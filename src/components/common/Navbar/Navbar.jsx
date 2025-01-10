@@ -38,7 +38,16 @@ const Navbar = () => {
     <nav className={styles.navbar}>
       <div className={styles.container}>
         <Link href="/" className={styles.logo}>
-          <Image src="/logo.png" alt="Logo" width={50} height={50} />
+          <Image 
+            src="/images/logo.jpg" 
+            alt="Arslandede Köyü Derneği Logo" 
+            width={60} 
+            height={60} 
+            style={{ 
+              borderRadius: '50%',
+              objectFit: 'cover'
+            }}
+          />
           <span>Arslandede Köyü Derneği</span>
         </Link>
 

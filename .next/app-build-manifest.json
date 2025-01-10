@@ -12,29 +12,11 @@
       "static/css/app/layout.css",
       "static/chunks/app/layout.js"
     ],
-    "/village/about-district/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/village/about-district/page.css",
-      "static/chunks/app/village/about-district/page.js"
-    ],
     "/projects/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/css/app/projects/page.css",
       "static/chunks/app/projects/page.js"
-    ],
-    "/contact/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/contact/page.css",
-      "static/chunks/app/contact/page.js"
-    ],
-    "/gallery/photos/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/gallery/photos/page.css",
-      "static/chunks/app/gallery/photos/page.js"
     ],
     "/not-found": [
       "static/chunks/webpack.js",
