@@ -41,8 +41,8 @@ const Navbar = () => {
           <Image 
             src="/images/logo.jpg" 
             alt="Arslandede Köyü Derneği Logo" 
-            width={60} 
-            height={60} 
+            width={80} 
+            height={80} 
             style={{ 
               borderRadius: '50%',
               objectFit: 'cover'
@@ -63,11 +63,11 @@ const Navbar = () => {
               className={`${styles.menuItem} ${styles.dropdownButton}`}
               onClick={toggleVillageMenu}
             >
-              Köyümüz Hakkında
+              Köyümüz
             </button>
             <div className={`${styles.dropdownContent} ${isVillageOpen ? styles.show : ''}`}>
-              <Link href="/village/about-district">İlçemiz Hakkında</Link>
-              <Link href="/village/about-village">Köyümüz Hakkında</Link>
+              <Link href="/village/about-district">Köyümüz Hakkında</Link>
+              <Link href="/village/about-village">..................</Link>
               <Link href="/village/places">Gezilecek Yerlerimiz</Link>
               <Link href="/village/sale">Satılık Arsa - Bahçe - Tarla</Link>
               <Link href="/village/neighborhoods">Mahallelerimiz</Link>
@@ -83,7 +83,7 @@ const Navbar = () => {
               className={`${styles.menuItem} ${styles.dropdownButton}`}
               onClick={toggleAboutMenu}
             >
-              Derneğimiz Hakkında
+              Derneğimiz
             </button>
             <div className={`${styles.dropdownContent} ${isAboutOpen ? styles.show : ''}`}>
               <Link href="/about/history">Derneğimizin Tarihçesi</Link>

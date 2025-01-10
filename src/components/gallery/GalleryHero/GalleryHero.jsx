@@ -17,6 +17,9 @@ const GalleryHero = () => {
       <div className={styles.container}>
         <h1>Galeri</h1>
         <p>Köyümüzün güzelliklerini ve anılarımızı keşfedin</p>
+        <div className={styles.buttonContainer}>
+          <button className={styles.button}>Galeriye Git</button>
+        </div>
       </div>
     </section>
   );

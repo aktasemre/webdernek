@@ -1,96 +1,33 @@
 {
   "pages": {
-    "/_not-found": [
-      "static/chunks/webpack-c9c6119480d7a8ff.js",
-      "static/chunks/fd9d1056-e8b19b7280e73163.js",
-      "static/chunks/472-da2611b830bd3f10.js",
-      "static/chunks/main-app-12fa86974e7c3fed.js",
-      "static/chunks/app/_not-found-c7555411b7b137ab.js"
+    "/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/page.css",
+      "static/chunks/app/page.js"
     ],
     "/layout": [
-      "static/chunks/webpack-c9c6119480d7a8ff.js",
-      "static/chunks/fd9d1056-e8b19b7280e73163.js",
-      "static/chunks/472-da2611b830bd3f10.js",
-      "static/chunks/main-app-12fa86974e7c3fed.js",
-      "static/css/b5fda97ae8ec4a72.css",
-      "static/chunks/app/layout-011a139e43e794ad.js"
-    ],
-    "/gallery/photos/page": [
-      "static/chunks/webpack-c9c6119480d7a8ff.js",
-      "static/chunks/fd9d1056-e8b19b7280e73163.js",
-      "static/chunks/472-da2611b830bd3f10.js",
-      "static/chunks/main-app-12fa86974e7c3fed.js",
-      "static/chunks/9081a741-02ff457719649c69.js",
-      "static/chunks/782-f2eeb6dea3f8ea26.js",
-      "static/css/f41ba4023bbee289.css",
-      "static/chunks/app/gallery/photos/page-b49cbd504b8dc3e1.js"
-    ],
-    "/gallery/page": [
-      "static/chunks/webpack-c9c6119480d7a8ff.js",
-      "static/chunks/fd9d1056-e8b19b7280e73163.js",
-      "static/chunks/472-da2611b830bd3f10.js",
-      "static/chunks/main-app-12fa86974e7c3fed.js",
-      "static/chunks/9081a741-02ff457719649c69.js",
-      "static/chunks/782-f2eeb6dea3f8ea26.js",
-      "static/css/c9939a3f026fad0f.css",
-      "static/chunks/app/gallery/page-37b8b7dae3496a08.js"
-    ],
-    "/contact/page": [
-      "static/chunks/webpack-c9c6119480d7a8ff.js",
-      "static/chunks/fd9d1056-e8b19b7280e73163.js",
-      "static/chunks/472-da2611b830bd3f10.js",
-      "static/chunks/main-app-12fa86974e7c3fed.js",
-      "static/chunks/9081a741-02ff457719649c69.js",
-      "static/chunks/782-f2eeb6dea3f8ea26.js",
-      "static/css/1cb2fe1f3ef10095.css",
-      "static/chunks/app/contact/page-b57b9df3dd4d6dcd.js"
-    ],
-    "/test/page": [
-      "static/chunks/webpack-c9c6119480d7a8ff.js",
-      "static/chunks/fd9d1056-e8b19b7280e73163.js",
-      "static/chunks/472-da2611b830bd3f10.js",
-      "static/chunks/main-app-12fa86974e7c3fed.js",
-      "static/chunks/app/test/page-7411b03c4cf63d69.js"
-    ],
-    "/projects/[id]/page": [
-      "static/chunks/webpack-c9c6119480d7a8ff.js",
-      "static/chunks/fd9d1056-e8b19b7280e73163.js",
-      "static/chunks/472-da2611b830bd3f10.js",
-      "static/chunks/main-app-12fa86974e7c3fed.js",
-      "static/chunks/9081a741-02ff457719649c69.js",
-      "static/chunks/782-f2eeb6dea3f8ea26.js",
-      "static/css/727f93edd41e8bb9.css",
-      "static/chunks/app/projects/[id]/page-32f93164e57bfa3f.js"
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/layout.css",
+      "static/chunks/app/layout.js"
     ],
     "/projects/page": [
-      "static/chunks/webpack-c9c6119480d7a8ff.js",
-      "static/chunks/fd9d1056-e8b19b7280e73163.js",
-      "static/chunks/472-da2611b830bd3f10.js",
-      "static/chunks/main-app-12fa86974e7c3fed.js",
-      "static/chunks/9081a741-02ff457719649c69.js",
-      "static/chunks/782-f2eeb6dea3f8ea26.js",
-      "static/css/3b6e1e02aa8cdf31.css",
-      "static/chunks/app/projects/page-a77fa3130c9b5a4a.js"
-    ],
-    "/page": [
-      "static/chunks/webpack-c9c6119480d7a8ff.js",
-      "static/chunks/fd9d1056-e8b19b7280e73163.js",
-      "static/chunks/472-da2611b830bd3f10.js",
-      "static/chunks/main-app-12fa86974e7c3fed.js",
-      "static/chunks/9081a741-02ff457719649c69.js",
-      "static/chunks/782-f2eeb6dea3f8ea26.js",
-      "static/css/23f52a6a655cb6ad.css",
-      "static/chunks/app/page-e3f7e1c68dd4c11f.js"
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/projects/page.css",
+      "static/chunks/app/projects/page.js"
     ],
     "/village/about-district/page": [
-      "static/chunks/webpack-c9c6119480d7a8ff.js",
-      "static/chunks/fd9d1056-e8b19b7280e73163.js",
-      "static/chunks/472-da2611b830bd3f10.js",
-      "static/chunks/main-app-12fa86974e7c3fed.js",
-      "static/chunks/9081a741-02ff457719649c69.js",
-      "static/chunks/782-f2eeb6dea3f8ea26.js",
-      "static/css/e983b8a2e52444fd.css",
-      "static/chunks/app/village/about-district/page-f50a4f437d3a5329.js"
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/village/about-district/page.css",
+      "static/chunks/app/village/about-district/page.js"
+    ],
+    "/not-found": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/not-found.js"
     ]
   }
 }

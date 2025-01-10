@@ -1,11 +1,5 @@
 {
-  "/_not-found": "app/_not-found.js",
-  "/gallery/photos/page": "app/gallery/photos/page.js",
-  "/gallery/page": "app/gallery/page.js",
-  "/contact/page": "app/contact/page.js",
-  "/test/page": "app/test/page.js",
-  "/projects/[id]/page": "app/projects/[id]/page.js",
-  "/projects/page": "app/projects/page.js",
+  "/not-found": "app/not-found.js",
   "/page": "app/page.js",
   "/village/about-district/page": "app/village/about-district/page.js"
 }
