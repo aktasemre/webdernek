@@ -1,0 +1,62 @@
+.projectList {
+  padding: 4rem 0;
+  background-color: #f5f5f5;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.filters {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.filterButton {
+  padding: 0.8rem 1.5rem;
+  border: 2px solid #2C5F2D;
+  border-radius: 5px;
+  background: none;
+  color: #2C5F2D;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s;
+
+  &:hover {
+    background-color: #2C5F2D;
+    color: white;
+  }
+
+  &.active {
+    background-color: #2C5F2D;
+    color: white;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+@media (max-width: 768px) {
+  .projectList {
+    padding: 2rem 0;
+  }
+
+  .filters {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .filterButton {
+    flex: 1;
+    min-width: 140px;
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+  }
+} 

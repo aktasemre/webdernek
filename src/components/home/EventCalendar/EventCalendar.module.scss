@@ -1,0 +1,122 @@
+.eventCalendar {
+  padding: 4rem 0;
+  background-color: white;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+
+  h2 {
+    text-align: center;
+    font-size: 2rem;
+    color: #2C5F2D;
+    margin-bottom: 2rem;
+  }
+}
+
+.eventList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.eventCard {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  background: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+
+  &:hover {
+    transform: translateX(10px);
+  }
+}
+
+.dateBox {
+  min-width: 100px;
+  text-align: center;
+  padding: 1rem;
+  background-color: #2C5F2D;
+  color: white;
+  border-radius: 5px;
+
+  .date {
+    display: block;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+
+  .time {
+    display: block;
+    font-size: 0.9rem;
+    opacity: 0.9;
+  }
+}
+
+.details {
+  flex: 1;
+
+  h3 {
+    font-size: 1.2rem;
+    color: #2C5F2D;
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    color: #666;
+    line-height: 1.6;
+  }
+}
+
+.joinButton {
+  padding: 0.8rem 1.5rem;
+  background-color: #2C5F2D;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: darken(#2C5F2D, 10%);
+  }
+}
+
+@media (max-width: 768px) {
+  .eventCalendar {
+    padding: 2rem 0;
+  }
+
+  .container h2 {
+    font-size: 1.5rem;
+  }
+
+  .eventCard {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+    padding: 1rem;
+
+    &:hover {
+      transform: translateY(-5px);
+    }
+  }
+
+  .dateBox {
+    width: 100%;
+    max-width: 200px;
+    margin: 0 auto;
+  }
+
+  .joinButton {
+    width: 100%;
+  }
+} 
