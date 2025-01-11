@@ -97,6 +97,16 @@
   }
 }
 
+.pdfLink {
+  color: #2C5F2D;
+  text-decoration: underline;
+  font-weight: 500;
+  
+  &:hover {
+    color: darken(#2C5F2D, 10%);
+  }
+}
+
 @media (max-width: 768px) {
   .statuteContent {
     h1 {

@@ -81,7 +81,7 @@ const StatuteContent = () => {
         <h3>Not:</h3>
         <p>
           Bu tüzük özeti bilgilendirme amaçlıdır. Derneğimizin tam tüzük metnine
-          ulaşmak için lütfen dernek yönetimi ile iletişime geçiniz.
+          ulaşmak için <a href="/documents/tuzuk.pdf" target="_blank" rel="noopener noreferrer" className={styles.pdfLink}>buraya tıklayınız</a>.
         </p>
       </div>
     </div>

@@ -1,3 +1,6 @@
+'use client';
+
+import { useState } from 'react';
 import { FaCopy } from 'react-icons/fa';
 import styles from './BankAccountsContent.module.scss';
 
@@ -39,9 +42,12 @@ const paymentInfo = {
 };
 
 const BankAccountsContent = () => {
-  const copyToClipboard = (text) => {
-    navigator.clipboard.writeText(text);
-    // Burada bir bildirim gösterilebilir
+  const [copiedIban, setCopiedIban] = useState('');
+
+  const copyToClipboard = (iban) => {
+    navigator.clipboard.writeText(iban);
+    setCopiedIban(iban);
+    setTimeout(() => setCopiedIban(''), 2000);
   };
 
   return (
@@ -78,9 +84,9 @@ const BankAccountsContent = () => {
                 <button
                   className={styles.copyButton}
                   onClick={() => copyToClipboard(account.iban)}
-                  title="IBAN'ı Kopyala"
                 >
                   <FaCopy />
+                  {copiedIban === account.iban && <span className={styles.tooltip}>Kopyalandı!</span>}
                 </button>
               </div>
               <div className={styles.description}>
