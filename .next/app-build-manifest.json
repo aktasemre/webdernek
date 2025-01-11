@@ -1,58 +1,14 @@
 {
   "pages": {
-    "/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/page.css",
-      "static/chunks/app/page.js"
-    ],
     "/layout": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/css/app/layout.css",
       "static/chunks/app/layout.js"
     ],
-    "/about/history/page": [
+    "/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/css/app/about/history/page.css",
-      "static/chunks/app/about/history/page.js"
-    ],
-    "/about/village/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/about/village/page.css",
-      "static/chunks/app/about/village/page.js"
-    ],
-    "/about/statute/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/about/statute/page.css",
-      "static/chunks/app/about/statute/page.js"
-    ],
-    "/about/village/history/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/about/village/history/page.css",
-      "static/chunks/app/about/village/history/page.js"
-    ],
-    "/about/board/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/about/board/page.css",
-      "static/chunks/app/about/board/page.js"
-    ],
-    "/gallery/photos/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/gallery/photos/page.css",
-      "static/chunks/app/gallery/photos/page.js"
-    ],
-    "/about/village/economy/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/about/village/economy/page.css",
-      "static/chunks/app/about/village/economy/page.js"
+      "static/chunks/app/page.js"
     ],
     "/not-found": [
       "static/chunks/webpack.js",

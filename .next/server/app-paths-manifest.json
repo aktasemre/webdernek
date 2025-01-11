@@ -1,8 +1,1 @@
-{
-  "/not-found": "app/not-found.js",
-  "/about/village/page": "app/about/village/page.js",
-  "/about/history/page": "app/about/history/page.js",
-  "/about/statute/page": "app/about/statute/page.js",
-  "/gallery/photos/page": "app/gallery/photos/page.js",
-  "/about/village/economy/page": "app/about/village/economy/page.js"
-}
+{}
