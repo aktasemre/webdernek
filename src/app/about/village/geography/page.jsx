@@ -1,5 +1,4 @@
 import GeographyContent from '@/components/about/Village/Geography/GeographyContent';
-import styles from './page.module.scss';
 
 export const metadata = {
   title: 'Coğrafi Yapı | Arslandede Köyü',
@@ -8,9 +7,5 @@ export const metadata = {
 };
 
 export default function VillageGeographyPage() {
-  return (
-    <div className={styles.container}>
-      <GeographyContent />
-    </div>
-  );
+  return <GeographyContent />;
 } 

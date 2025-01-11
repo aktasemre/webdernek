@@ -1,6 +1,4 @@
-import { Metadata } from 'next';
 import HistoryContent from '@/components/about/Village/History/HistoryContent';
-import styles from './page.module.scss';
 
 export const metadata = {
   title: 'Köyümüzün Tarihi | Arslandede Köyü',
@@ -9,9 +7,5 @@ export const metadata = {
 };
 
 export default function VillageHistoryPage() {
-  return (
-    <div className={styles.container}>
-      <HistoryContent />
-    </div>
-  );
+  return <HistoryContent />;
 } 

@@ -1,5 +1,4 @@
 import EducationContent from '@/components/about/Village/Education/EducationContent';
-import styles from './page.module.scss';
 
 export const metadata = {
   title: 'Eğitim ve Kültür | Arslandede Köyü',
@@ -8,9 +7,5 @@ export const metadata = {
 };
 
 export default function VillageEducationPage() {
-  return (
-    <div className={styles.container}>
-      <EducationContent />
-    </div>
-  );
+  return <EducationContent />;
 } 

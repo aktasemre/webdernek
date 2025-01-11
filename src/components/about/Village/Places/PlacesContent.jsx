@@ -82,143 +82,145 @@ const culturalPlaces = [
 
 const PlacesContent = () => {
   return (
-    <div className={styles.placesContent}>
+    <div className={styles.container}>
       <BackButton />
-      <h1>Gezilecek Yerler</h1>
-      
-      <div className={styles.introduction}>
-        <p>
-          Arslandede köyü, tarihi, doğal ve kültürel zenginlikleriyle ziyaretçilerine
-          unutulmaz deneyimler sunar. Osmanlı döneminden kalma tarihi yapılar,
-          el değmemiş doğal güzellikler ve zengin kültürel miras, köyümüzü
-          keşfedilmeyi bekleyen bir hazine haline getiriyor.
-        </p>
-      </div>
-
-      <div className={styles.section}>
-        <h2>Tarihi Mekanlar</h2>
-        <div className={styles.places}>
-          {historicalPlaces.map((place, index) => (
-            <div key={index} className={styles.placeCard}>
-              <div className={styles.imageContainer}>
-                <Image
-                  src={place.image}
-                  alt={place.name}
-                  width={600}
-                  height={400}
-                  style={{ objectFit: "cover" }}
-                />
-              </div>
-              <div className={styles.content}>
-                <h3>{place.name}</h3>
-                <p className={styles.description}>{place.description}</p>
-                <div className={styles.history}>{place.history}</div>
-                <div className={styles.features}>
-                  <h4>Özellikler</h4>
-                  <ul>
-                    {place.features.map((feature, i) => (
-                      <li key={i}>{feature}</li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            </div>
-          ))}
+      <div className={styles.placesContent}>
+        <h1>Gezilecek Yerler</h1>
+        
+        <div className={styles.introduction}>
+          <p>
+            Arslandede köyü, tarihi, doğal ve kültürel zenginlikleriyle ziyaretçilerine
+            unutulmaz deneyimler sunar. Osmanlı döneminden kalma tarihi yapılar,
+            el değmemiş doğal güzellikler ve zengin kültürel miras, köyümüzü
+            keşfedilmeyi bekleyen bir hazine haline getiriyor.
+          </p>
         </div>
-      </div>
 
-      <div className={styles.section}>
-        <h2>Doğal Güzellikler</h2>
-        <div className={styles.places}>
-          {naturalPlaces.map((place, index) => (
-            <div key={index} className={styles.placeCard}>
-              <div className={styles.imageContainer}>
-                <Image
-                  src={place.image}
-                  alt={place.name}
-                  width={600}
-                  height={400}
-                  style={{ objectFit: "cover" }}
-                />
-              </div>
-              <div className={styles.content}>
-                <h3>{place.name}</h3>
-                <p className={styles.description}>{place.description}</p>
-                <div className={styles.activities}>
-                  <h4>Aktiviteler</h4>
-                  <ul>
-                    {place.activities ? place.activities.map((activity, i) => (
-                      <li key={i}>{activity}</li>
-                    )) : place.benefits.map((benefit, i) => (
-                      <li key={i}>{benefit}</li>
-                    ))}
-                  </ul>
+        <div className={styles.section}>
+          <h2>Tarihi Mekanlar</h2>
+          <div className={styles.places}>
+            {historicalPlaces.map((place, index) => (
+              <div key={index} className={styles.placeCard}>
+                <div className={styles.imageContainer}>
+                  <Image
+                    src={place.image}
+                    alt={place.name}
+                    width={600}
+                    height={400}
+                    style={{ objectFit: "cover" }}
+                  />
                 </div>
-                <div className={styles.season}>
-                  En İyi Ziyaret Zamanı: {place.bestSeason}
+                <div className={styles.content}>
+                  <h3>{place.name}</h3>
+                  <p className={styles.description}>{place.description}</p>
+                  <div className={styles.history}>{place.history}</div>
+                  <div className={styles.features}>
+                    <h4>Özellikler</h4>
+                    <ul>
+                      {place.features.map((feature, i) => (
+                        <li key={i}>{feature}</li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      <div className={styles.section}>
-        <h2>Kültürel Mekanlar</h2>
-        <div className={styles.places}>
-          {culturalPlaces.map((place, index) => (
-            <div key={index} className={styles.placeCard}>
-              <div className={styles.imageContainer}>
-                <Image
-                  src={place.image}
-                  alt={place.name}
-                  width={600}
-                  height={400}
-                  style={{ objectFit: "cover" }}
-                />
-              </div>
-              <div className={styles.content}>
-                <h3>{place.name}</h3>
-                <p className={styles.description}>{place.description}</p>
-                <div className={styles.activities}>
-                  <h4>{place.activities ? 'Etkinlikler' : 'Sergilenen Eserler'}</h4>
-                  <ul>
-                    {place.activities ? place.activities.map((activity, i) => (
-                      <li key={i}>{activity}</li>
-                    )) : place.exhibits.map((exhibit, i) => (
-                      <li key={i}>{exhibit}</li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      <div className={styles.visitInfo}>
-        <h2>Ziyaret Bilgileri</h2>
-        <div className={styles.infoGrid}>
-          <div className={styles.infoCard}>
-            <h3>Ulaşım</h3>
-            <p>
-              Köyümüze Bayburt merkeze 15 km mesafede olup, düzenli minibüs seferleri
-              bulunmaktadır. Özel araçla ulaşım için asfalt yol mevcuttur.
-            </p>
+            ))}
           </div>
-          <div className={styles.infoCard}>
-            <h3>Konaklama</h3>
-            <p>
-              Köy konağında ve geleneksel evlerde konaklama imkanı sunulmaktadır.
-              Rezervasyon için muhtarlık ile iletişime geçebilirsiniz.
-            </p>
+        </div>
+
+        <div className={styles.section}>
+          <h2>Doğal Güzellikler</h2>
+          <div className={styles.places}>
+            {naturalPlaces.map((place, index) => (
+              <div key={index} className={styles.placeCard}>
+                <div className={styles.imageContainer}>
+                  <Image
+                    src={place.image}
+                    alt={place.name}
+                    width={600}
+                    height={400}
+                    style={{ objectFit: "cover" }}
+                  />
+                </div>
+                <div className={styles.content}>
+                  <h3>{place.name}</h3>
+                  <p className={styles.description}>{place.description}</p>
+                  <div className={styles.activities}>
+                    <h4>Aktiviteler</h4>
+                    <ul>
+                      {place.activities ? place.activities.map((activity, i) => (
+                        <li key={i}>{activity}</li>
+                      )) : place.benefits.map((benefit, i) => (
+                        <li key={i}>{benefit}</li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div className={styles.season}>
+                    En İyi Ziyaret Zamanı: {place.bestSeason}
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
-          <div className={styles.infoCard}>
-            <h3>İletişim</h3>
-            <p>
-              Ziyaret ve konaklama için önceden bilgi almak isteyenler muhtarlık
-              ile iletişime geçebilir. Tel: 0XXX XXX XX XX
-            </p>
+        </div>
+
+        <div className={styles.section}>
+          <h2>Kültürel Mekanlar</h2>
+          <div className={styles.places}>
+            {culturalPlaces.map((place, index) => (
+              <div key={index} className={styles.placeCard}>
+                <div className={styles.imageContainer}>
+                  <Image
+                    src={place.image}
+                    alt={place.name}
+                    width={600}
+                    height={400}
+                    style={{ objectFit: "cover" }}
+                  />
+                </div>
+                <div className={styles.content}>
+                  <h3>{place.name}</h3>
+                  <p className={styles.description}>{place.description}</p>
+                  <div className={styles.activities}>
+                    <h4>{place.activities ? 'Etkinlikler' : 'Sergilenen Eserler'}</h4>
+                    <ul>
+                      {place.activities ? place.activities.map((activity, i) => (
+                        <li key={i}>{activity}</li>
+                      )) : place.exhibits.map((exhibit, i) => (
+                        <li key={i}>{exhibit}</li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className={styles.visitInfo}>
+          <h2>Ziyaret Bilgileri</h2>
+          <div className={styles.infoGrid}>
+            <div className={styles.infoCard}>
+              <h3>Ulaşım</h3>
+              <p>
+                Köyümüze Bayburt merkeze 15 km mesafede olup, düzenli minibüs seferleri
+                bulunmaktadır. Özel araçla ulaşım için asfalt yol mevcuttur.
+              </p>
+            </div>
+            <div className={styles.infoCard}>
+              <h3>Konaklama</h3>
+              <p>
+                Köy konağında ve geleneksel evlerde konaklama imkanı sunulmaktadır.
+                Rezervasyon için muhtarlık ile iletişime geçebilirsiniz.
+              </p>
+            </div>
+            <div className={styles.infoCard}>
+              <h3>İletişim</h3>
+              <p>
+                Ziyaret ve konaklama için önceden bilgi almak isteyenler muhtarlık
+                ile iletişime geçebilir. Tel: 0XXX XXX XX XX
+              </p>
+            </div>
           </div>
         </div>
       </div>

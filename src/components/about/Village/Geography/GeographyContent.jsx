@@ -57,6 +57,7 @@ const vegetation = [
 const GeographyContent = () => {
   return (
     <div className={styles.geographyContent}>
+      <BackButton />
       <div className={styles.header}>
         <h1>Coğrafi Yapı ve İklim</h1>
         <div className={styles.introduction}>
@@ -84,7 +85,7 @@ const GeographyContent = () => {
         <div className={styles.locationContent}>
           <div className={styles.text}>
             <h3>Koordinatlar</h3>
-            <p>40° 15' Kuzey, 40° 13' Doğu</p>
+            <p>40°22'37"N, 40°28'25"E</p>
             
             <h3>Komşu Yerleşimler</h3>
             <ul>

@@ -1,4 +1,6 @@
-import '@/styles/globals.scss'
+import './globals.scss';
+import Header from '@/components/common/Header/Header';
+import Footer from '@/components/common/Footer/Footer';
 
 export const metadata = {
   metadataBase: new URL('https://arslandededernegi.org'),
@@ -31,12 +33,16 @@ export const metadata = {
       }
     ]
   }
-}
+};
 
 export default function RootLayout({ children }) {
   return (
     <html lang="tr">
-      <body>{children}</body>
+      <body>
+        <Header />
+        {children}
+        <Footer />
+      </body>
     </html>
-  )
+  );
 } 

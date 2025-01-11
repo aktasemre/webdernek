@@ -1,6 +1,4 @@
-import { Metadata } from 'next';
 import PlacesContent from '@/components/about/Village/Places/PlacesContent';
-import styles from './page.module.scss';
 
 export const metadata = {
   title: 'Gezilecek Yerler | Arslandede Köyü',
@@ -9,9 +7,5 @@ export const metadata = {
 };
 
 export default function VillagePlacesPage() {
-  return (
-    <div className={styles.container}>
-      <PlacesContent />
-    </div>
-  );
+  return <PlacesContent />;
 } 

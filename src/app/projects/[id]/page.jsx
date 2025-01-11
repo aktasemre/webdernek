@@ -1,5 +1,3 @@
-import Navbar from '@/components/common/Navbar/Navbar';
-import Footer from '@/components/common/Footer/Footer';
 import ProjectDetail from '@/components/projects/ProjectDetail/ProjectDetail';
 
 export function generateStaticParams() {
@@ -19,11 +17,7 @@ export const metadata = {
 export default function ProjectDetailPage({ params }) {
   return (
     <main>
-      <Navbar />
-      <div className="container">
-        <ProjectDetail id={params.id} />
-      </div>
-      <Footer />
+      <ProjectDetail id={params.id} />
     </main>
   );
 } 

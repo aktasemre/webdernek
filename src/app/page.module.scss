@@ -1,0 +1,176 @@
+.main {
+  min-height: 100vh;
+  width: 100%;
+}
+
+.contentWrapper {
+  display: flex;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  gap: 2rem;
+
+  .sideMenuContainer {
+    width: 300px;
+    flex-shrink: 0;
+  }
+
+  .mainContent {
+    flex: 1;
+  }
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.features {
+  padding: 5rem 0;
+  background-color: #f8f9fa;
+
+  h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: #333;
+  }
+
+  .featureGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+  }
+
+  .featureCard {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+    }
+
+    .icon {
+      font-size: 2.5rem;
+      color: #2C5F2D;
+      margin-bottom: 1rem;
+    }
+
+    h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: #333;
+    }
+
+    p {
+      color: #666;
+      line-height: 1.6;
+    }
+  }
+}
+
+.about {
+  padding: 5rem 0;
+
+  .aboutContent {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  .aboutText {
+    h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+      color: #333;
+    }
+
+    p {
+      color: #666;
+      line-height: 1.8;
+      margin-bottom: 2rem;
+    }
+
+    .aboutButton {
+      display: inline-block;
+      padding: 0.8rem 1.5rem;
+      background-color: #2C5F2D;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background-color: darken(#2C5F2D, 10%);
+      }
+    }
+  }
+
+  .aboutImage {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.cta {
+  padding: 5rem 0;
+  background-color: #2C5F2D;
+  color: white;
+  text-align: center;
+
+  h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+  }
+
+  .ctaButton {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background-color: white;
+    color: #2C5F2D;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-color: darken(white, 10%);
+      transform: translateY(-2px);
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .contentWrapper {
+    flex-direction: column;
+
+    .sideMenuContainer {
+      width: 100%;
+    }
+  }
+
+  .about {
+    .aboutContent {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .aboutText {
+      text-align: center;
+    }
+  }
+} 
