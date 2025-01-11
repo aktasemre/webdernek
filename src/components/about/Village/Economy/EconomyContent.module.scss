@@ -1,0 +1,329 @@
+.economyContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+
+  h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+  }
+
+  .introduction {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 3rem;
+    line-height: 1.6;
+    color: #666;
+    font-size: 1.1rem;
+  }
+
+  .sector {
+    margin-bottom: 4rem;
+
+    h2 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 2rem;
+      font-size: 2rem;
+    }
+
+    .sectorContent {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 2rem;
+      align-items: start;
+
+      .imageContainer {
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+        img {
+          width: 100%;
+          height: auto;
+          transition: transform 0.3s ease;
+
+          &:hover {
+            transform: scale(1.05);
+          }
+        }
+      }
+
+      .details {
+        p {
+          color: #666;
+          line-height: 1.6;
+          margin-bottom: 2rem;
+        }
+
+        .products {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+          gap: 1.5rem;
+
+          .productCard {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+
+            &:hover {
+              transform: translateY(-5px);
+            }
+
+            h3 {
+              color: #333;
+              margin-bottom: 1rem;
+              font-size: 1.3rem;
+            }
+
+            ul {
+              list-style: none;
+              padding: 0;
+              margin-bottom: 1rem;
+
+              li {
+                color: #666;
+                padding: 0.3rem 0;
+                border-bottom: 1px solid #eee;
+
+                &:last-child {
+                  border-bottom: none;
+                }
+              }
+            }
+
+            .area {
+              color: #007bff;
+              font-weight: bold;
+              font-size: 0.9rem;
+            }
+          }
+        }
+
+        .categories {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+          gap: 1.5rem;
+
+          .categoryCard {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+
+            &:hover {
+              transform: translateY(-5px);
+            }
+
+            h3 {
+              color: #333;
+              margin-bottom: 1rem;
+              font-size: 1.3rem;
+            }
+
+            .count {
+              color: #007bff;
+              font-weight: bold;
+              font-size: 1.5rem;
+              margin-bottom: 0.5rem;
+            }
+
+            p {
+              color: #666;
+              margin: 0;
+              font-size: 0.9rem;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .employment {
+    background: #f5f5f5;
+    padding: 2rem;
+    border-radius: 8px;
+    margin-bottom: 4rem;
+
+    h2 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 2rem;
+      font-size: 2rem;
+    }
+
+    .employmentContent {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 2rem;
+
+      h3 {
+        color: #333;
+        margin-bottom: 1.5rem;
+        font-size: 1.5rem;
+      }
+
+      .sectorDistribution {
+        background: white;
+        padding: 2rem;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+        .bars {
+          .bar {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+
+            .label {
+              flex: 0 0 150px;
+              color: #666;
+            }
+
+            .barContainer {
+              flex: 1;
+              height: 20px;
+              background: #f0f0f0;
+              border-radius: 10px;
+              margin: 0 1rem;
+              overflow: hidden;
+
+              .barFill {
+                height: 100%;
+                background: #007bff;
+                border-radius: 10px;
+                transition: width 0.3s ease;
+              }
+            }
+
+            .percentage {
+              flex: 0 0 50px;
+              color: #007bff;
+              font-weight: bold;
+            }
+          }
+        }
+      }
+
+      .income {
+        background: white;
+        padding: 2rem;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+        .average {
+          background: #f8f9fa;
+          padding: 1rem;
+          border-radius: 4px;
+          color: #007bff;
+          font-weight: bold;
+          margin-bottom: 1.5rem;
+          text-align: center;
+        }
+
+        ul {
+          list-style: none;
+          padding: 0;
+
+          li {
+            color: #666;
+            padding: 0.5rem;
+            border-bottom: 1px solid #eee;
+            text-align: center;
+
+            &:last-child {
+              border-bottom: none;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .infrastructure {
+    h2 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 2rem;
+      font-size: 2rem;
+    }
+
+    .infrastructureContent {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+
+      .agricultural, .commercial {
+        background: white;
+        padding: 2rem;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+        h3 {
+          color: #333;
+          margin-bottom: 1.5rem;
+          font-size: 1.5rem;
+          text-align: center;
+        }
+
+        ul {
+          list-style: none;
+          padding: 0;
+
+          li {
+            color: #666;
+            padding: 0.8rem;
+            border-bottom: 1px solid #eee;
+            text-align: center;
+            transition: background-color 0.3s ease;
+
+            &:last-child {
+              border-bottom: none;
+            }
+
+            &:hover {
+              background-color: #f8f9fa;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .economyContent {
+    padding: 1rem;
+
+    h1 {
+      font-size: 2rem;
+    }
+
+    .sector {
+      .sectorContent {
+        grid-template-columns: 1fr;
+
+        .imageContainer {
+          margin-bottom: 1rem;
+        }
+      }
+    }
+
+    .employment {
+      .employmentContent {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .infrastructure {
+      .infrastructureContent {
+        grid-template-columns: 1fr;
+      }
+    }
+  }
+} 

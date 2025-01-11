@@ -66,15 +66,13 @@ const Navbar = () => {
               Köyümüz
             </button>
             <div className={`${styles.dropdownContent} ${isVillageOpen ? styles.show : ''}`}>
-              <Link href="/village/about-district">Köyümüz Hakkında</Link>
-              <Link href="/village/about-village">..................</Link>
-              <Link href="/village/places">Gezilecek Yerlerimiz</Link>
-              <Link href="/village/sale">Satılık Arsa - Bahçe - Tarla</Link>
-              <Link href="/village/neighborhoods">Mahallelerimiz</Link>
-              <Link href="/village/mukhtars">Muhtarlarımız</Link>
-              <Link href="/village/events">Etkinlik Tarihleri</Link>
-              <Link href="/village/obituaries">Vefat Edenler</Link>
-              <Link href="/village/news">Bizden Haberler</Link>
+              <Link href="/about/village">Köyümüz Hakkında</Link>
+              <Link href="/about/village/history">Köyümüzün Tarihi</Link>
+              <Link href="/about/village/geography">Coğrafi Yapı ve İklim</Link>
+              <Link href="/about/village/population">Nüfus ve Yerleşim</Link>
+              <Link href="/about/village/economy">Ekonomik Yapı</Link>
+              <Link href="/about/village/education">Eğitim ve Kültür</Link>
+              <Link href="/about/village/places">Gezilecek Yerler</Link>
             </div>
           </div>
 

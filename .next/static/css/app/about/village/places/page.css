@@ -1,0 +1,177 @@
+/*!*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[12].oneOf[9].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[12].oneOf[9].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[12].oneOf[9].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[12].oneOf[9].use[5]!./src/components/about/Village/Places/PlacesContent.module.scss ***!
+  \*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+.PlacesContent_placesContent__KBeHH {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+.PlacesContent_placesContent__KBeHH h1 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
+}
+.PlacesContent_placesContent__KBeHH .PlacesContent_introduction__W2LSR {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 3rem;
+  line-height: 1.6;
+  color: #666;
+  font-size: 1.1rem;
+}
+.PlacesContent_placesContent__KBeHH .PlacesContent_section___2q5w {
+  margin-bottom: 4rem;
+}
+.PlacesContent_placesContent__KBeHH .PlacesContent_section___2q5w h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+.PlacesContent_placesContent__KBeHH .PlacesContent_section___2q5w .PlacesContent_places__yQlfW {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 2rem;
+  gap: 2rem;
+}
+.PlacesContent_placesContent__KBeHH .PlacesContent_section___2q5w .PlacesContent_places__yQlfW .PlacesContent_placeCard__qLAO_ {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+.PlacesContent_placesContent__KBeHH .PlacesContent_section___2q5w .PlacesContent_places__yQlfW .PlacesContent_placeCard__qLAO_:hover {
+  transform: translateY(-5px);
+}
+.PlacesContent_placesContent__KBeHH .PlacesContent_section___2q5w .PlacesContent_places__yQlfW .PlacesContent_placeCard__qLAO_ .PlacesContent_imageContainer__00abI {
+  width: 100%;
+  height: 250px;
+  position: relative;
+  overflow: hidden;
+}
+.PlacesContent_placesContent__KBeHH .PlacesContent_section___2q5w .PlacesContent_places__yQlfW .PlacesContent_placeCard__qLAO_ .PlacesContent_imageContainer__00abI img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+.PlacesContent_placesContent__KBeHH .PlacesContent_section___2q5w .PlacesContent_places__yQlfW .PlacesContent_placeCard__qLAO_ .PlacesContent_imageContainer__00abI img:hover {
+  transform: scale(1.05);
+}
+.PlacesContent_placesContent__KBeHH .PlacesContent_section___2q5w .PlacesContent_places__yQlfW .PlacesContent_placeCard__qLAO_ .PlacesContent_content__yGn75 {
+  padding: 1.5rem;
+}
+.PlacesContent_placesContent__KBeHH .PlacesContent_section___2q5w .PlacesContent_places__yQlfW .PlacesContent_placeCard__qLAO_ .PlacesContent_content__yGn75 h3 {
+  color: #333;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+.PlacesContent_placesContent__KBeHH .PlacesContent_section___2q5w .PlacesContent_places__yQlfW .PlacesContent_placeCard__qLAO_ .PlacesContent_content__yGn75 .PlacesContent_description__Kj1US {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+.PlacesContent_placesContent__KBeHH .PlacesContent_section___2q5w .PlacesContent_places__yQlfW .PlacesContent_placeCard__qLAO_ .PlacesContent_content__yGn75 .PlacesContent_history__RaBzw {
+  background: #f8f9fa;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  color: #007bff;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+.PlacesContent_placesContent__KBeHH .PlacesContent_section___2q5w .PlacesContent_places__yQlfW .PlacesContent_placeCard__qLAO_ .PlacesContent_content__yGn75 .PlacesContent_features__Dvk8u h4, .PlacesContent_placesContent__KBeHH .PlacesContent_section___2q5w .PlacesContent_places__yQlfW .PlacesContent_placeCard__qLAO_ .PlacesContent_content__yGn75 .PlacesContent_activities__oVyuT h4 {
+  color: #333;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+.PlacesContent_placesContent__KBeHH .PlacesContent_section___2q5w .PlacesContent_places__yQlfW .PlacesContent_placeCard__qLAO_ .PlacesContent_content__yGn75 .PlacesContent_features__Dvk8u ul, .PlacesContent_placesContent__KBeHH .PlacesContent_section___2q5w .PlacesContent_places__yQlfW .PlacesContent_placeCard__qLAO_ .PlacesContent_content__yGn75 .PlacesContent_activities__oVyuT ul {
+  list-style: none;
+  padding: 0;
+}
+.PlacesContent_placesContent__KBeHH .PlacesContent_section___2q5w .PlacesContent_places__yQlfW .PlacesContent_placeCard__qLAO_ .PlacesContent_content__yGn75 .PlacesContent_features__Dvk8u ul li, .PlacesContent_placesContent__KBeHH .PlacesContent_section___2q5w .PlacesContent_places__yQlfW .PlacesContent_placeCard__qLAO_ .PlacesContent_content__yGn75 .PlacesContent_activities__oVyuT ul li {
+  color: #666;
+  padding: 0.5rem;
+  border-bottom: 1px solid #eee;
+  text-align: center;
+}
+.PlacesContent_placesContent__KBeHH .PlacesContent_section___2q5w .PlacesContent_places__yQlfW .PlacesContent_placeCard__qLAO_ .PlacesContent_content__yGn75 .PlacesContent_features__Dvk8u ul li:last-child, .PlacesContent_placesContent__KBeHH .PlacesContent_section___2q5w .PlacesContent_places__yQlfW .PlacesContent_placeCard__qLAO_ .PlacesContent_content__yGn75 .PlacesContent_activities__oVyuT ul li:last-child {
+  border-bottom: none;
+}
+.PlacesContent_placesContent__KBeHH .PlacesContent_section___2q5w .PlacesContent_places__yQlfW .PlacesContent_placeCard__qLAO_ .PlacesContent_content__yGn75 .PlacesContent_season__hNO2C {
+  margin-top: 1rem;
+  text-align: center;
+  color: #007bff;
+  font-weight: bold;
+}
+.PlacesContent_placesContent__KBeHH .PlacesContent_visitInfo__iNFxD {
+  background: #f5f5f5;
+  padding: 2rem;
+  border-radius: 8px;
+}
+.PlacesContent_placesContent__KBeHH .PlacesContent_visitInfo__iNFxD h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+.PlacesContent_placesContent__KBeHH .PlacesContent_visitInfo__iNFxD .PlacesContent_infoGrid__cxQm5 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 2rem;
+  gap: 2rem;
+}
+.PlacesContent_placesContent__KBeHH .PlacesContent_visitInfo__iNFxD .PlacesContent_infoGrid__cxQm5 .PlacesContent_infoCard__gShIv {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+.PlacesContent_placesContent__KBeHH .PlacesContent_visitInfo__iNFxD .PlacesContent_infoGrid__cxQm5 .PlacesContent_infoCard__gShIv:hover {
+  transform: translateY(-5px);
+}
+.PlacesContent_placesContent__KBeHH .PlacesContent_visitInfo__iNFxD .PlacesContent_infoGrid__cxQm5 .PlacesContent_infoCard__gShIv h3 {
+  color: #333;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  text-align: center;
+}
+.PlacesContent_placesContent__KBeHH .PlacesContent_visitInfo__iNFxD .PlacesContent_infoGrid__cxQm5 .PlacesContent_infoCard__gShIv p {
+  color: #666;
+  line-height: 1.6;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .PlacesContent_placesContent__KBeHH {
+    padding: 1rem;
+  }
+  .PlacesContent_placesContent__KBeHH h1 {
+    font-size: 2rem;
+  }
+  .PlacesContent_placesContent__KBeHH .PlacesContent_section___2q5w .PlacesContent_places__yQlfW {
+    grid-template-columns: 1fr;
+  }
+  .PlacesContent_placesContent__KBeHH .PlacesContent_visitInfo__iNFxD .PlacesContent_infoGrid__cxQm5 {
+    grid-template-columns: 1fr;
+  }
+}
+/*!*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[12].oneOf[9].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[12].oneOf[9].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[12].oneOf[9].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[12].oneOf[9].use[5]!./src/app/about/village/places/page.module.scss ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+.page_container__3C2tz {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  display: flex;
+  gap: 2rem;
+}
+@media (max-width: 768px) {
+  .page_container__3C2tz {
+    flex-direction: column;
+    padding: 1rem;
+  }
+}

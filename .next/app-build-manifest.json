@@ -12,17 +12,101 @@
       "static/css/app/layout.css",
       "static/chunks/app/layout.js"
     ],
-    "/projects/page": [
+    "/about/statute/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/css/app/projects/page.css",
-      "static/chunks/app/projects/page.js"
+      "static/css/app/about/statute/page.css",
+      "static/chunks/app/about/statute/page.js"
     ],
     "/village/about-district/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/css/app/village/about-district/page.css",
       "static/chunks/app/village/about-district/page.js"
+    ],
+    "/about/supervisory/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/about/supervisory/page.css",
+      "static/chunks/app/about/supervisory/page.js"
+    ],
+    "/about/board/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/about/board/page.css",
+      "static/chunks/app/about/board/page.js"
+    ],
+    "/about/founders/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/about/founders/page.css",
+      "static/chunks/app/about/founders/page.js"
+    ],
+    "/about/members/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/about/members/page.css",
+      "static/chunks/app/about/members/page.js"
+    ],
+    "/about/history/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/about/history/page.css",
+      "static/chunks/app/about/history/page.js"
+    ],
+    "/about/bank-accounts/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/about/bank-accounts/page.css",
+      "static/chunks/app/about/bank-accounts/page.js"
+    ],
+    "/about/writers/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/about/writers/page.css",
+      "static/chunks/app/about/writers/page.js"
+    ],
+    "/about/blood-bank/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/about/blood-bank/page.css",
+      "static/chunks/app/about/blood-bank/page.js"
+    ],
+    "/about/village/history/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/about/village/history/page.css",
+      "static/chunks/app/about/village/history/page.js"
+    ],
+    "/about/village/geography/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/about/village/geography/page.css",
+      "static/chunks/app/about/village/geography/page.js"
+    ],
+    "/about/village/population/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/about/village/population/page.css",
+      "static/chunks/app/about/village/population/page.js"
+    ],
+    "/about/village/economy/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/about/village/economy/page.css",
+      "static/chunks/app/about/village/economy/page.js"
+    ],
+    "/about/village/places/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/about/village/places/page.css",
+      "static/chunks/app/about/village/places/page.js"
+    ],
+    "/contact/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/contact/page.css",
+      "static/chunks/app/contact/page.js"
     ],
     "/not-found": [
       "static/chunks/webpack.js",

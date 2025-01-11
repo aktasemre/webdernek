@@ -1,0 +1,228 @@
+.geographyContent {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  h1, h2 {
+    color: #2c3e50;
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+
+  .header {
+    margin-bottom: 3rem;
+
+    .introduction {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+
+      .imageContainer {
+        flex: 1;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .text {
+        flex: 1;
+        font-size: 1.1rem;
+        line-height: 1.6;
+        color: #34495e;
+      }
+    }
+  }
+
+  .location {
+    margin-bottom: 3rem;
+
+    .locationContent {
+      display: flex;
+      gap: 2rem;
+      align-items: flex-start;
+
+      .text {
+        flex: 1.5;
+
+        h3 {
+          color: #2c3e50;
+          margin: 1rem 0;
+        }
+
+        ul {
+          list-style: none;
+          padding-left: 0;
+
+          li {
+            margin: 0.5rem 0;
+            color: #34495e;
+          }
+        }
+
+        p {
+          color: #34495e;
+          line-height: 1.6;
+        }
+      }
+
+      .imageContainer {
+        flex: 1;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+    }
+  }
+
+  .climate {
+    margin-bottom: 3rem;
+
+    .seasons {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+
+      .seasonCard {
+        background-color: #fff;
+        padding: 1.5rem;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+        h3 {
+          color: #2c3e50;
+          margin-bottom: 1rem;
+          text-align: center;
+        }
+
+        .details {
+          margin-bottom: 1rem;
+
+          .info {
+            display: flex;
+            justify-content: space-between;
+            margin: 0.5rem 0;
+            color: #34495e;
+
+            span:first-child {
+              font-weight: bold;
+            }
+          }
+        }
+
+        p {
+          color: #34495e;
+          line-height: 1.4;
+          font-size: 0.9rem;
+        }
+      }
+    }
+  }
+
+  .vegetation {
+    margin-bottom: 3rem;
+
+    .vegetationContent {
+      display: flex;
+      gap: 2rem;
+      align-items: flex-start;
+
+      .imageContainer {
+        flex: 1;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .types {
+        flex: 1.5;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1.5rem;
+
+        .typeCard {
+          background-color: #fff;
+          padding: 1.5rem;
+          border-radius: 10px;
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+          h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            text-align: center;
+          }
+
+          ul {
+            list-style: none;
+            padding-left: 0;
+
+            li {
+              color: #34495e;
+              margin: 0.5rem 0;
+              text-align: center;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .resources {
+    .resourcesGrid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+
+      .resourceCard {
+        background-color: #fff;
+        padding: 1.5rem;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+        h3 {
+          color: #2c3e50;
+          margin-bottom: 1rem;
+          text-align: center;
+        }
+
+        ul {
+          list-style: none;
+          padding-left: 0;
+
+          li {
+            color: #34495e;
+            margin: 0.5rem 0;
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .geographyContent {
+    padding: 1rem;
+
+    .header .introduction,
+    .location .locationContent,
+    .vegetation .vegetationContent {
+      flex-direction: column;
+
+      .imageContainer {
+        width: 100%;
+      }
+    }
+
+    .climate .seasons {
+      grid-template-columns: 1fr;
+    }
+
+    .vegetation .types {
+      grid-template-columns: 1fr;
+    }
+
+    .resources .resourcesGrid {
+      grid-template-columns: 1fr;
+    }
+  }
+} 

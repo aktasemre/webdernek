@@ -1,0 +1,197 @@
+.foundersContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+
+  h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+  }
+
+  .introduction {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 3rem;
+    line-height: 1.6;
+    color: #666;
+  }
+
+  .foundersGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+  }
+
+  .founderCard {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+    }
+
+    .imageContainer {
+      width: 100%;
+      height: 300px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .founderInfo {
+      padding: 1.5rem;
+
+      h2 {
+        color: #333;
+        margin-bottom: 0.5rem;
+        font-size: 1.5rem;
+      }
+
+      h3 {
+        color: #666;
+        margin-bottom: 1rem;
+        font-size: 1.1rem;
+      }
+
+      .description {
+        color: #777;
+        margin-bottom: 1rem;
+        line-height: 1.4;
+      }
+
+      .contribution {
+        color: #555;
+        margin-bottom: 1rem;
+        font-style: italic;
+      }
+
+      .period {
+        color: #888;
+        font-size: 0.9rem;
+      }
+    }
+  }
+
+  .timeline {
+    background-color: #f5f5f5;
+    padding: 2rem;
+    border-radius: 8px;
+    margin-bottom: 3rem;
+
+    h2 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 2rem;
+    }
+
+    .milestones {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .milestone {
+      display: flex;
+      margin-bottom: 2rem;
+      position: relative;
+
+      &:not(:last-child):before {
+        content: "";
+        position: absolute;
+        left: 3rem;
+        top: 3rem;
+        bottom: -2rem;
+        width: 2px;
+        background-color: #007bff;
+      }
+
+      .year {
+        flex-shrink: 0;
+        width: 6rem;
+        height: 6rem;
+        background-color: #007bff;
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2rem;
+        font-weight: bold;
+      }
+
+      .content {
+        padding-left: 2rem;
+        padding-top: 0.5rem;
+
+        h3 {
+          color: #333;
+          margin-bottom: 0.5rem;
+        }
+
+        p {
+          color: #666;
+          line-height: 1.4;
+        }
+      }
+    }
+  }
+
+  .tribute {
+    text-align: center;
+    background-color: #e8f4ff;
+    padding: 2rem;
+    border-radius: 8px;
+
+    h2 {
+      color: #333;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      color: #666;
+      line-height: 1.6;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .foundersContent {
+    padding: 1rem;
+
+    h1 {
+      font-size: 2rem;
+    }
+
+    .foundersGrid {
+      grid-template-columns: 1fr;
+    }
+
+    .timeline {
+      .milestone {
+        flex-direction: column;
+
+        &:not(:last-child):before {
+          left: 50%;
+          top: 6rem;
+          bottom: -2rem;
+          transform: translateX(-50%);
+        }
+
+        .year {
+          margin: 0 auto 1rem;
+        }
+
+        .content {
+          padding-left: 0;
+          text-align: center;
+        }
+      }
+    }
+  }
+} 

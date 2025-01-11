@@ -1,0 +1,161 @@
+.historyContent {
+  h1 {
+    color: #2C5F2D;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  h2 {
+    color: #2C5F2D;
+    font-size: 1.8rem;
+    margin: 2rem 0 1.5rem;
+  }
+}
+
+.introduction {
+  margin-bottom: 3rem;
+
+  .imageContainer {
+    width: 100%;
+    height: 400px;
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #444;
+  }
+}
+
+.timeline {
+  position: relative;
+  padding: 2rem 0;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 100%;
+    background-color: #2C5F2D;
+    opacity: 0.2;
+  }
+}
+
+.timelineItem {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  position: relative;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.timelineYear {
+  min-width: 120px;
+  text-align: right;
+  padding-right: 2rem;
+
+  span {
+    display: inline-block;
+    background-color: #2C5F2D;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-weight: 500;
+  }
+}
+
+.timelineContent {
+  flex: 1;
+  max-width: 500px;
+  padding-left: 2rem;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: -6px;
+    top: 10px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #2C5F2D;
+  }
+
+  h3 {
+    color: #2C5F2D;
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    color: #666;
+    line-height: 1.6;
+  }
+}
+
+.mission, .vision {
+  background-color: #f9f9f9;
+  padding: 2rem;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+
+  p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #444;
+  }
+}
+
+@media (max-width: 768px) {
+  .historyContent {
+    h1 {
+      font-size: 2rem;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+    }
+  }
+
+  .introduction {
+    .imageContainer {
+      height: 250px;
+    }
+  }
+
+  .timeline {
+    &::before {
+      left: 30px;
+    }
+  }
+
+  .timelineItem {
+    flex-direction: column;
+  }
+
+  .timelineYear {
+    text-align: left;
+    padding-right: 0;
+    padding-left: 60px;
+    margin-bottom: 1rem;
+  }
+
+  .timelineContent {
+    padding-left: 60px;
+
+    &::before {
+      left: 24px;
+    }
+  }
+} 

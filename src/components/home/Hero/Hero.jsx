@@ -4,7 +4,7 @@ import styles from './Hero.module.scss';
 
 const Hero = () => {
   return (
-    <section className={styles.hero}>
+    <section className={`${styles.hero} hero-section`}>
       <div className={styles.backgroundImage}>
         <Image
           src="/images/manzara1.jpg"

@@ -1,8 +1,36 @@
 import '@/styles/globals.scss'
 
 export const metadata = {
-  title: 'Köy Derneği',
-  description: 'Köy derneği resmi web sitesi',
+  metadataBase: new URL('https://arslandededernegi.org'),
+  title: {
+    default: 'Arslandede Köyü Derneği',
+    template: '%s | Arslandede Köyü Derneği'
+  },
+  description: 'Bayburt Arslandede Köyü Yardımlaşma ve Dayanışma Derneği resmi web sitesi',
+  keywords: ['Arslandede Köyü', 'Bayburt', 'Dernek', 'Köy Derneği', 'Yardımlaşma', 'Dayanışma'],
+  authors: [{ name: 'Arslandede Köyü Derneği' }],
+  creator: 'Arslandede Köyü Derneği',
+  publisher: 'Arslandede Köyü Derneği',
+  robots: {
+    index: true,
+    follow: true
+  },
+  openGraph: {
+    type: 'website',
+    locale: 'tr_TR',
+    url: 'https://www.arslandededernegi.org',
+    siteName: 'Arslandede Köyü Derneği',
+    title: 'Arslandede Köyü Derneği',
+    description: 'Bayburt Arslandede Köyü Yardımlaşma ve Dayanışma Derneği resmi web sitesi',
+    images: [
+      {
+        url: '/images/logo.jpg',
+        width: 800,
+        height: 600,
+        alt: 'Arslandede Köyü Derneği Logo',
+      }
+    ]
+  }
 }
 
 export default function RootLayout({ children }) {

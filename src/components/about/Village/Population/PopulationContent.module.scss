@@ -1,0 +1,336 @@
+.populationContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+
+  h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+  }
+
+  .introduction {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 3rem;
+    line-height: 1.6;
+    color: #666;
+    font-size: 1.1rem;
+  }
+
+  .statistics {
+    margin-bottom: 4rem;
+
+    h2 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 2rem;
+      font-size: 2rem;
+    }
+
+    .mainStats {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      margin-bottom: 3rem;
+
+      .statCard {
+        background: white;
+        padding: 2rem;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        transition: transform 0.3s ease;
+
+        &:hover {
+          transform: translateY(-5px);
+        }
+
+        h3 {
+          color: #333;
+          margin-bottom: 1rem;
+          font-size: 1.5rem;
+        }
+
+        .value {
+          font-size: 3rem;
+          font-weight: bold;
+          color: #007bff;
+        }
+      }
+    }
+
+    .distributions {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 2rem;
+
+      h3 {
+        color: #333;
+        margin-bottom: 1.5rem;
+        font-size: 1.5rem;
+        text-align: center;
+      }
+
+      .ageDistribution {
+        background: white;
+        padding: 2rem;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+        .bars {
+          .bar {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+
+            .label {
+              flex: 0 0 100px;
+              color: #666;
+            }
+
+            .barContainer {
+              flex: 1;
+              height: 20px;
+              background: #f0f0f0;
+              border-radius: 10px;
+              margin: 0 1rem;
+              overflow: hidden;
+
+              .barFill {
+                height: 100%;
+                background: #007bff;
+                border-radius: 10px;
+                transition: width 0.3s ease;
+              }
+            }
+
+            .percentage {
+              flex: 0 0 50px;
+              color: #007bff;
+              font-weight: bold;
+            }
+          }
+        }
+      }
+
+      .genderDistribution {
+        background: white;
+        padding: 2rem;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+        .genderChart {
+          display: flex;
+          flex-direction: column;
+          gap: 1rem;
+
+          .male, .female {
+            padding: 1rem;
+            color: white;
+            text-align: center;
+            border-radius: 4px;
+            transition: width 0.3s ease;
+          }
+
+          .male {
+            background: #007bff;
+          }
+
+          .female {
+            background: #ff69b4;
+          }
+        }
+      }
+    }
+  }
+
+  .settlement {
+    margin-bottom: 4rem;
+
+    h2 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 2rem;
+      font-size: 2rem;
+    }
+
+    .neighborhoods {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-bottom: 3rem;
+
+      .neighborhoodCard {
+        background: white;
+        padding: 2rem;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+
+        &:hover {
+          transform: translateY(-5px);
+        }
+
+        h3 {
+          color: #333;
+          margin-bottom: 1rem;
+          font-size: 1.5rem;
+        }
+
+        p {
+          color: #666;
+          margin-bottom: 1rem;
+          line-height: 1.4;
+        }
+
+        .population {
+          color: #007bff;
+          font-weight: bold;
+        }
+      }
+    }
+
+    .housing {
+      background: #f5f5f5;
+      padding: 2rem;
+      border-radius: 8px;
+
+      h3 {
+        text-align: center;
+        color: #333;
+        margin-bottom: 2rem;
+        font-size: 1.8rem;
+      }
+
+      .housingTypes {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+
+        .housingCard {
+          background: white;
+          padding: 2rem;
+          border-radius: 8px;
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+          text-align: center;
+
+          h4 {
+            color: #333;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+          }
+
+          p {
+            color: #666;
+            margin-bottom: 1rem;
+            line-height: 1.4;
+          }
+
+          .percentage {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #007bff;
+          }
+        }
+      }
+    }
+  }
+
+  .migration {
+    h2 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 2rem;
+      font-size: 2rem;
+    }
+
+    .migrationInfo {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+
+      h3 {
+        color: #333;
+        margin-bottom: 1.5rem;
+        font-size: 1.5rem;
+        text-align: center;
+      }
+
+      .destinations, .reasons {
+        background: white;
+        padding: 2rem;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+        ul {
+          list-style: none;
+          padding: 0;
+
+          li {
+            color: #666;
+            padding: 0.5rem;
+            border-bottom: 1px solid #eee;
+            text-align: center;
+
+            &:last-child {
+              border-bottom: none;
+            }
+          }
+        }
+      }
+
+      .trends {
+        background: white;
+        padding: 2rem;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+        p {
+          color: #666;
+          margin-bottom: 1rem;
+          line-height: 1.4;
+
+          strong {
+            color: #333;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .populationContent {
+    padding: 1rem;
+
+    h1 {
+      font-size: 2rem;
+    }
+
+    .statistics {
+      .mainStats {
+        grid-template-columns: 1fr;
+      }
+
+      .distributions {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .settlement {
+      .housing {
+        .housingTypes {
+          grid-template-columns: 1fr;
+        }
+      }
+    }
+
+    .migration {
+      .migrationInfo {
+        grid-template-columns: 1fr;
+      }
+    }
+  }
+} 
