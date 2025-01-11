@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { FaHeart, FaUsers, FaHandHoldingHeart } from 'react-icons/fa';
 import styles from './BloodBankContent.module.scss';
+import BackButton from '@/components/common/BackButton/BackButton';
 
 const bloodGroups = [
   { type: 'A Rh+', donors: 45, needed: false },
@@ -62,6 +63,7 @@ const BloodBankContent = () => {
 
   return (
     <div className={styles.bloodBankContent}>
+      <BackButton />
       <h1>Kan Bankası</h1>
       
       <div className={styles.introduction}>

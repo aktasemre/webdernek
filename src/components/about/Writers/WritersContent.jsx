@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { FaBook, FaNewspaper, FaPen } from 'react-icons/fa';
+import BackButton from '@/components/common/BackButton/BackButton';
 import styles from './WritersContent.module.scss';
 
 const writers = [

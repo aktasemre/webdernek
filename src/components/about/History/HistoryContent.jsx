@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import styles from './HistoryContent.module.scss';
+import BackButton from '@/components/common/BackButton/BackButton';
 
 const timelineEvents = [
   {

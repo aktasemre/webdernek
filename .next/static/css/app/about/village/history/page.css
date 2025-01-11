@@ -1,0 +1,282 @@
+/*!******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[12].oneOf[9].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[12].oneOf[9].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[12].oneOf[9].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[12].oneOf[9].use[5]!./src/app/about/village/history/page.module.scss ***!
+  \******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+.page_container__qMGqi {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  display: flex;
+  gap: 2rem;
+}
+@media (max-width: 768px) {
+  .page_container__qMGqi {
+    flex-direction: column;
+    padding: 1rem;
+  }
+}
+/*!***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[12].oneOf[9].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[12].oneOf[9].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[12].oneOf[9].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[12].oneOf[9].use[5]!./src/components/about/Village/History/HistoryContent.module.scss ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+@charset "UTF-8";
+.HistoryContent_historyContent__ZgkBi {
+  flex: 1 1;
+}
+.HistoryContent_historyContent__ZgkBi .HistoryContent_header__XpcEc {
+  margin-bottom: 3rem;
+}
+.HistoryContent_historyContent__ZgkBi .HistoryContent_header__XpcEc h1 {
+  text-align: center;
+  color: #333;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+.HistoryContent_historyContent__ZgkBi .HistoryContent_header__XpcEc .HistoryContent_introduction__qVIVz {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+.HistoryContent_historyContent__ZgkBi .HistoryContent_header__XpcEc .HistoryContent_introduction__qVIVz .HistoryContent_imageContainer__KX5Hf {
+  flex: 1 1;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.HistoryContent_historyContent__ZgkBi .HistoryContent_header__XpcEc .HistoryContent_introduction__qVIVz .HistoryContent_text__bA25V {
+  flex: 1 1;
+}
+.HistoryContent_historyContent__ZgkBi .HistoryContent_header__XpcEc .HistoryContent_introduction__qVIVz .HistoryContent_text__bA25V p {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+.HistoryContent_historyContent__ZgkBi .HistoryContent_header__XpcEc .HistoryContent_introduction__qVIVz .HistoryContent_text__bA25V p:last-child {
+  margin-bottom: 0;
+}
+.HistoryContent_historyContent__ZgkBi .HistoryContent_timeline__z_00_ {
+  margin-bottom: 3rem;
+}
+.HistoryContent_historyContent__ZgkBi .HistoryContent_timeline__z_00_ h2 {
+  text-align: center;
+  color: #333;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+.HistoryContent_historyContent__ZgkBi .HistoryContent_timeline__z_00_ .HistoryContent_events__rFGoD {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+.HistoryContent_historyContent__ZgkBi .HistoryContent_timeline__z_00_ .HistoryContent_events__rFGoD::before {
+  content: "";
+  position: absolute;
+  width: 2px;
+  background: #007bff;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.HistoryContent_historyContent__ZgkBi .HistoryContent_timeline__z_00_ .HistoryContent_events__rFGoD .HistoryContent_event__qND5g {
+  position: relative;
+  margin-bottom: 2rem;
+  width: 50%;
+  padding: 0 2rem;
+}
+.HistoryContent_historyContent__ZgkBi .HistoryContent_timeline__z_00_ .HistoryContent_events__rFGoD .HistoryContent_event__qND5g:nth-child(odd) {
+  left: 0;
+  padding-right: 3rem;
+}
+.HistoryContent_historyContent__ZgkBi .HistoryContent_timeline__z_00_ .HistoryContent_events__rFGoD .HistoryContent_event__qND5g:nth-child(odd)::before {
+  right: -6px;
+}
+.HistoryContent_historyContent__ZgkBi .HistoryContent_timeline__z_00_ .HistoryContent_events__rFGoD .HistoryContent_event__qND5g:nth-child(even) {
+  left: 50%;
+  padding-left: 3rem;
+}
+.HistoryContent_historyContent__ZgkBi .HistoryContent_timeline__z_00_ .HistoryContent_events__rFGoD .HistoryContent_event__qND5g:nth-child(even)::before {
+  left: -6px;
+}
+.HistoryContent_historyContent__ZgkBi .HistoryContent_timeline__z_00_ .HistoryContent_events__rFGoD .HistoryContent_event__qND5g:nth-child(even) .HistoryContent_year__hGTP3 {
+  right: auto;
+  left: -120px;
+}
+.HistoryContent_historyContent__ZgkBi .HistoryContent_timeline__z_00_ .HistoryContent_events__rFGoD .HistoryContent_event__qND5g::before {
+  content: "";
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background: #007bff;
+  border-radius: 50%;
+  top: 15px;
+}
+.HistoryContent_historyContent__ZgkBi .HistoryContent_timeline__z_00_ .HistoryContent_events__rFGoD .HistoryContent_event__qND5g .HistoryContent_year__hGTP3 {
+  position: absolute;
+  right: -120px;
+  top: 0;
+  background: #007bff;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-weight: bold;
+}
+.HistoryContent_historyContent__ZgkBi .HistoryContent_timeline__z_00_ .HistoryContent_events__rFGoD .HistoryContent_event__qND5g .HistoryContent_content__Ei5Bh {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.HistoryContent_historyContent__ZgkBi .HistoryContent_timeline__z_00_ .HistoryContent_events__rFGoD .HistoryContent_event__qND5g .HistoryContent_content__Ei5Bh h3 {
+  color: #333;
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
+.HistoryContent_historyContent__ZgkBi .HistoryContent_timeline__z_00_ .HistoryContent_events__rFGoD .HistoryContent_event__qND5g .HistoryContent_content__Ei5Bh p {
+  color: #666;
+  line-height: 1.6;
+}
+.HistoryContent_historyContent__ZgkBi .HistoryContent_heritage__vbnzU {
+  margin-bottom: 3rem;
+  background: #f8f9fa;
+  padding: 2rem;
+  border-radius: 8px;
+}
+.HistoryContent_historyContent__ZgkBi .HistoryContent_heritage__vbnzU h2 {
+  text-align: center;
+  color: #333;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+.HistoryContent_historyContent__ZgkBi .HistoryContent_heritage__vbnzU .HistoryContent_heritageGrid__rClTV {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 2rem;
+  gap: 2rem;
+}
+.HistoryContent_historyContent__ZgkBi .HistoryContent_heritage__vbnzU .HistoryContent_heritageGrid__rClTV .HistoryContent_category__J5Z6x {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+.HistoryContent_historyContent__ZgkBi .HistoryContent_heritage__vbnzU .HistoryContent_heritageGrid__rClTV .HistoryContent_category__J5Z6x:hover {
+  transform: translateY(-5px);
+}
+.HistoryContent_historyContent__ZgkBi .HistoryContent_heritage__vbnzU .HistoryContent_heritageGrid__rClTV .HistoryContent_category__J5Z6x h3 {
+  color: #333;
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #007bff;
+}
+.HistoryContent_historyContent__ZgkBi .HistoryContent_heritage__vbnzU .HistoryContent_heritageGrid__rClTV .HistoryContent_category__J5Z6x ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.HistoryContent_historyContent__ZgkBi .HistoryContent_heritage__vbnzU .HistoryContent_heritageGrid__rClTV .HistoryContent_category__J5Z6x ul li {
+  color: #666;
+  padding: 0.5rem;
+  text-align: center;
+  border-bottom: 1px solid #eee;
+}
+.HistoryContent_historyContent__ZgkBi .HistoryContent_heritage__vbnzU .HistoryContent_heritageGrid__rClTV .HistoryContent_category__J5Z6x ul li:last-child {
+  border-bottom: none;
+}
+.HistoryContent_historyContent__ZgkBi .HistoryContent_preservation__MNrlG h2 {
+  text-align: center;
+  color: #333;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+.HistoryContent_historyContent__ZgkBi .HistoryContent_preservation__MNrlG .HistoryContent_preservationContent__J2xQD {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+.HistoryContent_historyContent__ZgkBi .HistoryContent_preservation__MNrlG .HistoryContent_preservationContent__J2xQD .HistoryContent_imageContainer__KX5Hf {
+  flex: 1 1;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.HistoryContent_historyContent__ZgkBi .HistoryContent_preservation__MNrlG .HistoryContent_preservationContent__J2xQD .HistoryContent_text__bA25V {
+  flex: 1 1;
+}
+.HistoryContent_historyContent__ZgkBi .HistoryContent_preservation__MNrlG .HistoryContent_preservationContent__J2xQD .HistoryContent_text__bA25V p {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+}
+.HistoryContent_historyContent__ZgkBi .HistoryContent_preservation__MNrlG .HistoryContent_preservationContent__J2xQD .HistoryContent_text__bA25V ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.HistoryContent_historyContent__ZgkBi .HistoryContent_preservation__MNrlG .HistoryContent_preservationContent__J2xQD .HistoryContent_text__bA25V ul li {
+  color: #666;
+  padding: 0.5rem 0;
+  padding-left: 1.5rem;
+  position: relative;
+}
+.HistoryContent_historyContent__ZgkBi .HistoryContent_preservation__MNrlG .HistoryContent_preservationContent__J2xQD .HistoryContent_text__bA25V ul li::before {
+  content: "•";
+  color: #007bff;
+  position: absolute;
+  left: 0;
+  font-size: 1.2rem;
+}
+
+@media (max-width: 768px) {
+  .HistoryContent_historyContent__ZgkBi .HistoryContent_header__XpcEc h1 {
+    font-size: 2rem;
+  }
+  .HistoryContent_historyContent__ZgkBi .HistoryContent_header__XpcEc .HistoryContent_introduction__qVIVz {
+    flex-direction: column;
+  }
+  .HistoryContent_historyContent__ZgkBi .HistoryContent_header__XpcEc .HistoryContent_introduction__qVIVz .HistoryContent_imageContainer__KX5Hf,
+  .HistoryContent_historyContent__ZgkBi .HistoryContent_header__XpcEc .HistoryContent_introduction__qVIVz .HistoryContent_text__bA25V {
+    width: 100%;
+  }
+  .HistoryContent_historyContent__ZgkBi .HistoryContent_header__XpcEc .HistoryContent_introduction__qVIVz .HistoryContent_text__bA25V {
+    text-align: center;
+  }
+  .HistoryContent_historyContent__ZgkBi .HistoryContent_timeline__z_00_ .HistoryContent_events__rFGoD::before {
+    left: 0;
+  }
+  .HistoryContent_historyContent__ZgkBi .HistoryContent_timeline__z_00_ .HistoryContent_events__rFGoD .HistoryContent_event__qND5g {
+    width: 100%;
+    padding-left: 2rem !important;
+    left: 0 !important;
+  }
+  .HistoryContent_historyContent__ZgkBi .HistoryContent_timeline__z_00_ .HistoryContent_events__rFGoD .HistoryContent_event__qND5g::before {
+    left: -6px !important;
+  }
+  .HistoryContent_historyContent__ZgkBi .HistoryContent_timeline__z_00_ .HistoryContent_events__rFGoD .HistoryContent_event__qND5g .HistoryContent_year__hGTP3 {
+    position: relative !important;
+    left: 0 !important;
+    right: 0 !important;
+    display: inline-block;
+    margin-bottom: 1rem;
+  }
+  .HistoryContent_historyContent__ZgkBi .HistoryContent_heritage__vbnzU .HistoryContent_heritageGrid__rClTV {
+    grid-template-columns: 1fr;
+  }
+  .HistoryContent_historyContent__ZgkBi .HistoryContent_preservation__MNrlG .HistoryContent_preservationContent__J2xQD {
+    flex-direction: column;
+  }
+  .HistoryContent_historyContent__ZgkBi .HistoryContent_preservation__MNrlG .HistoryContent_preservationContent__J2xQD .HistoryContent_imageContainer__KX5Hf,
+  .HistoryContent_historyContent__ZgkBi .HistoryContent_preservation__MNrlG .HistoryContent_preservationContent__J2xQD .HistoryContent_text__bA25V {
+    width: 100%;
+  }
+  .HistoryContent_historyContent__ZgkBi .HistoryContent_preservation__MNrlG .HistoryContent_preservationContent__J2xQD .HistoryContent_text__bA25V {
+    text-align: center;
+  }
+  .HistoryContent_historyContent__ZgkBi .HistoryContent_preservation__MNrlG .HistoryContent_preservationContent__J2xQD .HistoryContent_text__bA25V ul {
+    text-align: left;
+  }
+}

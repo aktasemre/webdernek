@@ -1,32 +1,42 @@
+import BackButton from '@/components/common/BackButton/BackButton';
 import styles from './StatuteContent.module.scss';
 
 const statuteItems = [
   {
     title: 'Madde 1: Derneğin Adı ve Merkezi',
-    content: `Derneğin adı "Bayburt Arslandede Köyü Yardımlaşma ve Dayanışma Derneği"dir. Derneğin merkezi Bayburt'tur. Dernek, yurt içinde ve yurt dışında şube açabilir.`
+    content: `Derneğin adı "Bayburt Arslandede Köyü Yardımlaşma ve Dayanışma Derneği"dir. Derneğin merkezi Bayburt'tur.`
   },
   {
     title: 'Madde 2: Derneğin Amacı',
-    content: `Derneğimizin temel amacı, Arslandede Köyü'nün kalkınmasına katkıda bulunmak, köy halkının sosyal ve kültürel gelişimine destek olmak, köy halkı arasındaki dayanışmayı güçlendirmek ve köyün geleneksel değerlerini korumaktır.`
+    content: [
+      'Köyün kalkınmasına katkıda bulunmak',
+      'Köy halkının sosyal ve kültürel gelişimine destek olmak',
+      'Köy halkı arasındaki dayanışmayı güçlendirmek',
+      'Köyün geleneksel değerlerini korumak ve yaşatmak',
+      'Köyün altyapı ve üstyapı ihtiyaçlarının karşılanmasına yardımcı olmak',
+      'Köy halkının eğitim ve sağlık hizmetlerine erişimini kolaylaştırmak'
+    ]
   },
   {
     title: 'Madde 3: Derneğin Faaliyet Alanları',
     content: [
-      'Köyün altyapı ve üstyapı ihtiyaçlarının karşılanmasına yardımcı olmak',
-      'Eğitim faaliyetlerini desteklemek ve burs imkanları sağlamak',
+      'Köyün altyapı ve üstyapı ihtiyaçlarının karşılanması için projeler geliştirmek',
+      'Eğitim faaliyetlerini desteklemek ve öğrencilere burs imkanları sağlamak',
       'Sosyal ve kültürel etkinlikler düzenlemek',
       'Köyün tanıtımına katkıda bulunmak',
       'Çevre düzenlemesi ve koruma çalışmaları yapmak',
-      'Köy halkının sağlık hizmetlerine erişimini kolaylaştırmak'
+      'Sağlık hizmetlerine erişimi kolaylaştırmak için çalışmalar yapmak',
+      'Köy halkının ekonomik kalkınmasına destek olmak'
     ]
   },
   {
     title: 'Madde 4: Üyelik Koşulları',
-    content: `Derneğe üye olabilmek için aşağıdaki şartlar aranır:
-    - Medeni haklara sahip ve 18 yaşını bitirmiş olmak
-    - Dernek amaçlarını benimsemek
-    - Üyelik başvuru formunu doldurmak
-    - Yönetim kurulu kararıyla üyeliğe kabul edilmek`
+    content: [
+      'Medeni haklara sahip ve 18 yaşını bitirmiş olmak',
+      'Dernek amaçlarını benimsemek ve bu doğrultuda çalışmayı kabul etmek',
+      'Derneğe giriş aidatını ve yıllık aidatı ödemeyi taahhüt etmek',
+      'Yönetim kurulu kararıyla üyeliğe kabul edilmek'
+    ]
   },
   {
     title: 'Madde 5: Dernek Organları',
@@ -37,7 +47,19 @@ const statuteItems = [
     ]
   },
   {
-    title: 'Madde 6: Gelir Kaynakları',
+    title: 'Madde 6: Genel Kurul',
+    content: `Genel kurul, derneğin en yetkili karar organıdır. Genel kurul, derneğe kayıtlı üyelerden oluşur. Olağan genel kurul toplantısı 3 yılda bir yapılır.`
+  },
+  {
+    title: 'Madde 7: Yönetim Kurulu',
+    content: `Yönetim kurulu, 5 asıl ve 5 yedek üyeden oluşur. Yönetim kurulu üyeleri genel kurulda gizli oyla seçilir. Görev süresi 3 yıldır.`
+  },
+  {
+    title: 'Madde 8: Denetim Kurulu',
+    content: `Denetim kurulu, 3 asıl ve 3 yedek üyeden oluşur. Denetim kurulu üyeleri genel kurulda gizli oyla seçilir. Görev süresi 3 yıldır.`
+  },
+  {
+    title: 'Madde 9: Derneğin Gelir Kaynakları',
     content: [
       'Üyelik aidatları',
       'Bağış ve yardımlar',
@@ -50,6 +72,7 @@ const statuteItems = [
 const StatuteContent = () => {
   return (
     <div className={styles.statuteContent}>
+      <BackButton />
       <h1>Derneğimizin Tüzüğü</h1>
       
       <div className={styles.introduction}>

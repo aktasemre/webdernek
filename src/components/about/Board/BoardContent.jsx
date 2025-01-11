@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { FaPhone, FaEnvelope } from 'react-icons/fa';
+import BackButton from '@/components/common/BackButton/BackButton';
 import styles from './BoardContent.module.scss';
 
 const boardMembers = [
@@ -48,6 +49,7 @@ const boardMembers = [
 const BoardContent = () => {
   return (
     <div className={styles.boardContent}>
+      <BackButton />
       <h1>Yönetim Kurulumuz</h1>
       
       <div className={styles.introduction}>

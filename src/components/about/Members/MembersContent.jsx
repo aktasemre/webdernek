@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import styles from './MembersContent.module.scss';
+import BackButton from '@/components/common/BackButton/BackButton';
 
 const memberCategories = [
   {

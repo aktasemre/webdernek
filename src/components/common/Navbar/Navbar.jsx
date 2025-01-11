@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { FaBars, FaTimes, FaHeart } from 'react-icons/fa';
@@ -11,6 +11,20 @@ const Navbar = () => {
   const [isAboutOpen, setIsAboutOpen] = useState(false);
   const [isVillageOpen, setIsVillageOpen] = useState(false);
   const [isGalleryOpen, setIsGalleryOpen] = useState(false);
+  const navRef = useRef(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (navRef.current && !navRef.current.contains(event.target)) {
+        setIsAboutOpen(false);
+        setIsVillageOpen(false);
+        setIsGalleryOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -35,7 +49,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className={styles.navbar}>
+    <nav className={styles.navbar} ref={navRef}>
       <div className={styles.container}>
         <Link href="/" className={styles.logo}>
           <Image 

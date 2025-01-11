@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import styles from './HistoryContent.module.scss';
+import BackButton from '@/components/common/BackButton';
 
 const historicalEvents = [
   {
@@ -67,6 +68,7 @@ const culturalHeritage = [
 const HistoryContent = () => {
   return (
     <div className={styles.historyContent}>
+      <BackButton />
       <div className={styles.header}>
         <h1>Köyümüzün Tarihi</h1>
         <div className={styles.introduction}>

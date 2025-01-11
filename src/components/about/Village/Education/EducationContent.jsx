@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import styles from './EducationContent.module.scss';
+import BackButton from '@/components/common/BackButton/BackButton';
 
 const educationStats = {
   facilities: {
@@ -106,6 +107,7 @@ const socialFacilities = [
 const EducationContent = () => {
   return (
     <div className={styles.educationContent}>
+      <BackButton />
       <h1>Eğitim ve Kültür</h1>
       
       <div className={styles.introduction}>

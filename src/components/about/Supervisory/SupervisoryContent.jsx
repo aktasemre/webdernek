@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { FaPhone, FaEnvelope } from 'react-icons/fa';
+import BackButton from '@/components/common/BackButton/BackButton';
 import styles from './SupervisoryContent.module.scss';
 
 const supervisoryMembers = [
@@ -40,6 +41,7 @@ const duties = [
 const SupervisoryContent = () => {
   return (
     <div className={styles.supervisoryContent}>
+      <BackButton />
       <h1>Denetleme Kurulumuz</h1>
       
       <div className={styles.introduction}>
