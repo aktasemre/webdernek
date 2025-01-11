@@ -1,4 +1,3 @@
-import { Metadata } from 'next';
 import EducationContent from '@/components/about/Village/Education/EducationContent';
 import styles from './page.module.scss';
 

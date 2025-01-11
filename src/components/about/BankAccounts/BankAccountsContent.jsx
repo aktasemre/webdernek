@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { FaHeart, FaUsers, FaHandHoldingHeart } from 'react-icons/fa';
+import { FaHeart, FaUsers, FaHandHoldingHeart, FaCopy } from 'react-icons/fa';
 import BackButton from '@/components/common/BackButton/BackButton';
 import styles from './BankAccountsContent.module.scss';
 

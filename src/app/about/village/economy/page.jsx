@@ -1,4 +1,3 @@
-import { Metadata } from 'next';
 import EconomyContent from '@/components/about/Village/Economy/EconomyContent';
 import styles from './page.module.scss';
 

@@ -1,4 +1,3 @@
-import { Metadata } from 'next';
 import VillageContent from '@/components/about/Village/VillageContent';
 import styles from './page.module.scss';
 

@@ -1,7 +1,7 @@
-import BankAccountsContent from '@/components/about/BankAccounts/BankAccountsContent.jsx';
-import Navbar from '@/components/common/Navbar/Navbar.jsx';
-import Footer from '@/components/common/Footer/Footer.jsx';
-import SideMenu from '@/components/common/SideMenu/SideMenu.jsx';
+import BankAccountsContent from '../../../components/about/BankAccounts/BankAccountsContent';
+import Navbar from '../../../components/common/Navbar/Navbar';
+import Footer from '../../../components/common/Footer/Footer';
+import SideMenu from '../../../components/common/SideMenu/SideMenu';
 
 export const metadata = {
   title: 'Banka Hesaplarımız | Arslandede Köyü Derneği',
