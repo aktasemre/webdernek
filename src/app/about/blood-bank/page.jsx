@@ -1,4 +1,7 @@
-import BloodBankContent from '@/components/about/BloodBank/BloodBankContent';
+import BloodBankContent from '@/components/about/BloodBank/BloodBankContent.jsx';
+import Navbar from '@/components/common/Navbar/Navbar.jsx';
+import Footer from '@/components/common/Footer/Footer.jsx';
+import SideMenu from '@/components/common/SideMenu/SideMenu.jsx';
 
 export const metadata = {
   title: 'Kan Bankası | Arslandede Köyü Derneği',
@@ -6,10 +9,15 @@ export const metadata = {
   keywords: ['kan bankası', 'kan bağışı', 'acil kan ihtiyacı', 'kan grubu'],
 };
 
-export default function BloodBankPage() {
+export default function BloodBank() {
   return (
     <main>
-      <BloodBankContent />
+      <Navbar />
+      <div className="container">
+        <SideMenu />
+        <BloodBankContent />
+      </div>
+      <Footer />
     </main>
   );
 } 

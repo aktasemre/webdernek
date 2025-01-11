@@ -1,7 +1,7 @@
-import Navbar from '@/components/common/Navbar/Navbar';
-import Footer from '@/components/common/Footer/Footer';
-import SideMenu from '@/components/common/SideMenu/SideMenu';
-import BoardContent from '@/components/about/Board/BoardContent';
+import BoardContent from '@/components/about/Board/BoardContent.jsx';
+import Navbar from '@/components/common/Navbar/Navbar.jsx';
+import Footer from '@/components/common/Footer/Footer.jsx';
+import SideMenu from '@/components/common/SideMenu/SideMenu.jsx';
 
 export const metadata = {
   title: 'Yönetim Kurulu',
@@ -11,19 +11,13 @@ export const metadata = {
 
 export default function Board() {
   return (
-    <>
+    <main>
       <Navbar />
-      <main className="page-container">
-        <div className="content-wrapper">
-          <div className="main-content">
-            <BoardContent />
-          </div>
-          <aside className="side-content">
-            <SideMenu />
-          </aside>
-        </div>
-      </main>
+      <div className="container">
+        <SideMenu />
+        <BoardContent />
+      </div>
       <Footer />
-    </>
+    </main>
   );
 } 

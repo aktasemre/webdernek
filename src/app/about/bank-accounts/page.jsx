@@ -1,4 +1,7 @@
-import BankAccountsContent from '@/components/about/BankAccounts/BankAccountsContent';
+import BankAccountsContent from '@/components/about/BankAccounts/BankAccountsContent.jsx';
+import Navbar from '@/components/common/Navbar/Navbar.jsx';
+import Footer from '@/components/common/Footer/Footer.jsx';
+import SideMenu from '@/components/common/SideMenu/SideMenu.jsx';
 
 export const metadata = {
   title: 'Banka Hesaplarımız | Arslandede Köyü Derneği',
@@ -6,10 +9,15 @@ export const metadata = {
   keywords: ['banka hesapları', 'aidat ödemeleri', 'bağış hesapları', 'ödeme bilgileri'],
 };
 
-export default function BankAccountsPage() {
+export default function BankAccounts() {
   return (
     <main>
-      <BankAccountsContent />
+      <Navbar />
+      <div className="container">
+        <SideMenu />
+        <BankAccountsContent />
+      </div>
+      <Footer />
     </main>
   );
 } 
