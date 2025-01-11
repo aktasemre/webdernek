@@ -12,6 +12,103 @@
       "static/css/app/layout.css",
       "static/chunks/app/layout.js"
     ],
+    "/about/village/history/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/about/village/history/page.css",
+      "static/chunks/app/about/village/history/page.js"
+    ],
+    "/about/history/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/about/history/page.css",
+      "static/chunks/app/about/history/page.js"
+    ],
+    "/contact/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/contact/page.js"
+    ],
+    "/projects/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/projects/page.css",
+      "static/chunks/app/projects/page.js"
+    ],
+    "/about/members/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/about/members/page.css",
+      "static/chunks/app/about/members/page.js"
+    ],
+    "/about/village/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/about/village/page.css",
+      "static/chunks/app/about/village/page.js"
+    ],
+    "/about/village/economy/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/about/village/economy/page.css",
+      "static/chunks/app/about/village/economy/page.js"
+    ],
+    "/about/village/geography/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/about/village/geography/page.css",
+      "static/chunks/app/about/village/geography/page.js"
+    ],
+    "/about/village/population/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/about/village/population/page.css",
+      "static/chunks/app/about/village/population/page.js"
+    ],
+    "/about/village/education/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/about/village/education/page.css",
+      "static/chunks/app/about/village/education/page.js"
+    ],
+    "/about/village/places/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/about/village/places/page.css",
+      "static/chunks/app/about/village/places/page.js"
+    ],
+    "/donate/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/donate/page.js"
+    ],
+    "/gallery/photos/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/gallery/photos/page.css",
+      "static/chunks/app/gallery/photos/page.js"
+    ],
+    "/contact/layout": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/contact/layout.js"
+    ],
+    "/news/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/news/page.js"
+    ],
+    "/news/layout": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/news/layout.js"
+    ],
+    "/about/board/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/about/board/page.css",
+      "static/chunks/app/about/board/page.js"
+    ],
     "/not-found": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",

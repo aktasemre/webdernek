@@ -1,4 +1,10 @@
 {
   "/not-found": "app/not-found.js",
-  "/page": "app/page.js"
+  "/about/village/page": "app/about/village/page.js",
+  "/projects/page": "app/projects/page.js",
+  "/page": "app/page.js",
+  "/about/village/history/page": "app/about/village/history/page.js",
+  "/about/board/page": "app/about/board/page.js",
+  "/contact/page": "app/contact/page.js",
+  "/news/page": "app/news/page.js"
 }
