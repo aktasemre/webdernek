@@ -1,13 +1,25 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { FaHeart } from 'react-icons/fa';
+import { FaHeart, FaBars, FaTimes } from 'react-icons/fa';
 import styles from './Header.module.scss';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
+
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isOpen]);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -32,7 +44,19 @@ const Header = () => {
             <span>Arslandede Köyü Derneği</span>
           </Link>
 
-          <div className={`${styles.menu} ${isOpen ? styles.active : ''}`}>
+          <button 
+            className={styles.menuButton} 
+            onClick={toggleMenu} 
+            aria-label="Toggle Menu"
+            aria-expanded={isOpen}
+          >
+            {isOpen ? <FaTimes /> : <FaBars />}
+          </button>
+
+          <div 
+            className={`${styles.menu} ${isOpen ? styles.active : ''}`}
+            aria-hidden={!isOpen}
+          >
             <Link href="/" className={styles.menuItem} onClick={closeMenu}>Ana Sayfa</Link>
             
             <div className={styles.dropdown}>
@@ -68,10 +92,6 @@ const Header = () => {
               <FaHeart /> Bağış Yap
             </Link>
           </div>
-
-          <button className={styles.menuButton} onClick={toggleMenu}>
-            {isOpen ? 'Kapat' : 'Menü'}
-          </button>
         </div>
       </nav>
     </header>

@@ -4,198 +4,242 @@
   position: sticky;
   top: 0;
   z-index: 1000;
+  width: 100%;
+}
 
-  .navbar {
-    .container {
-      max-width: 1400px;
-      margin: 0 auto;
-      padding: 0.5rem 1rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+.navbar {
+  width: 100%;
+  
+  .container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0.5rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    width: 100%;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    text-decoration: none;
+    color: #2C5F2D;
+
+    .logoImage {
+      border-radius: 50%;
+      border: 1px solid #2C5F2D;
+      transition: transform 0.3s ease;
     }
 
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      text-decoration: none;
-      color: #2C5F2D;
+    span {
+      font-size: 1.3rem;
+      font-weight: 700;
+    }
 
+    &:hover {
       .logoImage {
-        border-radius: 50%;
-        border: 1px solid #2C5F2D;
-        transition: transform 0.3s ease;
+        transform: scale(1.05);
       }
+    }
+  }
 
-      span {
-        font-size: 1.3rem;
-        font-weight: 700;
+  .menuButton {
+    display: none;
+    padding: 0.5rem;
+    background-color: transparent;
+    color: #2C5F2D;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+    z-index: 1002;
+    position: relative;
+
+    &:hover {
+      color: darken(#2C5F2D, 10%);
+    }
+
+    svg {
+      display: block;
+    }
+  }
+
+  .menu {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+
+    &.active {
+      display: flex !important;
+    }
+
+    .menuItem {
+      color: #333;
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: 500;
+      padding: 0.5rem;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: #2C5F2D;
+      }
+    }
+
+    .dropdown {
+      position: relative;
+
+      .menuItem {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 0.25rem;
       }
 
       &:hover {
-        .logoImage {
-          transform: scale(1.05);
+        .dropdownContent {
+          display: block;
+        }
+      }
+
+      .dropdownContent {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: white;
+        min-width: 220px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        border-radius: 4px;
+        padding: 0.5rem 0;
+        z-index: 1000;
+
+        a {
+          display: block;
+          padding: 0.5rem 1rem;
+          color: #333;
+          text-decoration: none;
+          transition: all 0.3s ease;
+
+          &:hover {
+            background-color: #f5f5f5;
+            color: #2C5F2D;
+            padding-left: 1.5rem;
+          }
         }
       }
     }
 
-    .menuButton {
-      display: none;
+    .donateButton {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
       padding: 0.5rem 1rem;
       background-color: #2C5F2D;
       color: white;
-      border: none;
+      text-decoration: none;
       border-radius: 4px;
-      cursor: pointer;
-      font-size: 1rem;
-    }
+      font-weight: 500;
+      transition: all 0.3s ease;
 
-    .menu {
-      display: flex;
-      align-items: center;
-      gap: 1.5rem;
-
-      .menuItem {
-        color: #333;
-        text-decoration: none;
-        font-size: 1rem;
-        font-weight: 500;
-        padding: 0.5rem;
-        transition: color 0.3s ease;
-
-        &:hover {
-          color: #2C5F2D;
-        }
-      }
-
-      .dropdown {
-        position: relative;
-
-        .menuItem {
-          cursor: pointer;
-          display: flex;
-          align-items: center;
-          gap: 0.25rem;
-        }
-
-        &:hover {
-          .dropdownContent {
-            display: block;
-          }
-        }
-
-        .dropdownContent {
-          display: none;
-          position: absolute;
-          top: 100%;
-          left: 0;
-          background-color: white;
-          min-width: 220px;
-          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-          border-radius: 4px;
-          padding: 0.5rem 0;
-          z-index: 1000;
-
-          a {
-            display: block;
-            padding: 0.5rem 1rem;
-            color: #333;
-            text-decoration: none;
-            transition: all 0.3s ease;
-
-            &:hover {
-              background-color: #f5f5f5;
-              color: #2C5F2D;
-              padding-left: 1.5rem;
-            }
-          }
-        }
-      }
-
-      .donateButton {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        padding: 0.5rem 1rem;
-        background-color: #2C5F2D;
-        color: white;
-        text-decoration: none;
-        border-radius: 4px;
-        font-weight: 500;
-        transition: all 0.3s ease;
-
-        &:hover {
-          background-color: darken(#2C5F2D, 10%);
-          transform: translateY(-2px);
-        }
+      &:hover {
+        background-color: darken(#2C5F2D, 10%);
+        transform: translateY(-2px);
       }
     }
   }
 }
 
 @media (max-width: 1024px) {
-  .header {
-    .navbar {
-      .container {
-        padding: 1rem;
+  .navbar {
+    .menuButton {
+      display: block;
+    }
+
+    .menu {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background-color: white;
+      padding: 2rem 1rem;
+      padding-top: 5rem;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+      z-index: 1001;
+      overflow-y: auto;
+
+      &.active {
+        display: flex;
       }
 
-      .menuButton {
-        display: block;
+      .menuItem {
+        width: 100%;
+        padding: 0.5rem 0;
+        font-size: 1.2rem;
       }
 
-      .menu {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background-color: white;
-        padding: 1rem;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 1rem;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      .dropdown {
+        width: 100%;
 
-        &.active {
-          display: flex;
+        .dropdownContent {
+          position: static;
+          display: none;
+          box-shadow: none;
+          padding-left: 1rem;
+          background-color: #f5f5f5;
+          margin-top: 0.5rem;
+          border-radius: 4px;
         }
 
-        .menuItem {
-          width: 100%;
-          padding: 0.5rem 0;
+        &:hover .dropdownContent,
+        &:focus-within .dropdownContent {
+          display: block;
         }
+      }
 
-        .dropdown {
-          width: 100%;
-
-          .dropdownContent {
-            position: static;
-            display: none;
-            box-shadow: none;
-            padding-left: 1rem;
-          }
-
-          &:hover .dropdownContent {
-            display: block;
-          }
-        }
-
-        .donateButton {
-          width: 100%;
-          justify-content: center;
-        }
+      .donateButton {
+        width: 100%;
+        justify-content: center;
+        margin-top: 1rem;
       }
     }
   }
 }
 
 @media (max-width: 768px) {
-  .header {
-    .navbar {
-      .menu {
-        transform: translateX(-100%);
+  .navbar {
+    .logo {
+      span {
+        font-size: 1.1rem;
+      }
+    }
+
+    .menu {
+      padding-top: 4rem;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    .logo {
+      span {
+        font-size: 0.9rem;
+      }
+    }
+
+    .menu {
+      padding-top: 3rem;
+      
+      .menuItem {
+        font-size: 1.1rem;
       }
     }
   }
