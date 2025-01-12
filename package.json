@@ -12,13 +12,13 @@
     "next": "14.0.0",
     "react": "^18",
     "react-dom": "^18",
-    "react-icons": "^4.11.0",
-    "sass": "^1.69.5"
+    "react-icons": "^4.11.0"
   },
   "devDependencies": {
-    "eslint": "^8.0.0",
+    "autoprefixer": "^10",
+    "eslint": "^8",
     "eslint-config-next": "14.0.0",
-    "eslint-plugin-react": "^7.33.2",
-    "prettier": "^3.0.0"
+    "postcss": "^8",
+    "tailwindcss": "^3"
   }
 }
