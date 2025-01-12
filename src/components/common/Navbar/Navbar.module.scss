@@ -1,302 +1,285 @@
-.navbar {
-  background-color: #1a1a1a;
-  padding: 1rem;
+@import '@/styles/variables.scss';
+@import '@/styles/mixins.scss';
+
+.header {
   position: fixed;
-  width: 100%;
   top: 0;
-  z-index: 1000;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
+.navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: relative;
-}
-
-.rightSection {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-
-.searchButton {
-  background: none;
-  border: none;
-  color: white;
-  font-size: 1.2rem;
-  cursor: pointer;
-  padding: 0.5rem;
-  transition: color 0.3s ease;
-
-  &:hover {
-    color: #4CAF50;
-  }
-}
-
-.searchOverlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  background-color: #1a1a1a;
   padding: 1rem;
-  animation: slideDown 0.3s ease;
-}
 
-.searchForm {
-  display: flex;
-  gap: 1rem;
-  align-items: center;
-}
-
-.searchInput {
-  flex: 1;
-  padding: 0.75rem 1rem;
-  border: 2px solid #333;
-  border-radius: 0.5rem;
-  background-color: #333;
-  color: white;
-  font-size: 1rem;
-  transition: all 0.3s ease;
-
-  &:focus {
-    outline: none;
-    border-color: #4CAF50;
-    background-color: #444;
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
   }
 
-  &::placeholder {
-    color: #888;
-  }
-}
-
-.searchSubmit,
-.searchClose {
-  background: none;
-  border: none;
-  color: white;
-  font-size: 1.2rem;
-  cursor: pointer;
-  padding: 0.5rem;
-  transition: all 0.3s ease;
-
-  &:hover {
-    color: #4CAF50;
-    transform: scale(1.1);
-  }
-}
-
-.logo {
-  color: white;
-  font-size: 1.5rem;
-  font-weight: bold;
-  text-decoration: none;
-  transition: color 0.3s ease;
-
-  &:hover {
-    color: #4CAF50;
-  }
-}
-
-.menu {
-  display: flex;
-  gap: 2rem;
-  align-items: center;
-
-  a {
-    color: white;
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
     text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s ease;
+    color: inherit;
 
-    &:hover {
-      color: #4CAF50;
+    .logoImage {
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid #2C5F2D;
+    }
+
+    .logoText {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #2C5F2D;
+      
+      @media (max-width: 768px) {
+        display: none;
+      }
     }
   }
-}
 
-.donateButton {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  background-color: #4CAF50;
-  padding: 0.5rem 1rem;
-  border-radius: 0.5rem;
-  transition: all 0.3s ease;
+  .menu {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
 
-  &:hover {
-    background-color: #45a049;
-    transform: translateY(-2px);
-    color: white !important;
+    .menuItem {
+      color: $text-color;
+      text-decoration: none;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: $primary-color;
+      }
+    }
+
+    .dropdown {
+      position: relative;
+
+      &:hover .dropdownContent {
+        display: block;
+      }
+
+      .dropdownContent {
+        display: none;
+        position: absolute;
+        background-color: #fff;
+        min-width: 160px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        z-index: 1;
+        border-radius: 4px;
+        padding: 0.5rem 0;
+
+        a {
+          display: block;
+          padding: 0.5rem 1rem;
+          color: $text-color;
+          text-decoration: none;
+          transition: background-color 0.3s ease;
+
+          &:hover {
+            background-color: #f5f5f5;
+          }
+        }
+      }
+    }
+
+    .donateButton {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 1rem;
+      background-color: $accent-color;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: darken($accent-color, 10%);
+      }
+    }
   }
 
-  .donateIcon {
-    font-size: 1.2rem;
+  .searchContainer {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    z-index: 100;
+
+    .searchButton {
+      background: none;
+      border: none;
+      color: #2C5F2D;
+      font-size: 1.4rem;
+      cursor: pointer;
+      padding: 0.5rem;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &:hover {
+        transform: scale(1.1);
+        color: darken(#2C5F2D, 10%);
+      }
+    }
+
+    .searchForm {
+      position: absolute;
+      top: calc(100% + 0.5rem);
+      right: 0;
+      display: flex;
+      align-items: center;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      width: 300px;
+      z-index: 1000;
+
+      .searchInput {
+        flex: 1;
+        padding: 0.75rem 1rem;
+        border: none;
+        outline: none;
+        font-size: 1rem;
+
+        &::placeholder {
+          color: #999;
+        }
+      }
+
+      .searchSubmit {
+        background-color: #2C5F2D;
+        color: white;
+        border: none;
+        padding: 0.75rem 1rem;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+          background-color: darken(#2C5F2D, 10%);
+        }
+      }
+    }
   }
-}
 
-.dropdown {
-  position: relative;
-  display: inline-block;
-
-  span {
-    color: white;
+  .menuButton {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 24px;
+    height: 20px;
+    background: none;
+    border: none;
     cursor: pointer;
-    font-weight: 500;
-    transition: color 0.3s ease;
+    padding: 0;
 
-    &:hover {
-      color: #4CAF50;
+    span {
+      width: 100%;
+      height: 2px;
+      background-color: $text-color;
+      transition: transform 0.3s ease;
     }
-  }
-}
 
-.dropdownContent {
-  display: none;
-  position: absolute;
-  background-color: #1a1a1a;
-  min-width: 200px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  border-radius: 4px;
-  padding: 0.5rem 0;
-  z-index: 1;
+    &.active {
+      span:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+      }
 
-  a {
-    color: white;
-    padding: 0.5rem 1rem;
-    display: block;
-    text-decoration: none;
-    transition: all 0.3s ease;
+      span:nth-child(2) {
+        opacity: 0;
+      }
 
-    &:hover {
-      background-color: #333;
-      color: #4CAF50;
+      span:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+      }
     }
-  }
-}
-
-.dropdown:hover .dropdownContent {
-  display: block;
-  animation: fadeIn 0.3s ease;
-}
-
-.mobileMenuButton {
-  display: none;
-  background: none;
-  border: none;
-  color: white;
-  font-size: 1.5rem;
-  cursor: pointer;
-  transition: color 0.3s ease;
-
-  &:hover {
-    color: #4CAF50;
-  }
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes slideIn {
-  from {
-    opacity: 0;
-    transform: translateX(-100%);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes slideDown {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
   }
 }
 
 @media (max-width: 768px) {
-  .mobileMenuButton {
-    display: block;
-  }
-
-  .menu {
-    display: none;
-    position: fixed;
-    top: 70px;
-    left: 0;
-    width: 100%;
-    height: calc(100vh - 70px);
-    background-color: #1a1a1a;
-    flex-direction: column;
-    padding: 2rem;
-    gap: 1.5rem;
-    transition: all 0.3s ease;
-
-    &.active {
-      display: flex;
-      animation: slideIn 0.3s ease;
-    }
-
-    a {
-      font-size: 1.2rem;
-    }
-
-    .donateButton {
+  .navbar {
+    .menu {
+      position: fixed;
+      top: 64px;
+      left: -100%;
       width: 100%;
-      justify-content: center;
-      margin-top: 1rem;
+      height: calc(100vh - 64px);
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 2rem;
+      background-color: #fff;
+      transition: left 0.3s ease;
+      overflow-y: auto;
+
+      &.active {
+        left: 0;
+      }
+
+      .menuItem {
+        margin-bottom: 1rem;
+      }
+
+      .dropdown {
+        width: 100%;
+
+        .dropdownContent {
+          position: static;
+          box-shadow: none;
+          padding: 0;
+          margin-top: 0.5rem;
+
+          a {
+            padding: 0.5rem 0;
+          }
+        }
+      }
+
+      .donateButton {
+        width: 100%;
+        justify-content: center;
+        margin-top: 1rem;
+      }
     }
-  }
 
-  .dropdown {
-    width: 100%;
-    text-align: center;
+    .searchContainer {
+      margin-right: 1rem;
 
-    span {
-      display: block;
-      padding: 0.5rem;
+      .searchButton {
+        font-size: 1.5rem;
+      }
+
+      .searchForm {
+        position: fixed;
+        top: 64px;
+        left: 0;
+        right: 0;
+        width: 100%;
+        border-radius: 0;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
     }
-  }
 
-  .dropdownContent {
-    position: static;
-    width: 100%;
-    background-color: #333;
-    display: none;
-    animation: fadeIn 0.3s ease;
-
-    a {
-      padding: 0.75rem;
+    .menuButton {
+      display: flex;
     }
-  }
-
-  .dropdown:hover .dropdownContent {
-    display: block;
-  }
-
-  .searchOverlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    padding: 1rem;
-    z-index: 1001;
   }
 } 

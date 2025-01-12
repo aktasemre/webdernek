@@ -39,9 +39,25 @@ const Hero = () => {
       <div className={styles.heroContent}>
         <h1>{heroSlides[currentSlide].title}</h1>
         <p>{heroSlides[currentSlide].description}</p>
-        <Link href="/about/village" className={styles.heroButton}>
-          Köyümüzü Keşfedin
-        </Link>
+        <div className={styles.heroButtons}>
+          <Link href="/about/village" className={styles.heroButton}>
+            Köyümüzü Keşfedin
+          </Link>
+          <Link
+            href="https://forms.gle/apMoxADc2iusKKEP8"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.heroButton}
+          >
+            Meslek Envanteri
+          </Link>
+          <Link
+            href="/about/members"
+            className={styles.heroButton}
+          >
+            Üyelik Başvurusu
+          </Link>
+        </div>
       </div>
       <div className={styles.sliderDots}>
         {heroSlides.map((_, index) => (

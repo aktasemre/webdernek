@@ -28,9 +28,16 @@
       text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
     }
 
+    .heroButtons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
     .heroButton {
       display: inline-block;
-      padding: 1rem 2rem;
+      padding: 0.75rem 1.5rem;
       background-color: #2C5F2D;
       color: white;
       text-decoration: none;
@@ -38,11 +45,18 @@
       font-weight: 600;
       transition: all 0.3s ease;
       border: 2px solid transparent;
+      min-width: 160px;
+      font-size: 1rem;
 
       &:hover {
         background-color: transparent;
         border-color: white;
         transform: translateY(-2px);
+      }
+
+      @media (max-width: 640px) {
+        width: 100%;
+        margin-bottom: 0.5rem;
       }
     }
   }

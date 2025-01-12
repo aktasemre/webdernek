@@ -1,6 +1,6 @@
 import AboutDistrictContent from '@/components/village/AboutDistrict/AboutDistrictContent';
 
-export default function AboutDistrict() {
+export default async function AboutDistrict({ searchParams }) {
   return (
     <main>
       <AboutDistrictContent />

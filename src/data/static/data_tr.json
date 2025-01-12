@@ -1,0 +1,176 @@
+{
+  "genel": {
+    "dernekAdi": "Sarıyayla Köyü Derneği",
+    "kurulusYili": "1990",
+    "iletisim": {
+      "adres": "Sarıyayla Köyü, Merkez/Giresun",
+      "telefon": "+90 XXX XXX XX XX",
+      "email": "info@sariyayla.org"
+    }
+  },
+  "about": {
+    "bankHesaplari": [
+      {
+        "bankaAdi": "Ziraat Bankası",
+        "subeKodu": "1234",
+        "hesapNo": "12345678",
+        "iban": "TR00 0000 0000 0000 0000 0000 00"
+      }
+    ],
+    "kanBankasi": {
+      "acilKanGruplari": ["A Rh+", "0 Rh-"],
+      "bagiscilar": [
+        {
+          "id": 1,
+          "adSoyad": "Ali Yılmaz",
+          "kanGrubu": "A Rh+",
+          "telefon": "+90 XXX XXX XX XX"
+        }
+      ]
+    },
+    "yonetimKurulu": [
+      {
+        "id": 1,
+        "adSoyad": "Mehmet Yılmaz",
+        "gorev": "Başkan",
+        "foto": "/images/board/baskan.jpg"
+      }
+    ],
+    "kurucular": [
+      {
+        "id": 1,
+        "adSoyad": "Ahmet Demir",
+        "kurulusYili": "1990",
+        "foto": "/images/founders/kurucu1.jpg"
+      }
+    ],
+    "tarihce": {
+      "baslik": "Derneğimizin Tarihçesi",
+      "icerik": "1990 yılında kurulan derneğimiz...",
+      "onemliTarihler": [
+        {
+          "yil": "1990",
+          "olay": "Derneğin Kuruluşu"
+        }
+      ]
+    }
+  },
+  "koy": {
+    "ekonomi": {
+      "baslicaGecimKaynaklari": ["Tarım", "Hayvancılık"],
+      "urunler": ["Fındık", "Mısır"]
+    },
+    "egitim": {
+      "okullar": [
+        {
+          "ad": "Sarıyayla İlkokulu",
+          "ogrenciSayisi": 50,
+          "ogretmenSayisi": 5
+        }
+      ]
+    },
+    "cografi": {
+      "rakım": 1200,
+      "iklim": "Karadeniz İklimi",
+      "yuzolcumu": "500 hektar"
+    },
+    "tarihce": {
+      "kurulusYili": "1800'ler",
+      "onemliOlaylar": [
+        {
+          "yil": "1800",
+          "olay": "Köyün Kuruluşu"
+        }
+      ]
+    },
+    "onemliYerler": [
+      {
+        "id": 1,
+        "ad": "Köy Meydanı",
+        "aciklama": "Köyün merkezi toplanma alanı",
+        "foto": "/images/places/meydan.jpg"
+      }
+    ],
+    "nufus": {
+      "toplam": 500,
+      "erkek": 250,
+      "kadin": 250,
+      "yillikDegisim": "+10"
+    }
+  },
+  "duyurular": [
+    {
+      "id": 1,
+      "baslik": "Genel Kurul Toplantısı",
+      "tarih": "2024-03-01",
+      "icerik": "Yıllık genel kurul toplantımız yapılacaktır",
+      "onemlilik": "yuksek",
+      "kategori": "Toplantı"
+    }
+  ],
+  "etkinlikler": [
+    {
+      "id": 1,
+      "baslik": "Yıllık Köy Şenliği",
+      "tarih": "2024-07-15",
+      "aciklama": "Geleneksel köy şenliğimiz",
+      "resimUrl": "/images/events/senlik.jpg",
+      "konum": "Köy Meydanı",
+      "katilimciSayisi": 200
+    }
+  ],
+  "galeri": {
+    "albumler": [
+      {
+        "id": 1,
+        "baslik": "Köy Manzaraları",
+        "aciklama": "Köyümüzden güzel kareler",
+        "fotograflar": [
+          {
+            "id": 1,
+            "baslik": "Gün Batımı",
+            "url": "/images/gallery/gunbatimi.jpg",
+            "tarih": "2024-01-01"
+          }
+        ]
+      }
+    ]
+  },
+  "haberler": [
+    {
+      "id": 1,
+      "baslik": "Köy Yolu Yenilendi",
+      "tarih": "2024-02-01",
+      "icerik": "Köyümüzün ana yolu yenilendi",
+      "foto": "/images/news/yol.jpg",
+      "kategori": "Altyapı"
+    }
+  ],
+  "projeler": [
+    {
+      "id": 1,
+      "baslik": "Köy Okulu Yenileme",
+      "durum": "devam_ediyor",
+      "baslangicTarihi": "2024-01-01",
+      "bitisTarihi": "2024-06-01",
+      "aciklama": "Köy okulumuzun yenileme çalışmaları",
+      "butce": 100000,
+      "tamamlanmaYuzdesi": 60
+    }
+  ],
+  "istatistikler": {
+    "dernek": {
+      "uyeSayisi": 150,
+      "tamamlananProje": 25,
+      "yillikEtkinlik": 10,
+      "aktifCalismalar": 5,
+      "toplamBagis": 500000
+    },
+    "koy": {
+      "nufus": 500,
+      "haneSayisi": 100,
+      "ogrenciSayisi": 50,
+      "yillikGelir": 1000000
+    }
+  }
+} 

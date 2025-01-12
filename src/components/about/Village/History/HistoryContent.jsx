@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import ImageWithFallback from '@/components/common/ImageWithFallback/ImageWithFallback';
 import styles from './HistoryContent.module.scss';
 import BackButton from '@/components/common/BackButton/BackButton';
 
@@ -73,7 +73,7 @@ const HistoryContent = () => {
         <h1>Köyümüzün Tarihi</h1>
         <div className={styles.introduction}>
           <div className={styles.imageContainer}>
-            <Image
+            <ImageWithFallback
               src="/images/manzara1.jpg"
               alt="Arslandede Köyü Tarihi Görünüm"
               width={600}
@@ -131,7 +131,7 @@ const HistoryContent = () => {
         <h2>Tarihi Koruma Çalışmaları</h2>
         <div className={styles.preservationContent}>
           <div className={styles.imageContainer}>
-            <Image
+            <ImageWithFallback
               src="/images/manzara2.jpg"
               alt="Tarihi Koruma Çalışmaları"
               width={400}

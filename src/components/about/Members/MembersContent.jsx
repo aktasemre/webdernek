@@ -130,8 +130,6 @@ const MembersContent = () => {
         </p>
         <ul>
           <li>Nüfus cüzdanı fotokopisi</li>
-          <li>İkametgah belgesi</li>
-          <li>2 adet fotoğraf</li>
           <li>Üyelik başvuru formu</li>
         </ul>
         <button className={styles.applyButton}>

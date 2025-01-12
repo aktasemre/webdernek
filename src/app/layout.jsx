@@ -4,11 +4,8 @@ import Footer from '@/components/common/Footer/Footer';
 
 export const metadata = {
   metadataBase: new URL('https://arslandededernegi.org'),
-  title: {
-    default: 'Arslandede Köyü Derneği',
-    template: '%s | Arslandede Köyü Derneği'
-  },
-  description: 'Bayburt Arslandede Köyü Yardımlaşma ve Dayanışma Derneği resmi web sitesi',
+  title: 'Arslandede Köyü Derneği',
+  description: 'Arslandede Köyü Derneği resmi web sitesi',
   keywords: ['Arslandede Köyü', 'Bayburt', 'Dernek', 'Köy Derneği', 'Yardımlaşma', 'Dayanışma'],
   authors: [{ name: 'Arslandede Köyü Derneği' }],
   creator: 'Arslandede Köyü Derneği',
@@ -32,7 +29,12 @@ export const metadata = {
         alt: 'Arslandede Köyü Derneği Logo',
       }
     ]
-  }
+  },
+  icons: {
+    icon: '/images/logo.jpg',
+    shortcut: '/images/logo.jpg',
+    apple: '/images/logo.jpg',
+  },
 };
 
 export default function RootLayout({ children }) {

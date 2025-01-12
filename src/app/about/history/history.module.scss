@@ -1,0 +1,229 @@
+.historyPage {
+  min-height: 100vh;
+  background-color: #f8f9fa;
+  padding: 2rem 1rem;
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+
+  .title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #2C5F2D;
+    text-align: center;
+    margin-bottom: 2rem;
+    position: relative;
+    padding-bottom: 1rem;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 3px;
+      background-color: #2C5F2D;
+    }
+  }
+
+  .introduction {
+    max-width: 800px;
+    margin: 0 auto 4rem;
+    text-align: center;
+    line-height: 1.8;
+    color: #4a5568;
+    font-size: 1.1rem;
+  }
+
+  .timeline {
+    margin-bottom: 4rem;
+
+    h2 {
+      font-size: 2rem;
+      font-weight: 600;
+      color: #2C5F2D;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+
+    .events {
+      position: relative;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem 0;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 2px;
+        height: 100%;
+        background-color: #2C5F2D;
+      }
+
+      .event {
+        position: relative;
+        margin-bottom: 3rem;
+        width: calc(50% - 30px);
+        padding: 1.5rem;
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+        &:nth-child(odd) {
+          margin-left: auto;
+          
+          &::before {
+            content: '';
+            position: absolute;
+            left: -30px;
+            top: 20px;
+            width: 30px;
+            height: 2px;
+            background-color: #2C5F2D;
+          }
+        }
+
+        &:nth-child(even) {
+          margin-right: auto;
+          
+          &::before {
+            content: '';
+            position: absolute;
+            right: -30px;
+            top: 20px;
+            width: 30px;
+            height: 2px;
+            background-color: #2C5F2D;
+          }
+        }
+
+        .eventYear {
+          position: absolute;
+          top: -10px;
+          background-color: #2C5F2D;
+          color: white;
+          padding: 0.5rem 1rem;
+          border-radius: 20px;
+          font-weight: 600;
+        }
+
+        .eventContent {
+          margin-top: 1.5rem;
+
+          h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #2d3748;
+            margin-bottom: 0.5rem;
+          }
+
+          p {
+            color: #4a5568;
+            line-height: 1.6;
+          }
+        }
+      }
+    }
+  }
+
+  .achievements {
+    margin-bottom: 4rem;
+
+    h2 {
+      font-size: 2rem;
+      font-weight: 600;
+      color: #2C5F2D;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+
+    .categories {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+
+      .category {
+        background: white;
+        padding: 2rem;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+        h3 {
+          font-size: 1.25rem;
+          font-weight: 600;
+          color: #2C5F2D;
+          margin-bottom: 1rem;
+          padding-bottom: 0.5rem;
+          border-bottom: 2px solid #2C5F2D;
+        }
+
+        ul {
+          list-style: none;
+          padding: 0;
+
+          li {
+            padding: 0.5rem 0;
+            color: #4a5568;
+            position: relative;
+            padding-left: 1.5rem;
+
+            &::before {
+              content: '•';
+              color: #2C5F2D;
+              position: absolute;
+              left: 0;
+              font-size: 1.5rem;
+              line-height: 1;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .conclusion {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    color: #4a5568;
+    line-height: 1.8;
+    font-size: 1.1rem;
+    padding: 2rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+}
+
+@media (max-width: 768px) {
+  .historyPage {
+    .timeline {
+      .events {
+        &::before {
+          left: 0;
+        }
+
+        .event {
+          width: calc(100% - 30px);
+          margin-left: 30px !important;
+
+          &::before {
+            left: -30px !important;
+            right: auto !important;
+          }
+
+          .eventYear {
+            left: 0;
+          }
+        }
+      }
+    }
+  }
+} 

@@ -2,13 +2,22 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { FaBars, FaTimes, FaHandHoldingHeart, FaSearch } from 'react-icons/fa';
+import Image from 'next/image';
+import { FaHeart, FaSearch } from 'react-icons/fa';
 import styles from './Navbar.module.scss';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
+  const toggleSearch = () => {
+    setIsSearchOpen(!isSearchOpen);
+  };
 
   const handleLinkClick = () => {
     setIsOpen(false);
@@ -17,108 +26,116 @@ export default function Navbar() {
   const handleSearch = (e) => {
     e.preventDefault();
     // Arama işlemi burada yapılacak
-    console.log('Arama yapılıyor:', searchQuery);
+    console.log('Arama sorgusu:', searchQuery);
+    setSearchQuery('');
     setIsSearchOpen(false);
   };
 
   return (
-    <nav className={styles.navbar}>
-      <div className={styles.container}>
-        <Link href="/" className={styles.logo}>
-          Arslandede Köyü Derneği
-        </Link>
-
-        <div className={styles.rightSection}>
-          {/* Arama Butonu */}
-          <button
-            className={styles.searchButton}
-            onClick={() => setIsSearchOpen(!isSearchOpen)}
-            aria-label="Arama"
-          >
-            <FaSearch />
-          </button>
-
-          <button
-            className={styles.mobileMenuButton}
-            onClick={() => setIsOpen(!isOpen)}
-            aria-label="Menüyü Aç/Kapat"
-          >
-            {isOpen ? <FaTimes /> : <FaBars />}
-          </button>
-        </div>
-
-        {/* Arama Formu */}
-        {isSearchOpen && (
-          <div className={styles.searchOverlay}>
-            <form onSubmit={handleSearch} className={styles.searchForm}>
-              <input
-                type="text"
-                placeholder="Site içinde ara..."
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                className={styles.searchInput}
-                autoFocus
-              />
-              <button type="submit" className={styles.searchSubmit}>
-                <FaSearch />
-              </button>
-              <button
-                type="button"
-                className={styles.searchClose}
-                onClick={() => setIsSearchOpen(false)}
-              >
-                <FaTimes />
-              </button>
-            </form>
-          </div>
-        )}
-
-        <div className={`${styles.menu} ${isOpen ? styles.active : ''}`}>
-          <Link href="/" onClick={handleLinkClick}>
-            Ana Sayfa
+    <header className={styles.header}>
+      <nav className={styles.navbar}>
+        <div className={styles.container}>
+          <Link href="/" className={styles.logo}>
+            <Image 
+              src="/images/logo.jpg" 
+              alt="Arslandede Köyü Derneği Logo" 
+              width={48} 
+              height={48}
+              className={styles.logoImage}
+              priority
+            />
+            <span className={styles.logoText}>Arslandede Köyü Derneği</span>
           </Link>
-          <div className={styles.dropdown}>
-            <span>Hakkımızda</span>
-            <div className={styles.dropdownContent}>
-              <Link href="/about/history" onClick={handleLinkClick}>
-                Derneğimizin Tarihçesi
-              </Link>
-              <Link href="/about/board" onClick={handleLinkClick}>
-                Yönetim Kurulu
-              </Link>
-              <Link href="/about/statute" onClick={handleLinkClick}>
-                Dernek Tüzüğü
-              </Link>
-              <Link href="/about/bank-accounts" onClick={handleLinkClick}>
-                Banka Hesapları
-              </Link>
-              <Link href="/about/blood-bank" onClick={handleLinkClick}>
-                Kan Bankası
-              </Link>
+
+          <div className={`${styles.menu} ${isOpen ? styles.active : ''}`}>
+            <Link href="/" className={styles.menuItem} onClick={handleLinkClick}>Ana Sayfa</Link>
+            
+            <div className={styles.dropdown}>
+              <span className={styles.menuItem}>Köyümüz ▼</span>
+              <div className={styles.dropdownContent}>
+                <Link href="/about/village" onClick={handleLinkClick}>Köyümüz Hakkında</Link>
+                <Link href="/about/village/history" onClick={handleLinkClick}>Köyümüzün Tarihi</Link>
+                <Link href="/about/village/geography" onClick={handleLinkClick}>Coğrafi Yapı</Link>
+                <Link href="/about/village/population" onClick={handleLinkClick}>Nüfus ve Yerleşim</Link>
+                <Link href="/about/village/economy" onClick={handleLinkClick}>Ekonomik Yapı</Link>
+                <Link href="/about/village/education" onClick={handleLinkClick}>Eğitim ve Kültür</Link>
+                <Link href="/about/village/places" onClick={handleLinkClick}>Gezilecek Yerler</Link>
+              </div>
             </div>
+
+            <div className={styles.dropdown}>
+              <span className={styles.menuItem}>Derneğimiz ▼</span>
+              <div className={styles.dropdownContent}>
+                <Link href="/about/history" onClick={handleLinkClick}>Derneğimizin Tarihçesi</Link>
+                <Link href="/about/board" onClick={handleLinkClick}>Yönetim Kurulu</Link>
+                <Link href="/about/statute" onClick={handleLinkClick}>Dernek Tüzüğü</Link>
+                <Link href="/about/founders" onClick={handleLinkClick}>Kurucularımız</Link>
+                <Link href="/about/members" onClick={handleLinkClick}>Üyelerimiz</Link>
+                <Link href="/donate" onClick={handleLinkClick}>Bağış Yap</Link>
+              </div>
+            </div>
+
+            <div className={styles.dropdown}>
+              <span className={styles.menuItem}>Galeri ▼</span>
+              <div className={styles.dropdownContent}>
+                <Link href="/gallery/photos" onClick={handleLinkClick}>Fotoğraf Galerisi</Link>
+                <Link href="/gallery/videos" onClick={handleLinkClick}>Video Galerisi</Link>
+                <Link href="/gallery/historical" onClick={handleLinkClick}>Tarihi Fotoğraflar</Link>
+              </div>
+            </div>
+
+            <Link href="/projects" className={styles.menuItem} onClick={handleLinkClick}>Projeler</Link>
+            <Link href="/news" className={styles.menuItem} onClick={handleLinkClick}>Haberler</Link>
+            <Link href="/contact" className={styles.menuItem} onClick={handleLinkClick}>İletişim</Link>
+
+            <Link href="/donate" className={styles.donateButton} onClick={handleLinkClick}>
+              <FaHeart /> Bağış Yap
+            </Link>
           </div>
-          <Link href="/news" onClick={handleLinkClick}>
-            Haberler
-          </Link>
-          <Link href="/projects" onClick={handleLinkClick}>
-            Projeler
-          </Link>
-          <Link href="/gallery" onClick={handleLinkClick}>
-            Galeri
-          </Link>
-          <Link href="/contact" onClick={handleLinkClick}>
-            İletişim
-          </Link>
-          <Link 
-            href="/donate" 
-            onClick={handleLinkClick}
-            className={styles.donateButton}
+
+          <div className={styles.searchContainer}>
+            <button 
+              className={styles.searchButton}
+              onClick={toggleSearch}
+              aria-label="Ara"
+            >
+              <FaSearch />
+            </button>
+
+            {isSearchOpen && (
+              <form onSubmit={handleSearch} className={styles.searchForm}>
+                <input
+                  type="text"
+                  placeholder="Ara..."
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className={styles.searchInput}
+                />
+                <button type="submit" className={styles.submitButton}>
+                  <FaSearch />
+                </button>
+                <button 
+                  type="button" 
+                  className={styles.closeButton}
+                  onClick={toggleSearch}
+                >
+                  &times;
+                </button>
+              </form>
+            )}
+          </div>
+
+          <button 
+            className={`${styles.menuButton} ${isOpen ? styles.active : ''}`}
+            onClick={toggleMenu}
+            aria-label={isOpen ? 'Menüyü Kapat' : 'Menüyü Aç'}
           >
-            <FaHandHoldingHeart className={styles.donateIcon} />
-            Bağış Yap
-          </Link>
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
         </div>
-      </div>
-    </nav>
+      </nav>
+    </header>
   );
 } 
