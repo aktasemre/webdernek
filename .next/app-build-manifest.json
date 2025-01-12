@@ -23,7 +23,7 @@
       "static/chunks/fd9d1056-4dbbcf07a05c3f48.js",
       "static/chunks/472-c42c3277309827e5.js",
       "static/chunks/main-app-12fa86974e7c3fed.js",
-      "static/chunks/app/about/bank-accounts/page-48a9db2029612d97.js"
+      "static/chunks/app/about/bank-accounts/page-90f47061578c6a5a.js"
     ],
     "/about/board/page": [
       "static/chunks/webpack-6f7b4157dd870fa5.js",
@@ -87,7 +87,7 @@
       "static/chunks/fd9d1056-4dbbcf07a05c3f48.js",
       "static/chunks/472-c42c3277309827e5.js",
       "static/chunks/main-app-12fa86974e7c3fed.js",
-      "static/chunks/app/test/page-465d4d6fab5324d4.js"
+      "static/chunks/app/test/page-46bbda5342ef7e84.js"
     ],
     "/village/about-district/page": [
       "static/chunks/webpack-6f7b4157dd870fa5.js",
@@ -97,6 +97,13 @@
       "static/chunks/413-d30db3610e9ec2ce.js",
       "static/css/14b14a6aef2e7c57.css",
       "static/chunks/app/village/about-district/page-1fded13273a42ec5.js"
+    ],
+    "/about/blood-bank/page": [
+      "static/chunks/webpack-6f7b4157dd870fa5.js",
+      "static/chunks/fd9d1056-4dbbcf07a05c3f48.js",
+      "static/chunks/472-c42c3277309827e5.js",
+      "static/chunks/main-app-12fa86974e7c3fed.js",
+      "static/chunks/app/about/blood-bank/page-9ba8cfad2633076b.js"
     ],
     "/about/founders/page": [
       "static/chunks/webpack-6f7b4157dd870fa5.js",
@@ -108,13 +115,6 @@
       "static/css/83931a8a5027a44b.css",
       "static/chunks/app/about/founders/page-b3b086b6e4a8b2f0.js"
     ],
-    "/about/blood-bank/page": [
-      "static/chunks/webpack-6f7b4157dd870fa5.js",
-      "static/chunks/fd9d1056-4dbbcf07a05c3f48.js",
-      "static/chunks/472-c42c3277309827e5.js",
-      "static/chunks/main-app-12fa86974e7c3fed.js",
-      "static/chunks/app/about/blood-bank/page-34d775906e2539c7.js"
-    ],
     "/about/members/page": [
       "static/chunks/webpack-6f7b4157dd870fa5.js",
       "static/chunks/fd9d1056-4dbbcf07a05c3f48.js",
@@ -123,16 +123,6 @@
       "static/chunks/9081a741-7be3eab4722675f6.js",
       "static/css/5854ee19d65f3955.css",
       "static/chunks/app/about/members/page-38699e7df319f8eb.js"
-    ],
-    "/about/history/page": [
-      "static/chunks/webpack-6f7b4157dd870fa5.js",
-      "static/chunks/fd9d1056-4dbbcf07a05c3f48.js",
-      "static/chunks/472-c42c3277309827e5.js",
-      "static/chunks/main-app-12fa86974e7c3fed.js",
-      "static/chunks/9081a741-7be3eab4722675f6.js",
-      "static/chunks/413-d30db3610e9ec2ce.js",
-      "static/css/a1de905f98be4265.css",
-      "static/chunks/app/about/history/page-775985873299bb7f.js"
     ],
     "/about/supervisory/page": [
       "static/chunks/webpack-6f7b4157dd870fa5.js",
@@ -195,6 +185,16 @@
       "static/css/224dd91b178f0e07.css",
       "static/chunks/app/about/village/page-e181f8042b74ba5c.js"
     ],
+    "/about/history/page": [
+      "static/chunks/webpack-6f7b4157dd870fa5.js",
+      "static/chunks/fd9d1056-4dbbcf07a05c3f48.js",
+      "static/chunks/472-c42c3277309827e5.js",
+      "static/chunks/main-app-12fa86974e7c3fed.js",
+      "static/chunks/9081a741-7be3eab4722675f6.js",
+      "static/chunks/413-d30db3610e9ec2ce.js",
+      "static/css/a1de905f98be4265.css",
+      "static/chunks/app/about/history/page-775985873299bb7f.js"
+    ],
     "/about/village/places/page": [
       "static/chunks/webpack-6f7b4157dd870fa5.js",
       "static/chunks/fd9d1056-4dbbcf07a05c3f48.js",
@@ -230,21 +230,21 @@
       "static/chunks/fd9d1056-4dbbcf07a05c3f48.js",
       "static/chunks/472-c42c3277309827e5.js",
       "static/chunks/main-app-12fa86974e7c3fed.js",
-      "static/chunks/app/auth/page-78ff33e6aaa685a3.js"
+      "static/chunks/app/auth/page-d851ada328223e30.js"
     ],
     "/announcements/page": [
       "static/chunks/webpack-6f7b4157dd870fa5.js",
       "static/chunks/fd9d1056-4dbbcf07a05c3f48.js",
       "static/chunks/472-c42c3277309827e5.js",
       "static/chunks/main-app-12fa86974e7c3fed.js",
-      "static/chunks/app/announcements/page-5768193212347a17.js"
+      "static/chunks/app/announcements/page-ccf3dfe56aece40d.js"
     ],
     "/donate/page": [
       "static/chunks/webpack-6f7b4157dd870fa5.js",
       "static/chunks/fd9d1056-4dbbcf07a05c3f48.js",
       "static/chunks/472-c42c3277309827e5.js",
       "static/chunks/main-app-12fa86974e7c3fed.js",
-      "static/chunks/app/donate/page-28ea1e6f2dbac07a.js"
+      "static/chunks/app/donate/page-1cdc8605bb6491e5.js"
     ],
     "/events/page": [
       "static/chunks/webpack-6f7b4157dd870fa5.js",
@@ -276,42 +276,42 @@
       "static/chunks/fd9d1056-4dbbcf07a05c3f48.js",
       "static/chunks/472-c42c3277309827e5.js",
       "static/chunks/main-app-12fa86974e7c3fed.js",
-      "static/chunks/app/statistics/page-785b79d738fef56e.js"
+      "static/chunks/app/statistics/page-7b5d69cfc756639b.js"
     ],
     "/village-guide/page": [
       "static/chunks/webpack-6f7b4157dd870fa5.js",
       "static/chunks/fd9d1056-4dbbcf07a05c3f48.js",
       "static/chunks/472-c42c3277309827e5.js",
       "static/chunks/main-app-12fa86974e7c3fed.js",
-      "static/chunks/app/village-guide/page-17e27b6698ba8eed.js"
-    ],
-    "/news/page": [
-      "static/chunks/webpack-6f7b4157dd870fa5.js",
-      "static/chunks/fd9d1056-4dbbcf07a05c3f48.js",
-      "static/chunks/472-c42c3277309827e5.js",
-      "static/chunks/main-app-12fa86974e7c3fed.js",
-      "static/chunks/app/news/page-63c2b55699c475b3.js"
-    ],
-    "/news/layout": [
-      "static/chunks/webpack-6f7b4157dd870fa5.js",
-      "static/chunks/fd9d1056-4dbbcf07a05c3f48.js",
-      "static/chunks/472-c42c3277309827e5.js",
-      "static/chunks/main-app-12fa86974e7c3fed.js",
-      "static/chunks/app/news/layout-8da6b6fb24eb8014.js"
-    ],
-    "/contact/layout": [
-      "static/chunks/webpack-6f7b4157dd870fa5.js",
-      "static/chunks/fd9d1056-4dbbcf07a05c3f48.js",
-      "static/chunks/472-c42c3277309827e5.js",
-      "static/chunks/main-app-12fa86974e7c3fed.js",
-      "static/chunks/app/contact/layout-10f89a982e104a50.js"
+      "static/chunks/app/village-guide/page-6134b847ddb03851.js"
     ],
     "/contact/page": [
       "static/chunks/webpack-6f7b4157dd870fa5.js",
       "static/chunks/fd9d1056-4dbbcf07a05c3f48.js",
       "static/chunks/472-c42c3277309827e5.js",
       "static/chunks/main-app-12fa86974e7c3fed.js",
-      "static/chunks/app/contact/page-458cd11b87cc87e3.js"
+      "static/chunks/app/contact/page-47c76d357e31fb62.js"
+    ],
+    "/contact/layout": [
+      "static/chunks/webpack-6f7b4157dd870fa5.js",
+      "static/chunks/fd9d1056-4dbbcf07a05c3f48.js",
+      "static/chunks/472-c42c3277309827e5.js",
+      "static/chunks/main-app-12fa86974e7c3fed.js",
+      "static/chunks/app/contact/layout-577c414fff39cd49.js"
+    ],
+    "/news/page": [
+      "static/chunks/webpack-6f7b4157dd870fa5.js",
+      "static/chunks/fd9d1056-4dbbcf07a05c3f48.js",
+      "static/chunks/472-c42c3277309827e5.js",
+      "static/chunks/main-app-12fa86974e7c3fed.js",
+      "static/chunks/app/news/page-81f908625027f949.js"
+    ],
+    "/news/layout": [
+      "static/chunks/webpack-6f7b4157dd870fa5.js",
+      "static/chunks/fd9d1056-4dbbcf07a05c3f48.js",
+      "static/chunks/472-c42c3277309827e5.js",
+      "static/chunks/main-app-12fa86974e7c3fed.js",
+      "static/chunks/app/news/layout-ac306a6acf8453e1.js"
     ]
   }
 }
