@@ -13,11 +13,15 @@ const Header = () => {
     setIsOpen(!isOpen);
   };
 
+  const closeMenu = () => {
+    setIsOpen(false);
+  };
+
   return (
     <header className={styles.header}>
       <nav className={styles.navbar}>
         <div className={styles.container}>
-          <Link href="/" className={styles.logo}>
+          <Link href="/" className={styles.logo} onClick={closeMenu}>
             <Image 
               src="/images/logo.jpg" 
               alt="Arslandede Köyü Derneği Logo" 
@@ -29,46 +33,46 @@ const Header = () => {
           </Link>
 
           <div className={`${styles.menu} ${isOpen ? styles.active : ''}`}>
-            <Link href="/" className={styles.menuItem}>Ana Sayfa</Link>
+            <Link href="/" className={styles.menuItem} onClick={closeMenu}>Ana Sayfa</Link>
             
             <div className={styles.dropdown}>
               <span className={styles.menuItem}>Köyümüz ▼</span>
               <div className={styles.dropdownContent}>
-                <Link href="/about/village">Köyümüz Hakkında</Link>
-                <Link href="/about/village/history">Köyümüzün Tarihi</Link>
-                <Link href="/about/village/geography">Coğrafi Yapı</Link>
-                <Link href="/about/village/population">Nüfus ve Yerleşim</Link>
-                <Link href="/about/village/economy">Ekonomik Yapı</Link>
-                <Link href="/about/village/education">Eğitim ve Kültür</Link>
-                <Link href="/about/village/places">Gezilecek Yerler</Link>
+                <Link href="/about/village" onClick={closeMenu}>Köyümüz Hakkında</Link>
+                <Link href="/about/village/history" onClick={closeMenu}>Köyümüzün Tarihi</Link>
+                <Link href="/about/village/geography" onClick={closeMenu}>Coğrafi Yapı</Link>
+                <Link href="/about/village/population" onClick={closeMenu}>Nüfus ve Yerleşim</Link>
+                <Link href="/about/village/economy" onClick={closeMenu}>Ekonomik Yapı</Link>
+                <Link href="/about/village/education" onClick={closeMenu}>Eğitim ve Kültür</Link>
+                <Link href="/about/village/places" onClick={closeMenu}>Gezilecek Yerler</Link>
               </div>
             </div>
 
             <div className={styles.dropdown}>
               <span className={styles.menuItem}>Derneğimiz ▼</span>
               <div className={styles.dropdownContent}>
-                <Link href="/about/history">Derneğimizin Tarihçesi</Link>
-                <Link href="/about/board">Yönetim Kurulu</Link>
-                <Link href="/about/statute">Dernek Tüzüğü</Link>
-                <Link href="/about/founders">Kurucularımız</Link>
-                <Link href="/about/members">Üyelerimiz</Link>
+                <Link href="/about/history" onClick={closeMenu}>Derneğimizin Tarihçesi</Link>
+                <Link href="/about/board" onClick={closeMenu}>Yönetim Kurulu</Link>
+                <Link href="/about/statute" onClick={closeMenu}>Dernek Tüzüğü</Link>
+                <Link href="/about/founders" onClick={closeMenu}>Kurucularımız</Link>
+                <Link href="/about/members" onClick={closeMenu}>Üyelerimiz</Link>
               </div>
             </div>
 
             <div className={styles.dropdown}>
               <span className={styles.menuItem}>Galeri ▼</span>
               <div className={styles.dropdownContent}>
-                <Link href="/gallery/photos">Fotoğraf Galerisi</Link>
-                <Link href="/gallery/videos">Video Galerisi</Link>
-                <Link href="/gallery/historical">Tarihi Fotoğraflar</Link>
+                <Link href="/gallery/photos" onClick={closeMenu}>Fotoğraf Galerisi</Link>
+                <Link href="/gallery/videos" onClick={closeMenu}>Video Galerisi</Link>
+                <Link href="/gallery/historical" onClick={closeMenu}>Tarihi Fotoğraflar</Link>
               </div>
             </div>
 
-            <Link href="/projects" className={styles.menuItem}>Projeler</Link>
-            <Link href="/news" className={styles.menuItem}>Haberler</Link>
-            <Link href="/contact" className={styles.menuItem}>İletişim</Link>
+            <Link href="/projects" className={styles.menuItem} onClick={closeMenu}>Projeler</Link>
+            <Link href="/news" className={styles.menuItem} onClick={closeMenu}>Haberler</Link>
+            <Link href="/contact" className={styles.menuItem} onClick={closeMenu}>İletişim</Link>
 
-            <Link href="/donate" className={styles.donateButton}>
+            <Link href="/donate" className={styles.donateButton} onClick={closeMenu}>
               <FaHeart /> Bağış Yap
             </Link>
           </div>
