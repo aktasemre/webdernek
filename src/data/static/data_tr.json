@@ -15,6 +15,8 @@
         "subeKodu": "1234",
         "hesapNo": "12345678",
         "iban": "TR00 0000 0000 0000 0000 0000 00"
+        
+        
       }
     ],
     "kanBankasi": {
@@ -56,46 +58,50 @@
     }
   },
   "koy": {
-    "ekonomi": {
-      "baslicaGecimKaynaklari": ["Tarım", "Hayvancılık"],
-      "urunler": ["Fındık", "Mısır"]
-    },
-    "egitim": {
-      "okullar": [
-        {
-          "ad": "Sarıyayla İlkokulu",
-          "ogrenciSayisi": 50,
-          "ogretmenSayisi": 5
-        }
-      ]
-    },
-    "cografi": {
-      "rakım": 1200,
-      "iklim": "Karadeniz İklimi",
-      "yuzolcumu": "500 hektar"
+    "hakkinda": {
+      "baslik": "Arslandede Köyü",
+      "ozet": "Bayburt'un merkez ilçesine bağlı olan Arslandede Köyü (eski adı 'Kan'), 1959 yılında resmi olarak bu ismi almıştır. Zengin tarihi, kültürü ve doğal güzellikleriyle dikkat çeken köyümüz, geleneksel yaşam tarzını korumaktadır.",
+      "konum": {
+        "il": "Bayburt",
+        "ilce": "Merkez",
+        "ulasim": "Köy, Bayburt şehir merkezine kara yoluyla ulaşılabilir mesafededir. Bazı günler düzenlenen minibüs seferleri veya özel araç kullanımı yaygındır."
+      }
     },
     "tarihce": {
-      "kurulusYili": "1800'ler",
-      "onemliOlaylar": [
-        {
-          "yil": "1800",
-          "olay": "Köyün Kuruluşu"
-        }
-      ]
-    },
-    "onemliYerler": [
-      {
-        "id": 1,
-        "ad": "Köy Meydanı",
-        "aciklama": "Köyün merkezi toplanma alanı",
-        "foto": "/images/places/meydan.jpg"
+      "eskiAd": "Kan",
+      "degisimTarihi": "1959",
+      "diniYapi": {
+        "cami": "Köydeki ibadethane, eskiden bir kilise olarak hizmet vermekteydi. Zamanla camiye dönüştürülerek Müslüman cemaatin kullanımına açılmıştır. Artan nüfus ve yapının yetersizliği sebebiyle 1960 yılında cami yeniden inşa edilmiş; bugün kullanılan yapı 1960'ta yapılan bu camidir."
       }
-    ],
+    },
     "nufus": {
-      "toplam": 500,
-      "erkek": 250,
-      "kadin": 250,
-      "yillikDegisim": "+10"
+      "genel": "Köyün nüfusu mevsimlere göre değişir. Yazın gurbetçilerin gelişiyle nüfus artarken, kış aylarında azalır.",
+      "goc": "Genç nüfusun bir kısmı, iş ve eğitim imkânları nedeniyle Bayburt merkez veya daha büyük şehirlere göç etmiştir."
+    },
+    "ekonomi": {
+      "tarim": "Aile tipi küçük ölçekli tarım yaygındır; arpa ve buğday gibi tahıllar yetiştirilir.",
+      "hayvancilik": "Koyun, keçi ve büyükbaş yetiştiriciliği önemli bir geçim kaynağıdır. Yaylacılık geleneği canlı bir şekilde sürdürülür.",
+      "seracilik": "Özellikle iklim koşullarının elverdiği dönemlerde örtü altı (sera) üretimi yapılır.",
+      "aricilik": "Yüksek rakım, zengin yayla bitki örtüsü ve çiçek çeşitliliği sayesinde arıcılık da köy ekonomisinde yer tutar."
+    },
+    "kultur": {
+      "mutfak": "Bayburt'un genelinde bilinen lor dolması, galacoş, su böreği, yalancı dolma, erişte ve tel helva gibi lezzetler köyde de mevcuttur.",
+      "halkOyunlari": "Düğün, bayram ve şenliklerde davul-zurna eşliğinde yerel halk oyunları icra edilir.",
+      "etkinlikler": "Özellikle yaz aylarında gurbetçilerin gelişiyle düğün, şenlik ve toplantılar düzenlenir; köy sosyal açıdan canlanır."
+    },
+    "doga": {
+      "cografiYapi": "Arslandede Köyü, Bayburt'un genel karakterini yansıtan dağlık ve yüksek rakımlı bir bölgededir; yaylalarıyla ünlüdür.",
+      "iklim": "Kışlar uzun, soğuk ve karlı; yazlar ılıman ve serin geçer. Karasal iklim etkileri belirgindir."
+    },
+    "sosyalYapi": {
+      "yonetim": "Türkiye'deki diğer köyler gibi, Arslandede de muhtarlık tarafından idare edilir.",
+      "egitim": "Nüfusun azlığı ve dağılımı nedeniyle taşımalı eğitim sistemi uygulanabilir. Öğrenciler Bayburt merkezdeki okullara gidip gelirler.",
+      "saglik": "Köyde bir sağlık ocağı bulunmakta olup temel sağlık hizmetleri burada sağlanır. Acil veya ileri tetkik gerektiren durumlar için Bayburt merkezdeki hastanelere başvurulur."
+    },
+    "gelecek": {
+      "turizm": "Yaylalar, doğa yürüyüşleri ve kamp gibi etkinlikler açısından potansiyel sunar.",
+      "kalkinma": "Hayvancılık, arıcılık ve seracılık alanlarında kooperatifleşme ve devlet destekleri sayesinde köy ekonomisi daha da gelişebilir.",
+      "kulturelMiras": "Tarihî kökleri olan yapılar (kiliseden dönüştürülen cami gibi) ve yöresel kültür korunarak gelecek nesillere aktarılabilir."
     }
   },
   "duyurular": [

@@ -21,26 +21,26 @@ export default function Home() {
             <div className={styles.container}>
               <h2>Derneğimizin Çalışmaları</h2>
               <div className={styles.featureGrid}>
-                <div className={styles.featureCard}>
+                <Link href="/about/members" className={styles.featureCard}>
                   <FaUsers className={styles.icon} />
                   <h3>Üyelerimiz</h3>
                   <p>Güçlü üye ağımız ile birlikte çalışıyoruz</p>
-                </div>
-                <div className={styles.featureCard}>
+                </Link>
+                <Link href="/donate" className={styles.featureCard}>
                   <FaHandHoldingHeart className={styles.icon} />
                   <h3>Sosyal Yardım</h3>
                   <p>İhtiyaç sahiplerine destek oluyoruz</p>
-                </div>
-                <div className={styles.featureCard}>
+                </Link>
+                <Link href="/about/village" className={styles.featureCard}>
                   <FaLandmark className={styles.icon} />
                   <h3>Kültürel Miras</h3>
-                  <p>Köyümüzün değerlerini koruyoruz</p>
-                </div>
-                <div className={styles.featureCard}>
+                  <p>Köyümüzün zengin tarihini ve kültürünü yaşatıyoruz</p>
+                </Link>
+                <Link href="/news" className={styles.featureCard}>
                   <FaNewspaper className={styles.icon} />
                   <h3>Haberler</h3>
-                  <p>Güncel gelişmelerden haberdar olun</p>
-                </div>
+                  <p>En güncel dernek ve köy haberlerimiz</p>
+                </Link>
               </div>
             </div>
           </section>

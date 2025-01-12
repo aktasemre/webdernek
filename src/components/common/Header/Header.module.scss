@@ -55,6 +55,11 @@
       display: flex;
       align-items: center;
       gap: 1.5rem;
+      transition: transform 0.3s ease-in-out;
+
+      &.active {
+        transform: translateX(0);
+      }
 
       .menuItem {
         color: #333;
@@ -96,6 +101,14 @@
           border-radius: 4px;
           padding: 0.5rem 0;
           z-index: 1000;
+          transition: opacity 0.2s ease-in-out;
+          opacity: 0;
+          visibility: hidden;
+
+          &:hover {
+            opacity: 1;
+            visibility: visible;
+          }
 
           a {
             display: block;
@@ -186,6 +199,16 @@
           width: 100%;
           justify-content: center;
         }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    .navbar {
+      .menu {
+        transform: translateX(-100%);
       }
     }
   }
