@@ -1,163 +1,178 @@
 import { FaWhatsapp, FaPhone, FaEnvelope, FaMapMarkerAlt, FaFacebook, FaTwitter, FaInstagram, FaYoutube, FaClipboardList } from 'react-icons/fa';
-import { getData } from '@/utils/data';
+import iletisimData from '@/data/iletisim.data.json';
+import styles from './page.module.scss';
 
 export const metadata = {
-  title: 'İletişim',
+  title: 'İletişim | Arslandede Köyü',
   description: 'Arslandede Köyü Derneği iletişim bilgileri',
   keywords: ['iletişim', 'adres', 'telefon', 'e-posta', 'sosyal medya']
 };
 
 export default function ContactPage() {
-  const { phone, email, address } = getData('contact');
-  const social = getData('social');
-  const forms = getData('forms');
+  const { phone, email, address, social, forms } = iletisimData;
 
   return (
-    <main className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 py-20">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-gray-800 mb-4">İletişim</h1>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+    <main className={styles.contactPage}>
+      <div className={styles.container}>
+        <div className={styles.header}>
+          <h1>İletişim</h1>
+          <p>
             Derneğimiz ile ilgili her konuda bizimle iletişime geçebilirsiniz. Size en kısa sürede dönüş yapacağız.
           </p>
         </div>
 
-        {/* Ana İletişim Kartları */}
-        <div className="grid md:grid-cols-3 gap-6 mb-12">
-          {/* Telefon */}
-          <div className="bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow p-6">
-            <div className="flex items-center gap-4 mb-4">
-              <div className="bg-green-100 p-3 rounded-full">
-                <FaPhone className="text-green-600 text-xl" />
+        <div className={styles.content}>
+          <div className={styles.contactInfo}>
+            {/* İletişim Kartları */}
+            <div className={styles.infoCards}>
+              {/* Telefon */}
+              <div className={styles.infoCard}>
+                <div className={styles.iconWrapper}>
+                  <FaPhone className={styles.icon} />
+                </div>
+                <h2>Telefon</h2>
+                <div className={styles.details}>
+                  <a href={`tel:${phone.president}`}>
+                    <span>Dernek Başkanı:</span>
+                    <span>{phone.president}</span>
+                  </a>
+                  <a href={`tel:${phone.muhtar}`}>
+                    <span>Köy Muhtarı:</span>
+                    <span>{phone.muhtar}</span>
+                  </a>
+                </div>
               </div>
-              <h2 className="text-xl font-semibold text-gray-800">Telefon</h2>
+
+              {/* E-posta */}
+              <div className={styles.infoCard}>
+                <div className={styles.iconWrapper}>
+                  <FaEnvelope className={styles.icon} />
+                </div>
+                <h2>E-posta</h2>
+                <div className={styles.details}>
+                  <a href={`mailto:${email}`}>{email}</a>
+                </div>
+              </div>
+
+              {/* WhatsApp */}
+              <div className={styles.infoCard}>
+                <div className={styles.iconWrapper}>
+                  <FaWhatsapp className={styles.icon} />
+                </div>
+                <h2>WhatsApp</h2>
+                <div className={styles.details}>
+                  <a href={social.whatsapp} target="_blank" rel="noopener noreferrer">
+                    WhatsApp üzerinden mesaj gönderin
+                  </a>
+                </div>
+              </div>
             </div>
-            <div className="space-y-3">
-              <a href={`tel:${phone.president}`} className="flex items-center text-gray-600 hover:text-green-600 transition-colors">
-                <span className="font-medium">Dernek Başkanı:</span>
-                <span className="ml-2">{phone.president}</span>
-              </a>
-              <a href={`tel:${phone.muhtar}`} className="flex items-center text-gray-600 hover:text-green-600 transition-colors">
-                <span className="font-medium">Köy Muhtarı:</span>
-                <span className="ml-2">{phone.muhtar}</span>
-              </a>
+
+            {/* Adres Kartları */}
+            <div className={styles.addressCards}>
+              {/* Köy Adresi */}
+              <div className={styles.addressCard}>
+                <h2>
+                  <FaMapMarkerAlt className={styles.icon} />
+                  {address.koy.title}
+                </h2>
+                <p>{address.koy.text}</p>
+                <div className={styles.mapContainer}>
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3021.371234567891!2d40.2873371!3d40.2873371!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x406e5f8f8f8f8f8f%3A0x8f8f8f8f8f8f8f8f!2sArslandede%20K%C3%B6y%C3%BC!5e0!3m2!1str!2str!4v1234567890123!5m2!1str!2str"
+                    width="100%"
+                    height="300"
+                    style={{ border: 0, borderRadius: '12px' }}
+                    allowFullScreen=""
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                  />
+                </div>
+                <a 
+                  href={address.koy.maps} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className={styles.mapsLink}
+                >
+                  Google Maps'te Aç
+                </a>
+              </div>
+
+              {/* Dernek Adresi */}
+              <div className={styles.addressCard}>
+                <h2>
+                  <FaMapMarkerAlt className={styles.icon} />
+                  {address.dernek.title}
+                </h2>
+                <p>{address.dernek.text}</p>
+                <div className={styles.mapContainer}>
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3008.0419037152685!2d28.8863889!3d41.0419444!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14caa4e6f6e3e747%3A0x3f8f3c4cd394d833!2zS2lyYXpsxLEgTWVzY2l0LCBFc2VubGVyL8Swc3RhbmJ1bA!5e0!3m2!1str!2str!4v1234567890123!5m2!1str!2str"
+                    width="100%"
+                    height="300"
+                    style={{ border: 0, borderRadius: '12px' }}
+                    allowFullScreen=""
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                  />
+                </div>
+                <a 
+                  href={address.dernek.maps} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className={styles.mapsLink}
+                >
+                  Google Maps'te Aç
+                </a>
+              </div>
             </div>
           </div>
 
-          {/* E-posta */}
-          <div className="bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow p-6">
-            <div className="flex items-center gap-4 mb-4">
-              <div className="bg-blue-100 p-3 rounded-full">
-                <FaEnvelope className="text-blue-600 text-xl" />
-              </div>
-              <h2 className="text-xl font-semibold text-gray-800">E-posta</h2>
-            </div>
-            <a 
-              href={`mailto:${email}`} 
-              className="text-gray-600 hover:text-blue-600 transition-colors break-all"
-            >
-              {email}
-            </a>
-          </div>
-
-          {/* WhatsApp */}
-          <div className="bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow p-6">
-            <div className="flex items-center gap-4 mb-4">
-              <div className="bg-emerald-100 p-3 rounded-full">
-                <FaWhatsapp className="text-emerald-600 text-xl" />
-              </div>
-              <h2 className="text-xl font-semibold text-gray-800">WhatsApp</h2>
-            </div>
-            <a 
-              href={social.whatsapp}
-              target="_blank"
-              rel="noopener noreferrer" 
-              className="inline-flex items-center gap-2 text-gray-600 hover:text-emerald-600 transition-colors"
-            >
-              <span>WhatsApp üzerinden mesaj gönderin</span>
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-              </svg>
-            </a>
-          </div>
-        </div>
-
-        {/* Sosyal Medya ve Meslek Envanteri */}
-        <div className="grid md:grid-cols-2 gap-8">
           {/* Sosyal Medya */}
-          <div className="bg-white rounded-xl shadow-md p-6">
-            <h2 className="text-2xl font-semibold text-gray-800 mb-6">Sosyal Medya Hesaplarımız</h2>
-            <div className="grid grid-cols-2 gap-4">
-              <a
-                href={social.facebook}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-3 p-3 rounded-lg bg-blue-50 hover:bg-blue-100 transition-colors group"
-              >
-                <FaFacebook className="text-2xl text-blue-600 group-hover:scale-110 transition-transform" />
-                <span className="text-gray-700">Facebook</span>
+          <div className={styles.socialSection}>
+            <h2>Sosyal Medya Hesaplarımız</h2>
+            <div className={styles.socialGrid}>
+              <a href={social.facebook} target="_blank" rel="noopener noreferrer" className={styles.facebook}>
+                <FaFacebook />
+                <span>Facebook</span>
               </a>
-              
-              <a
-                href={social.twitter}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-3 p-3 rounded-lg bg-sky-50 hover:bg-sky-100 transition-colors group"
-              >
-                <FaTwitter className="text-2xl text-sky-600 group-hover:scale-110 transition-transform" />
-                <span className="text-gray-700">Twitter</span>
+              <a href={social.twitter} target="_blank" rel="noopener noreferrer" className={styles.twitter}>
+                <FaTwitter />
+                <span>Twitter</span>
               </a>
-              
-              <a
-                href={social.instagram}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-3 p-3 rounded-lg bg-pink-50 hover:bg-pink-100 transition-colors group"
-              >
-                <FaInstagram className="text-2xl text-pink-600 group-hover:scale-110 transition-transform" />
-                <span className="text-gray-700">Instagram</span>
+              <a href={social.instagram} target="_blank" rel="noopener noreferrer" className={styles.instagram}>
+                <FaInstagram />
+                <span>Instagram</span>
               </a>
-              
-              <a
-                href={social.youtube}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-3 p-3 rounded-lg bg-red-50 hover:bg-red-100 transition-colors group"
-              >
-                <FaYoutube className="text-2xl text-red-600 group-hover:scale-110 transition-transform" />
-                <span className="text-gray-700">YouTube</span>
+              <a href={social.youtube} target="_blank" rel="noopener noreferrer" className={styles.youtube}>
+                <FaYoutube />
+                <span>YouTube</span>
               </a>
             </div>
           </div>
 
           {/* Meslek Envanteri */}
-          <div className="bg-white rounded-xl shadow-md p-6">
-            <div className="flex items-center gap-4 mb-6">
-              <div className="bg-indigo-100 p-2 rounded-full">
-                <FaClipboardList className="text-indigo-600 text-lg" />
+          <div className={styles.surveySection}>
+            <div className={styles.surveyContent}>
+              <div className={styles.surveyIcon}>
+                <FaClipboardList />
               </div>
-              <h2 className="text-2xl font-semibold text-gray-800">Meslek Envanteri</h2>
-            </div>
-            <p className="text-gray-600 mb-6">
-              Köyümüzün meslek haritasını çıkarmak ve gençlerimize yol göstermek amacıyla başlattığımız çalışmaya katılımınızı bekliyoruz.
-            </p>
-            <div className="flex justify-start">
+              <h2>Meslek Envanteri</h2>
+              <p>
+                Köyümüzün meslek haritasını çıkarmak ve gençlerimize yol göstermek amacıyla başlattığımız çalışmaya katılımınızı bekliyoruz.
+              </p>
               <a
                 href={forms.professionInventory}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2 bg-indigo-600 text-white text-sm font-medium rounded-lg hover:bg-indigo-700 transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                className={styles.surveyButton}
               >
-                <FaClipboardList className="text-sm" />
                 Formu Doldur
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                </svg>
               </a>
+              <p className={styles.surveyNote}>
+                Form doldurmak yaklaşık 5 dakika sürmektedir.
+              </p>
             </div>
-            <p className="text-xs text-gray-500 mt-3">
-              Form doldurmak yaklaşık 5 dakika sürmektedir.
-            </p>
           </div>
         </div>
       </div>

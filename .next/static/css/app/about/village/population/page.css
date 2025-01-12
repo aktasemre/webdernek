@@ -1,0 +1,320 @@
+/*!*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[12].oneOf[9].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[12].oneOf[9].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[12].oneOf[9].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[12].oneOf[9].use[5]!./src/components/about/Village/Population/PopulationContent.module.scss ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+.PopulationContent_populationContent__lf_Z1 {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+.PopulationContent_populationContent__lf_Z1 h1 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
+}
+.PopulationContent_populationContent__lf_Z1 .PopulationContent_introduction__n1ku0 {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 3rem;
+  line-height: 1.6;
+  color: #666;
+  font-size: 1.1rem;
+}
+.PopulationContent_populationContent__lf_Z1 .PopulationContent_statistics__Eq2W2 {
+  margin-bottom: 4rem;
+}
+.PopulationContent_populationContent__lf_Z1 .PopulationContent_statistics__Eq2W2 h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+.PopulationContent_populationContent__lf_Z1 .PopulationContent_statistics__Eq2W2 .PopulationContent_mainStats__tpaC7 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 2rem;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+.PopulationContent_populationContent__lf_Z1 .PopulationContent_statistics__Eq2W2 .PopulationContent_mainStats__tpaC7 .PopulationContent_statCard__Z0Fet {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+.PopulationContent_populationContent__lf_Z1 .PopulationContent_statistics__Eq2W2 .PopulationContent_mainStats__tpaC7 .PopulationContent_statCard__Z0Fet:hover {
+  transform: translateY(-5px);
+}
+.PopulationContent_populationContent__lf_Z1 .PopulationContent_statistics__Eq2W2 .PopulationContent_mainStats__tpaC7 .PopulationContent_statCard__Z0Fet h3 {
+  color: #333;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+.PopulationContent_populationContent__lf_Z1 .PopulationContent_statistics__Eq2W2 .PopulationContent_mainStats__tpaC7 .PopulationContent_statCard__Z0Fet .PopulationContent_value__qD4tU {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #007bff;
+}
+.PopulationContent_populationContent__lf_Z1 .PopulationContent_statistics__Eq2W2 .PopulationContent_distributions__mIhCZ {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-gap: 2rem;
+  gap: 2rem;
+}
+.PopulationContent_populationContent__lf_Z1 .PopulationContent_statistics__Eq2W2 .PopulationContent_distributions__mIhCZ h3 {
+  color: #333;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+  text-align: center;
+}
+.PopulationContent_populationContent__lf_Z1 .PopulationContent_statistics__Eq2W2 .PopulationContent_distributions__mIhCZ .PopulationContent_ageDistribution__Avt_8 {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.PopulationContent_populationContent__lf_Z1 .PopulationContent_statistics__Eq2W2 .PopulationContent_distributions__mIhCZ .PopulationContent_ageDistribution__Avt_8 .PopulationContent_bars__thF0F .PopulationContent_bar__w85g0 {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.PopulationContent_populationContent__lf_Z1 .PopulationContent_statistics__Eq2W2 .PopulationContent_distributions__mIhCZ .PopulationContent_ageDistribution__Avt_8 .PopulationContent_bars__thF0F .PopulationContent_bar__w85g0 .PopulationContent_label__LJBcQ {
+  flex: 0 0 100px;
+  color: #666;
+}
+.PopulationContent_populationContent__lf_Z1 .PopulationContent_statistics__Eq2W2 .PopulationContent_distributions__mIhCZ .PopulationContent_ageDistribution__Avt_8 .PopulationContent_bars__thF0F .PopulationContent_bar__w85g0 .PopulationContent_barContainer__8_k50 {
+  flex: 1 1;
+  height: 20px;
+  background: #f0f0f0;
+  border-radius: 10px;
+  margin: 0 1rem;
+  overflow: hidden;
+}
+.PopulationContent_populationContent__lf_Z1 .PopulationContent_statistics__Eq2W2 .PopulationContent_distributions__mIhCZ .PopulationContent_ageDistribution__Avt_8 .PopulationContent_bars__thF0F .PopulationContent_bar__w85g0 .PopulationContent_barContainer__8_k50 .PopulationContent_barFill__iSi42 {
+  height: 100%;
+  background: #007bff;
+  border-radius: 10px;
+  transition: width 0.3s ease;
+}
+.PopulationContent_populationContent__lf_Z1 .PopulationContent_statistics__Eq2W2 .PopulationContent_distributions__mIhCZ .PopulationContent_ageDistribution__Avt_8 .PopulationContent_bars__thF0F .PopulationContent_bar__w85g0 .PopulationContent_percentage__308jF {
+  flex: 0 0 50px;
+  color: #007bff;
+  font-weight: bold;
+}
+.PopulationContent_populationContent__lf_Z1 .PopulationContent_statistics__Eq2W2 .PopulationContent_distributions__mIhCZ .PopulationContent_genderDistribution__r5_iG {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.PopulationContent_populationContent__lf_Z1 .PopulationContent_statistics__Eq2W2 .PopulationContent_distributions__mIhCZ .PopulationContent_genderDistribution__r5_iG .PopulationContent_genderChart__ad7BI {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.PopulationContent_populationContent__lf_Z1 .PopulationContent_statistics__Eq2W2 .PopulationContent_distributions__mIhCZ .PopulationContent_genderDistribution__r5_iG .PopulationContent_genderChart__ad7BI .PopulationContent_male__ibx61, .PopulationContent_populationContent__lf_Z1 .PopulationContent_statistics__Eq2W2 .PopulationContent_distributions__mIhCZ .PopulationContent_genderDistribution__r5_iG .PopulationContent_genderChart__ad7BI .PopulationContent_female__xLw3E {
+  padding: 1rem;
+  color: white;
+  text-align: center;
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+.PopulationContent_populationContent__lf_Z1 .PopulationContent_statistics__Eq2W2 .PopulationContent_distributions__mIhCZ .PopulationContent_genderDistribution__r5_iG .PopulationContent_genderChart__ad7BI .PopulationContent_male__ibx61 {
+  background: #007bff;
+}
+.PopulationContent_populationContent__lf_Z1 .PopulationContent_statistics__Eq2W2 .PopulationContent_distributions__mIhCZ .PopulationContent_genderDistribution__r5_iG .PopulationContent_genderChart__ad7BI .PopulationContent_female__xLw3E {
+  background: #ff69b4;
+}
+.PopulationContent_populationContent__lf_Z1 .PopulationContent_settlement__LKJna {
+  margin-bottom: 4rem;
+}
+.PopulationContent_populationContent__lf_Z1 .PopulationContent_settlement__LKJna h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+.PopulationContent_populationContent__lf_Z1 .PopulationContent_settlement__LKJna .PopulationContent_neighborhoods__N3b0I {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 2rem;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+.PopulationContent_populationContent__lf_Z1 .PopulationContent_settlement__LKJna .PopulationContent_neighborhoods__N3b0I .PopulationContent_neighborhoodCard__3_TCw {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+.PopulationContent_populationContent__lf_Z1 .PopulationContent_settlement__LKJna .PopulationContent_neighborhoods__N3b0I .PopulationContent_neighborhoodCard__3_TCw:hover {
+  transform: translateY(-5px);
+}
+.PopulationContent_populationContent__lf_Z1 .PopulationContent_settlement__LKJna .PopulationContent_neighborhoods__N3b0I .PopulationContent_neighborhoodCard__3_TCw h3 {
+  color: #333;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+.PopulationContent_populationContent__lf_Z1 .PopulationContent_settlement__LKJna .PopulationContent_neighborhoods__N3b0I .PopulationContent_neighborhoodCard__3_TCw p {
+  color: #666;
+  margin-bottom: 1rem;
+  line-height: 1.4;
+}
+.PopulationContent_populationContent__lf_Z1 .PopulationContent_settlement__LKJna .PopulationContent_neighborhoods__N3b0I .PopulationContent_neighborhoodCard__3_TCw .PopulationContent_population__cGQr6 {
+  color: #007bff;
+  font-weight: bold;
+}
+.PopulationContent_populationContent__lf_Z1 .PopulationContent_settlement__LKJna .PopulationContent_housing___2Q5P {
+  background: #f5f5f5;
+  padding: 2rem;
+  border-radius: 8px;
+}
+.PopulationContent_populationContent__lf_Z1 .PopulationContent_settlement__LKJna .PopulationContent_housing___2Q5P h3 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 2rem;
+  font-size: 1.8rem;
+}
+.PopulationContent_populationContent__lf_Z1 .PopulationContent_settlement__LKJna .PopulationContent_housing___2Q5P .PopulationContent_housingTypes__OgyqT {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 2rem;
+  gap: 2rem;
+}
+.PopulationContent_populationContent__lf_Z1 .PopulationContent_settlement__LKJna .PopulationContent_housing___2Q5P .PopulationContent_housingTypes__OgyqT .PopulationContent_housingCard__a1U6c {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+.PopulationContent_populationContent__lf_Z1 .PopulationContent_settlement__LKJna .PopulationContent_housing___2Q5P .PopulationContent_housingTypes__OgyqT .PopulationContent_housingCard__a1U6c h4 {
+  color: #333;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+.PopulationContent_populationContent__lf_Z1 .PopulationContent_settlement__LKJna .PopulationContent_housing___2Q5P .PopulationContent_housingTypes__OgyqT .PopulationContent_housingCard__a1U6c p {
+  color: #666;
+  margin-bottom: 1rem;
+  line-height: 1.4;
+}
+.PopulationContent_populationContent__lf_Z1 .PopulationContent_settlement__LKJna .PopulationContent_housing___2Q5P .PopulationContent_housingTypes__OgyqT .PopulationContent_housingCard__a1U6c .PopulationContent_percentage__308jF {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #007bff;
+}
+.PopulationContent_populationContent__lf_Z1 .PopulationContent_migration__HoMQh h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+.PopulationContent_populationContent__lf_Z1 .PopulationContent_migration__HoMQh .PopulationContent_migrationInfo__34Xhb {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 2rem;
+  gap: 2rem;
+}
+.PopulationContent_populationContent__lf_Z1 .PopulationContent_migration__HoMQh .PopulationContent_migrationInfo__34Xhb h3 {
+  color: #333;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+  text-align: center;
+}
+.PopulationContent_populationContent__lf_Z1 .PopulationContent_migration__HoMQh .PopulationContent_migrationInfo__34Xhb .PopulationContent_destinations__YIfss, .PopulationContent_populationContent__lf_Z1 .PopulationContent_migration__HoMQh .PopulationContent_migrationInfo__34Xhb .PopulationContent_reasons__Y7_fC {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.PopulationContent_populationContent__lf_Z1 .PopulationContent_migration__HoMQh .PopulationContent_migrationInfo__34Xhb .PopulationContent_destinations__YIfss ul, .PopulationContent_populationContent__lf_Z1 .PopulationContent_migration__HoMQh .PopulationContent_migrationInfo__34Xhb .PopulationContent_reasons__Y7_fC ul {
+  list-style: none;
+  padding: 0;
+}
+.PopulationContent_populationContent__lf_Z1 .PopulationContent_migration__HoMQh .PopulationContent_migrationInfo__34Xhb .PopulationContent_destinations__YIfss ul li, .PopulationContent_populationContent__lf_Z1 .PopulationContent_migration__HoMQh .PopulationContent_migrationInfo__34Xhb .PopulationContent_reasons__Y7_fC ul li {
+  color: #666;
+  padding: 0.5rem;
+  border-bottom: 1px solid #eee;
+  text-align: center;
+}
+.PopulationContent_populationContent__lf_Z1 .PopulationContent_migration__HoMQh .PopulationContent_migrationInfo__34Xhb .PopulationContent_destinations__YIfss ul li:last-child, .PopulationContent_populationContent__lf_Z1 .PopulationContent_migration__HoMQh .PopulationContent_migrationInfo__34Xhb .PopulationContent_reasons__Y7_fC ul li:last-child {
+  border-bottom: none;
+}
+.PopulationContent_populationContent__lf_Z1 .PopulationContent_migration__HoMQh .PopulationContent_migrationInfo__34Xhb .PopulationContent_trends__6gqQY {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.PopulationContent_populationContent__lf_Z1 .PopulationContent_migration__HoMQh .PopulationContent_migrationInfo__34Xhb .PopulationContent_trends__6gqQY p {
+  color: #666;
+  margin-bottom: 1rem;
+  line-height: 1.4;
+}
+.PopulationContent_populationContent__lf_Z1 .PopulationContent_migration__HoMQh .PopulationContent_migrationInfo__34Xhb .PopulationContent_trends__6gqQY p strong {
+  color: #333;
+}
+
+@media (max-width: 768px) {
+  .PopulationContent_populationContent__lf_Z1 {
+    padding: 1rem;
+  }
+  .PopulationContent_populationContent__lf_Z1 h1 {
+    font-size: 2rem;
+  }
+  .PopulationContent_populationContent__lf_Z1 .PopulationContent_statistics__Eq2W2 .PopulationContent_mainStats__tpaC7 {
+    grid-template-columns: 1fr;
+  }
+  .PopulationContent_populationContent__lf_Z1 .PopulationContent_statistics__Eq2W2 .PopulationContent_distributions__mIhCZ {
+    grid-template-columns: 1fr;
+  }
+  .PopulationContent_populationContent__lf_Z1 .PopulationContent_settlement__LKJna .PopulationContent_housing___2Q5P .PopulationContent_housingTypes__OgyqT {
+    grid-template-columns: 1fr;
+  }
+  .PopulationContent_populationContent__lf_Z1 .PopulationContent_migration__HoMQh .PopulationContent_migrationInfo__34Xhb {
+    grid-template-columns: 1fr;
+  }
+}
+/*!*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[12].oneOf[9].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[12].oneOf[9].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[12].oneOf[9].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[12].oneOf[9].use[5]!./src/app/about/village/population/page.module.scss ***!
+  \*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+.page_container__w6P_c {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  display: flex;
+  gap: 2rem;
+}
+@media (max-width: 768px) {
+  .page_container__w6P_c {
+    flex-direction: column;
+    padding: 1rem;
+  }
+}
+/*!***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[12].oneOf[9].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[12].oneOf[9].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[12].oneOf[9].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[12].oneOf[9].use[5]!./src/components/common/BackButton/BackButton.module.scss ***!
+  \***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+.BackButton_backButton__n2t1O {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background-color: #2C5F2D;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+.BackButton_backButton__n2t1O:hover {
+  background-color: rgb(27.8561151079, 60.1438848921, 28.4892086331);
+  transform: translateX(-5px);
+}
+.BackButton_backButton__n2t1O svg {
+  font-size: 1.2rem;
+}

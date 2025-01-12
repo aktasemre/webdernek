@@ -1,0 +1,315 @@
+.newsPage {
+  min-height: 100vh;
+  padding: 2rem;
+  background: linear-gradient(to bottom, #f8f9fa, #e9ecef);
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .header {
+    text-align: center;
+    margin-bottom: 3rem;
+
+    h1 {
+      font-size: 2.5rem;
+      color: #2c3e50;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      color: #6c757d;
+      font-size: 1.1rem;
+    }
+  }
+
+  .filters {
+    margin-bottom: 2rem;
+
+    .searchBox {
+      position: relative;
+      margin-bottom: 1.5rem;
+
+      .searchIcon {
+        position: absolute;
+        left: 1rem;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #6c757d;
+      }
+
+      input {
+        width: 100%;
+        padding: 1rem 1rem 1rem 3rem;
+        border: 1px solid #dee2e6;
+        border-radius: 0.5rem;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+
+        &:focus {
+          outline: none;
+          border-color: #28a745;
+          box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
+        }
+      }
+    }
+
+    .categories {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+
+      .categoryButton {
+        padding: 0.5rem 1rem;
+        border: 1px solid #dee2e6;
+        border-radius: 0.25rem;
+        background: white;
+        color: #495057;
+        font-size: 0.9rem;
+        transition: all 0.3s ease;
+        cursor: pointer;
+
+        &:hover {
+          background: #e9ecef;
+        }
+
+        &.active {
+          background: #28a745;
+          color: white;
+          border-color: #28a745;
+        }
+      }
+    }
+  }
+
+  .featuredNews {
+    margin-bottom: 3rem;
+
+    .featuredCard {
+      background: white;
+      border-radius: 1rem;
+      overflow: hidden;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      margin-bottom: 2rem;
+
+      .imageContainer {
+        position: relative;
+        height: 400px;
+
+        .image {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+
+        .category {
+          position: absolute;
+          top: 1rem;
+          right: 1rem;
+          background: rgba(40, 167, 69, 0.9);
+          color: white;
+          padding: 0.5rem 1rem;
+          border-radius: 0.25rem;
+          font-size: 0.9rem;
+        }
+      }
+
+      .content {
+        padding: 2rem;
+
+        h2 {
+          font-size: 1.8rem;
+          color: #2c3e50;
+          margin-bottom: 1rem;
+        }
+
+        p {
+          color: #6c757d;
+          margin-bottom: 1.5rem;
+          line-height: 1.6;
+        }
+
+        .meta {
+          display: flex;
+          gap: 1.5rem;
+          margin-bottom: 1.5rem;
+          color: #6c757d;
+          font-size: 0.9rem;
+
+          span {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+          }
+        }
+
+        .readMore {
+          display: inline-block;
+          padding: 0.75rem 1.5rem;
+          background: #28a745;
+          color: white;
+          border-radius: 0.25rem;
+          text-decoration: none;
+          transition: all 0.3s ease;
+
+          &:hover {
+            background: #218838;
+            transform: translateY(-2px);
+          }
+        }
+      }
+    }
+  }
+
+  .newsList {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+
+    .newsCard {
+      background: white;
+      border-radius: 1rem;
+      overflow: hidden;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: translateY(-5px);
+      }
+
+      .imageContainer {
+        position: relative;
+        height: 200px;
+
+        .image {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+
+        .category {
+          position: absolute;
+          top: 1rem;
+          right: 1rem;
+          background: rgba(40, 167, 69, 0.9);
+          color: white;
+          padding: 0.5rem 1rem;
+          border-radius: 0.25rem;
+          font-size: 0.9rem;
+        }
+      }
+
+      .content {
+        padding: 1.5rem;
+
+        h3 {
+          font-size: 1.3rem;
+          color: #2c3e50;
+          margin-bottom: 1rem;
+        }
+
+        p {
+          color: #6c757d;
+          margin-bottom: 1rem;
+          line-height: 1.6;
+          display: -webkit-box;
+          -webkit-line-clamp: 3;
+          line-clamp: 3;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+        }
+
+        .meta {
+          display: flex;
+          gap: 1rem;
+          margin-bottom: 1rem;
+          color: #6c757d;
+          font-size: 0.8rem;
+
+          span {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+          }
+        }
+
+        .tags {
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+          margin-bottom: 1rem;
+          color: #6c757d;
+          font-size: 0.8rem;
+          flex-wrap: wrap;
+
+          span {
+            background: #e9ecef;
+            padding: 0.25rem 0.5rem;
+            border-radius: 0.25rem;
+          }
+        }
+
+        .readMore {
+          display: inline-block;
+          padding: 0.5rem 1rem;
+          background: #28a745;
+          color: white;
+          border-radius: 0.25rem;
+          text-decoration: none;
+          font-size: 0.9rem;
+          transition: all 0.3s ease;
+
+          &:hover {
+            background: #218838;
+          }
+        }
+      }
+    }
+  }
+
+  .noResults {
+    text-align: center;
+    padding: 3rem;
+    background: white;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+    p {
+      color: #6c757d;
+      font-size: 1.1rem;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .newsPage {
+    padding: 1rem;
+
+    .header {
+      h1 {
+        font-size: 2rem;
+      }
+    }
+
+    .featuredNews {
+      .featuredCard {
+        .imageContainer {
+          height: 300px;
+        }
+
+        .content {
+          padding: 1.5rem;
+
+          h2 {
+            font-size: 1.5rem;
+          }
+        }
+      }
+    }
+
+    .newsList {
+      grid-template-columns: 1fr;
+    }
+  }
+} 

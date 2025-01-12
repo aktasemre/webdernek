@@ -1,71 +1,44 @@
-import { FaCheckCircle, FaClock } from 'react-icons/fa';
-import Link from 'next/link';
+import React from 'react';
+import ProjectHero from '@/components/projects/ProjectHero/ProjectHero';
+import ProjectList from '@/components/projects/ProjectList/ProjectList';
+import projectsData from '@/data/projects.json';
+import styles from './page.module.scss';
 
 export const metadata = {
-  title: 'Projeler | Arslandede Köyü Derneği',
-  description: 'Arslandede Köyü Derneği projeleri. Tamamlanan ve devam eden projeler.',
-  keywords: ['projeler', 'tamamlanan projeler', 'devam eden projeler'],
+  title: 'Projeler | Arslandede Köyü',
+  description: 'Arslandede Köyü projeleri, devam eden ve tamamlanan altyapı, sosyal ve kültürel projelerimiz.',
+  keywords: ['projeler', 'köy projeleri', 'altyapı projeleri', 'sosyal projeler'],
 };
 
-const projects = [
-  {
-    id: 1,
-    title: 'Köy Okulu Renovasyonu',
-    description: 'Köy okulumuzun renovasyonu tamamlandı. Öğrencilerimiz artık daha modern ve konforlu sınıflarda eğitim görecek.',
-    status: 'completed',
-    image: '/images/projects/okul-renovasyonu.jpg',
-  },
-  {
-    id: 2,
-    title: 'Köy Meydanı Düzenlemesi',
-    description: 'Köy meydanımızın düzenleme çalışmaları devam ediyor. Peyzaj düzenlemesi ve oturma alanları ekleniyor.',
-    status: 'inProgress',
-    image: '/images/projects/meydan-duzenlemesi.jpg',
-  },
-  // Daha fazla proje eklenebilir
-];
-
-export default function ProjectsPage() {
+const ProjectsPage = () => {
   return (
-    <main className="min-h-screen p-4 md:p-8 bg-gray-50">
-      <div className="max-w-6xl mx-auto">
-        <h1 className="text-4xl font-bold text-center text-gray-800 mb-8">Projeler</h1>
-
-        <div className="grid md:grid-cols-2 gap-8">
-          {projects.map((project) => (
-            <div key={project.id} className="bg-white rounded-lg shadow-md overflow-hidden">
-              <div className="relative h-48">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="absolute inset-0 w-full h-full object-cover"
-                />
-                <div className="absolute top-0 right-0 mt-4 mr-4 px-2 py-1 bg-green-500 text-white text-sm rounded-full flex items-center">
-                  {project.status === 'completed' ? (
-                    <>
-                      <FaCheckCircle className="mr-1" />
-                      <span>Tamamlandı</span>
-                    </>
-                  ) : (
-                    <>
-                      <FaClock className="mr-1" />
-                      <span>Devam Ediyor</span>
-                    </>
-                  )}
-                </div>
+    <div className={styles.projectsPage}>
+      <ProjectHero />
+      
+      <div className={styles.container}>
+        <section className={styles.categories}>
+          <h2>Proje Kategorileri</h2>
+          <div className={styles.categoryGrid}>
+            {projectsData.categories.map((category) => (
+              <div key={category.id} className={styles.categoryCard}>
+                <h3>{category.title}</h3>
+                <ul>
+                  {category.items.map((item, index) => (
+                    <li key={index}>{item}</li>
+                  ))}
+                </ul>
               </div>
-              <div className="p-4">
-                <h2 className="text-xl font-semibold text-gray-800 mb-2">{project.title}</h2>
-                <p className="text-gray-700 mb-4">{project.description}</p>
-                <Link href={`/projects/${project.id}`} className="text-blue-600 hover:underline">
-                  Proje Detayları
-                </Link>
-              </div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
+        </section>
 
+        <section className={styles.projectsList}>
+          <h2>Tüm Projelerimiz</h2>
+          <ProjectList />
+        </section>
       </div>
-    </main>
+    </div>
   );
-} 
+};
+
+export default ProjectsPage; 

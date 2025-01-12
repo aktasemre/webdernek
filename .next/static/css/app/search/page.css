@@ -1,0 +1,112 @@
+/*!***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[12].oneOf[9].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[12].oneOf[9].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[12].oneOf[9].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[12].oneOf[9].use[5]!./src/app/search/page.module.scss ***!
+  \***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+.page_searchPage__Vdzyu {
+  min-height: 100vh;
+  padding: 2rem 1rem;
+  background-color: #f8f9fa;
+}
+.page_searchPage__Vdzyu .page_container__vjK8A {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.page_searchPage__Vdzyu .page_header__CoOSn {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+.page_searchPage__Vdzyu .page_header__CoOSn h1 {
+  font-size: 2.5rem;
+  color: #2C5F2D;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+.page_searchPage__Vdzyu .page_header__CoOSn h1 .page_icon__NbGVn {
+  font-size: 2rem;
+}
+.page_searchPage__Vdzyu .page_header__CoOSn p {
+  color: #666;
+  font-size: 1.1rem;
+}
+.page_searchPage__Vdzyu .page_loading__2chJm {
+  text-align: center;
+  padding: 2rem;
+  font-size: 1.2rem;
+  color: #666;
+}
+.page_searchPage__Vdzyu .page_noResults__FQl1f {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+.page_searchPage__Vdzyu .page_noResults__FQl1f p {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 1.5rem;
+}
+.page_searchPage__Vdzyu .page_noResults__FQl1f ul {
+  list-style: none;
+  padding: 0;
+}
+.page_searchPage__Vdzyu .page_noResults__FQl1f ul li {
+  color: #888;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+.page_searchPage__Vdzyu .page_results__rbRal {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+.page_searchPage__Vdzyu .page_results__rbRal .page_category__FJuOk h2 {
+  font-size: 1.8rem;
+  color: #2C5F2D;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #2C5F2D;
+}
+.page_searchPage__Vdzyu .page_results__rbRal .page_category__FJuOk .page_items___Gjyv {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 1.5rem;
+  gap: 1.5rem;
+}
+.page_searchPage__Vdzyu .page_results__rbRal .page_category__FJuOk .page_resultItem__bKEcW {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+.page_searchPage__Vdzyu .page_results__rbRal .page_category__FJuOk .page_resultItem__bKEcW:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.page_searchPage__Vdzyu .page_results__rbRal .page_category__FJuOk .page_resultItem__bKEcW h3 {
+  font-size: 1.3rem;
+  color: #2C5F2D;
+  margin-bottom: 0.5rem;
+}
+.page_searchPage__Vdzyu .page_results__rbRal .page_category__FJuOk .page_resultItem__bKEcW p {
+  color: #666;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .page_searchPage__Vdzyu .page_header__CoOSn h1 {
+    font-size: 2rem;
+  }
+  .page_searchPage__Vdzyu .page_results__rbRal .page_category__FJuOk h2 {
+    font-size: 1.5rem;
+  }
+  .page_searchPage__Vdzyu .page_results__rbRal .page_category__FJuOk .page_items___Gjyv {
+    grid-template-columns: 1fr;
+  }
+}

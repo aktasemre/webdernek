@@ -1,91 +1,167 @@
-import { FaCalendar, FaUser, FaTag } from 'react-icons/fa';
+'use client';
 
-export const metadata = {
-  title: 'Haberler | Arslandede Köyü Derneği',
-  description: 'Arslandede Köyü Derneği güncel haberler ve duyurular.',
-  keywords: ['haberler', 'duyurular', 'etkinlikler'],
-};
-
-const newsItems = [
-  {
-    id: 1,
-    title: 'Köy Meydanı Düzenleme Projesi Başladı',
-    date: '15 Mart 2024',
-    author: 'Dernek Yönetimi',
-    category: 'Projeler',
-    image: '/images/news/project.jpg',
-    summary: 'Köyümüzün meydanını güzelleştirmek için başlattığımız proje kapsamında çalışmalar başladı.',
-  },
-  {
-    id: 2,
-    title: 'Ramazan Ayı Yardım Kampanyası',
-    date: '10 Mart 2024',
-    author: 'Yardım Komisyonu',
-    category: 'Yardım',
-    image: '/images/news/ramadan.jpg',
-    summary: 'Ramazan ayı münasebetiyle ihtiyaç sahibi ailelerimize yardım kampanyası başlattık.',
-  },
-  // Daha fazla haber eklenebilir
-];
+import { useState } from 'react';
+import { FaSearch, FaCalendar, FaUser, FaTag } from 'react-icons/fa';
+import haberlerData from '@/data/haberler.data.json';
+import Image from 'next/image';
+import Link from 'next/link';
+import styles from './page.module.scss';
 
 export default function NewsPage() {
-  return (
-    <main className="min-h-screen p-4 md:p-8 bg-gray-50 pt-20">
-      <div className="max-w-6xl mx-auto">
-        <h1 className="text-4xl font-bold text-center text-gray-800 mb-12">Haberler</h1>
+  const [activeCategory, setActiveCategory] = useState('all');
+  const [searchQuery, setSearchQuery] = useState('');
+  const { categories, news } = haberlerData;
 
-        <div className="grid md:grid-cols-2 gap-8">
-          {newsItems.map((news) => (
-            <article
-              key={news.id}
-              className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300"
+  // Haberleri filtrele
+  const filteredNews = news.filter(item => {
+    const matchesCategory = activeCategory === 'all' || item.category === activeCategory;
+    const matchesSearch = searchQuery === '' || 
+      item.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      item.summary.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      item.tags.some(tag => tag.toLowerCase().includes(searchQuery.toLowerCase()));
+    
+    return matchesCategory && matchesSearch;
+  });
+
+  // Tarihe göre sırala (en yeni en üstte)
+  const sortedNews = [...filteredNews].sort((a, b) => 
+    new Date(b.date) - new Date(a.date)
+  );
+
+  // Tarihi formatla
+  const formatDate = (dateString) => {
+    const options = { year: 'numeric', month: 'long', day: 'numeric' };
+    return new Date(dateString).toLocaleDateString('tr-TR', options);
+  };
+
+  return (
+    <main className={styles.newsPage}>
+      <div className={styles.container}>
+        {/* Header */}
+        <div className={styles.header}>
+          <h1>Haberler</h1>
+          <p>Köyümüz ve derneğimiz ile ilgili en güncel haberler</p>
+        </div>
+
+        {/* Arama ve Filtreleme */}
+        <div className={styles.filters}>
+          <div className={styles.searchBox}>
+            <FaSearch className={styles.searchIcon} />
+            <input
+              type="text"
+              placeholder="Haberlerde ara..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+            />
+          </div>
+
+          <div className={styles.categories}>
+            <button
+              className={`${styles.categoryButton} ${activeCategory === 'all' ? styles.active : ''}`}
+              onClick={() => setActiveCategory('all')}
             >
-              <div className="aspect-w-16 aspect-h-9 bg-gray-200">
-                <img
-                  src={news.image}
-                  alt={news.title}
-                  className="object-cover w-full h-full"
-                />
-              </div>
-              <div className="p-6">
-                <h2 className="text-2xl font-semibold text-gray-800 mb-4 hover:text-blue-600 transition-colors">
-                  {news.title}
-                </h2>
-                <p className="text-gray-600 mb-4">{news.summary}</p>
-                <div className="flex flex-wrap gap-4 text-sm text-gray-500">
-                  <div className="flex items-center gap-2">
-                    <FaCalendar className="text-blue-500" />
-                    <span>{news.date}</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <FaUser className="text-blue-500" />
-                    <span>{news.author}</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <FaTag className="text-blue-500" />
-                    <span>{news.category}</span>
+              Tümü
+            </button>
+            {categories.map(category => (
+              <button
+                key={category.id}
+                className={`${styles.categoryButton} ${activeCategory === category.id ? styles.active : ''}`}
+                onClick={() => setActiveCategory(category.id)}
+              >
+                {category.title}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        {/* Öne Çıkan Haberler */}
+        {activeCategory === 'all' && searchQuery === '' && (
+          <div className={styles.featuredNews}>
+            {sortedNews.filter(item => item.featured).map(news => (
+              <div key={news.id} className={styles.featuredCard}>
+                <div className={styles.imageContainer}>
+                  <Image
+                    src={news.image}
+                    alt={news.title}
+                    width={800}
+                    height={400}
+                    className={styles.image}
+                  />
+                  <div className={styles.category}>
+                    {categories.find(cat => cat.id === news.category)?.title}
                   </div>
                 </div>
+                <div className={styles.content}>
+                  <h2>{news.title}</h2>
+                  <p>{news.summary}</p>
+                  <div className={styles.meta}>
+                    <span>
+                      <FaCalendar />
+                      {formatDate(news.date)}
+                    </span>
+                    <span>
+                      <FaUser />
+                      {news.author}
+                    </span>
+                  </div>
+                  <Link href={`/news/${news.id}`} className={styles.readMore}>
+                    Devamını Oku
+                  </Link>
+                </div>
               </div>
-            </article>
+            ))}
+          </div>
+        )}
+
+        {/* Haber Listesi */}
+        <div className={styles.newsList}>
+          {sortedNews.map(news => (
+            <div key={news.id} className={styles.newsCard}>
+              <div className={styles.imageContainer}>
+                <Image
+                  src={news.image}
+                  alt={news.title}
+                  width={400}
+                  height={250}
+                  className={styles.image}
+                />
+                <div className={styles.category}>
+                  {categories.find(cat => cat.id === news.category)?.title}
+                </div>
+              </div>
+              <div className={styles.content}>
+                <h3>{news.title}</h3>
+                <p>{news.summary}</p>
+                <div className={styles.meta}>
+                  <span>
+                    <FaCalendar />
+                    {formatDate(news.date)}
+                  </span>
+                  <span>
+                    <FaUser />
+                    {news.author}
+                  </span>
+                </div>
+                <div className={styles.tags}>
+                  <FaTag />
+                  {news.tags.map((tag, index) => (
+                    <span key={index}>{tag}</span>
+                  ))}
+                </div>
+                <Link href={`/news/${news.id}`} className={styles.readMore}>
+                  Devamını Oku
+                </Link>
+              </div>
+            </div>
           ))}
         </div>
 
-        {/* Sayfalama */}
-        <div className="mt-12 flex justify-center gap-2">
-          <button className="px-4 py-2 bg-white rounded-lg shadow hover:shadow-md transition-all duration-300 text-gray-700">
-            Önceki
-          </button>
-          <button className="px-4 py-2 bg-blue-600 rounded-lg shadow hover:shadow-md transition-all duration-300 text-white">
-            1
-          </button>
-          <button className="px-4 py-2 bg-white rounded-lg shadow hover:shadow-md transition-all duration-300 text-gray-700">
-            2
-          </button>
-          <button className="px-4 py-2 bg-white rounded-lg shadow hover:shadow-md transition-all duration-300 text-gray-700">
-            Sonraki
-          </button>
-        </div>
+        {/* Sonuç Bulunamadı */}
+        {sortedNews.length === 0 && (
+          <div className={styles.noResults}>
+            <p>Aradığınız kriterlere uygun haber bulunamadı.</p>
+          </div>
+        )}
       </div>
     </main>
   );

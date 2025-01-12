@@ -1,62 +1,57 @@
 .projectList {
-  padding: 4rem 0;
-  background-color: #f5f5f5;
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1rem;
+  margin-bottom: 4rem;
 }
 
 .filters {
   display: flex;
   justify-content: center;
   gap: 1rem;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
 }
 
 .filterButton {
   padding: 0.8rem 1.5rem;
-  border: 2px solid #2C5F2D;
-  border-radius: 5px;
-  background: none;
-  color: #2C5F2D;
+  border: none;
+  border-radius: 30px;
+  background: #fff;
+  color: #666;
   font-size: 1rem;
   cursor: pointer;
-  transition: all 0.3s;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 
   &:hover {
-    background-color: #2C5F2D;
-    color: white;
+    background: #27ae60;
+    color: #fff;
+    transform: translateY(-2px);
   }
 
   &.active {
-    background-color: #2C5F2D;
-    color: white;
+    background: #27ae60;
+    color: #fff;
   }
 }
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 2rem;
+  padding: 1rem;
 }
 
 @media (max-width: 768px) {
-  .projectList {
-    padding: 2rem 0;
-  }
-
   .filters {
-    flex-wrap: wrap;
-    gap: 0.5rem;
+    padding: 0 1rem;
   }
 
   .filterButton {
-    flex: 1;
-    min-width: 140px;
-    padding: 0.6rem 1rem;
+    padding: 0.6rem 1.2rem;
     font-size: 0.9rem;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    padding: 0.5rem;
   }
 } 

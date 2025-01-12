@@ -1,0 +1,137 @@
+.searchPage {
+  min-height: 100vh;
+  padding: 2rem 1rem;
+  background-color: #f8f9fa;
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .header {
+    text-align: center;
+    margin-bottom: 3rem;
+
+    h1 {
+      font-size: 2.5rem;
+      color: #2C5F2D;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+
+      .icon {
+        font-size: 2rem;
+      }
+    }
+
+    p {
+      color: #666;
+      font-size: 1.1rem;
+    }
+  }
+
+  .loading {
+    text-align: center;
+    padding: 2rem;
+    font-size: 1.2rem;
+    color: #666;
+  }
+
+  .noResults {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+
+    p {
+      font-size: 1.2rem;
+      color: #666;
+      margin-bottom: 1.5rem;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+
+      li {
+        color: #888;
+        margin-bottom: 0.5rem;
+        font-size: 1.1rem;
+      }
+    }
+  }
+
+  .results {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+
+    .category {
+      h2 {
+        font-size: 1.8rem;
+        color: #2C5F2D;
+        margin-bottom: 1.5rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 2px solid #2C5F2D;
+      }
+
+      .items {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1.5rem;
+      }
+
+      .resultItem {
+        background: white;
+        padding: 1.5rem;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        text-decoration: none;
+        transition: all 0.3s ease;
+
+        &:hover {
+          transform: translateY(-3px);
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        h3 {
+          font-size: 1.3rem;
+          color: #2C5F2D;
+          margin-bottom: 0.5rem;
+        }
+
+        p {
+          color: #666;
+          line-height: 1.6;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .searchPage {
+    .header {
+      h1 {
+        font-size: 2rem;
+      }
+    }
+
+    .results {
+      .category {
+        h2 {
+          font-size: 1.5rem;
+        }
+
+        .items {
+          grid-template-columns: 1fr;
+        }
+      }
+    }
+  }
+} 

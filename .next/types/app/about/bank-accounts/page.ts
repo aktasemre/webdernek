@@ -1,4 +1,4 @@
-// File: C:\Users\Asus\Desktop\web_sdernek\src\app\about\bank-accounts\page.jsx
+// File: C:\Users\Asus\Desktop\web_dernek\src\app\about\bank-accounts\page.jsx
 import * as entry from '../../../../../src/app/about/bank-accounts/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

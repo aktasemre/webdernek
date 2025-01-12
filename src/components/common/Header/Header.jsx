@@ -1,13 +1,18 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
+import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
-import { FaHeart, FaBars, FaTimes } from 'react-icons/fa';
+import { FaHeart, FaBars, FaTimes, FaSearch } from 'react-icons/fa';
 import styles from './Header.module.scss';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [showSearch, setShowSearch] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
+  const searchRef = useRef(null);
+  const router = useRouter();
 
   useEffect(() => {
     if (isOpen) {
@@ -21,12 +26,45 @@ const Header = () => {
     };
   }, [isOpen]);
 
+  useEffect(() => {
+    // Dışarı tıklama kontrolü
+    const handleClickOutside = (event) => {
+      if (searchRef.current && !searchRef.current.contains(event.target)) {
+        setShowSearch(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
   const closeMenu = () => {
     setIsOpen(false);
+  };
+
+  const toggleSearch = () => {
+    setShowSearch(!showSearch);
+  };
+
+  const handleSearch = (e) => {
+    e.preventDefault();
+    if (searchQuery.trim()) {
+      router.push(`/search?q=${encodeURIComponent(searchQuery.trim())}`);
+      setShowSearch(false);
+      setSearchQuery('');
+    }
+  };
+
+  const handleKeyPress = (e) => {
+    if (e.key === 'Enter') {
+      handleSearch(e);
+    }
   };
 
   return (
@@ -87,6 +125,36 @@ const Header = () => {
             <Link href="/projects" className={styles.menuItem} onClick={closeMenu}>Projeler</Link>
             <Link href="/news" className={styles.menuItem} onClick={closeMenu}>Haberler</Link>
             <Link href="/contact" className={styles.menuItem} onClick={closeMenu}>İletişim</Link>
+
+            <div className={styles.searchContainer} ref={searchRef}>
+              <button 
+                className={styles.searchButton} 
+                onClick={toggleSearch}
+                aria-label="Arama"
+              >
+                <FaSearch />
+              </button>
+              {showSearch && (
+                <div className={styles.searchBox}>
+                  <input
+                    type="text"
+                    placeholder="Site içinde arama yapın..."
+                    className={styles.searchInput}
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                    onKeyPress={handleKeyPress}
+                    autoFocus
+                  />
+                  <button 
+                    className={styles.searchSubmit}
+                    onClick={handleSearch}
+                    aria-label="Ara"
+                  >
+                    <FaSearch />
+                  </button>
+                </div>
+              )}
+            </div>
 
             <Link href="/donate" className={styles.donateButton} onClick={closeMenu}>
               <FaHeart /> Bağış Yap

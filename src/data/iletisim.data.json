@@ -1,0 +1,29 @@
+{
+  "phone": {
+    "president": "+90 555 123 4567",
+    "muhtar": "+90 555 765 4321"
+  },
+  "email": "arslandededernegi@gmail.com",
+  "address": {
+    "dernek": {
+      "title": "Dernek Merkezi",
+      "text": "Bayburt Arslandede Köyü Derneği, Kirazlı Mescit Mahallesi, Esenler/İSTANBUL",
+      "maps": "https://maps.app.goo.gl/3xjc7HecEZvKYhCe9"
+    },
+    "koy": {
+      "title": "Arslandede Köyü",
+      "text": "Arslandede Köyü, Merkez/BAYBURT",
+      "maps": "https://maps.app.goo.gl/iVDUq82MQZbeW9h3A"
+    }
+  },
+  "social": {
+    "whatsapp": "https://wa.me/905551234567",
+    "facebook": "https://facebook.com/arslandededernegi",
+    "twitter": "https://twitter.com/arslandededernegi",
+    "instagram": "https://instagram.com/arslandededernegi",
+    "youtube": "https://youtube.com/@arslandededernegi"
+  },
+  "forms": {
+    "professionInventory": "https://forms.gle/apMoxADc2iusKKEP8"
+  }
+} 

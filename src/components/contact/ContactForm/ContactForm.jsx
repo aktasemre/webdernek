@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { FaPaperPlane, FaCheck, FaExclamationTriangle } from 'react-icons/fa';
 import styles from './ContactForm.module.scss';
 
 const ContactForm = () => {
@@ -11,10 +12,37 @@ const ContactForm = () => {
     message: ''
   });
 
-  const handleSubmit = (e) => {
+  const [status, setStatus] = useState({
+    type: null, // 'success' veya 'error'
+    message: ''
+  });
+
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Form gönderme işlemi burada yapılacak
-    console.log('Form data:', formData);
+    setIsSubmitting(true);
+    setStatus({ type: null, message: '' });
+
+    try {
+      // Form gönderme işlemi burada yapılacak
+      // Örnek olarak bir gecikme ekliyoruz
+      await new Promise(resolve => setTimeout(resolve, 1000));
+
+      // Başarılı sonuç
+      setStatus({
+        type: 'success',
+        message: 'Mesajınız başarıyla gönderildi. En kısa sürede size dönüş yapacağız.'
+      });
+      setFormData({ name: '', email: '', subject: '', message: '' });
+    } catch (error) {
+      setStatus({
+        type: 'error',
+        message: 'Mesajınız gönderilemedi. Lütfen daha sonra tekrar deneyin.'
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e) => {
@@ -41,6 +69,8 @@ const ContactForm = () => {
               value={formData.name}
               onChange={handleChange}
               required
+              disabled={isSubmitting}
+              placeholder="Adınız ve soyadınız"
             />
           </div>
 
@@ -53,6 +83,8 @@ const ContactForm = () => {
               value={formData.email}
               onChange={handleChange}
               required
+              disabled={isSubmitting}
+              placeholder="E-posta adresiniz"
             />
           </div>
 
@@ -65,6 +97,8 @@ const ContactForm = () => {
               value={formData.subject}
               onChange={handleChange}
               required
+              disabled={isSubmitting}
+              placeholder="Mesajınızın konusu"
             />
           </div>
 
@@ -77,13 +111,34 @@ const ContactForm = () => {
               onChange={handleChange}
               rows="5"
               required
+              disabled={isSubmitting}
+              placeholder="Mesajınızı buraya yazın..."
             />
           </div>
 
-          <button type="submit" className={styles.submitButton}>
-            Gönder
+          <button 
+            type="submit" 
+            className={styles.submitButton}
+            disabled={isSubmitting}
+          >
+            <FaPaperPlane />
+            {isSubmitting ? 'Gönderiliyor...' : 'Gönder'}
           </button>
         </form>
+
+        {status.type === 'success' && (
+          <div className={styles.successMessage}>
+            <FaCheck />
+            {status.message}
+          </div>
+        )}
+
+        {status.type === 'error' && (
+          <div className={styles.errorMessage}>
+            <FaExclamationTriangle />
+            {status.message}
+          </div>
+        )}
       </div>
     </section>
   );
