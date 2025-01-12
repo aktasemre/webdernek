@@ -18,7 +18,7 @@ export const getData = <K extends DataKey>(key: K): DataValue<K> => {
     if (value === undefined || value === null) {
       console.warn(`'${String(key)}' için veri bulunamadı, boş değer döndürülüyor`);
       
-      // Veri tipine göre varsayılan değer döndür
+      // Veri tipine göre varsayılan   değer döndür
       if (isArrayKey(key)) {
         return ([] as unknown) as DataValue<K>;
       }
