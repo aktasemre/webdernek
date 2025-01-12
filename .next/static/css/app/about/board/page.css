@@ -1,0 +1,154 @@
+/*!***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[12].oneOf[9].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[12].oneOf[9].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[12].oneOf[9].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[12].oneOf[9].use[5]!./src/components/about/Board/BoardContent.module.scss ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+.BoardContent_boardContent__b8UOX h1 {
+  color: #2C5F2D;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.BoardContent_introduction__t6C_Z {
+  background-color: #f9f9f9;
+  padding: 2rem;
+  border-radius: 10px;
+  margin-bottom: 3rem;
+}
+.BoardContent_introduction__t6C_Z p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #444;
+  text-align: center;
+}
+
+.BoardContent_membersGrid__QiZ3U {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 2rem;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.BoardContent_memberCard__SOlSq {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+.BoardContent_memberCard__SOlSq:hover {
+  transform: translateY(-5px);
+}
+
+.BoardContent_imageContainer__lRI3w {
+  width: 100%;
+  height: 300px;
+  position: relative;
+  overflow: hidden;
+}
+.BoardContent_imageContainer__lRI3w img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+.BoardContent_imageContainer__lRI3w:hover img {
+  transform: scale(1.05);
+}
+
+.BoardContent_memberInfo__Dawrs {
+  padding: 1.5rem;
+}
+.BoardContent_memberInfo__Dawrs h2 {
+  color: #2C5F2D;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+.BoardContent_memberInfo__Dawrs h3 {
+  color: #666;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+.BoardContent_memberInfo__Dawrs p {
+  color: #666;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.BoardContent_contactInfo__sIUq_ {
+  border-top: 1px solid #eee;
+  padding-top: 1rem;
+}
+
+.BoardContent_contactItem__ETFb5 {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+.BoardContent_contactItem__ETFb5:last-child {
+  margin-bottom: 0;
+}
+.BoardContent_contactItem__ETFb5 .BoardContent_icon__UOdyB {
+  color: #2C5F2D;
+  margin-right: 0.5rem;
+  font-size: 1.1rem;
+}
+.BoardContent_contactItem__ETFb5 span {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.BoardContent_note__R8RcC {
+  background-color: #f9f9f9;
+  padding: 1.5rem;
+  border-radius: 10px;
+  text-align: center;
+}
+.BoardContent_note__R8RcC h3 {
+  color: #2C5F2D;
+  margin-bottom: 0.5rem;
+}
+.BoardContent_note__R8RcC p {
+  color: #666;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .BoardContent_boardContent__b8UOX h1 {
+    font-size: 2rem;
+  }
+  .BoardContent_membersGrid__QiZ3U {
+    grid-template-columns: 1fr;
+  }
+  .BoardContent_memberCard__SOlSq {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  .BoardContent_imageContainer__lRI3w {
+    height: 250px;
+  }
+}
+/*!***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[12].oneOf[9].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[12].oneOf[9].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[12].oneOf[9].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[12].oneOf[9].use[5]!./src/components/common/BackButton/BackButton.module.scss ***!
+  \***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+.BackButton_backButton__n2t1O {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background-color: #2C5F2D;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+.BackButton_backButton__n2t1O:hover {
+  background-color: rgb(27.8561151079, 60.1438848921, 28.4892086331);
+  transform: translateX(-5px);
+}
+.BackButton_backButton__n2t1O svg {
+  font-size: 1.2rem;
+}

@@ -59,15 +59,7 @@ const Header = () => {
               </div>
             </div>
 
-            <div className={styles.dropdown}>
-              <span className={styles.menuItem}>Galeri ▼</span>
-              <div className={styles.dropdownContent}>
-                <Link href="/gallery/photos" onClick={closeMenu}>Fotoğraf Galerisi</Link>
-                <Link href="/gallery/videos" onClick={closeMenu}>Video Galerisi</Link>
-                <Link href="/gallery/historical" onClick={closeMenu}>Tarihi Fotoğraflar</Link>
-              </div>
-            </div>
-
+            <Link href="/gallery" className={styles.menuItem} onClick={closeMenu}>Galeri</Link>
             <Link href="/projects" className={styles.menuItem} onClick={closeMenu}>Projeler</Link>
             <Link href="/news" className={styles.menuItem} onClick={closeMenu}>Haberler</Link>
             <Link href="/contact" className={styles.menuItem} onClick={closeMenu}>İletişim</Link>

@@ -1,1 +1,19 @@
-{}
+{
+  "/not-found": "app/not-found.js",
+  "/page": "app/page.js",
+  "/about/village/places/page": "app/about/village/places/page.js",
+  "/gallery/photos/page": "app/gallery/photos/page.js",
+  "/about/village/geography/page": "app/about/village/geography/page.js",
+  "/about/village/page": "app/about/village/page.js",
+  "/about/village/history/page": "app/about/village/history/page.js",
+  "/about/village/economy/page": "app/about/village/economy/page.js",
+  "/about/members/page": "app/about/members/page.js",
+  "/about/founders/page": "app/about/founders/page.js",
+  "/about/statute/page": "app/about/statute/page.js",
+  "/about/board/page": "app/about/board/page.js",
+  "/about/history/page": "app/about/history/page.js",
+  "/gallery/page": "app/gallery/page.js",
+  "/projects/page": "app/projects/page.js",
+  "/contact/page": "app/contact/page.js",
+  "/news/page": "app/news/page.js"
+}
