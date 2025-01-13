@@ -1,4 +1,5 @@
 import { FaWhatsapp, FaPhone, FaEnvelope, FaMapMarkerAlt, FaFacebook, FaTwitter, FaInstagram, FaYoutube, FaClipboardList } from 'react-icons/fa';
+import MapButtons from '@/components/common/MapButtons/MapButtons';
 import iletisimData from '@/data/iletisim.data.json';
 import styles from './page.module.scss';
 
@@ -88,14 +89,7 @@ export default function ContactPage() {
                     referrerPolicy="no-referrer-when-downgrade"
                   />
                 </div>
-                <a 
-                  href={address.koy.maps} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className={styles.mapsLink}
-                >
-                  Google Maps'te Aç
-                </a>
+                <MapButtons address={address.koy.text} />
               </div>
 
               {/* Dernek Adresi */}
@@ -116,14 +110,7 @@ export default function ContactPage() {
                     referrerPolicy="no-referrer-when-downgrade"
                   />
                 </div>
-                <a 
-                  href={address.dernek.maps} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className={styles.mapsLink}
-                >
-                  Google Maps'te Aç
-                </a>
+                <MapButtons address={address.dernek.text} />
               </div>
             </div>
           </div>

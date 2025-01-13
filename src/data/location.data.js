@@ -12,17 +12,17 @@ export const locationData = {
     {
       direction: "Batı",
       name: "Karşıgeçit (Milehi) Köyü",
-      distance: "4 km"
+      distance: "5 km"
     },
     {
       direction: "Doğu",
       name: "Çakırbağ (Abusta) Köyü",
-      distance: "6 km"
+      distance: "3 km"
     },
     {
       direction: "Güney",
       name: "Yanıkçam (Muşerek) Köyü",
-      distance: "5 km"
+      distance: "4 km"
     }
   ],
   transportation: {

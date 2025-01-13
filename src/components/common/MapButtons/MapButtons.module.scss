@@ -1,0 +1,38 @@
+.mapButtons {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+
+  .mapButton {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    background: #e53e3e;
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+
+    &:hover {
+      background: #c53030;
+    }
+
+    svg {
+      font-size: 1.2rem;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .mapButtons {
+    flex-direction: column;
+    
+    .mapButton {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+} 
