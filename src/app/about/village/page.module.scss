@@ -1,12 +1,100 @@
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem;
-  display: flex;
-  gap: 2rem;
+.villagePage {
+  padding: 2rem 0;
+  min-height: calc(100vh - 200px);
+  background-color: #f8f9fa;
 
-  @media (max-width: 768px) {
-    flex-direction: column;
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+
+  .locationSection {
+    background: white;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+
+    h2 {
+      color: #2C5F2D;
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .locationDetails {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+
+      @media (min-width: 768px) {
+        grid-template-columns: 1.5fr 1fr;
+      }
+    }
+
+    .mapContainer {
+      width: 100%;
+      height: 450px;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .locationInfo {
+      .infoItem {
+        margin-bottom: 1.5rem;
+
+        h3 {
+          color: #2C5F2D;
+          font-size: 1.2rem;
+          margin-bottom: 0.5rem;
+        }
+
+        p {
+          color: #666;
+          line-height: 1.6;
+        }
+
+        ul {
+          list-style: none;
+          padding: 0;
+
+          li {
+            color: #666;
+            margin-bottom: 0.5rem;
+            
+            strong {
+              color: #333;
+              margin-right: 0.5rem;
+            }
+          }
+        }
+
+        a {
+          color: #2C5F2D;
+          text-decoration: none;
+          transition: color 0.3s ease;
+
+          &:hover {
+            color: darken(#2C5F2D, 10%);
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .villagePage {
     padding: 1rem;
+
+    .locationSection {
+      padding: 1rem;
+
+      .mapContainer {
+        height: 300px;
+      }
+    }
   }
 } 

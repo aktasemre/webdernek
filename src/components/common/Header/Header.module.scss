@@ -133,7 +133,7 @@
       }
     }
 
-    .donateButton {
+    .surveyButton {
       display: flex;
       align-items: center;
       gap: 0.5rem;
@@ -148,6 +148,10 @@
       &:hover {
         background-color: darken(#2C5F2D, 10%);
         transform: translateY(-2px);
+      }
+
+      svg {
+        font-size: 1.1rem;
       }
     }
 
@@ -265,7 +269,7 @@
         }
       }
 
-      .donateButton {
+      .surveyButton {
         width: 100%;
         justify-content: center;
         margin-top: 1rem;

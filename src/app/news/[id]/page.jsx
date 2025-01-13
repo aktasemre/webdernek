@@ -1,126 +1,82 @@
-'use client';
-
-import { useParams } from 'next/navigation';
-import { FaCalendar, FaUser, FaTag, FaArrowLeft } from 'react-icons/fa';
-import haberlerData from '@/data/haberler.data.json';
+import { notFound } from 'next/navigation';
 import Image from 'next/image';
-import Link from 'next/link';
 import styles from './page.module.scss';
+import haberlerData from '@/data/haberler.data.json';
 
-export default function NewsDetailPage() {
-  const params = useParams();
-  const { news, categories } = haberlerData;
-  const newsItem = news.find(item => item.id === params.id);
+export async function generateMetadata({ params }) {
+  const haber = haberlerData.haberler.find(
+    (h) => h.id.toString() === params.id
+  );
 
-  if (!newsItem) {
-    return (
-      <div className={styles.notFound}>
-        <h1>Haber Bulunamadı</h1>
-        <p>Aradığınız haber bulunamadı veya kaldırılmış olabilir.</p>
-        <Link href="/news" className={styles.backButton}>
-          <FaArrowLeft />
-          Haberlere Dön
-        </Link>
-      </div>
-    );
+  if (!haber) {
+    return {
+      title: 'Haber Bulunamadı',
+      description: 'Aradığınız haber bulunamadı.'
+    };
   }
 
-  // Tarihi formatla
-  const formatDate = (dateString) => {
-    const options = { year: 'numeric', month: 'long', day: 'numeric' };
-    return new Date(dateString).toLocaleDateString('tr-TR', options);
+  return {
+    title: `${haber.title} | Arslandede Köyü Derneği`,
+    description: haber.summary,
+    openGraph: {
+      title: haber.title,
+      description: haber.summary,
+      images: [{ url: haber.image }],
+    },
   };
+}
+
+export async function generateStaticParams() {
+  const haberler = haberlerData.haberler || [];
+  return haberler.map((haber) => ({
+    id: haber.id.toString(),
+  }));
+}
+
+export default function NewsDetail({ params }) {
+  const haber = haberlerData.haberler.find(
+    (h) => h.id.toString() === params.id
+  );
+
+  if (!haber) {
+    notFound();
+  }
 
   return (
-    <main className={styles.newsDetail}>
+    <article className={styles.newsDetail}>
       <div className={styles.container}>
-        {/* Geri Dön Butonu */}
-        <Link href="/news" className={styles.backButton}>
-          <FaArrowLeft />
-          Haberlere Dön
-        </Link>
-
-        {/* Haber Başlığı */}
-        <div className={styles.header}>
-          <h1>{newsItem.title}</h1>
-          <div className={styles.meta}>
-            <span>
-              <FaCalendar />
-              {formatDate(newsItem.date)}
-            </span>
-            <span>
-              <FaUser />
-              {newsItem.author}
-            </span>
-            <span className={styles.category}>
-              {categories.find(cat => cat.id === newsItem.category)?.title}
-            </span>
+        {haber.image && (
+          <div className={styles.imageContainer}>
+            <Image
+              src={haber.image}
+              alt={haber.title}
+              width={800}
+              height={400}
+              className={styles.image}
+            />
           </div>
+        )}
+        
+        <h1>{haber.title}</h1>
+        
+        <div className={styles.meta}>
+          <time dateTime={haber.date}>
+            {new Date(haber.date).toLocaleDateString('tr-TR')}
+          </time>
+          <span className={styles.category}>{haber.category}</span>
+          {haber.author && <span className={styles.author}>{haber.author}</span>}
         </div>
 
-        {/* Haber Görseli */}
-        <div className={styles.imageContainer}>
-          <Image
-            src={newsItem.image}
-            alt={newsItem.title}
-            width={1200}
-            height={600}
-            className={styles.image}
-          />
-        </div>
-
-        {/* Haber İçeriği */}
-        <div className={styles.content}>
-          <div dangerouslySetInnerHTML={{ __html: newsItem.content }} />
-        </div>
-
-        {/* Etiketler */}
-        <div className={styles.tags}>
-          <FaTag />
-          <div className={styles.tagList}>
-            {newsItem.tags.map((tag, index) => (
-              <span key={index} className={styles.tag}>
-                {tag}
-              </span>
+        <div className={styles.content} dangerouslySetInnerHTML={{ __html: haber.content }} />
+        
+        {haber.tags && haber.tags.length > 0 && (
+          <div className={styles.tags}>
+            {haber.tags.map((tag) => (
+              <span key={tag} className={styles.tag}>#{tag}</span>
             ))}
           </div>
-        </div>
-
-        {/* İlgili Haberler */}
-        <div className={styles.relatedNews}>
-          <h2>İlgili Haberler</h2>
-          <div className={styles.relatedGrid}>
-            {news
-              .filter(item => 
-                item.id !== newsItem.id && 
-                (item.category === newsItem.category || 
-                item.tags.some(tag => newsItem.tags.includes(tag)))
-              )
-              .slice(0, 3)
-              .map(item => (
-                <Link href={`/news/${item.id}`} key={item.id} className={styles.relatedCard}>
-                  <div className={styles.relatedImage}>
-                    <Image
-                      src={item.image}
-                      alt={item.title}
-                      width={400}
-                      height={250}
-                      className={styles.image}
-                    />
-                  </div>
-                  <div className={styles.relatedContent}>
-                    <h3>{item.title}</h3>
-                    <p>{item.summary}</p>
-                    <span className={styles.date}>
-                      <FaCalendar />
-                      {formatDate(item.date)}
-                    </span>
-                  </div>
-                </Link>
-              ))}
-          </div>
-        </div>
+        )}
       </div>
-    </main>
+    </article>
   );
 } 

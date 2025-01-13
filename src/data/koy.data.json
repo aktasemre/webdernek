@@ -1,0 +1,24 @@
+{
+  "konum": {
+    "koordinatlar": {
+      "maps_link": "https://maps.app.goo.gl/Nm23fknSH1H5wLQt7",
+      "lat": "40.2603",
+      "long": "40.4736"
+    },
+    "merkez_uzaklik": "30 km",
+    "komsu_yerlesimler": {
+      "kuzey": {
+        "isim": "Yazyurdu (Çakmas) Köyü"
+      },
+      "guney": {
+        "isim": "Çakırbağ (Abusta) Köyü"
+      },
+      "dogu": {
+        "isim": "Yanıkçam (Miserek) Köyü"
+      },
+      "bati": {
+        "isim": "Karşıgeçit (Milehi) Köyü"
+      }
+    }
+  }
+} 

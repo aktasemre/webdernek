@@ -1,19 +1,36 @@
+'use client';
+
 import Link from 'next/link';
 import { FaFacebook, FaTwitter, FaInstagram, FaYoutube, FaWhatsapp } from 'react-icons/fa';
 import styles from './Footer.module.scss';
+import iletisimData from '@/data/iletisim.data.json';
 
 const Footer = () => {
+  const socialIcons = {
+    facebook: FaFacebook,
+    twitter: FaTwitter,
+    instagram: FaInstagram,
+    youtube: FaYoutube,
+    whatsapp: FaWhatsapp
+  };
+
   return (
     <footer className={styles.footer}>
       <div className={styles.container}>
         <div className={styles.content}>
           <div className={styles.section}>
-            <h3>İletişim</h3>
-            <p>Arslandede Köyü, Bayburt</p>
-            <p>Tel: +90 xxx xxx xx xx</p>
-            <p>Email: info@arslandededernegi.org</p>
+            <h3>Dernek İletişim</h3>
+            <p>{iletisimData.address.dernek.text}</p>
+            <p>Tel: {iletisimData.phone.president}</p>
+            <p>Email: {iletisimData.email}</p>
           </div>
           
+          <div className={styles.section}>
+            <h3>Köy İletişim</h3>
+            <p>{iletisimData.address.koy.text}</p>
+            <p>Muhtar: {iletisimData.phone.muhtar}</p>
+          </div>
+
           <div className={styles.section}>
             <h3>Hızlı Bağlantılar</h3>
             <ul>
@@ -27,21 +44,14 @@ const Footer = () => {
           <div className={styles.section}>
             <h3>Sosyal Medya</h3>
             <div className={styles.socialIcons}>
-              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
-                <FaFacebook />
-              </a>
-              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-                <FaTwitter />
-              </a>
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
-                <FaInstagram />
-              </a>
-              <a href="https://youtube.com" target="_blank" rel="noopener noreferrer">
-                <FaYoutube />
-              </a>
-              <a href="https://wa.me/yourphonenumber" target="_blank" rel="noopener noreferrer">
-                <FaWhatsapp />
-              </a>
+              {Object.entries(iletisimData.social).map(([platform, url]) => {
+                const Icon = socialIcons[platform];
+                return (
+                  <a key={platform} href={url} target="_blank" rel="noopener noreferrer">
+                    <Icon />
+                  </a>
+                );
+              })}
             </div>
           </div>
         </div>

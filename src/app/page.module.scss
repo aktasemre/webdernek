@@ -1,22 +1,22 @@
 .main {
   min-height: 100vh;
-  width: 100%;
-}
+  background: #f8f9fa;
 
-.contentWrapper {
-  display: flex;
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 2rem 1rem;
-  gap: 2rem;
+  .contentWrapper {
+    display: flex;
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
 
-  .sideMenuContainer {
-    width: 300px;
-    flex-shrink: 0;
-  }
+    .sideMenuContainer {
+      width: 250px;
+      flex-shrink: 0;
+    }
 
-  .mainContent {
-    flex: 1;
+    .mainContent {
+      flex-grow: 1;
+    }
   }
 }
 
@@ -27,129 +27,205 @@
 }
 
 .features {
-  padding: 5rem 0;
-  background-color: #f8f9fa;
+  padding: 4rem 0;
+  background: white;
+  border-radius: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
 
   h2 {
     text-align: center;
-    font-size: 2.5rem;
+    font-size: 2rem;
+    color: #2c3e50;
     margin-bottom: 3rem;
-    color: #333;
   }
 
   .featureGrid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
-  }
 
-  .featureCard {
-    background-color: white;
-    padding: 2rem;
-    border-radius: 10px;
-    text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+    .featureCard {
+      text-align: center;
+      padding: 2rem;
+      background: #f8f9fa;
+      border-radius: 0.5rem;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      color: #2c3e50;
 
-    &:hover {
-      transform: translateY(-5px);
-    }
+      &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
 
-    .icon {
-      font-size: 2.5rem;
-      color: #2C5F2D;
-      margin-bottom: 1rem;
-    }
+      .icon {
+        font-size: 2.5rem;
+        color: #28a745;
+        margin-bottom: 1rem;
+      }
 
-    h3 {
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-      color: #333;
-    }
+      h3 {
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+      }
 
-    p {
-      color: #666;
-      line-height: 1.6;
+      p {
+        color: #6c757d;
+        font-size: 0.9rem;
+      }
     }
   }
 }
 
 .about {
-  padding: 5rem 0;
+  padding: 4rem 0;
+  background: white;
+  border-radius: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
 
   .aboutContent {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 4rem;
+    gap: 3rem;
     align-items: center;
-  }
 
-  .aboutText {
-    h2 {
-      font-size: 2.5rem;
+    .aboutText {
+      h2 {
+        font-size: 2rem;
+        color: #2c3e50;
+        margin-bottom: 1.5rem;
+      }
+
+      p {
+        color: #6c757d;
+        line-height: 1.6;
+        margin-bottom: 2rem;
+      }
+
+      .aboutButton {
+        display: inline-block;
+        padding: 0.75rem 1.5rem;
+        background: #28a745;
+        color: white;
+        text-decoration: none;
+        border-radius: 0.5rem;
+        transition: all 0.3s ease;
+
+        &:hover {
+          background: #218838;
+          transform: translateY(-2px);
+        }
+      }
+    }
+
+    .aboutImage {
+      border-radius: 1rem;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+  }
+}
+
+.professionSurvey {
+  padding: 4rem 0;
+  background: white;
+  border-radius: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+
+  .surveyContent {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+
+    .surveyIcon {
+      font-size: 3rem;
+      color: #28a745;
       margin-bottom: 1.5rem;
-      color: #333;
+    }
+
+    h2 {
+      font-size: 2rem;
+      color: #2c3e50;
+      margin-bottom: 1rem;
     }
 
     p {
-      color: #666;
-      line-height: 1.8;
+      color: #6c757d;
       margin-bottom: 2rem;
+      line-height: 1.6;
     }
 
-    .aboutButton {
+    .surveyButton {
       display: inline-block;
-      padding: 0.8rem 1.5rem;
-      background-color: #2C5F2D;
+      padding: 1rem 2rem;
+      background: #28a745;
       color: white;
       text-decoration: none;
-      border-radius: 5px;
+      border-radius: 0.5rem;
       font-weight: 600;
       transition: all 0.3s ease;
 
       &:hover {
-        background-color: darken(#2C5F2D, 10%);
+        background: #218838;
+        transform: translateY(-2px);
       }
     }
   }
-
-  .aboutImage {
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
 }
 
-.cta {
-  padding: 5rem 0;
-  background-color: #2C5F2D;
-  color: white;
-  text-align: center;
+.contact {
+  padding: 4rem 0;
+  background: white;
+  border-radius: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 
-  h2 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-  }
+  .contactGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
 
-  p {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
-    opacity: 0.9;
-  }
+    .contactCard {
+      padding: 2rem;
+      background: #f8f9fa;
+      border-radius: 0.5rem;
+      text-align: center;
 
-  .ctaButton {
-    display: inline-block;
-    padding: 1rem 2rem;
-    background-color: white;
-    color: #2C5F2D;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: 600;
-    transition: all 0.3s ease;
+      h3 {
+        font-size: 1.2rem;
+        color: #2c3e50;
+        margin-bottom: 1rem;
+      }
 
-    &:hover {
-      background-color: darken(white, 10%);
-      transform: translateY(-2px);
+      p {
+        color: #6c757d;
+        margin-bottom: 0.5rem;
+      }
+
+      .socialLinks {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+
+        .socialLink {
+          display: inline-block;
+          padding: 0.5rem 1rem;
+          background: #28a745;
+          color: white;
+          text-decoration: none;
+          border-radius: 0.25rem;
+          font-size: 0.9rem;
+          transition: all 0.3s ease;
+
+          &:hover {
+            background: #218838;
+            transform: translateY(-2px);
+          }
+        }
+      }
     }
   }
 }
@@ -157,6 +233,7 @@
 @media (max-width: 768px) {
   .contentWrapper {
     flex-direction: column;
+    padding: 1rem;
 
     .sideMenuContainer {
       width: 100%;
@@ -167,10 +244,26 @@
     .aboutContent {
       grid-template-columns: 1fr;
       gap: 2rem;
-    }
 
-    .aboutText {
-      text-align: center;
+      .aboutText {
+        order: 2;
+      }
+
+      .aboutImage {
+        order: 1;
+      }
+    }
+  }
+
+  .features {
+    .featureGrid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .contact {
+    .contactGrid {
+      grid-template-columns: 1fr;
     }
   }
 } 

@@ -3,88 +3,54 @@
     {
       "id": "dernek",
       "title": "Dernek Haberleri",
-      "description": "Derneğimizin faaliyetleri ve duyuruları"
+      "description": "Derneğimizle ilgili güncel haberler"
     },
     {
       "id": "koy",
       "title": "Köy Haberleri",
-      "description": "Köyümüzden güncel haberler"
+      "description": "Köyümüzle ilgili güncel haberler"
     },
     {
       "id": "duyuru",
       "title": "Duyurular",
       "description": "Önemli duyurular ve bilgilendirmeler"
-    },
-    {
-      "id": "etkinlik",
-      "title": "Etkinlikler",
-      "description": "Düzenlenen ve planlanan etkinlikler"
-    },
-    {
-      "id": "proje",
-      "title": "Projeler",
-      "description": "Devam eden ve tamamlanan projeler"
     }
   ],
-  "news": [
+  "haberler": [
     {
       "id": 1,
-      "title": "Derneğimizin Yeni Merkezi Açıldı",
-      "summary": "Bayburt Arslandede Köyü Derneğimizin İstanbul Esenler'deki yeni merkezi düzenlenen törenle açıldı.",
-      "content": "Derneğimizin yeni hizmet binası, üyelerimizin ve hayırseverlerin katkılarıyla Esenler'de hizmete açıldı. Açılış törenine çok sayıda köylümüz ve protokol üyeleri katıldı.",
-      "image": "/images/news/dernek-merkezi.jpg",
+      "title": "Derneğimizin Yeni Web Sitesi Yayında",
+      "summary": "Derneğimizin yeni web sitesi modern bir tasarımla yayına başladı.",
+      "content": "<p>Derneğimizin yeni web sitesi, modern tasarımı ve kullanıcı dostu arayüzüyle yayına başladı. Sitemizde dernek faaliyetlerimiz, köyümüz hakkında bilgiler ve güncel haberler yer alacak.</p><p>Yeni sitemizde:</p><ul><li>Köyümüz hakkında detaylı bilgiler</li><li>Dernek faaliyetlerimiz</li><li>Projelerimiz</li><li>Duyurularımız</li><li>Galeri</li></ul><p>gibi bölümler bulunmaktadır.</p>",
+      "image": "/images/news/website-launch.jpg",
       "category": "dernek",
       "date": "2024-01-15",
-      "author": "Dernek Yönetimi",
-      "tags": ["dernek", "açılış", "istanbul", "esenler"],
+      "author": "Yönetim Kurulu",
+      "tags": ["dernek", "website", "duyuru"],
       "featured": true
     },
     {
       "id": 2,
       "title": "Köyümüzde Altyapı Çalışmaları Başladı",
-      "summary": "Köyümüzün içme suyu ve kanalizasyon altyapısının yenilenmesi çalışmaları başladı.",
-      "content": "Bayburt Belediyesi ile yapılan görüşmeler sonucunda köyümüzün altyapı sorunlarının çözümü için çalışmalar başlatıldı. Proje kapsamında içme suyu şebekesi yenilenecek ve modern bir kanalizasyon sistemi kurulacak.",
+      "summary": "Köyümüzde yeni altyapı çalışmaları başlatıldı.",
+      "content": "<p>Köyümüzde uzun süredir planlanan altyapı çalışmaları nihayet başladı. Bu kapsamda:</p><ul><li>İçme suyu şebekesi yenilenecek</li><li>Kanalizasyon sistemi modernize edilecek</li><li>Yollar yenilenecek</li></ul><p>Çalışmaların 3 ay içinde tamamlanması planlanıyor.</p>",
       "image": "/images/news/altyapi.jpg",
       "category": "koy",
       "date": "2024-01-10",
       "author": "Köy Muhtarlığı",
-      "tags": ["altyapı", "içme suyu", "kanalizasyon"],
+      "tags": ["köy", "altyapı", "gelişim"],
       "featured": true
     },
     {
       "id": 3,
-      "title": "Geleneksel Köy Pikniğimiz Düzenlenecek",
-      "summary": "Her yıl düzenlediğimiz geleneksel köy pikniğimiz bu yıl 15 Temmuz'da yapılacak.",
-      "content": "Köyümüzün birlik ve beraberliğini pekiştiren geleneksel pikniğimiz bu yıl da renkli etkinliklerle gerçekleştirilecek. Piknikte çocuklar için oyun alanları, yöresel yemekler ve çeşitli yarışmalar olacak.",
+      "title": "Geleneksel Köy Pikniğimiz Yaklaşıyor",
+      "summary": "Her yıl düzenlediğimiz geleneksel köy pikniğimizin tarihi belli oldu.",
+      "content": "<p>Geleneksel köy pikniğimiz bu yıl 15 Temmuz 2024 tarihinde düzenlenecek. Tüm köylülerimiz ve dernek üyelerimiz davetlidir.</p><p>Piknik programımızda:</p><ul><li>Köy yemekleri</li><li>Çocuklar için oyunlar</li><li>Müzik ve eğlence</li><li>Sohbet ve hasret giderme</li></ul><p>yer alacaktır.</p>",
       "image": "/images/news/piknik.jpg",
-      "category": "etkinlik",
+      "category": "duyuru",
       "date": "2024-01-05",
       "author": "Etkinlik Komitesi",
       "tags": ["piknik", "etkinlik", "gelenek"],
-      "featured": false
-    },
-    {
-      "id": 4,
-      "title": "Burs Başvuruları Başladı",
-      "summary": "2024-2025 eğitim yılı için burs başvuruları başladı. Son başvuru tarihi 1 Mart 2024.",
-      "content": "Derneğimiz, eğitim gören öğrencilerimize destek olmak amacıyla burs vermeye devam ediyor. Başvurular online olarak yapılabilecek. Detaylı bilgi için derneğimizle iletişime geçebilirsiniz.",
-      "image": "/images/news/burs.jpg",
-      "category": "duyuru",
-      "date": "2024-01-01",
-      "author": "Burs Komisyonu",
-      "tags": ["burs", "eğitim", "öğrenci"],
-      "featured": true
-    },
-    {
-      "id": 5,
-      "title": "Köy Konağı Projesi Onaylandı",
-      "summary": "Uzun süredir planlanan köy konağı projemiz resmi onayı aldı ve yapım çalışmaları başlıyor.",
-      "content": "Köyümüze modern bir köy konağı kazandırmak için hazırladığımız proje, ilgili kurumlardan onay aldı. İnşaat çalışmalarına ilkbaharda başlanacak ve konağın 2024 yılı sonunda tamamlanması planlanıyor.",
-      "image": "/images/news/konak.jpg",
-      "category": "proje",
-      "date": "2023-12-25",
-      "author": "Proje Koordinatörü",
-      "tags": ["köy konağı", "proje", "inşaat"],
       "featured": false
     }
   ]

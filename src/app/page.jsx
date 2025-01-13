@@ -1,9 +1,12 @@
+'use client';
+
 import Image from 'next/image';
 import Link from 'next/link';
-import { FaUsers, FaHandHoldingHeart, FaLandmark, FaNewspaper } from 'react-icons/fa';
+import { FaUsers, FaHandHoldingHeart, FaLandmark, FaNewspaper, FaClipboardList } from 'react-icons/fa';
 import styles from './page.module.scss';
-import Hero from '@/components/common/Hero/Hero';
+import Hero from '@/components/home/Hero/Hero';
 import SideMenu from '@/components/common/SideMenu/SideMenu';
+import iletisimData from '@/data/iletisim.data.json';
 
 export default function Home() {
   return (
@@ -58,7 +61,7 @@ export default function Home() {
                 </div>
                 <div className={styles.aboutImage}>
                   <Image
-                    src="/images/village.jpg"
+                    src="/images/manzara3.jpg"
                     alt="Arslandede Köyü"
                     width={500}
                     height={300}
@@ -69,14 +72,22 @@ export default function Home() {
             </div>
           </section>
 
-          {/* Call to Action Section */}
-          <section className={styles.cta}>
+          {/* Meslek Envanteri Section */}
+          <section className={styles.professionSurvey}>
             <div className={styles.container}>
-              <h2>Derneğimize Katılın</h2>
-              <p>Siz de köyümüzün gelişimine katkıda bulunmak ister misiniz?</p>
-              <Link href="/contact" className={styles.ctaButton}>
-                Bize Ulaşın
-              </Link>
+              <div className={styles.surveyContent}>
+                <FaClipboardList className={styles.surveyIcon} />
+                <h2>Meslek Envanteri</h2>
+                <p>Köyümüzün gelişimine katkıda bulunmak ve üyelerimiz arasındaki iş birliğini artırmak için meslek envanterimize katılın.</p>
+                <a 
+                  href={iletisimData.forms.professionInventory} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className={styles.surveyButton}
+                >
+                  Formu Doldurun
+                </a>
+              </div>
             </div>
           </section>
         </div>

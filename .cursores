@@ -1,299 +1,55 @@
 {
-  "version": "1.0.0",
-  "projectType": "next.js",
-  "name": "Arslandede Köyü Web Sitesi",
-  "description": "Bayburt Arslandede Köyü Derneği resmi web sitesi",
+  "project": {
+    "name": "Arslandede Köyü Derneği Web Sitesi",
+    "version": "1.0.0",
+    "type": "Next.js Web Application",
+    "description": "Bayburt Arslandede Köyü Derneği resmi web sitesi"
+  },
   "structure": {
     "pages": {
-      "home": {
-        "path": "src/app/page.jsx",
-        "description": "Ana sayfa",
-        "components": [
-          "Hero",
-          "Features",
-          "About",
-          "News",
-          "Events",
-          "CallToAction"
-        ]
-      },
+      "home": "/",
       "about": {
-        "path": "src/app/about/page.jsx",
-        "description": "Hakkımızda sayfası",
-        "subpages": {
-          "village": {
-            "path": "src/app/about/village/page.jsx",
-            "description": "Köyümüz sayfası",
-            "subpages": {
-              "history": {
-                "path": "src/app/about/village/history/page.jsx",
-                "description": "Köy tarihi"
-              },
-              "economy": {
-                "path": "src/app/about/village/economy/page.jsx",
-                "description": "Köy ekonomisi"
-              }
-            }
-          },
-          "board": {
-            "path": "src/app/about/board/page.jsx",
-            "description": "Yönetim kurulu"
-          },
-          "supervisory": {
-            "path": "src/app/about/supervisory/page.jsx",
-            "description": "Denetim kurulu"
-          },
-          "statute": {
-            "path": "src/app/about/statute/page.jsx",
-            "description": "Dernek tüzüğü"
-          }
-        }
+        "village": "/about/village/*",
+        "association": "/about/*"
       },
-      "news": {
-        "path": "src/app/news/page.jsx",
-        "description": "Haberler sayfası",
-        "components": [
-          {
-            "name": "NewsPage",
-            "features": [
-              "Haber listesi",
-              "Haber kategorileri",
-              "Haber arama",
-              "Öne çıkan haberler",
-              "Etiket sistemi"
-            ]
-          },
-          {
-            "name": "NewsDetailPage",
-            "path": "src/app/news/[id]/page.jsx",
-            "features": [
-              "Haber detayı",
-              "İlgili haberler",
-              "Etiketler",
-              "Sosyal medya paylaşımı"
-            ]
-          }
-        ],
-        "data": {
-          "file": "src/data/haberler.data.json",
-          "schema": {
-            "categories": [
-              {
-                "id": "string",
-                "title": "string",
-                "description": "string"
-              }
-            ],
-            "news": {
-              "id": "number",
-              "title": "string",
-              "summary": "string",
-              "content": "string",
-              "image": "string",
-              "category": "string",
-              "date": "string",
-              "author": "string",
-              "tags": "string[]",
-              "featured": "boolean"
-            }
-          }
-        },
-        "styles": {
-          "files": [
-            "src/app/news/page.module.scss",
-            "src/app/news/[id]/page.module.scss"
-          ],
-          "components": [
-            "newsPage",
-            "header",
-            "filters",
-            "searchBox",
-            "categories",
-            "featuredNews",
-            "newsList",
-            "newsCard",
-            "newsDetail",
-            "relatedNews"
-          ]
-        }
-      },
-      "events": {
-        "path": "src/app/events/page.jsx",
-        "description": "Etkinlikler sayfası"
-      },
-      "projects": {
-        "path": "src/app/projects/page.jsx",
-        "description": "Projeler sayfası",
-        "components": [
-          {
-            "name": "ProjectsPage",
-            "features": [
-              "Proje listesi",
-              "Proje kategorileri",
-              "Proje durumu filtreleme",
-              "Proje detayları"
-            ]
-          }
-        ],
-        "data": {
-          "file": "src/data/projeler.data.json",
-          "schema": {
-            "categories": [
-              "Altyapı Projeleri",
-              "Sosyal Projeler",
-              "Tarım ve Hayvancılık",
-              "Kültürel Projeler"
-            ],
-            "projects": {
-              "id": "number",
-              "title": "string",
-              "description": "string",
-              "category": "string",
-              "status": "string",
-              "startDate": "string",
-              "endDate": "string",
-              "budget": "number",
-              "progress": "number",
-              "features": "string[]",
-              "team": "string[]",
-              "timeline": "object[]"
-            }
-          }
-        }
-      },
-      "contact": {
-        "path": "src/app/contact/page.jsx",
-        "description": "İletişim sayfası",
-        "components": [
-          {
-            "name": "ContactPage",
-            "features": [
-              "İletişim kartları (telefon, e-posta, whatsapp)",
-              "Adres kartları (köy ve dernek konumları)",
-              "Sosyal medya bağlantıları",
-              "Meslek envanteri formu"
-            ]
-          }
-        ],
-        "data": {
-          "file": "src/data/iletisim.data.json",
-          "schema": {
-            "phone": {
-              "president": "string",
-              "muhtar": "string"
-            },
-            "email": "string",
-            "address": {
-              "dernek": {
-                "title": "string",
-                "text": "string",
-                "maps": "string"
-              },
-              "koy": {
-                "title": "string",
-                "text": "string",
-                "maps": "string"
-              }
-            },
-            "social": {
-              "whatsapp": "string",
-              "facebook": "string",
-              "twitter": "string",
-              "instagram": "string",
-              "youtube": "string"
-            },
-            "forms": {
-              "professionInventory": "string"
-            }
-          }
-        },
-        "styles": {
-          "file": "src/app/contact/page.module.scss",
-          "components": [
-            "contactPage",
-            "container",
-            "header",
-            "content",
-            "contactInfo",
-            "infoCards",
-            "addressCards",
-            "socialSection",
-            "surveySection"
-          ]
-        }
-      }
+      "news": "/news",
+      "projects": "/projects",
+      "contact": "/contact"
     },
     "components": {
-      "layout": {
-        "path": "src/components/layout",
-        "components": [
-          "Header",
-          "Footer",
-          "Navigation",
-          "SideMenu"
-        ]
-      },
-      "common": {
-        "path": "src/components/common",
-        "components": [
-          "Button",
-          "Card",
-          "Icon",
-          "Loading",
-          "Modal"
-        ]
-      }
-    },
-    "styles": {
-      "global": {
-        "path": "src/styles",
-        "files": [
-          "globals.scss",
-          "variables.scss",
-          "mixins.scss"
-        ]
-      }
-    },
-    "public": {
-      "path": "public",
-      "directories": [
-        "images",
-        "fonts",
-        "icons"
-      ]
+      "layout": ["Header", "Footer", "Navbar"],
+      "common": ["Hero", "SearchBar", "Button"],
+      "features": ["NewsSection", "ProjectList", "ContactForm"]
     }
   },
   "features": {
-    "seo": {
-      "enabled": true,
-      "components": [
-        "metadata.js",
-        "sitemap.xml",
-        "robots.txt"
-      ]
-    },
-    "responsive": {
-      "enabled": true,
-      "breakpoints": {
-        "mobile": "768px",
-        "tablet": "1024px",
-        "desktop": "1200px"
-      }
-    },
-    "authentication": {
-      "enabled": false,
-      "type": "none"
-    },
-    "imageOptimization": {
-      "enabled": true,
-      "formats": ["webp", "jpg", "png"]
-    }
+    "seo": true,
+    "responsive": true,
+    "authentication": false,
+    "imageOptimization": true
   },
   "dependencies": {
-    "next": "^14.0.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-icons": "^4.12.0",
-    "sass": "^1.69.0"
+    "framework": "Next.js 14",
+    "styling": "SCSS Modules",
+    "icons": "React Icons"
+  },
+  "testing": {
+    "framework": "Jest",
+    "coverage": {
+      "statements": 80,
+      "branches": 80,
+      "functions": 80,
+      "lines": 80
+    },
+    "setupFiles": ["jest.setup.js"],
+    "testMatch": ["**/__tests__/**/*.test.{js,jsx,ts,tsx}"]
+  },
+  "optimization": {
+    "imageLoading": "lazy",
+    "codeSplitting": true,
+    "performance": {
+      "caching": true,
+      "compression": true
+    }
   }
 } 

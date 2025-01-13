@@ -4,8 +4,9 @@ import { useState, useEffect, useRef } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
-import { FaHeart, FaBars, FaTimes, FaSearch } from 'react-icons/fa';
+import { FaClipboardList, FaBars, FaTimes, FaSearch } from 'react-icons/fa';
 import styles from './Header.module.scss';
+import iletisimData from '@/data/iletisim.data.json';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -78,6 +79,7 @@ const Header = () => {
               width={64} 
               height={64}
               className={styles.logoImage}
+              priority
             />
             <span>Arslandede Köyü Derneği</span>
           </Link>
@@ -156,9 +158,15 @@ const Header = () => {
               )}
             </div>
 
-            <Link href="/donate" className={styles.donateButton} onClick={closeMenu}>
-              <FaHeart /> Bağış Yap
-            </Link>
+            <a 
+              href={iletisimData.forms.professionInventory} 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className={styles.surveyButton} 
+              onClick={closeMenu}
+            >
+              <FaClipboardList /> Meslek Envanteri
+            </a>
           </div>
         </div>
       </nav>

@@ -1,0 +1,32 @@
+{
+  "slides": [
+    {
+      "id": 1,
+      "image": "/images/arslandede-intro.jpg",
+      "title": "Arslandede Köyü",
+      "description": "Bayburt'un cennet köşesi, doğal güzellikleri ve misafirperver insanlarıyla Arslandede Köyü",
+      "link": "/about/village"
+    },
+    {
+      "id": 2,
+      "image": "/images/cami1.jpg",
+      "title": "Derneğimizin Tarihçesi",
+      "description": "Köyümüzün gelişimi ve dayanışması için çalışan Arslandede Köyü Derneği'nin kuruluş hikayesi",
+      "link": "/about/history"
+    },
+    {
+      "id": 3,
+      "image": "/images/manzara3.jpg",
+      "title": "Projelerimiz",
+      "description": "Köyümüzün geleceği için hayata geçirdiğimiz ve planladığımız projeler",
+      "link": "/projects"
+    },
+    {
+      "id": 4,
+      "image": "/images/kis1.jpg",
+      "title": "Etkinliklerimiz",
+      "description": "Derneğimizin düzenlediği sosyal ve kültürel etkinlikler",
+      "link": "/events"
+    }
+  ]
+} 
