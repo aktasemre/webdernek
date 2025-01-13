@@ -2,6 +2,7 @@ import Image from 'next/image';
 import styles from './GeographyContent.module.scss';
 import BackButton from '@/components/common/BackButton/BackButton';
 import LocationInfo from './LocationInfo/LocationInfo';
+import VegetationInfo from './VegetationInfo/VegetationInfo';
 
 const climateData = {
   seasons: [
@@ -35,25 +36,6 @@ const climateData = {
     }
   ]
 };
-
-const vegetation = [
-  {
-    type: 'Ağaçlar',
-    species: ['Çam', 'Meşe', 'Kavak', 'Söğüt', 'Ardıç']
-  },
-  {
-    type: 'Meyve Ağaçları',
-    species: ['Elma', 'Armut', 'Erik', 'Ceviz', 'Dut']
-  },
-  {
-    type: 'Otsu Bitkiler',
-    species: ['Kekik', 'Nane', 'Papatya', 'Adaçayı', 'Isırgan']
-  },
-  {
-    type: 'Tarım Bitkileri',
-    species: ['Buğday', 'Arpa', 'Yonca', 'Patates', 'Fasulye']
-  }
-];
 
 const GeographyContent = () => {
   return (
@@ -109,32 +91,7 @@ const GeographyContent = () => {
         </div>
       </div>
 
-      <div className={styles.vegetation}>
-        <h2>Bitki Örtüsü</h2>
-        <div className={styles.vegetationContent}>
-          <div className={styles.imageContainer}>
-            <Image
-              src="/images/manzara3.jpg"
-              alt="Arslandede Köyü Bitki Örtüsü"
-              width={400}
-              height={300}
-              style={{ objectFit: "cover" }}
-            />
-          </div>
-          <div className={styles.types}>
-            {vegetation.map((type, index) => (
-              <div key={index} className={styles.typeCard}>
-                <h3>{type.type}</h3>
-                <ul>
-                  {type.species.map((species, i) => (
-                    <li key={i}>{species}</li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
+      <VegetationInfo />
 
       <div className={styles.resources}>
         <h2>Doğal Kaynaklar</h2>
