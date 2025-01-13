@@ -1,55 +1,118 @@
 {
   "project": {
     "name": "Arslandede Köyü Derneği Web Sitesi",
-    "version": "1.0.0",
     "type": "Next.js Web Application",
+    "version": "1.0.0",
     "description": "Bayburt Arslandede Köyü Derneği resmi web sitesi"
   },
   "structure": {
     "pages": {
-      "home": "/",
-      "about": {
-        "village": "/about/village/*",
-        "association": "/about/*"
+      "home": {
+        "path": "/",
+        "components": ["Hero", "Features", "News", "Projects", "Contact"],
+        "features": {
+          "slider": "Köy ve dernek faaliyetlerini gösteren tam ekran slider",
+          "quickAccess": "Meslek envanteri ve diğer önemli sayfalara hızlı erişim butonları"
+        }
       },
-      "news": "/news",
-      "projects": "/projects",
-      "contact": "/contact"
+      "about": {
+        "village": {
+          "path": "/about/village",
+          "sections": ["Tarihçe", "Coğrafya", "Nüfus", "Ekonomi", "Eğitim", "Gezilecek Yerler"],
+          "features": "Köy hakkında detaylı bilgiler ve görseller"
+        },
+        "association": {
+          "path": "/about/association",
+          "sections": ["Tarihçe", "Yönetim", "Tüzük", "Denetim"],
+          "features": "Dernek yapısı ve yönetimi hakkında bilgiler"
+        }
+      },
+      "news": {
+        "path": "/news",
+        "features": {
+          "categories": ["Dernek Haberleri", "Köy Haberleri", "Duyurular"],
+          "filtering": "Kategori bazlı filtreleme",
+          "search": "Haber içeriklerinde arama"
+        }
+      },
+      "projects": {
+        "path": "/projects",
+        "features": {
+          "status": ["Devam Eden", "Tamamlanan", "Planlanan"],
+          "filtering": "Durum bazlı filtreleme",
+          "details": "Proje detayları, bütçe ve zaman çizelgesi"
+        }
+      },
+      "contact": {
+        "path": "/contact",
+        "features": {
+          "info": "Dernek ve köy iletişim bilgileri",
+          "maps": "Dernek merkezi ve köy konumu",
+          "social": "Sosyal medya bağlantıları"
+        }
+      }
     },
     "components": {
-      "layout": ["Header", "Footer", "Navbar"],
-      "common": ["Hero", "SearchBar", "Button"],
-      "features": ["NewsSection", "ProjectList", "ContactForm"]
+      "common": ["Header", "Footer", "SearchBar", "Button"],
+      "home": ["Hero", "FeatureCard", "NewsCard", "ProjectCard"],
+      "about": ["VillageContent", "BoardMembers", "Timeline"],
+      "news": ["NewsList", "NewsDetail", "CategoryFilter"],
+      "projects": ["ProjectList", "ProjectDetail", "StatusFilter"],
+      "contact": ["ContactInfo", "SocialLinks", "Map"]
+    }
+  },
+  "data": {
+    "json": {
+      "haberler.data.json": "Haber içerikleri ve kategorileri",
+      "projeler.data.json": "Proje detayları ve durumları",
+      "iletisim.data.json": "İletişim bilgileri ve sosyal medya linkleri",
+      "koy.data.json": "Köy bilgileri ve içerikleri",
+      "slider.data.json": "Ana sayfa slider içerikleri"
     }
   },
   "features": {
-    "seo": true,
-    "responsive": true,
-    "authentication": false,
-    "imageOptimization": true
+    "seo": {
+      "metadata": "Her sayfa için özel meta etiketleri",
+      "openGraph": "Sosyal medya paylaşım meta etiketleri"
+    },
+    "responsive": {
+      "breakpoints": {
+        "mobile": "768px",
+        "tablet": "1024px",
+        "desktop": "1200px"
+      }
+    },
+    "performance": {
+      "imageOptimization": "Next.js Image komponenti ile optimizasyon",
+      "lazyLoading": "Görseller ve içerikler için lazy loading",
+      "codeSplitting": "Sayfa bazlı otomatik kod bölümleme"
+    }
   },
   "dependencies": {
-    "framework": "Next.js 14",
-    "styling": "SCSS Modules",
-    "icons": "React Icons"
+    "framework": {
+      "next": "14.x",
+      "react": "18.x"
+    },
+    "styling": {
+      "sass": "Modül bazlı SCSS kullanımı",
+      "cssModules": "Komponent bazlı stil izolasyonu"
+    },
+    "icons": "react-icons kütüphanesi",
+    "testing": {
+      "jest": "Unit testler için Jest framework",
+      "testingLibrary": "React component testleri"
+    }
   },
   "testing": {
-    "framework": "Jest",
     "coverage": {
       "statements": 80,
       "branches": 80,
       "functions": 80,
       "lines": 80
     },
-    "setupFiles": ["jest.setup.js"],
-    "testMatch": ["**/__tests__/**/*.test.{js,jsx,ts,tsx}"]
-  },
-  "optimization": {
-    "imageLoading": "lazy",
-    "codeSplitting": true,
-    "performance": {
-      "caching": true,
-      "compression": true
+    "setup": {
+      "jest.config.js": "Jest yapılandırması",
+      "jest.setup.js": "Test ortamı ayarları"
     }
   }
 } 
