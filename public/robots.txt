@@ -1,0 +1,20 @@
+# Arslandede Köyü Derneği Web Sitesi robots.txt
+
+# Allow all crawlers
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://www.arslandededernegi.org/sitemap.xml
+
+# Disallow specific paths
+Disallow: /api/
+Disallow: /_next/
+Disallow: /404
+Disallow: /500
+
+# Crawl-delay
+Crawl-delay: 10
+
+# Host
+Host: https://www.arslandededernegi.org 
