@@ -5,6 +5,11 @@
     font-size: 1.8rem;
     color: #2c3e50;
     margin-bottom: 1.5rem;
+
+    @media (max-width: 768px) {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
   }
 
   .vegetationContent {
@@ -14,6 +19,7 @@
 
     @media (max-width: 768px) {
       flex-direction: column;
+      gap: 1rem;
     }
 
     .imageContainer {
@@ -41,11 +47,8 @@
 
       @media (max-width: 768px) {
         grid-template-columns: repeat(2, 1fr);
-        gap: 1rem;
-      }
-
-      @media (max-width: 480px) {
-        grid-template-columns: 1fr;
+        gap: 0.75rem;
+        padding: 0 0.5rem;
       }
 
       .typeCard {
@@ -56,7 +59,8 @@
         transition: transform 0.3s ease;
 
         @media (max-width: 768px) {
-          padding: 1rem;
+          padding: 0.75rem;
+          margin-bottom: 0;
         }
 
         &:hover {
@@ -70,7 +74,7 @@
           font-size: 1.2rem;
 
           @media (max-width: 768px) {
-            font-size: 1rem;
+            font-size: 0.9rem;
             margin-bottom: 0.5rem;
           }
         }
@@ -90,8 +94,8 @@
             font-size: 0.9rem;
 
             @media (max-width: 768px) {
-              padding: 0.3rem;
-              margin: 0.3rem 0;
+              padding: 0.25rem;
+              margin: 0.25rem 0;
               font-size: 0.8rem;
             }
 
