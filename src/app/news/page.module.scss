@@ -69,7 +69,8 @@
           color: #666;
           margin-bottom: 1rem;
           display: -webkit-box;
-          -webkit-line-clamp: 3;
+          -webkit-line-clamp: 2;
+          line-clamp: 2;  // Standart özellik eklendi
           -webkit-box-orient: vertical;
           overflow: hidden;
         }

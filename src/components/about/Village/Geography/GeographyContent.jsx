@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import styles from './GeographyContent.module.scss';
 import BackButton from '@/components/common/BackButton/BackButton';
+import LocationInfo from './LocationInfo/LocationInfo';
 
 const climateData = {
   seasons: [
@@ -80,39 +81,7 @@ const GeographyContent = () => {
         </div>
       </div>
 
-      <div className={styles.location}>
-        <h2>Coğrafi Konum</h2>
-        <div className={styles.locationContent}>
-          <div className={styles.text}>
-            <h3>Koordinatlar</h3>
-            <p>40°22'37"N, 40°28'25"E</p>
-            
-            <h3>Komşu Yerleşimler</h3>
-            <ul>
-              <li>Kuzey: Akşar Köyü (5 km)</li>
-              <li>Güney: Yazyurdu Köyü (4 km)</li>
-              <li>Doğu: Çayıryolu Köyü (6 km)</li>
-              <li>Batı: Merkez (15 km)</li>
-            </ul>
-
-            <h3>Ulaşım</h3>
-            <p>
-              Köyümüze Bayburt merkezden asfalt yol ile ulaşılmaktadır. Düzenli
-              minibüs seferleri mevcuttur. Kışın kar yağışlı günlerde ulaşım
-              aksayabilmektedir.
-            </p>
-          </div>
-          <div className={styles.imageContainer}>
-            <Image
-              src="/images/manzara2.jpg"
-              alt="Arslandede Köyü Konumu"
-              width={400}
-              height={300}
-              style={{ objectFit: "cover" }}
-            />
-          </div>
-        </div>
-      </div>
+      <LocationInfo />
 
       <div className={styles.climate}>
         <h2>İklim Özellikleri</h2>
