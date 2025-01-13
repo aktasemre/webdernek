@@ -9,6 +9,10 @@ export const vegetationData = {
       species: ['Elma', 'Armut', 'Erik', 'Ceviz', 'Dut']
     },
     {
+      type: 'Yabani Meyve Ağaçları',
+      species: ['Ekşi Elma', 'Kuşburnu', 'İğde', 'Yaban Armutu', 'Aluç']
+    },
+    {
       type: 'Otsu Bitkiler',
       species: ['Kekik', 'Nane', 'Papatya', 'Adaçayı', 'Isırgan']
     },
