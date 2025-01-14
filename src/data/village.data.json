@@ -1,0 +1,113 @@
+{
+  "district": {
+    "title": "İlçemiz Hakkında",
+    "content": [
+      {
+        "title": "Bayburt Merkez",
+        "description": "Bayburt'un merkez ilçesi hakkında genel bilgiler...",
+        "history": "İlçenin tarihi...",
+        "geography": "Coğrafi özellikleri...",
+        "population": "Nüfus bilgileri..."
+      }
+    ]
+  },
+  "village": {
+    "title": "Köyümüz Hakkında",
+    "content": [
+      {
+        "name": "Arslandede Köyü",
+        "history": "Köyümüzün tarihi...",
+        "location": "Bayburt merkeze 15 km uzaklıkta...",
+        "population": "Güncel nüfus bilgileri...",
+        "economy": "Ekonomik faaliyetler...",
+        "climate": "İklim özellikleri..."
+      }
+    ]
+  },
+  "places": {
+    "title": "Gezilecek Yerlerimiz",
+    "locations": [
+      {
+        "name": "Yer Adı",
+        "description": "Yer hakkında açıklama",
+        "image": "/images/places/yer1.jpg",
+        "history": "Tarihi önemi..."
+      }
+    ]
+  },
+  "sale": {
+    "title": "Satılık Arsa - Bahçe - Tarla",
+    "listings": [
+      {
+        "type": "Arsa",
+        "location": "Konum bilgisi",
+        "area": "500m²",
+        "price": "Fiyat bilgisi",
+        "contact": "İletişim bilgileri"
+      }
+    ]
+  },
+  "neighborhoods": {
+    "title": "Mahallelerimiz",
+    "list": [
+      {
+        "name": "Mahalle Adı",
+        "description": "Mahalle hakkında bilgi",
+        "population": "Nüfus"
+      }
+    ]
+  },
+  "mukhtars": {
+    "title": "Muhtarlarımız",
+    "current": {
+      "name": "Mevcut Muhtar",
+      "period": "2019-2024",
+      "contact": "İletişim bilgileri"
+    },
+    "previous": [
+      {
+        "name": "Önceki Muhtar",
+        "period": "2014-2019"
+      }
+    ]
+  },
+  "events": {
+    "title": "Etkinlik Tarihleri",
+    "upcoming": [
+      {
+        "name": "Etkinlik Adı",
+        "date": "Tarih",
+        "description": "Açıklama"
+      }
+    ],
+    "past": [
+      {
+        "name": "Geçmiş Etkinlik",
+        "date": "Tarih",
+        "description": "Açıklama"
+      }
+    ]
+  },
+  "obituaries": {
+    "title": "Vefat Edenler",
+    "list": [
+      {
+        "name": "İsim",
+        "date": "Vefat Tarihi",
+        "age": "Yaş",
+        "burialPlace": "Defin Yeri"
+      }
+    ]
+  },
+  "news": {
+    "title": "Bizden Haberler",
+    "articles": [
+      {
+        "title": "Haber Başlığı",
+        "date": "Tarih",
+        "content": "Haber içeriği",
+        "image": "/images/news/haber1.jpg"
+      }
+    ]
+  }
+} 

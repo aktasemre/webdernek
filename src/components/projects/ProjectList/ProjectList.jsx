@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import ProjectCard from '@/components/projects/ProjectCard/ProjectCard';
-import projectsData from '@/data/projects.json';
+import projectsData from '@/data/projects.data.json';
 import styles from './ProjectList.module.scss';
 
 const ProjectList = () => {

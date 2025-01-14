@@ -1,5 +1,5 @@
 import ProjectDetail from '@/components/projects/ProjectDetail/ProjectDetail';
-import projectsData from '@/data/projects.json';
+import projectsData from '@/data/projects.data.json';
 
 export function generateStaticParams() {
   return projectsData.projects.map((project) => ({

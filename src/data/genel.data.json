@@ -1,0 +1,68 @@
+{
+  "contact": {
+    "phone": {
+      "president": "+905321234567",
+      "muhtar": "+905321234568"
+    },
+    "email": "info@arslandededernegi.org",
+    "address": "Arslandede Köyü, Merkez/Bayburt"
+  },
+  "social": {
+    "whatsapp": "https://wa.me/905321234567",
+    "facebook": "https://facebook.com/arslandedekoyudernegi",
+    "twitter": "https://twitter.com/arslandedekoyudernegi",
+    "instagram": "https://instagram.com/arslandedekoyudernegi",
+    "youtube": "https://youtube.com/arslandedekoyudernegi"
+  },
+  "forms": {
+    "professionInventory": "https://forms.gle/apMoxADc2iusKKEP8",
+    "membership": "https://forms.gle/membershipForm123"
+  },
+  "navigation": {
+    "mainMenu": [
+      {
+        "title": "Ana Sayfa",
+        "path": "/"
+      },
+      {
+        "title": "Köyümüz",
+        "path": "/about/village",
+        "submenu": [
+          {
+            "title": "Köyümüz Hakkında",
+            "path": "/about/village"
+          },
+          {
+            "title": "Köyümüzün Tarihi",
+            "path": "/about/village/history"
+          },
+          {
+            "title": "Coğrafi Yapı",
+            "path": "/about/village/geography"
+          },
+          {
+            "title": "Nüfus ve Yerleşim",
+            "path": "/about/village/population"
+          },
+          {
+            "title": "Ekonomik Yapı",
+            "path": "/about/village/economy"
+          },
+          {
+            "title": "Eğitim ve Kültür",
+            "path": "/about/village/education"
+          },
+          {
+            "title": "Gezilecek Yerler",
+            "path": "/about/village/places"
+          }
+        ]
+      }
+    ]
+  },
+  "seo": {
+    "defaultTitle": "Arslandede Köyü Derneği",
+    "defaultDescription": "Bayburt Arslandede Köyü Yardımlaşma ve Dayanışma Derneği resmi web sitesi",
+    "defaultKeywords": ["Arslandede Köyü", "Bayburt", "Dernek", "Köy Derneği", "Yardımlaşma", "Dayanışma"]
+  }
+} 

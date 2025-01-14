@@ -1,0 +1,71 @@
+{
+  "photos": {
+    "title": "Fotoğraf Galerisi",
+    "categories": [
+      {
+        "name": "Köy Manzaraları",
+        "images": [
+          {
+            "id": 1,
+            "title": "Fotoğraf Başlığı",
+            "description": "Fotoğraf açıklaması",
+            "url": "/images/gallery/photo1.jpg",
+            "date": "2024-01-01"
+          }
+        ]
+      }
+    ]
+  },
+  "videos": {
+    "title": "Video Galerisi",
+    "categories": [
+      {
+        "name": "Etkinlik Videoları",
+        "videos": [
+          {
+            "id": 1,
+            "title": "Video Başlığı",
+            "description": "Video açıklaması",
+            "url": "https://youtube.com/...",
+            "thumbnail": "/images/gallery/video-thumb1.jpg",
+            "date": "2024-01-01"
+          }
+        ]
+      }
+    ]
+  },
+  "historical": {
+    "title": "Tarihi Fotoğraflar",
+    "decades": [
+      {
+        "period": "1950-1960",
+        "images": [
+          {
+            "id": 1,
+            "title": "Eski Köy Meydanı",
+            "description": "1955 yılında çekilmiş fotoğraf",
+            "url": "/images/gallery/historical1.jpg",
+            "year": "1955"
+          }
+        ]
+      }
+    ]
+  },
+  "events": {
+    "title": "Etkinlik Fotoğrafları",
+    "events": [
+      {
+        "name": "Köy Şenliği 2023",
+        "date": "2023-07-15",
+        "images": [
+          {
+            "id": 1,
+            "title": "Şenlik Açılışı",
+            "description": "Açılış töreni",
+            "url": "/images/gallery/event1.jpg"
+          }
+        ]
+      }
+    ]
+  }
+} 

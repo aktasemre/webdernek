@@ -1,5 +1,6 @@
-import projectsData from '@/data/projects.json';
+import Image from 'next/image';
 import styles from './ProjectHero.module.scss';
+import projectsData from '@/data/projects.data.json';
 
 const ProjectHero = () => {
   const stats = {

@@ -1,6 +1,6 @@
 import { render, screen, fireEvent } from '@testing-library/react'
 import ProjectList from '../ProjectList'
-import projectsData from '@/data/projects.json'
+import projectsData from '@/data/projects.data.json'
 
 describe('ProjectList', () => {
   it('should render all projects initially', () => {
