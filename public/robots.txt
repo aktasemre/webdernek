@@ -4,6 +4,9 @@
 User-agent: *
 Allow: /
 
+# CSS dosyalarını taramaya izin ver
+Allow: /*.css$
+
 # Sitemap location
 Sitemap: https://www.arslandededernegi.org/sitemap.xml
 
@@ -17,4 +20,4 @@ Disallow: /500
 Crawl-delay: 10
 
 # Host
-Host: https://www.arslandededernegi.org 
+Host: https://www.arslandedekoyu.org.tr

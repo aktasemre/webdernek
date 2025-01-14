@@ -1,33 +1,32 @@
+import Head from 'next/head';
+
 export const metadata = {
   title: 'Arslandede Köyü Derneği',
   description: 'Arslandede Köyü Derneği resmi web sitesi',
   manifest: '/manifest.json',
-  icons: {
-    apple: [
-      { url: '/icons/icon-192.png', sizes: '192x192', type: 'image/png' },
-      { url: '/icons/icon-512.png', sizes: '512x512', type: 'image/png' },
-    ],
-  },
-  appleWebApp: {
-    capable: true,
-    statusBarStyle: 'default',
-    title: 'Arslandede',
-  },
-  formatDetection: {
-    telephone: true,
-    date: true,
-    address: true,
-    email: true,
-    url: true,
-  },
-}
-
-export const viewport = {
   themeColor: '#2C5F2D',
-  width: 'device-width',
-  initialScale: 1,
-  minimumScale: 1,
-  maximumScale: 5,
-  userScalable: true,
-  viewportFit: 'cover',
+  viewport: {
+    width: 'device-width',
+    initialScale: 1,
+    maximumScale: 5,
+  },
+  icons: {
+    icon: '/favicon.ico',
+    shortcut: '/favicon.ico',
+    apple: '/favicon.ico',
+  }
+};
+
+export default function RootLayout({ children }) {
+  return (
+    <html lang="tr">
+      <head>
+        <link rel="manifest" href="/manifest.json" />
+        <link rel="icon" href="/favicon.ico" />
+        <meta name="theme-color" content="#2C5F2D" />
+        <meta name="mobile-web-app-capable" content="yes" />
+      </head>
+      <body suppressHydrationWarning={true} className="antialiased">{children}</body>
+    </html>
+  );
 } 
