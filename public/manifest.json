@@ -4,8 +4,11 @@
   "description": "Arslandede Köyü Derneği resmi web sitesi",
   "start_url": "/",
   "display": "standalone",
+  "orientation": "portrait",
   "background_color": "#ffffff",
   "theme_color": "#2C5F2D",
+  "scope": "/",
+  "prefer_related_applications": false,
   "icons": [
     {
       "src": "/icons/icon-72.png",
