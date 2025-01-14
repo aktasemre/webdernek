@@ -88,11 +88,15 @@
 .contactItem {
   display: flex;
   align-items: center;
+  gap: 8px;
   margin-bottom: 0.5rem;
-
+  &:hover {
+    opacity: 0.7;
+  }
   &:last-child {
     margin-bottom: 0;
   }
+
 
   .icon {
     color: #2C5F2D;

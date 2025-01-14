@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { FaPhone, FaEnvelope } from 'react-icons/fa';
+import { FaPhone, FaEnvelope, FaLinkedin, FaInstagram } from 'react-icons/fa';
 import BackButton from '@/components/common/BackButton/BackButton';
 import { boardMembers, boardInfo } from '@/data/board.data';
 import styles from './BoardContent.module.scss';
@@ -31,14 +31,22 @@ const BoardContent = () => {
               <h3>{member.position}</h3>
               <p>{member.description}</p>
               <div className={styles.contactInfo}>
-                <div className={styles.contactItem}>
+                <a href={`tel:${member.phone}`} className={styles.contactItem}>
                   <FaPhone className={styles.icon} />
                   <span>{member.phone}</span>
-                </div>
-                <div className={styles.contactItem}>
+                </a>
+                <a href={`mailto:${member.email}`} className={styles.contactItem}>
                   <FaEnvelope className={styles.icon} />
                   <span>{member.email}</span>
-                </div>
+                </a>
+                <a href={member.linkedin} target="_blank" rel="noopener noreferrer" className={styles.contactItem}>
+                  <FaLinkedin className={styles.icon} />
+                  <span>{member.linkedin}</span>
+                </a>
+                <a href={member.instagram} target="_blank" rel="noopener noreferrer" className={styles.contactItem}>
+                  <FaInstagram className={styles.icon} />
+                  <span>{member.instagram}</span>
+                </a>
               </div>
             </div>
           </div>
