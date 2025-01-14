@@ -71,6 +71,7 @@ export default function Home() {
               </div>
             </div>
           </section>
+         
 
           {/* Meslek Envanteri Section */}
           <section className={styles.professionSurvey}>
@@ -91,16 +92,7 @@ export default function Home() {
             </div>
           </section>
 
-          <div className={styles.imageContainer}>
-            <Image
-              src="/images/cami1.jpg"
-              alt="Arslandede Köyü Camii"
-              width={600}
-              height={400}
-              style={{ objectFit: "cover" }}
-              priority
-            />
-          </div>
+          
         </div>
       </div>
     </main>
