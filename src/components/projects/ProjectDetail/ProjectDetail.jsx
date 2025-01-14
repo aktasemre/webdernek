@@ -10,58 +10,57 @@ import ProjectDetails from './ProjectDetails';
 import ProjectTeam from './ProjectTeam';
 import ProjectTimeline from './ProjectTimeline';
 
-const ProjectDetail = ({ id }) => {
-  // Gerçek uygulamada bu veri API'den gelecek
-  const project = {
-    id: 1,
-    title: 'Köy Meydanı Yenileme',
-    description: 'Modern ve ferah bir köy meydanı için kapsamlı yenileme çalışması. Projemiz kapsamında yeşil alanlar, oturma bankları, çocuk parkı ve etkinlik alanı yer alacaktır.',
-    status: 'ongoing',
-    image: '/images/projects/meydan.jpg',
-    startDate: 'Ocak 2024',
-    endDate: 'Haziran 2024',
-    budget: '1.5M TL',
-    progress: 35,
-    team: [
-      { name: 'Ahmet Yılmaz', role: 'Proje Yöneticisi' },
-      { name: 'Mehmet Demir', role: 'Mimar' },
-      { name: 'Ayşe Kaya', role: 'Peyzaj Mimarı' }
-    ],
-    timeline: [
-      { date: 'Ocak 2024', event: 'Proje Başlangıcı' },
-      { date: 'Şubat 2024', event: 'Zemin Hazırlığı' },
-      { date: 'Mart 2024', event: 'Altyapı Çalışmaları' },
-      { date: 'Nisan 2024', event: 'Peyzaj Düzenlemesi' },
-      { date: 'Mayıs 2024', event: 'Mobilya Yerleşimi' },
-      { date: 'Haziran 2024', event: 'Proje Tamamlanması' }
-    ],
-    details: [
-      'Toplam Alan: 2500m²',
-      'Yeşil Alan: 1000m²',
-      'Oturma Alanları: 20 Bank',
-      'Çocuk Parkı: 200m²',
-      'Aydınlatma: 30 LED Direk'
-    ]
-  };
-
+const ProjectDetail = ({ project }) => {
   return (
     <div className={styles.projectDetail}>
-      <ProjectHero project={project} />
-
-      <div className={styles.content}>
-        <div className={styles.mainInfo}>
-          <ProjectInfo project={project} />
-          <ProjectProgress project={project} />
-          <ProjectDetails project={project} />
-        </div>
-
-        <div className={styles.sidebar}>
-          <ProjectTeam project={project} />
-          <ProjectTimeline project={project} />
+      <div className={styles.container}>
+        <h1>{project.title}</h1>
+        <div className={styles.content}>
+          <div className={styles.mainInfo}>
+            <div className={styles.description}>
+              <h2>Proje Açıklaması</h2>
+              <p>{project.description}</p>
+            </div>
+            
+            <div className={styles.details}>
+              <h2>Proje Detayları</h2>
+              <ul>
+                <li><strong>Başlangıç:</strong> {project.startDate}</li>
+                <li><strong>Durum:</strong> {project.status}</li>
+                <li><strong>Bütçe:</strong> {project.budget}</li>
+              </ul>
+            </div>
+            
+            {project.progress && (
+              <div className={styles.progress}>
+                <h2>İlerleme Durumu</h2>
+                <div className={styles.progressBar}>
+                  <div 
+                    className={styles.progressFill} 
+                    style={{width: `${project.progress}%`}}
+                  />
+                </div>
+                <span>{project.progress}% Tamamlandı</span>
+              </div>
+            )}
+          </div>
+          
+          {project.team && (
+            <div className={styles.team}>
+              <h2>Proje Ekibi</h2>
+              <ul>
+                {project.team.map((member, index) => (
+                  <li key={index}>
+                    <strong>{member.role}:</strong> {member.name}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
         </div>
       </div>
     </div>
   );
-};
+}
 
 export default ProjectDetail; 

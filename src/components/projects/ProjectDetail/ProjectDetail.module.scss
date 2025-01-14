@@ -1,222 +1,105 @@
 .projectDetail {
-  padding-top: 4rem;
-}
-
-.hero {
-  position: relative;
-  background-color: #2C5F2D;
-  color: white;
   padding: 2rem 0;
-  margin-bottom: 3rem;
-
-  .imageContainer {
+  
+  .container {
     max-width: 1200px;
     margin: 0 auto;
-    height: 400px;
-    position: relative;
-    
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: 10px;
-    }
+    padding: 0 1rem;
   }
 
   h1 {
-    max-width: 1200px;
-    margin: 2rem auto 0;
-    padding: 0 1rem;
     font-size: 2.5rem;
-  }
-}
-
-.content {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1rem;
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 2rem;
-}
-
-.mainInfo {
-  > div {
-    background: white;
-    border-radius: 10px;
-    padding: 2rem;
+    color: #2c3e50;
     margin-bottom: 2rem;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  }
-}
-
-.description {
-  h2 {
-    color: #2C5F2D;
-    margin-bottom: 1rem;
-  }
-
-  p {
-    line-height: 1.8;
-    color: #666;
-  }
-}
-
-.progress {
-  h3 {
-    color: #2C5F2D;
-    margin-bottom: 1rem;
-  }
-
-  span {
-    display: block;
-    margin-top: 0.5rem;
-    color: #666;
-  }
-}
-
-.details {
-  h3 {
-    color: #2C5F2D;
-    margin-bottom: 1rem;
-  }
-
-  ul {
-    list-style: none;
-    padding: 0;
-
-    li {
-      padding: 0.8rem;
-      border-bottom: 1px solid #eee;
-      color: #666;
-
-      &:last-child {
-        border-bottom: none;
-      }
-    }
-  }
-}
-
-.sidebar {
-  > div {
-    background: white;
-    border-radius: 10px;
-    padding: 1.5rem;
-    margin-bottom: 2rem;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  }
-
-  h3 {
-    color: #2C5F2D;
-    margin-bottom: 1.5rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 2px solid #eee;
-  }
-}
-
-.infoItem {
-  display: flex;
-  justify-content: space-between;
-  padding: 0.8rem 0;
-  border-bottom: 1px solid #eee;
-
-  &:last-child {
-    border-bottom: none;
-  }
-
-  span {
-    color: #666;
-  }
-
-  strong {
-    color: #333;
-  }
-}
-
-.teamMember {
-  padding: 0.8rem 0;
-  border-bottom: 1px solid #eee;
-
-  &:last-child {
-    border-bottom: none;
-  }
-
-  strong {
-    display: block;
-    color: #333;
-  }
-
-  span {
-    font-size: 0.9rem;
-    color: #666;
-  }
-}
-
-.timeline {
-  position: relative;
-  padding-left: 2rem;
-
-  &::before {
-    content: '';
-    position: absolute;
-    left: 7px;
-    top: 0;
-    bottom: 0;
-    width: 2px;
-    background-color: #eee;
-  }
-}
-
-.timelineItem {
-  position: relative;
-  padding-bottom: 1.5rem;
-
-  &:last-child {
-    padding-bottom: 0;
-  }
-}
-
-.timelineDot {
-  position: absolute;
-  left: -2rem;
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  background-color: #2C5F2D;
-  border: 3px solid white;
-}
-
-.timelineContent {
-  strong {
-    display: block;
-    color: #333;
-    margin-bottom: 0.3rem;
-  }
-
-  span {
-    color: #666;
-    font-size: 0.9rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .hero {
-    .imageContainer {
-      height: 250px;
-    }
-
-    h1 {
-      font-size: 2rem;
-    }
   }
 
   .content {
-    grid-template-columns: 1fr;
+    display: grid;
+    gap: 2rem;
+    
+    @media (min-width: 768px) {
+      grid-template-columns: 2fr 1fr;
+    }
   }
 
-  .mainInfo, .sidebar {
-    > div {
-      padding: 1.5rem;
+  .mainInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    h2 {
+      font-size: 1.8rem;
+      color: #34495e;
+      margin-bottom: 1rem;
+    }
+  }
+
+  .description {
+    p {
+      line-height: 1.6;
+      color: #4a5568;
+    }
+  }
+
+  .details {
+    ul {
+      list-style: none;
+      padding: 0;
+
+      li {
+        margin-bottom: 0.8rem;
+        color: #4a5568;
+
+        strong {
+          color: #2c3e50;
+          margin-right: 0.5rem;
+        }
+      }
+    }
+  }
+
+  .progress {
+    .progressBar {
+      width: 100%;
+      height: 20px;
+      background-color: #e2e8f0;
+      border-radius: 10px;
+      overflow: hidden;
+      margin: 1rem 0;
+    }
+
+    .progressFill {
+      height: 100%;
+      background-color: #4299e1;
+      transition: width 0.3s ease;
+    }
+
+    span {
+      color: #4a5568;
+      font-weight: 500;
+    }
+  }
+
+  .team {
+    background-color: #f8fafc;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+    ul {
+      list-style: none;
+      padding: 0;
+
+      li {
+        margin-bottom: 1rem;
+        color: #4a5568;
+
+        strong {
+          color: #2c3e50;
+          display: block;
+          margin-bottom: 0.2rem;
+        }
+      }
     }
   }
 } 
