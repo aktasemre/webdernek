@@ -48,8 +48,8 @@ const GeographyContent = () => {
             <Image
               src="/images/manzara1.jpg"
               alt="Arslandede Köyü Coğrafi Görünüm"
-              width={600}
-              height={400}
+              width="auto"
+              height="auto"
               style={{ objectFit: "cover" }}
             />
           </div>

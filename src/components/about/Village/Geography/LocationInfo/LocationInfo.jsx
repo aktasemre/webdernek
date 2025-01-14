@@ -27,8 +27,8 @@ const LocationInfo = () => {
           <Image
             src="/images/manzara2.jpg"
             alt="Arslandede Köyü Konumu"
-            width={400}
-            height={300}
+            width="auto"
+            height="auto"
             style={{ objectFit: "cover" }}
           />
         </div>

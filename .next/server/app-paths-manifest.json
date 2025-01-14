@@ -1,6 +1,4 @@
 {
   "/page": "app/page.js",
-  "/donate/page": "app/donate/page.js",
-  "/contact/page": "app/contact/page.js",
-  "/news/page": "app/news/page.js"
+  "/about/village/education/page": "app/about/village/education/page.js"
 }

@@ -90,6 +90,16 @@ export default function Home() {
               </div>
             </div>
           </section>
+
+          <div className={styles.imageContainer}>
+            <Image
+              src="/images/cami1.jpg"
+              alt="Arslandede Köyü Camii"
+              width={600}
+              height={400}
+              priority
+            />
+          </div>
         </div>
       </div>
     </main>
