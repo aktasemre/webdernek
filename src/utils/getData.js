@@ -1,27 +1,18 @@
-const data = require('../data/static/data_tr.json');
-
-const isArrayKey = (key) => {
-  return Array.isArray(data[key]);
+const data = {
+  genel: require('@/data/genel.data.json'),
+  duyurular: require('@/data/duyurular.data.json'),
+  etkinlikler: require('@/data/etkinlikler.data.json'),
+  haberler: require('@/data/haberler.data.json'),
+  projeler: require('@/data/projeler.data.json')
 };
 
-const getData = (key) => {
+function getData(key) {
   try {
-    if (!data[key]) {
-      console.warn(`${key} için veri bulunamadı`);
-      return isArrayKey(key) ? [] : {};
-    }
-    return data[key];
+    return data[key] || {};
   } catch (error) {
     console.error(`Veri alınırken hata oluştu: ${error.message}`);
-    return isArrayKey(key) ? [] : {};
+    return {};
   }
-};
+}
 
-const getAllData = () => {
-  return data;
-};
-
-module.exports = {
-  getData,
-  getAllData
-}; 
+module.exports = getData; 

@@ -1,23 +1,38 @@
 import ProjectDetail from '@/components/projects/ProjectDetail/ProjectDetail';
+import projectsData from '@/data/projects.json';
 
 export function generateStaticParams() {
-  return [
-    { id: '1' },
-    { id: '2' },
-    { id: '3' }
-  ];
+  return projectsData.projects.map((project) => ({
+    id: project.id.toString()
+  }));
 }
 
-export const metadata = {
-  title: 'Proje Detayı | Arslandede Köyü Derneği',
-  description: 'Arslandede Köyü Derneği proje detayları ve gelişmeleri.',
-  keywords: ['projeler', 'köy projeleri', 'dernek projeleri'],
-};
+export function generateMetadata({ params }) {
+  const project = projectsData.projects.find(p => p.id.toString() === params.id);
+  
+  if (!project) {
+    return {
+      title: 'Proje Bulunamadı'
+    };
+  }
+
+  return {
+    title: project.title,
+    description: project.description,
+    keywords: ['projeler', 'köy projeleri', 'dernek projeleri', project.title],
+  };
+}
 
 export default function ProjectDetailPage({ params }) {
+  const project = projectsData.projects.find(p => p.id.toString() === params.id);
+
+  if (!project) {
+    return <div>Proje bulunamadı.</div>;
+  }
+
   return (
     <main>
-      <ProjectDetail id={params.id} />
+      <ProjectDetail project={project} />
     </main>
   );
 } 

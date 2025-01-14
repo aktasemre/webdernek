@@ -1,12 +1,11 @@
 {
   "name": "Arslandede Köyü Derneği",
   "short_name": "Arslandede",
-  "description": "Bayburt Arslandede Köyü Derneği resmi web sitesi",
+  "description": "Arslandede Köyü Derneği resmi web sitesi",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
-  "theme_color": "#28a745",
-  "orientation": "portrait-primary",
+  "theme_color": "#2C5F2D",
   "icons": [
     {
       "src": "/icons/icon-72.png",
