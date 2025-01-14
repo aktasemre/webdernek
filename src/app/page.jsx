@@ -97,6 +97,7 @@ export default function Home() {
               alt="Arslandede Köyü Camii"
               width={600}
               height={400}
+              style={{ objectFit: "cover" }}
               priority
             />
           </div>

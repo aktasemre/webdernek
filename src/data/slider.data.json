@@ -27,6 +27,13 @@
       "title": "Etkinliklerimiz",
       "description": "Derneğimizin düzenlediği sosyal ve kültürel etkinlikler",
       "link": "/events"
+    },
+    {
+      "id": 5,
+      "image": "/images/arslandede5.jpg",
+      "title": "Görülecek Yerler",
+      "description": "Bayburt'un cennet köşesi, doğal güzellikleri ve misafirperver insanlarıyla Arslandede Köyü",
+      "link": "/events"
     }
   ]
 } 
