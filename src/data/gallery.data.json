@@ -1,71 +1,120 @@
 {
-  "photos": {
-    "title": "Fotoğraf Galerisi",
-    "categories": [
-      {
-        "name": "Köy Manzaraları",
-        "images": [
-          {
-            "id": 1,
-            "title": "Fotoğraf Başlığı",
-            "description": "Fotoğraf açıklaması",
-            "url": "/images/gallery/photo1.jpg",
-            "date": "2024-01-01"
-          }
-        ]
-      }
-    ]
-  },
-  "videos": {
-    "title": "Video Galerisi",
-    "categories": [
-      {
-        "name": "Etkinlik Videoları",
-        "videos": [
-          {
-            "id": 1,
-            "title": "Video Başlığı",
-            "description": "Video açıklaması",
-            "url": "https://youtube.com/...",
-            "thumbnail": "/images/gallery/video-thumb1.jpg",
-            "date": "2024-01-01"
-          }
-        ]
-      }
-    ]
-  },
-  "historical": {
-    "title": "Tarihi Fotoğraflar",
-    "decades": [
-      {
-        "period": "1950-1960",
-        "images": [
-          {
-            "id": 1,
-            "title": "Eski Köy Meydanı",
-            "description": "1955 yılında çekilmiş fotoğraf",
-            "url": "/images/gallery/historical1.jpg",
-            "year": "1955"
-          }
-        ]
-      }
-    ]
-  },
-  "events": {
-    "title": "Etkinlik Fotoğrafları",
-    "events": [
-      {
-        "name": "Köy Şenliği 2023",
-        "date": "2023-07-15",
-        "images": [
-          {
-            "id": 1,
-            "title": "Şenlik Açılışı",
-            "description": "Açılış töreni",
-            "url": "/images/gallery/event1.jpg"
-          }
-        ]
-      }
-    ]
-  }
+  "categories": [
+    {
+      "id": "dogal-guzellikler",
+      "title": "Doğal Güzellikler",
+      "description": "Köyümüzün doğal güzellikleri",
+      "coverImage": "/images/manzara1.jpg"
+    },
+    {
+      "id": "koyyasami",
+      "title": "Köy Yaşamı"
+    },
+    {
+      "id": "etkinlikler",
+      "title": "Etkinlikler"
+    },
+    {
+      "id": "tarihi",
+      "title": "Tarihi Fotoğraflar"
+    }
+  ],
+  "photos": [
+    {
+      "id": "manzara-001",
+      "title": "Köy Manzarası",
+      "description": "Arslandede Köyü genel görünüm",
+      "image": "/images/arslandede1.jpg",
+      "category": "dogal-guzellikler",
+      "tags": ["doğa", "manzara"]
+    },
+    {
+      "id": "manzara-002",
+      "title": "Köy Meydanı",
+      "description": "Köy meydanından bir görünüm",
+      "image": "/images/arslandede2.jpg", 
+      "category": "koyyasami",
+      "tags": ["meydan", "sosyal yaşam"]
+    },
+    {
+      "id": "etkinlik-001",
+      "title": "Köy Şenliği",
+      "description": "Geleneksel köy şenliğimizden bir kare",
+      "image": "/images/senlik1.jpg",
+      "category": "etkinlikler",
+      "tags": ["şenlik", "etkinlik", "gelenek"]
+    },
+    {
+      "id": "tarihi-001",
+      "title": "Eski Köy Okulu",
+      "description": "1960'lı yıllarda köy okulu",
+      "image": "/images/tarih1.jpg",
+      "category": "tarihi",
+      "tags": ["tarih", "eğitim", "nostalji"]
+    },
+    {
+      "id": "dogal-001",
+      "title": "Köy Çeşmesi",
+      "description": "Tarihi köy çeşmemiz",
+      "image": "/images/cesme1.jpg",
+      "category": "dogal-guzellikler",
+      "tags": ["çeşme", "su", "tarih"]
+    },
+    {
+      "id": "yasam-001",
+      "title": "Hasat Zamanı",
+      "description": "Köyümüzde hasat çalışmaları",
+      "image": "/images/hasat1.jpg",
+      "category": "koyyasami",
+      "tags": ["tarım", "hasat", "emek"]
+    },
+    {
+      "id": "etkinlik-002",
+      "title": "Dernek Toplantısı",
+      "description": "Arslandede Köyü Derneği yıllık toplantısı",
+      "image": "/images/dernek1.jpg",
+      "category": "etkinlikler",
+      "tags": ["dernek", "toplantı"]
+    },
+    {
+      "id": "tarihi-002",
+      "title": "Eski Düğün",
+      "description": "1970'lerden bir düğün töreni",
+      "image": "/images/dugun1.jpg",
+      "category": "tarihi",
+      "tags": ["düğün", "gelenek", "nostalji"]
+    },
+    {
+      "id": "dogal-002",
+      "title": "Kış Manzarası",
+      "description": "Karlı bir günde köyümüz",
+      "image": "/images/kis1.jpg",
+      "category": "dogal-guzellikler",
+      "tags": ["kış", "kar", "manzara"]
+    },
+    {
+      "id": "yasam-002",
+      "title": "Köy Kahvesi",
+      "description": "Köy kahvesinde sohbet",
+      "image": "/images/kahve1.jpg",
+      "category": "koyyasami",
+      "tags": ["kahve", "sohbet", "sosyal"]
+    },
+    {
+      "id": "etkinlik-003",
+      "title": "Yardım Kampanyası",
+      "description": "Derneğimizin yardım dağıtımı",
+      "image": "/images/yardim1.jpg",
+      "category": "etkinlikler",
+      "tags": ["yardım", "dayanışma"]
+    },
+    {
+      "id": "tarihi-003",
+      "title": "Eski Cami",
+      "description": "1950'lerde köy camimiz",
+      "image": "/images/cami_eski.jpg",
+      "category": "tarihi",
+      "tags": ["cami", "tarih", "ibadet"]
+    }
+  ]
 } 

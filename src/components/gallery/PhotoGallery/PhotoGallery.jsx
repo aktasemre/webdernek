@@ -1,163 +1,175 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useCallback, useEffect } from 'react';
 import Image from 'next/image';
-import { FaTimes } from 'react-icons/fa';
+import { FaArrowLeft, FaArrowRight, FaTimes } from 'react-icons/fa';
+import Masonry from 'react-masonry-css';
 import styles from './PhotoGallery.module.scss';
-
-const photos = [
-  // Kış Fotoğrafları
-  {
-    id: 1,
-    title: 'Kış Manzarası 1',
-    description: 'Arslandede Köyü kış manzarası',
-    image: '/images/kis1.jpg',
-    category: 'Kış'
-  },
-  {
-    id: 2,
-    title: 'Kış Manzarası 2',
-    description: 'Karlı bir günde köyümüz',
-    image: '/images/kis2.jpg',
-    category: 'Kış'
-  },
-  {
-    id: 3,
-    title: 'Kış Manzarası 3',
-    description: 'Kış mevsiminde köy yolları',
-    image: '/images/kis3.jpg',
-    category: 'Kış'
-  },
-  {
-    id: 4,
-    title: 'Kış Manzarası 4',
-    description: 'Kar altında köy evleri',
-    image: '/images/kis4.jpg',
-    category: 'Kış'
-  },
-  {
-    id: 5,
-    title: 'Kış Manzarası 5',
-    description: 'Kış güzelliği',
-    image: '/images/kis5.jpg',
-    category: 'Kış'
-  },
-  // Manzara Fotoğrafları
-  {
-    id: 6,
-    title: 'Köy Manzarası 1',
-    description: 'Arslandede Köyü genel görünüm',
-    image: '/images/manzara1.jpg',
-    category: 'Manzara'
-  },
-  {
-    id: 7,
-    title: 'Köy Manzarası 2',
-    description: 'Köyümüzün doğal güzellikleri',
-    image: '/images/manzara2.jpg',
-    category: 'Manzara'
-  },
-  {
-    id: 8,
-    title: 'Köy Manzarası 3',
-    description: 'Yeşil vadilerimiz',
-    image: '/images/manzara3.jpg',
-    category: 'Manzara'
-  },
-  {
-    id: 9,
-    title: 'Köy Manzarası 4',
-    description: 'Dağların arasındaki köyümüz',
-    image: '/images/manzara4.jpg',
-    category: 'Manzara'
-  },
-  {
-    id: 10,
-    title: 'Köy Manzarası 5',
-    description: 'Gün batımında köyümüz',
-    image: '/images/manzara5.jpg',
-    category: 'Manzara'
-  }
-];
+import galleryData from '@/data/gallery.data.json';
+import Lightbox from 'yet-another-react-lightbox';
+import Zoom from 'yet-another-react-lightbox/plugins/zoom';
+import 'yet-another-react-lightbox/styles.css';
 
 const PhotoGallery = () => {
   const [selectedPhoto, setSelectedPhoto] = useState(null);
-  const [selectedCategory, setSelectedCategory] = useState('Tümü');
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const categories = [...new Set(galleryData.photos.map(photo => photo.category))];
+  const [lightboxIndex, setLightboxIndex] = useState(-1);
 
-  const categories = ['Tümü', 'Kış', 'Manzara'];
-
-  const filteredPhotos = selectedCategory === 'Tümü' 
-    ? photos 
-    : photos.filter(photo => photo.category === selectedCategory);
-
-  const openLightbox = (photo) => {
-    setSelectedPhoto(photo);
-    document.body.style.overflow = 'hidden';
+  const breakpointColumns = {
+    default: 4,
+    1200: 3,
+    768: 2,
+    480: 1
   };
 
-  const closeLightbox = () => {
-    setSelectedPhoto(null);
-    document.body.style.overflow = 'auto';
+  const getPhotosByCategory = (category) => {
+    return galleryData.photos.filter(photo => photo.category === category);
   };
+
+  const scrollSlider = useCallback((categoryId, direction) => {
+    const slider = document.querySelector(`#slider-${categoryId}`);
+    const scrollAmount = slider.clientWidth * 0.8;
+    const maxScroll = slider.scrollWidth - slider.clientWidth;
+    
+    let newScroll;
+    if (direction === 'left') {
+      newScroll = slider.scrollLeft - scrollAmount;
+    } else {
+      newScroll = slider.scrollLeft + scrollAmount;
+    }
+    
+    slider.scrollTo({
+      left: Math.max(0, Math.min(newScroll, maxScroll)),
+      behavior: 'smooth'
+    });
+  }, []);
+
+  const openLightbox = useCallback((index) => {
+    setLightboxIndex(index);
+  }, []);
+
+  const closeLightbox = useCallback(() => {
+    setLightboxIndex(-1);
+  }, []);
+
+  const handleKeyDown = useCallback((e) => {
+    if (!selectedPhoto) return;
+    
+    switch(e.key) {
+      case 'ArrowLeft':
+        navigatePhotos('prev');
+        break;
+      case 'ArrowRight':
+        navigatePhotos('next');
+        break;
+      case 'Escape':
+        setSelectedPhoto(null);
+        break;
+    }
+  }, [selectedPhoto]);
+
+  const navigatePhotos = (direction) => {
+    const photos = getPhotosByCategory(selectedPhoto.category);
+    const currentIdx = photos.findIndex(p => p.id === selectedPhoto.id);
+    let newIdx;
+    
+    if (direction === 'prev') {
+      newIdx = currentIdx > 0 ? currentIdx - 1 : photos.length - 1;
+    } else {
+      newIdx = currentIdx < photos.length - 1 ? currentIdx + 1 : 0;
+    }
+    
+    setSelectedPhoto(photos[newIdx]);
+  };
+
+  useEffect(() => {
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [handleKeyDown]);
 
   return (
     <section className={styles.photoGallery}>
       <div className={styles.container}>
         <h1>Fotoğraf Galerisi</h1>
-        
-        <div className={styles.categories}>
-          {categories.map(category => (
-            <button
-              key={category}
-              className={`${styles.categoryButton} ${selectedCategory === category ? styles.active : ''}`}
-              onClick={() => setSelectedCategory(category)}
-            >
-              {category}
-            </button>
-          ))}
-        </div>
 
-        <div className={styles.grid}>
-          {filteredPhotos.map((photo) => (
-            <div 
-              key={photo.id} 
-              className={styles.photoCard}
-              onClick={() => openLightbox(photo)}
+        {categories.map(category => (
+          <div key={category} className={styles.categorySection}>
+            <h2>{category}</h2>
+            <Masonry
+              breakpointCols={breakpointColumns}
+              className={styles.myMasonryGrid}
+              columnClassName={styles.myMasonryGridColumn}
             >
-              <div className={styles.imageContainer}>
-                <Image
-                  src={photo.image}
-                  alt={photo.title}
-                  width={400}
-                  height={300}
-                  style={{ objectFit: "cover" }}
-                />
-                <div className={styles.overlay}>
-                  <h3>{photo.title}</h3>
-                  <p>{photo.description}</p>
+              {getPhotosByCategory(category).map((photo, index) => (
+                <div 
+                  key={photo.id} 
+                  className={styles.photoCard}
+                  style={{ '--index': index }}
+                  onClick={() => setSelectedPhoto(photo)}
+                >
+                  <div className={styles.imageContainer}>
+                    <Image
+                      src={photo.image}
+                      alt={photo.title}
+                      fill
+                      sizes="(max-width: 480px) 180px,
+                              (max-width: 768px) 220px,
+                              (max-width: 1200px) 260px,
+                              300px"
+                      className={styles.image}
+                      priority={index === 0}
+                      loading="lazy"
+                    />
+                    <div className={styles.overlay}>
+                      <h3>{photo.title}</h3>
+                      <p>{photo.description}</p>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
-          ))}
-        </div>
+              ))}
+            </Masonry>
+          </div>
+        ))}
       </div>
 
+      <Lightbox
+        open={lightboxIndex >= 0}
+        close={closeLightbox}
+        index={lightboxIndex}
+        slides={galleryData.photos.map(photo => ({
+          src: photo.image,
+          alt: photo.title,
+          title: photo.title,
+          description: photo.description
+        }))}
+        plugins={[Zoom]}
+      />
+
       {selectedPhoto && (
-        <div className={styles.lightbox} onClick={closeLightbox}>
-          <button className={styles.closeButton} onClick={closeLightbox}>
-            <FaTimes />
-          </button>
-          <div className={styles.lightboxContent} onClick={(e) => e.stopPropagation()}>
+        <div className={styles.lightbox} onClick={() => setSelectedPhoto(null)}>
+          <div className={styles.lightboxContent} onClick={e => e.stopPropagation()}>
             <Image
               src={selectedPhoto.image}
               alt={selectedPhoto.title}
               width={1200}
               height={800}
-              style={{ objectFit: "contain" }}
+              className={styles.lightboxImage}
             />
+            <div className={styles.navButtons}>
+              <button onClick={() => navigatePhotos('prev')}>
+                <FaArrowLeft />
+              </button>
+              <button onClick={() => navigatePhotos('next')}>
+                <FaArrowRight />
+              </button>
+            </div>
             <div className={styles.photoInfo}>
               <h3>{selectedPhoto.title}</h3>
               <p>{selectedPhoto.description}</p>
+            </div>
+            <div className={styles.keyboardHint}>
+              Klavye ile gezinmek için ← → tuşlarını kullanın
             </div>
           </div>
         </div>
