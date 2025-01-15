@@ -8,113 +8,267 @@
     },
     {
       "id": "koyyasami",
-      "title": "Köy Yaşamı"
+      "title": "Köy Yaşamı",
+      "description": "Köyümüzden günlük yaşam kareleri",
+      "coverImage": "/images/koy1.jpg"
     },
     {
-      "id": "etkinlikler",
-      "title": "Etkinlikler"
+      "id": "kis-manzaralari",
+      "title": "Kış Manzaraları",
+      "description": "Köyümüzün kış güzellikleri",
+      "coverImage": "/images/kis1.jpg"
+    },
+    {
+      "id": "arslandede",
+      "title": "Arslandede",
+      "description": "Köyümüzün genel görünümü",
+      "coverImage": "/images/arslandede1.jpg"
     },
     {
       "id": "tarihi",
-      "title": "Tarihi Fotoğraflar"
+      "title": "Tarihi Fotoğraflar",
+      "description": "Köyümüzün tarihi fotoğrafları",
+      "coverImage": "/images/arslandede-intro.jpg"
+    },
+    {
+      "id": "etkinlikler",
+      "title": "Etkinlikler",
+      "description": "Köyümüzde gerçekleşen etkinlikler",
+      "coverImage": "/images/koy2.jpg"
     }
   ],
   "photos": [
     {
       "id": "manzara-001",
-      "title": "Köy Manzarası",
+      "title": "Köy Manzarası 1",
       "description": "Arslandede Köyü genel görünüm",
-      "image": "/images/arslandede1.jpg",
+      "image": "/images/manzara1.jpg",
       "category": "dogal-guzellikler",
       "tags": ["doğa", "manzara"]
     },
     {
       "id": "manzara-002",
-      "title": "Köy Meydanı",
-      "description": "Köy meydanından bir görünüm",
-      "image": "/images/arslandede2.jpg", 
-      "category": "koyyasami",
-      "tags": ["meydan", "sosyal yaşam"]
-    },
-    {
-      "id": "etkinlik-001",
-      "title": "Köy Şenliği",
-      "description": "Geleneksel köy şenliğimizden bir kare",
-      "image": "/images/senlik1.jpg",
-      "category": "etkinlikler",
-      "tags": ["şenlik", "etkinlik", "gelenek"]
-    },
-    {
-      "id": "tarihi-001",
-      "title": "Eski Köy Okulu",
-      "description": "1960'lı yıllarda köy okulu",
-      "image": "/images/tarih1.jpg",
-      "category": "tarihi",
-      "tags": ["tarih", "eğitim", "nostalji"]
-    },
-    {
-      "id": "dogal-001",
-      "title": "Köy Çeşmesi",
-      "description": "Tarihi köy çeşmemiz",
-      "image": "/images/cesme1.jpg",
+      "title": "Köy Manzarası 2",
+      "description": "Köyümüzün doğal güzelliklerinden bir kare",
+      "image": "/images/manzara3.jpg",
       "category": "dogal-guzellikler",
-      "tags": ["çeşme", "su", "tarih"]
+      "tags": ["doğa", "manzara"]
     },
     {
-      "id": "yasam-001",
-      "title": "Hasat Zamanı",
-      "description": "Köyümüzde hasat çalışmaları",
-      "image": "/images/hasat1.jpg",
+      "id": "manzara-003",
+      "title": "Köy Manzarası 3",
+      "description": "Köyümüzün doğal güzelliklerinden bir görünüm",
+      "image": "/images/manzara4.jpg",
+      "category": "dogal-guzellikler",
+      "tags": ["doğa", "manzara"]
+    },
+    {
+      "id": "manzara-004",
+      "title": "Köy Manzarası 4",
+      "description": "Köyümüzün doğal güzelliklerinden bir kesit",
+      "image": "/images/manzara6.jpg",
+      "category": "dogal-guzellikler",
+      "tags": ["doğa", "manzara"]
+    },
+    {
+      "id": "manzara-005",
+      "title": "Köy Manzarası 5",
+      "description": "Köyümüzün doğal güzelliklerinden bir görünüm",
+      "image": "/images/manzara8.jpg",
+      "category": "dogal-guzellikler",
+      "tags": ["doğa", "manzara"]
+    },
+    {
+      "id": "manzara-006",
+      "title": "Köy Manzarası 6",
+      "description": "Köyümüzün doğal güzelliklerinden başka bir görünüm",
+      "image": "/images/manzaraa5.jpg",
+      "category": "dogal-guzellikler",
+      "tags": ["doğa", "manzara"]
+    },
+    {
+      "id": "manzara-007",
+      "title": "Köy Manzarası 7",
+      "description": "Köyümüzün doğal güzelliklerinden farklı bir kesit",
+      "image": "/images/manza2.jpg",
+      "category": "dogal-guzellikler",
+      "tags": ["doğa", "manzara"]
+    },
+    {
+      "id": "koy-001",
+      "title": "Köy Yaşamı 1",
+      "description": "Köyümüzden günlük bir kare",
+      "image": "/images/koy1.jpg",
       "category": "koyyasami",
-      "tags": ["tarım", "hasat", "emek"]
+      "tags": ["yaşam", "köy"]
     },
     {
-      "id": "etkinlik-002",
-      "title": "Dernek Toplantısı",
-      "description": "Arslandede Köyü Derneği yıllık toplantısı",
-      "image": "/images/dernek1.jpg",
-      "category": "etkinlikler",
-      "tags": ["dernek", "toplantı"]
+      "id": "koy-002",
+      "title": "Köy Yaşamı 2",
+      "description": "Köyümüzden günlük bir görünüm",
+      "image": "/images/koy2.jpg",
+      "category": "koyyasami",
+      "tags": ["yaşam", "köy"]
     },
     {
-      "id": "tarihi-002",
-      "title": "Eski Düğün",
-      "description": "1970'lerden bir düğün töreni",
-      "image": "/images/dugun1.jpg",
-      "category": "tarihi",
-      "tags": ["düğün", "gelenek", "nostalji"]
+      "id": "koy-003",
+      "title": "Köy Yaşamı 3",
+      "description": "Köyümüzden günlük bir kesit",
+      "image": "/images/koy3.jpg",
+      "category": "koyyasami",
+      "tags": ["yaşam", "köy"]
     },
     {
-      "id": "dogal-002",
-      "title": "Kış Manzarası",
+      "id": "koy-004",
+      "title": "Köy Yaşamı 4",
+      "description": "Köyümüzden başka bir günlük kare",
+      "image": "/images/arslandede4.jpg",
+      "category": "koyyasami",
+      "tags": ["yaşam", "köy"]
+    },
+    {
+      "id": "koy-005",
+      "title": "Köy Yaşamı 5",
+      "description": "Köyümüzden farklı bir görünüm",
+      "image": "/images/arslandede5.jpg",
+      "category": "koyyasami",
+      "tags": ["yaşam", "köy"]
+    },
+    {
+      "id": "kis-001",
+      "title": "Kış Manzarası 1",
       "description": "Karlı bir günde köyümüz",
       "image": "/images/kis1.jpg",
-      "category": "dogal-guzellikler",
+      "category": "kis-manzaralari",
       "tags": ["kış", "kar", "manzara"]
     },
     {
-      "id": "yasam-002",
-      "title": "Köy Kahvesi",
-      "description": "Köy kahvesinde sohbet",
-      "image": "/images/kahve1.jpg",
-      "category": "koyyasami",
-      "tags": ["kahve", "sohbet", "sosyal"]
+      "id": "kis-002",
+      "title": "Kış Manzarası 2",
+      "description": "Kış mevsiminde köyümüz",
+      "image": "/images/kis2.jpg",
+      "category": "kis-manzaralari",
+      "tags": ["kış", "kar", "manzara"]
     },
     {
-      "id": "etkinlik-003",
-      "title": "Yardım Kampanyası",
-      "description": "Derneğimizin yardım dağıtımı",
-      "image": "/images/yardim1.jpg",
-      "category": "etkinlikler",
-      "tags": ["yardım", "dayanışma"]
+      "id": "kis-003",
+      "title": "Kış Manzarası 3",
+      "description": "Karlı bir günde köyümüzden bir görünüm",
+      "image": "/images/kis3.jpg",
+      "category": "kis-manzaralari",
+      "tags": ["kış", "kar", "manzara"]
+    },
+    {
+      "id": "kis-004",
+      "title": "Kış Manzarası 4",
+      "description": "Kış mevsiminde köyümüzden bir kesit",
+      "image": "/images/kis4.jpg",
+      "category": "kis-manzaralari",
+      "tags": ["kış", "kar", "manzara"]
+    },
+    {
+      "id": "kis-005",
+      "title": "Kış Manzarası 5",
+      "description": "Karlı bir günde köyümüzden bir görünüm",
+      "image": "/images/kis5.jpg",
+      "category": "kis-manzaralari",
+      "tags": ["kış", "kar", "manzara"]
+    },
+    {
+      "id": "kis-006",
+      "title": "Kış Manzarası 6",
+      "description": "Kış mevsiminde köyümüzden bir kare",
+      "image": "/images/kis6.jpg",
+      "category": "kis-manzaralari",
+      "tags": ["kış", "kar", "manzara"]
+    },
+    {
+      "id": "arslandede-001",
+      "title": "Arslandede 1",
+      "description": "Arslandede Köyü genel görünüm",
+      "image": "/images/arslandede1.jpg",
+      "category": "arslandede",
+      "tags": ["köy", "genel"]
+    },
+    {
+      "id": "arslandede-002",
+      "title": "Arslandede 2",
+      "description": "Arslandede Köyü'nden bir görünüm",
+      "image": "/images/arslandede2.jpg",
+      "category": "arslandede",
+      "tags": ["köy", "genel"]
+    },
+    {
+      "id": "arslandede-003",
+      "title": "Arslandede 3",
+      "description": "Arslandede Köyü'nden bir kesit",
+      "image": "/images/arslandede3.jpg",
+      "category": "arslandede",
+      "tags": ["köy", "genel"]
+    },
+    {
+      "id": "arslandede-004",
+      "title": "Arslandede 4",
+      "description": "Arslandede Köyü'nden bir kare",
+      "image": "/images/arslandede4.jpg",
+      "category": "arslandede",
+      "tags": ["köy", "genel"]
+    },
+    {
+      "id": "arslandede-005",
+      "title": "Arslandede 5",
+      "description": "Arslandede Köyü'nden bir görünüm",
+      "image": "/images/arslandede5.jpg",
+      "category": "arslandede",
+      "tags": ["köy", "genel"]
+    },
+    {
+      "id": "tarihi-001",
+      "title": "Tarihi Fotoğraf 1",
+      "description": "Köyümüzün eski günlerinden bir kare",
+      "image": "/images/arslandede-intro.jpg",
+      "category": "tarihi",
+      "tags": ["tarih", "nostalji", "geçmiş"]
+    },
+    {
+      "id": "tarihi-002",
+      "title": "Tarihi Fotoğraf 2",
+      "description": "Köyümüzün geçmişinden bir görünüm",
+      "image": "/images/manzara1.jpg",
+      "category": "tarihi",
+      "tags": ["tarih", "nostalji", "geçmiş"]
     },
     {
       "id": "tarihi-003",
-      "title": "Eski Cami",
-      "description": "1950'lerde köy camimiz",
-      "image": "/images/cami_eski.jpg",
+      "title": "Tarihi Fotoğraf 3",
+      "description": "Eski günlerden bir kesit",
+      "image": "/images/arslandede2.jpg",
       "category": "tarihi",
-      "tags": ["cami", "tarih", "ibadet"]
+      "tags": ["tarih", "nostalji", "geçmiş"]
+    },
+    {
+      "id": "etkinlik-001",
+      "title": "Köy Etkinliği 1",
+      "description": "Köyümüzde gerçekleşen bir etkinlik",
+      "image": "/images/koy2.jpg",
+      "category": "etkinlikler",
+      "tags": ["etkinlik", "topluluk", "sosyal"]
+    },
+    {
+      "id": "etkinlik-002",
+      "title": "Köy Etkinliği 2",
+      "description": "Başka bir köy etkinliğinden görüntüler",
+      "image": "/images/koy3.jpg",
+      "category": "etkinlikler",
+      "tags": ["etkinlik", "topluluk", "sosyal"]
+    },
+    {
+      "id": "etkinlik-003",
+      "title": "Köy Etkinliği 3",
+      "description": "Köy etkinliklerinden bir kare",
+      "image": "/images/arslandede5.jpg",
+      "category": "etkinlikler",
+      "tags": ["etkinlik", "topluluk", "sosyal"]
     }
   ]
 } 
