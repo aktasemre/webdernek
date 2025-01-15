@@ -2,6 +2,13 @@
   padding: 2rem;
   max-width: 1200px;
   margin: 0 auto;
+
+  h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #2C5F2D;
+    font-size: 2rem;
+  }
 }
 
 .photoCategories {
@@ -35,8 +42,8 @@
 
 .photoGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
   padding: 1rem;
 }
 
@@ -51,44 +58,43 @@
   &:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+
+    .photoImage {
+      transform: scale(1.05);
+    }
   }
 }
 
 .photoImageContainer {
   position: relative;
   width: 100%;
-  padding-top: 133.33%; // 3:4 oranı için
+  height: 300px;
   overflow: hidden;
+  background: #f5f5f5;
+}
 
-  .photoImage {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.3s ease;
-
-    &:hover {
-      transform: scale(1.05);
-    }
-  }
+.photoImage {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.3s ease;
+  object-fit: cover;
 }
 
 .photoInfo {
-  padding: 1rem;
+  padding: 1.5rem;
 
   h3 {
-    font-size: 1rem;
+    font-size: 1.1rem;
     color: #333;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.75rem;
+    font-weight: 600;
   }
 
   p {
     color: #666;
-    font-size: 0.85rem;
-    margin-bottom: 0.5rem;
-    line-height: 1.4;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    line-height: 1.5;
   }
 }
 
@@ -119,7 +125,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.9);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -129,7 +135,7 @@
 
 .photoModalContent {
   position: relative;
-  max-width: 900px;
+  max-width: 1000px;
   width: 100%;
   background: white;
   border-radius: 12px;
@@ -139,17 +145,17 @@
 .photoModalImageContainer {
   position: relative;
   width: 100%;
-  padding-top: 75%; // 4:3 oranı
+  height: 600px;
   background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-  .photoModalImage {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-  }
+.photoModalImage {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .photoModalInfo {
@@ -158,12 +164,15 @@
 
   h3 {
     font-size: 1.2rem;
-    margin-bottom: 0.5rem;
+    color: #333;
+    margin-bottom: 0.75rem;
+    font-weight: 600;
   }
 
   p {
     color: #666;
     margin-bottom: 1rem;
+    line-height: 1.6;
   }
 }
 
@@ -182,6 +191,7 @@
   transition: all 0.3s ease;
   border: none;
   color: #333;
+  font-size: 1.2rem;
 
   &:hover {
     background: white;
@@ -212,6 +222,7 @@
   border: none;
   color: #333;
   transition: all 0.3s ease;
+  font-size: 1.2rem;
 
   &:hover {
     background: white;
@@ -222,32 +233,65 @@
 @media (max-width: 768px) {
   .photoGalleryContainer {
     padding: 1rem;
+    
+    h1 {
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
   }
 
   .photoGrid {
     grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
     gap: 1rem;
+    padding: 0.5rem;
   }
 
   .photoInfo {
-    padding: 0.75rem;
+    padding: 1rem;
 
     h3 {
-      font-size: 0.9rem;
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
     }
 
     p {
-      font-size: 0.8rem;
+      font-size: 0.85rem;
+      margin-bottom: 0.75rem;
     }
   }
 
+  .photoModal {
+    padding: 1rem;
+  }
+
   .photoModalContent {
-    max-width: 100%;
-    margin: 0 1rem;
+    margin: 0;
   }
 
   .photoModalNav {
     width: 32px;
     height: 32px;
+    font-size: 1rem;
+
+    &.prev {
+      left: 0.5rem;
+    }
+
+    &.next {
+      right: 0.5rem;
+    }
+  }
+
+  .photoModalClose {
+    top: 0.5rem;
+    right: 0.5rem;
+  }
+
+  .photoImageContainer {
+    height: 200px;
+  }
+
+  .photoModalImageContainer {
+    height: 300px;
   }
 } 

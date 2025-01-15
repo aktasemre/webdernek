@@ -49,7 +49,8 @@ const PhotoGallery = () => {
   }, [selectedPhoto, currentIndex]);
 
   return (
-    <div className={styles.photoGalleryContainer}>
+    <section className={styles.photoGalleryContainer}>
+      <h1>Fotoğraf Galerisi</h1>
       <div className={styles.photoCategories}>
         <button
           className={`${styles.photoCategoryButton} ${selectedCategory === 'all' ? styles.active : ''}`}
@@ -79,22 +80,25 @@ const PhotoGallery = () => {
               <Image
                 src={photo.image}
                 alt={photo.title}
+                width={400}
+                height={300}
+                sizes="(max-width: 768px) 160px, 400px"
                 className={styles.photoImage}
-                width={photo.width || 900}
-                height={photo.height || 1200}
-                priority={index === 0}
+                priority={index < 4}
               />
             </div>
             <div className={styles.photoInfo}>
               <h3>{photo.title}</h3>
-              <p>{photo.description}</p>
-              <div className={styles.photoTags}>
-                {photo.tags?.map(tag => (
-                  <span key={tag} className={styles.photoTag}>
-                    {tag}
-                  </span>
-                ))}
-              </div>
+              {photo.description && <p>{photo.description}</p>}
+              {photo.tags && photo.tags.length > 0 && (
+                <div className={styles.photoTags}>
+                  {photo.tags.map(tag => (
+                    <span key={tag} className={styles.photoTag}>
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              )}
             </div>
           </div>
         ))}
@@ -107,22 +111,25 @@ const PhotoGallery = () => {
               <Image
                 src={selectedPhoto.image}
                 alt={selectedPhoto.title}
+                width={800}
+                height={600}
+                sizes="(max-width: 768px) 100vw, 800px"
                 className={styles.photoModalImage}
-                width={900}
-                height={1200}
                 priority
               />
             </div>
             <div className={styles.photoModalInfo}>
               <h3>{selectedPhoto.title}</h3>
-              <p>{selectedPhoto.description}</p>
-              <div className={styles.photoTags}>
-                {selectedPhoto.tags?.map(tag => (
-                  <span key={tag} className={styles.photoTag}>
-                    {tag}
-                  </span>
-                ))}
-              </div>
+              {selectedPhoto.description && <p>{selectedPhoto.description}</p>}
+              {selectedPhoto.tags && selectedPhoto.tags.length > 0 && (
+                <div className={styles.photoTags}>
+                  {selectedPhoto.tags.map(tag => (
+                    <span key={tag} className={styles.photoTag}>
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              )}
             </div>
             <button className={styles.photoModalClose} onClick={handleClose}>
               ✕
@@ -136,7 +143,7 @@ const PhotoGallery = () => {
           </div>
         </div>
       )}
-    </div>
+    </section>
   );
 };
 

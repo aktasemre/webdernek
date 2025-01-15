@@ -1,4 +1,8 @@
+'use client';
+
+import { useState } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import styles from './SideMenu.module.scss';
 
 const menuItems = [
@@ -30,22 +34,58 @@ const menuItems = [
 ];
 
 const SideMenu = () => {
+  const [openSections, setOpenSections] = useState([]);
+  const pathname = usePathname();
+
+  const toggleSection = (index) => {
+    setOpenSections(prev => {
+      if (prev.includes(index)) {
+        return prev.filter(i => i !== index);
+      } else {
+        return [...prev, index];
+      }
+    });
+  };
+
+  const isMobile = () => {
+    if (typeof window !== 'undefined') {
+      return window.innerWidth <= 768;
+    }
+    return false;
+  };
+
   return (
     <div className={styles.sideMenu}>
-      {menuItems.map((item, index) => (
-        <div key={index} className={styles.menuSection}>
-          <h3 className={styles.sectionTitle}>{item.title}</h3>
-          <ul className={styles.subItems}>
-            {item.subItems.map((subItem, subIndex) => (
-              <li key={subIndex}>
-                <Link href={subItem.path}>
-                  {subItem.title}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-      ))}
+      {menuItems.map((item, index) => {
+        const isOpen = openSections.includes(index);
+        const hasActiveLink = item.subItems.some(subItem => pathname === subItem.path);
+        
+        return (
+          <div 
+            key={index} 
+            className={`${styles.menuSection} ${isOpen ? styles.open : ''} ${hasActiveLink ? styles.hasActive : ''}`}
+          >
+            <h3 
+              className={styles.sectionTitle}
+              onClick={() => isMobile() && toggleSection(index)}
+            >
+              {item.title}
+            </h3>
+            <ul className={`${styles.subItems} ${isOpen ? styles.open : ''}`}>
+              {item.subItems.map((subItem, subIndex) => (
+                <li key={subIndex}>
+                  <Link 
+                    href={subItem.path}
+                    className={pathname === subItem.path ? styles.active : ''}
+                  >
+                    {subItem.title}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        );
+      })}
     </div>
   );
 };
