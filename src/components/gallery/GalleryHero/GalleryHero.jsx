@@ -3,25 +3,21 @@ import styles from './GalleryHero.module.scss';
 
 const GalleryHero = () => {
   return (
-    <section className={styles.galleryHero}>
-      <div className={styles.backgroundImage}>
-        <Image
-          src="/images/manzara5.jpg"
-          alt="Galeri Arka Plan"
-          fill
-          priority
-          style={{ objectFit: "cover" }}
-        />
-        <div className={styles.overlay} />
+    <div className={styles.hero}>
+      <Image
+        src="/images/arslandede1.jpg" 
+        alt="Arslandede Köyü Galeri Görseli"
+        fill
+        className={styles.heroImage}
+        priority
+        quality={75}
+        sizes="100vw"
+      />
+      <div className={styles.content}>
+        <h1>Fotoğraf Galerisi</h1>
+        <p>Arslandede Köyü'nün güzelliklerini keşfedin</p>
       </div>
-      <div className={styles.container}>
-        <h1>Galeri</h1>
-        <p>Köyümüzün güzelliklerini ve anılarımızı keşfedin</p>
-        <div className={styles.buttonContainer}>
-          <button className={styles.button}>Galeriye Git</button>
-        </div>
-      </div>
-    </section>
+    </div>
   );
 };
 

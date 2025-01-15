@@ -2,13 +2,10 @@
 
 import { useState, useCallback, useEffect } from 'react';
 import Image from 'next/image';
-import { FaArrowLeft, FaArrowRight, FaTimes } from 'react-icons/fa';
 import Masonry from 'react-masonry-css';
 import styles from './PhotoGallery.module.scss';
 import galleryData from '@/data/gallery.data.json';
-import Lightbox from 'yet-another-react-lightbox';
-import Zoom from 'yet-another-react-lightbox/plugins/zoom';
-import 'yet-another-react-lightbox/styles.css';
+import PhotoModal from '../PhotoModal/PhotoModal';
 
 const PhotoGallery = () => {
   const [selectedPhoto, setSelectedPhoto] = useState(null);
@@ -85,8 +82,16 @@ const PhotoGallery = () => {
 
   useEffect(() => {
     window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [handleKeyDown]);
+    if (selectedPhoto) {
+      document.body.classList.add('modal-open');
+    } else {
+      document.body.classList.remove('modal-open');
+    }
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+      document.body.classList.remove('modal-open');
+    };
+  }, [handleKeyDown, selectedPhoto]);
 
   return (
     <section className={styles.photoGallery}>
@@ -112,14 +117,13 @@ const PhotoGallery = () => {
                     <Image
                       src={photo.image}
                       alt={photo.title}
-                      fill
+                      width={400}
+                      height={300}
                       sizes="(max-width: 480px) 180px,
                               (max-width: 768px) 220px,
                               (max-width: 1200px) 260px,
                               300px"
                       className={styles.image}
-                      priority={index === 0}
-                      loading="lazy"
                     />
                     <div className={styles.overlay}>
                       <h3>{photo.title}</h3>
@@ -133,47 +137,12 @@ const PhotoGallery = () => {
         ))}
       </div>
 
-      <Lightbox
-        open={lightboxIndex >= 0}
-        close={closeLightbox}
-        index={lightboxIndex}
-        slides={galleryData.photos.map(photo => ({
-          src: photo.image,
-          alt: photo.title,
-          title: photo.title,
-          description: photo.description
-        }))}
-        plugins={[Zoom]}
+      <PhotoModal
+        photo={selectedPhoto}
+        onClose={() => setSelectedPhoto(null)}
+        onNavigate={navigatePhotos}
+        isOpen={!!selectedPhoto}
       />
-
-      {selectedPhoto && (
-        <div className={styles.lightbox} onClick={() => setSelectedPhoto(null)}>
-          <div className={styles.lightboxContent} onClick={e => e.stopPropagation()}>
-            <Image
-              src={selectedPhoto.image}
-              alt={selectedPhoto.title}
-              width={1200}
-              height={800}
-              className={styles.lightboxImage}
-            />
-            <div className={styles.navButtons}>
-              <button onClick={() => navigatePhotos('prev')}>
-                <FaArrowLeft />
-              </button>
-              <button onClick={() => navigatePhotos('next')}>
-                <FaArrowRight />
-              </button>
-            </div>
-            <div className={styles.photoInfo}>
-              <h3>{selectedPhoto.title}</h3>
-              <p>{selectedPhoto.description}</p>
-            </div>
-            <div className={styles.keyboardHint}>
-              Klavye ile gezinmek için ← → tuşlarını kullanın
-            </div>
-          </div>
-        </div>
-      )}
     </section>
   );
 };

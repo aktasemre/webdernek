@@ -1,6 +1,17 @@
 .photoGallery {
   padding: 4rem 0 2rem;
   background-color: #f5f5f5;
+  opacity: 0;
+  animation: fadeIn 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .container {
@@ -13,6 +24,10 @@
     color: #2C5F2D;
     margin-bottom: 2rem;
     font-size: 2.5rem;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: slideUp 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    animation-delay: 0.3s;
   }
 }
 
@@ -24,6 +39,10 @@
     margin-bottom: 1rem;
     font-size: 1.8rem;
     padding-left: 1rem;
+    opacity: 0;
+    transform: translateX(-20px);
+    animation: slideIn 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    animation-delay: 0.5s;
   }
 }
 
@@ -35,23 +54,32 @@
   cursor: pointer;
   border-radius: 12px;
   overflow: hidden;
-  transition: all 0.3s ease;
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
   background: white;
   border: 1px solid #e0e0e0;
   opacity: 0;
-  animation: fadeInUp 0.6s ease forwards;
-  animation-delay: calc(var(--index) * 0.1s);
+  animation: fadeInUp 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  animation-delay: calc(var(--index) * 0.2s);
 
   &:hover {
-    transform: scale(1.1);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    border-color: #2C5F2D;
-    z-index: 10;
+    .imageContainer {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(1.3);
+      z-index: 1000;
+      width: 400px;
+      height: 300px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      border-radius: 12px;
+      background: white;
+    }
     
     .overlay {
       opacity: 1;
       background: rgba(0, 0, 0, 0.5);
+      z-index: 1001;
     }
   }
 }
@@ -59,7 +87,7 @@
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(40px);
   }
   to {
     opacity: 1;
@@ -67,16 +95,38 @@
   }
 }
 
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
 .imageContainer {
   position: relative;
   width: 100%;
   height: 100%;
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 
   .image {
     object-fit: cover;
     width: 100%;
     height: 100%;
-    transition: all 0.3s ease;
   }
 }
 
@@ -89,17 +139,28 @@
   justify-content: flex-end;
   padding: 1rem;
   opacity: 0;
-  transition: all 0.3s ease;
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 11;
   
   h3 {
     color: white;
     font-size: 1.2rem;
     margin-bottom: 0.5rem;
+    transform: translateY(20px);
+    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
   }
   
   p {
     color: rgba(255, 255, 255, 0.9);
     font-size: 0.9rem;
+    transform: translateY(20px);
+    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+.photoCard:hover .overlay {
+  h3, p {
+    transform: translateY(0);
   }
 }
 
@@ -149,8 +210,9 @@
   .photoCard {
     width: 350px;
     height: 262px;
-    &:hover {
-      transform: scale(1.1);
+    &:hover .imageContainer {
+      width: 350px;
+      height: 262px;
     }
   }
 }
@@ -159,8 +221,10 @@
   .photoCard {
     width: 300px;
     height: 225px;
-    &:hover {
-      transform: scale(1.05);
+    &:hover .imageContainer {
+      width: 300px;
+      height: 225px;
+      transform: translate(-50%, -50%) scale(1.2);
     }
   }
 }
@@ -169,8 +233,164 @@
   .photoCard {
     width: 250px;
     height: 187px;
+    &:hover .imageContainer {
+      width: 250px;
+      height: 187px;
+      transform: translate(-50%, -50%) scale(1.15);
+    }
+  }
+}
+
+.modalCard {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 800px;
+  max-width: 90vw;
+  height: auto;
+  max-height: 80vh;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  z-index: 9999;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  animation: modalFadeIn 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+
+  .modalImage {
+    width: 100%;
+    height: auto;
+    max-height: 60vh;
+    object-fit: contain;
+    background: #000;
+  }
+
+  .modalContent {
+    padding: 1.5rem;
+    background: white;
+    max-height: 20vh;
+    overflow-y: auto;
+
+    h3 {
+      font-size: 1.4rem;
+      color: #333;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      color: #666;
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+  }
+
+  .modalClose {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 10000;
+
     &:hover {
-      transform: scale(1.05);
+      background: rgba(0, 0, 0, 0.7);
+      transform: scale(1.1);
+    }
+  }
+
+  .modalNav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 10000;
+
+    &:hover {
+      background: rgba(0, 0, 0, 0.7);
+      transform: translateY(-50%) scale(1.1);
+    }
+
+    &.prev {
+      left: 1rem;
+    }
+
+    &.next {
+      right: 1rem;
+    }
+  }
+}
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -48%) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(4px);
+  z-index: 9998;
+  animation: overlayFadeIn 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes overlayFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+body.modal-open {
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .modalCard {
+    width: 95vw;
+    max-height: 90vh;
+    
+    .modalContent {
+      padding: 1rem;
+      max-height: 30vh;
+      
+      h3 {
+        font-size: 1.2rem;
+      }
+    }
+    
+    .modalNav {
+      width: 32px;
+      height: 32px;
     }
   }
 } 

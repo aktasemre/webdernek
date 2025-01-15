@@ -1,5 +1,6 @@
 import GalleryHero from '@/components/gallery/GalleryHero/GalleryHero';
 import GalleryCategories from '@/components/gallery/GalleryCategories/GalleryCategories';
+import Image from 'next/image';
 
 export default function Gallery() {
   return (
