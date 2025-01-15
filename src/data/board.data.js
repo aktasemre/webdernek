@@ -51,7 +51,7 @@ export const boardMembers = [
     description: '2023-2025 dönemi Yönetim Kurulu Üyesi'
   },
   {
-    name: 'Mustafa Albay Emirali',
+    name: 'Mustafa Albay Yildirim',
     position: 'Üye',
     image: '/images/manzara5.jpg',
     phone: '+90 555 567 8901',

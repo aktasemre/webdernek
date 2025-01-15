@@ -11,8 +11,8 @@ const VegetationInfo = () => {
           <Image
             src="/images/manzara3.jpg"
             alt="Arslandede Köyü Bitki Örtüsü"
-            width="auto"
-            height="auto"
+            width={600}
+            height={400}
             style={{ objectFit: "cover" }}
           />
         </div>

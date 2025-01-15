@@ -1,321 +1,224 @@
 .header {
-  background-color: white;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   z-index: 1000;
-  width: 100%;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .navbar {
-  width: 100%;
-  
-  .container {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 0.5rem 1rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: relative;
-    width: 100%;
+  padding: 0.5rem 1rem;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  gap: 1rem;
+
+  span {
+    font-size: 1.2rem;
   }
+}
 
-  .logo {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    text-decoration: none;
-    color: #2C5F2D;
+.logoImage {
+  border-radius: 50%;
+}
 
-    .logoImage {
-      border-radius: 50%;
-      border: 1px solid #2C5F2D;
-      transition: transform 0.3s ease;
-    }
+.menuButton {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #333;
+  padding: 0.5rem;
 
-    span {
-      font-size: 1.3rem;
-      font-weight: 700;
-    }
-
-    &:hover {
-      .logoImage {
-        transform: scale(1.05);
-      }
-    }
+  @media (max-width: 768px) {
+    display: block;
   }
+}
 
-  .menuButton {
+.menu {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+
+  @media (max-width: 768px) {
     display: none;
-    padding: 0.5rem;
-    background-color: transparent;
-    color: #2C5F2D;
-    border: none;
-    cursor: pointer;
-    font-size: 1.5rem;
-    transition: color 0.3s ease;
-    z-index: 1002;
-    position: relative;
-
-    &:hover {
-      color: darken(#2C5F2D, 10%);
-    }
-
-    svg {
-      display: block;
-    }
-  }
-
-  .menu {
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
+    position: fixed;
+    top: 80px;
+    left: 0;
+    right: 0;
+    background: #fff;
+    flex-direction: column;
+    padding: 1rem;
+    height: calc(100vh - 80px);
+    overflow-y: auto;
 
     &.active {
-      display: flex !important;
+      display: flex;
     }
+  }
+}
 
-    .menuItem {
-      color: #333;
-      text-decoration: none;
-      font-size: 1rem;
-      font-weight: 500;
+.menuItem {
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5rem;
+  transition: color 0.3s;
+
+  &:hover {
+    color: #2C5F2D;
+  }
+}
+
+.dropdown {
+  position: relative;
+  cursor: pointer;
+
+  &:hover .dropdownContent {
+    display: block;
+  }
+}
+
+.dropdownContent {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #fff;
+  min-width: 200px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  padding: 0.5rem 0;
+
+  a {
+    display: block;
+    padding: 0.5rem 1rem;
+    color: #333;
+    text-decoration: none;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: #f5f5f5;
+      color: #2C5F2D;
+    }
+  }
+
+  @media (max-width: 768px) {
+    position: static;
+    box-shadow: none;
+    display: block;
+    width: 100%;
+    padding: 0;
+    margin-top: 0.5rem;
+
+    a {
       padding: 0.5rem;
-      transition: color 0.3s ease;
-
-      &:hover {
-        color: #2C5F2D;
-      }
-    }
-
-    .dropdown {
-      position: relative;
-
-      .menuItem {
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        gap: 0.25rem;
-      }
-
-      &:hover {
-        .dropdownContent {
-          display: block;
-        }
-      }
-
-      .dropdownContent {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        background-color: white;
-        min-width: 220px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        border-radius: 4px;
-        padding: 0.5rem 0;
-        z-index: 1000;
-
-        a {
-          display: block;
-          padding: 0.5rem 1rem;
-          color: #333;
-          text-decoration: none;
-          transition: all 0.3s ease;
-
-          &:hover {
-            background-color: #f5f5f5;
-            color: #2C5F2D;
-            padding-left: 1.5rem;
-          }
-        }
-      }
-    }
-
-    .surveyButton {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.5rem 1rem;
-      background-color: #2C5F2D;
-      color: white;
-      text-decoration: none;
-      border-radius: 4px;
-      font-weight: 500;
-      transition: all 0.3s ease;
-
-      &:hover {
-        background-color: darken(#2C5F2D, 10%);
-        transform: translateY(-2px);
-      }
-
-      svg {
-        font-size: 1.1rem;
-      }
-    }
-
-    .searchContainer {
-      position: relative;
-      display: flex;
-      align-items: center;
-
-      .searchButton {
-        background: none;
-        border: none;
-        color: #333;
-        font-size: 1.2rem;
-        cursor: pointer;
-        padding: 0.5rem;
-        transition: color 0.3s ease;
-
-        &:hover {
-          color: #2C5F2D;
-        }
-      }
-
-      .searchBox {
-        position: absolute;
-        top: 100%;
-        right: 0;
-        background: white;
-        padding: 1rem;
-        border-radius: 4px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        display: flex;
-        gap: 0.5rem;
-        z-index: 1000;
-        min-width: 300px;
-
-        .searchInput {
-          flex: 1;
-          padding: 0.5rem;
-          border: 1px solid #ddd;
-          border-radius: 4px;
-          font-size: 1rem;
-
-          &:focus {
-            outline: none;
-            border-color: #2C5F2D;
-          }
-        }
-
-        .searchSubmit {
-          background: #2C5F2D;
-          border: none;
-          color: white;
-          padding: 0.5rem 1rem;
-          border-radius: 4px;
-          cursor: pointer;
-          transition: background-color 0.3s ease;
-
-          &:hover {
-            background-color: darken(#2C5F2D, 10%);
-          }
-        }
-      }
     }
   }
 }
 
-@media (max-width: 1024px) {
-  .navbar {
-    .menuButton {
-      display: block;
-    }
+.searchContainer {
+  position: relative;
+}
 
-    .menu {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100vh;
-      background-color: white;
-      padding: 2rem 1rem;
-      padding-top: 5rem;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 1rem;
-      z-index: 1001;
-      overflow-y: auto;
+.searchButton {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: #333;
+  padding: 0.5rem;
+  transition: color 0.3s;
 
-      &.active {
-        display: flex;
-      }
-
-      .menuItem {
-        width: 100%;
-        padding: 0.5rem 0;
-        font-size: 1.2rem;
-      }
-
-      .dropdown {
-        width: 100%;
-
-        .dropdownContent {
-          position: static;
-          display: none;
-          box-shadow: none;
-          padding-left: 1rem;
-          background-color: #f5f5f5;
-          margin-top: 0.5rem;
-          border-radius: 4px;
-        }
-
-        &:hover .dropdownContent,
-        &:focus-within .dropdownContent {
-          display: block;
-        }
-      }
-
-      .surveyButton {
-        width: 100%;
-        justify-content: center;
-        margin-top: 1rem;
-      }
-
-      .searchContainer {
-        width: 100%;
-
-        .searchBox {
-          position: static;
-          width: 100%;
-          margin-top: 1rem;
-        }
-      }
-    }
+  &:hover {
+    color: #2C5F2D;
   }
 }
 
-@media (max-width: 768px) {
-  .navbar {
-    .logo {
-      span {
-        font-size: 1.1rem;
-      }
-    }
+.searchBox {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: #fff;
+  padding: 1rem;
+  border-radius: 4px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  gap: 0.5rem;
 
-    .menu {
-      padding-top: 4rem;
-    }
+  @media (max-width: 768px) {
+    position: static;
+    box-shadow: none;
+    padding: 0.5rem;
   }
 }
 
-@media (max-width: 480px) {
-  .navbar {
-    .logo {
-      span {
-        font-size: 0.9rem;
-      }
-    }
+.searchInput {
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  width: 200px;
+  font-size: 1rem;
 
-    .menu {
-      padding-top: 3rem;
-      
-      .menuItem {
-        font-size: 1.1rem;
-      }
-    }
+  &:focus {
+    outline: none;
+    border-color: #2C5F2D;
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+}
+
+.searchSubmit {
+  background: #2C5F2D;
+  border: none;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: darken(#2C5F2D, 10%);
+  }
+}
+
+.surveyButton {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #2C5F2D;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: darken(#2C5F2D, 10%);
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    justify-content: center;
   }
 } 

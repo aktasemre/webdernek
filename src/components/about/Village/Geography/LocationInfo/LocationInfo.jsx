@@ -24,11 +24,11 @@ const LocationInfo = () => {
           <p>{locationData.transportation.description}</p>
         </div>
         <div className={styles.imageContainer}>
-          <Image
-            src="/images/manzara2.jpg"
+          <Image 
+            src="/images/manzara2.jpg" 
             alt="Arslandede Köyü Konumu"
-            width="auto"
-            height="auto"
+            width={600}
+            height={400}
             style={{ objectFit: "cover" }}
           />
         </div>

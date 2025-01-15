@@ -1,4 +1,6 @@
 import Head from 'next/head';
+import Header from '@/components/common/Header/Header';
+import '@/styles/globals.scss';
 
 export const metadata = {
   title: 'Arslandede Köyü Derneği',
@@ -26,7 +28,12 @@ export default function RootLayout({ children }) {
         <meta name="theme-color" content="#2C5F2D" />
         <meta name="mobile-web-app-capable" content="yes" />
       </head>
-      <body suppressHydrationWarning={true} className="antialiased">{children}</body>
+      <body suppressHydrationWarning={true} className="antialiased">
+        <Header />
+        <main>
+          {children}
+        </main>
+      </body>
     </html>
   );
 } 

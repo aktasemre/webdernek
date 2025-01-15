@@ -28,7 +28,6 @@ const Header = () => {
   }, [isOpen]);
 
   useEffect(() => {
-    // Dışarı tıklama kontrolü
     const handleClickOutside = (event) => {
       if (searchRef.current && !searchRef.current.contains(event.target)) {
         setShowSearch(false);
