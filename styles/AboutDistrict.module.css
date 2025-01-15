@@ -53,11 +53,11 @@
   margin-bottom: 25px;
 }
 
-.gallerySection {
+.districtGallerySection {
   margin-top: 40px;
 }
 
-.gallery {
+.districtGallery {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 20px;

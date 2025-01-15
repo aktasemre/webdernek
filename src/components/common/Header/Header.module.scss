@@ -4,12 +4,19 @@
   left: 0;
   right: 0;
   z-index: 1000;
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+
+  &.scrolled {
+    background-color: rgba(255, 255, 255, 0.98);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
 }
 
 .navbar {
-  padding: 0.5rem 1rem;
+  padding: 0.75rem 1.5rem;
 }
 
 .container {
@@ -25,17 +32,29 @@
   display: flex;
   align-items: center;
   text-decoration: none;
-  color: #333;
+  color: #2C5F2D;
   font-weight: bold;
   gap: 1rem;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: translateY(-1px);
+  }
 
   span {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
   }
 }
 
 .logoImage {
   border-radius: 50%;
+  border: 2px solid #2C5F2D;
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(44, 95, 45, 0.2);
+  }
 }
 
 .menuButton {
@@ -44,8 +63,13 @@
   border: none;
   font-size: 1.5rem;
   cursor: pointer;
-  color: #333;
+  color: #2C5F2D;
   padding: 0.5rem;
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: rotate(90deg);
+  }
 
   @media (max-width: 768px) {
     display: block;
@@ -55,22 +79,27 @@
 .menu {
   display: flex;
   align-items: center;
-  gap: 1.5rem;
+  gap: 2rem;
 
   @media (max-width: 768px) {
     display: none;
     position: fixed;
     top: 80px;
     left: 0;
-    right: 0;
-    background: #fff;
+    width: 75%;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(10px);
     flex-direction: column;
-    padding: 1rem;
+    padding: 2rem;
     height: calc(100vh - 80px);
     overflow-y: auto;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+    border-right: 1px solid rgba(44, 95, 45, 0.1);
 
     &.active {
       display: flex;
+      transform: translateX(0);
     }
   }
 }
@@ -80,10 +109,26 @@
   text-decoration: none;
   font-weight: 500;
   padding: 0.5rem;
-  transition: color 0.3s;
+  position: relative;
+  transition: all 0.3s ease;
+
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #2C5F2D;
+    transition: width 0.3s ease;
+  }
 
   &:hover {
     color: #2C5F2D;
+
+    &:after {
+      width: 100%;
+    }
   }
 }
 
@@ -92,44 +137,64 @@
   cursor: pointer;
 
   &:hover .dropdownContent {
-    display: block;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
   }
 }
 
 .dropdownContent {
-  display: none;
+  display: block;
   position: absolute;
   top: 100%;
-  left: 0;
-  background: #fff;
-  min-width: 200px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  border-radius: 4px;
-  padding: 0.5rem 0;
+  left: -1rem;
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(10px);
+  min-width: 220px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 0.75rem 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(44, 95, 45, 0.1);
 
   a {
     display: block;
-    padding: 0.5rem 1rem;
+    padding: 0.75rem 1.5rem;
     color: #333;
     text-decoration: none;
-    transition: background-color 0.3s;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
 
     &:hover {
-      background-color: #f5f5f5;
+      background-color: rgba(44, 95, 45, 0.1);
       color: #2C5F2D;
+      padding-left: 2rem;
     }
   }
 
   @media (max-width: 768px) {
     position: static;
     box-shadow: none;
-    display: block;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
     width: 100%;
     padding: 0;
     margin-top: 0.5rem;
+    background: transparent;
+    border: none;
 
     a {
-      padding: 0.5rem;
+      padding: 0.75rem 1rem;
+      border-radius: 4px;
+
+      &:hover {
+        background-color: rgba(44, 95, 45, 0.1);
+        padding-left: 1.5rem;
+      }
     }
   }
 }
@@ -143,12 +208,12 @@
   border: none;
   font-size: 1.2rem;
   cursor: pointer;
-  color: #333;
+  color: #2C5F2D;
   padding: 0.5rem;
-  transition: color 0.3s;
+  transition: all 0.3s ease;
 
   &:hover {
-    color: #2C5F2D;
+    transform: scale(1.1);
   }
 }
 
@@ -156,69 +221,76 @@
   position: absolute;
   top: 100%;
   right: 0;
-  background: #fff;
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(10px);
   padding: 1rem;
-  border-radius: 4px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   display: flex;
   gap: 0.5rem;
+  border: 1px solid rgba(44, 95, 45, 0.1);
+  min-width: 300px;
 
   @media (max-width: 768px) {
     position: static;
     box-shadow: none;
-    padding: 0.5rem;
+    padding: 1rem 0;
+    width: 100%;
   }
 }
 
 .searchInput {
-  padding: 0.5rem;
+  flex: 1;
+  padding: 0.75rem;
   border: 1px solid #ddd;
-  border-radius: 4px;
-  width: 200px;
+  border-radius: 6px;
   font-size: 1rem;
+  transition: all 0.3s ease;
 
   &:focus {
     outline: none;
     border-color: #2C5F2D;
-  }
-
-  @media (max-width: 768px) {
-    width: 100%;
+    box-shadow: 0 0 0 2px rgba(44, 95, 45, 0.1);
   }
 }
 
 .searchSubmit {
   background: #2C5F2D;
   border: none;
-  color: #fff;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
+  color: white;
+  padding: 0.75rem 1.25rem;
+  border-radius: 6px;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: all 0.3s ease;
+  font-weight: 500;
 
   &:hover {
     background-color: darken(#2C5F2D, 10%);
+    transform: translateY(-1px);
   }
 }
 
 .surveyButton {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.75rem;
   background: #2C5F2D;
-  color: #fff;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
+  color: white;
+  padding: 0.75rem 1.25rem;
+  border-radius: 6px;
   text-decoration: none;
   font-weight: 500;
-  transition: background-color 0.3s;
+  transition: all 0.3s ease;
 
   &:hover {
     background-color: darken(#2C5F2D, 10%);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(44, 95, 45, 0.2);
   }
 
   @media (max-width: 768px) {
     width: 100%;
     justify-content: center;
+    margin-top: 1rem;
   }
 } 

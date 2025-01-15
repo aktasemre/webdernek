@@ -86,6 +86,13 @@ const AboutDistrictContent = () => {
             <p>4 Mahalle</p>
           </div>
         </div>
+
+        <div className={styles.districtGallerySection}>
+          <h2>Fotoğraf Galerisi</h2>
+          <div className={styles.districtGallery}>
+            {/* ... gallery items ... */}
+          </div>
+        </div>
       </div>
     </section>
   );
