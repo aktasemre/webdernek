@@ -27,6 +27,7 @@ const withPWA = require('@ducanh2912/next-pwa').default({
 const nextConfig = {
   images: {
     unoptimized: true,
+    domains: ['localhost'],
   },
   trailingSlash: true
 }

@@ -13,28 +13,28 @@ export const donationData = {
     {
       title: "Ağaçlandırma Kampanyası",
       description: "Köyümüzün yeşil dokusunu korumak ve geliştirmek için başlattığımız ağaçlandırma kampanyasına destek olabilirsiniz.",
-      image: "/images/agaclandirma.jpg",
+      image: "/images/bagis_kampanya/agaclandirma.jpg",
       targetAmount: 50000,
       currentAmount: 25000
     },
     {
       title: "Ramazan Kumanyası",
       description: "Ramazan ayında ihtiyaç sahibi ailelerimize kumanya desteği sağlıyoruz.",
-      image: "/images/kumanya.jpg",
+      image: "/images/bagis_kampanya/kumanya.jpg",
       targetAmount: 30000,
       currentAmount: 15000
     },
     {
       title: "Eğitim Bursu",
       description: "Köyümüzün başarılı öğrencilerine eğitim bursu desteği sağlıyoruz.",
-      image: "/images/egitim.jpg",
+      image: "/images/bagis_kampanya/egitim.jpg",
       targetAmount: 100000,
       currentAmount: 45000
     },
     {
       title: "Cami Yardımı",
       description: "Köyümüz camisinin bakım, onarım ve ihtiyaçları için yardımlarınızı bekliyoruz.",
-      image: "/images/cami.jpg",
+      image: "/images/cami1.jpg",
       targetAmount: 75000,
       currentAmount: 35000
     }

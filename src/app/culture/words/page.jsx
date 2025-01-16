@@ -7,57 +7,126 @@ const WordsPage = () => {
   const [searchTerm, setSearchTerm] = useState('');
 
   const words = [
-    {
-      word: "Zıbar",
-      meaning: "Yatmak, uyumak",
-      example: "Hadi zıbar artık, geç oldu"
-    },
-    {
-      word: "Çiğsemek",
-      meaning: "Hafif yağmur yağması",
-      example: "Hava çiğsiyor, içeri girelim"
-    },
-    {
-      word: "Hellenmek",
-      meaning: "Yorulmak, bitkin düşmek",
-      example: "Bugün çok hellendim"
-    },
-    {
-      word: "Gırnata",
-      meaning: "Sürekli konuşan, çok konuşkan",
-      example: "Ne gırnata adamsın be"
-    },
-    {
-      word: "Zangırdamak",
-      meaning: "Titremek, sallanmak",
-      example: "Soğuktan zangır zangır titriyor"
-    },
-    {
-      word: "Höykürme",
-      meaning: "Bağırmak, yüksek sesle konuşmak",
-      example: "Ne höykürüp duruyorsun?"
-    },
-    {
-      word: "Cıncık",
-      meaning: "Küçük cam parçası, boncuk",
-      example: "Yerde cıncıklar var, dikkat et"
-    },
-    {
-      word: "Eğleşmek",
-      meaning: "Oyalanmak, vakit geçirmek",
-      example: "Biraz eğleşip gideriz"
-    },
-    {
-      word: "Gıdım",
-      meaning: "Çok az, azıcık",
-      example: "Bir gıdım su ver"
-    },
-    {
-      word: "İlişmek",
-      meaning: "Hafifçe oturmak, kısa süre oturmak",
-      example: "Şöyle ilişiver biraz"
-    }
-  ];
+    
+
+      {
+        word: "Galıf",
+        meaning: "Tahta kulübe, bağ evi",
+        example: "Yazın galıfta kalırız."
+      },
+      {
+        word: "Germişe",
+        meaning: "Meyvesi yenen, çalımsı bir ağaç",
+        example: "Germişe meyveleri toplandı."
+      },
+      {
+        word: "Gössüz",
+        meaning: "Köstebek",
+        example: "Bahçede gössüz yuvası var."
+      },
+      {
+        word: "Kahmut",
+        meaning: "Yumru köklü bir tür bitki",
+        example: "Kahmutları topladık."
+      },
+      {
+        word: "Künde",
+        meaning: "Her gün",
+        example: "Künde buraya gelir."
+      },
+      {
+        word: "Meşebe",
+        meaning: "Maşrapa",
+        example: "Suyu meşebeyle içtik."
+      },
+      {
+        word: "Sımışka",
+        meaning: "Ay çekirdeği",
+        example: "Akşamları sımışka çitleriz."
+      },
+      {
+        word: "Tehmük",
+        meaning: "Tekme",
+        example: "Topa bir tehmük attı."
+      },
+      {
+        word: "Zap",
+        meaning: "Genellikle bakliyat konulan büyük çömlek küp",
+        example: "Fasulyeleri zapa koyduk."
+      },
+      {
+        word: "Zıbar",
+        meaning: "Yatmak, uyumak",
+        example: "Hadi zıbar artık, geç oldu."
+      },
+      {
+        word: "Çiğsemek",
+        meaning: "Hafif yağmur yağması",
+        example: "Hava çiğsiyor, içeri girelim."
+      },
+      {
+        word: "Hellenmek",
+        meaning: "Yorulmak, bitkin düşmek",
+        example: "Bugün çok hellendim."
+      },
+      {
+        word: "Gırnata",
+        meaning: "Sürekli konuşan, çok konuşkan",
+        example: "Ne gırnata adamsın be!"
+      },
+      {
+        word: "Zangırdamak",
+        meaning: "Titremek, sallanmak",
+        example: "Soğuktan zangır zangır titriyor."
+      },
+      {
+        word: "Höykürmek",
+        meaning: "Bağırmak, yüksek sesle konuşmak",
+        example: "Ne höykürüp duruyorsun?"
+      },
+      {
+        word: "Cıncık",
+        meaning: "Küçük cam parçası, boncuk",
+        example: "Yerde cıncıklar var, dikkat et."
+      },
+      {
+        word: "Eğleşmek",
+        meaning: "Oyalanmak, vakit geçirmek",
+        example: "Biraz eğleşip gideriz."
+      },
+      {
+        word: "Gıdım",
+        meaning: "Çok az, azıcık",
+        example: "Bir gıdım su ver."
+      },
+      {
+        word: "İlişmek",
+        meaning: "Hafifçe oturmak, kısa süre oturmak",
+        example: "Şöyle ilişiver biraz."
+      },
+      {
+        word: "Corcolos",
+        meaning: "Karın erimiş, sulanmış hali",
+        example: "Dışarıda corcolos var, dikkatli yürü."
+      },
+      {
+        word: "Corma",
+        meaning: "Bataklık",
+        example: "O tarla corma olmuş, oraya gitmeyelim."
+      },
+      {
+        word: "Cumurla",
+        meaning: "Katlayıp toplamak, buruşturmak",
+        example: "Bu kağıdı cumurlama, düzgün tut."
+      },
+      {
+        word: "Debbe",
+        meaning: "Bakırdan yapılmış bir tür güğüm",
+        example: "Suyu debbeyle taşıdık."
+      }
+    
+    ];
+    
 
   const filteredWords = words.filter(item =>
     item.word.toLowerCase().includes(searchTerm.toLowerCase()) ||

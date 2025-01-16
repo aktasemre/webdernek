@@ -1,6 +1,7 @@
 import DonationCard from '@/components/donate/DonationCard/DonationCard';
 import { donationData } from '@/data/donation.data';
 import styles from './page.module.scss';
+import Image from 'next/image';
 
 export const metadata = {
   title: 'Bağış Yap | Arslandede Köyü Derneği',
@@ -35,7 +36,17 @@ const DonatePage = () => {
             {donationData.campaigns.map((campaign, index) => (
               <div key={index} className={styles.campaignCard}>
                 <div className={styles.imageContainer}>
-                  <img src={campaign.image} alt={campaign.title} />
+                  <Image 
+                    src={campaign.image}
+                    alt={campaign.title}
+                    width={300}
+                    height={200}
+                    style={{
+                      width: '100%',
+                      height: '100%',
+                      objectFit: 'cover'
+                    }}
+                  />
                 </div>
                 <div className={styles.content}>
                   <h3>{campaign.title}</h3>
