@@ -1,6 +1,8 @@
 import './globals.scss';
 import Header from '@/components/common/Header/Header';
 import Footer from '@/components/common/Footer/Footer';
+import BottomNav from '@/components/layout/BottomNav/BottomNav';
+
 
 export const viewport = {
   width: 'device-width',
@@ -56,6 +58,7 @@ export default function RootLayout({ children }) {
       <body>
         <Header />
         {children}
+        <BottomNav/>
         <Footer />
       </body>
     </html>

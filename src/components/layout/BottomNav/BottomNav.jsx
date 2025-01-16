@@ -17,7 +17,7 @@ const BottomNav = () => {
     },
     { 
       label: 'Haberler', 
-      path: '/haberler',
+      path: '/news',
       icon: '📰'
     },
     { 
@@ -28,12 +28,12 @@ const BottomNav = () => {
     },
     { 
       label: 'Galeri', 
-      path: '/galeri',
+      path: '/gallery',
       icon: '🖼️'
     },
     { 
       label: 'İletişim', 
-      path: '/iletisim',
+      path: '/contact',
       icon: '📞'
     }
   ];
