@@ -4,7 +4,20 @@ import { useState, useEffect, useRef } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
-import { FaClipboardList, FaBars, FaTimes, FaSearch } from 'react-icons/fa';
+import { 
+  FaClipboardList, 
+  FaBars, 
+  FaTimes, 
+  FaSearch,
+  FaHome,
+  FaHistory,
+  FaMapMarkerAlt,
+  FaUsers,
+  FaIndustry,
+  FaGraduationCap,
+  FaLandmark,
+  FaChevronDown
+} from 'react-icons/fa';
 import styles from './Header.module.scss';
 import iletisimData from '@/data/iletisim.data.json';
 
@@ -15,6 +28,7 @@ const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const searchRef = useRef(null);
   const router = useRouter();
+  const [activeDropdown, setActiveDropdown] = useState(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -77,6 +91,21 @@ const Header = () => {
     }
   };
 
+  const toggleDropdown = (dropdownName) => {
+    setActiveDropdown(activeDropdown === dropdownName ? null : dropdownName);
+  };
+
+  useEffect(() => {
+    const closeDropdown = (e) => {
+      if (!e.target.closest(`.${styles.dropdown}`)) {
+        setActiveDropdown(null);
+      }
+    };
+
+    document.addEventListener('click', closeDropdown);
+    return () => document.removeEventListener('click', closeDropdown);
+  }, []);
+
   return (
     <header className={`${styles.header} ${isScrolled ? styles.scrolled : ''}`}>
       <nav className={styles.navbar}>
@@ -90,7 +119,7 @@ const Header = () => {
               className={styles.logoImage}
               priority
             />
-            <span>Arslandede Köyü Derneği</span>
+            <span>Arslandede Köyü</span>
           </Link>
 
           <button 
@@ -100,20 +129,29 @@ const Header = () => {
             aria-expanded={isOpen}
           >
             {isOpen ? <FaTimes /> : <FaBars />}
-          </button>
+          </button> 
 
           <div 
             className={`${styles.menu} ${isOpen ? styles.active : ''}`}
             aria-hidden={!isOpen}
           >
-            <Link href="/" className={styles.menuItem} onClick={closeMenu}>Ana Sayfa</Link>
+            <Link href="/" className={styles.menuItem} onClick={closeMenu}></Link>
             
-            <div className={styles.dropdown}>
-              <span className={styles.menuItem}>Köyümüz ▼</span>
-              <div className={styles.dropdownContent}>
+            <div 
+              className={styles.dropdown}
+              onClick={() => toggleDropdown('village')}
+            >
+              <span className={styles.menuItem}>
+                Köyümüz
+                <FaChevronDown className={`${styles.dropdownIcon} ${activeDropdown === 'village' ? styles.active : ''}`} />
+              </span>
+              <div className={`${styles.dropdownContent} ${activeDropdown === 'village' ? styles.show : ''}`}>
                 <Link href="/about/village" onClick={closeMenu}>Köyümüz Hakkında</Link>
                 <Link href="/about/village/history" onClick={closeMenu}>Köyümüzün Tarihi</Link>
-                <Link href="/about/village/geography" onClick={closeMenu}>Coğrafi Yapı</Link>
+                <Link href="/about/village/geography" onClick={closeMenu} className={styles.dropdownLink}>
+                  <FaMapMarkerAlt className={styles.menuIcon} />
+                  <span>Coğrafi Yapı</span>
+                </Link>
                 <Link href="/about/village/population" onClick={closeMenu}>Nüfus ve Yerleşim</Link>
                 <Link href="/about/village/economy" onClick={closeMenu}>Ekonomik Yapı</Link>
                 <Link href="/about/village/education" onClick={closeMenu}>Eğitim ve Kültür</Link>
@@ -121,9 +159,15 @@ const Header = () => {
               </div>
             </div>
 
-            <div className={styles.dropdown}>
-              <span className={styles.menuItem}>Derneğimiz ▼</span>
-              <div className={styles.dropdownContent}>
+            <div 
+              className={styles.dropdown}
+              onClick={() => toggleDropdown('association')}
+            >
+              <span className={styles.menuItem}>
+                Derneğimiz
+                <FaChevronDown className={`${styles.dropdownIcon} ${activeDropdown === 'association' ? styles.active : ''}`} />
+              </span>
+              <div className={`${styles.dropdownContent} ${activeDropdown === 'association' ? styles.show : ''}`}>
                 <Link href="/about/history" onClick={closeMenu}>Derneğimizin Tarihçesi</Link>
                 <Link href="/about/board" onClick={closeMenu}>Yönetim Kurulu</Link>
                 <Link href="/about/statute" onClick={closeMenu}>Dernek Tüzüğü</Link>

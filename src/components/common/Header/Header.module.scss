@@ -105,30 +105,13 @@
 }
 
 .menuItem {
-  color: #333;
-  text-decoration: none;
-  font-weight: 500;
-  padding: 0.5rem;
-  position: relative;
-  transition: all 0.3s ease;
-
-  &:after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background-color: #2C5F2D;
-    transition: width 0.3s ease;
-  }
-
-  &:hover {
-    color: #2C5F2D;
-
-    &:after {
-      width: 100%;
-    }
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  
+  .dropdownIcon {
+    font-size: 0.8rem;
+    transition: transform 0.3s ease;
   }
 }
 
@@ -140,6 +123,21 @@
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
+  }
+
+  &:hover {
+    .dropdownIcon {
+      transform: rotate(180deg);
+    }
+  }
+  
+  // Mobil görünüm için
+  @media (max-width: 768px) {
+    .menuItem {
+      width: 100%;
+      justify-content: space-between;
+      padding: 0.75rem;
+    }
   }
 }
 

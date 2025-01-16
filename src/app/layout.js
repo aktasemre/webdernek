@@ -3,7 +3,7 @@ import Header from '@/components/common/Header/Header';
 import '@/styles/globals.scss';
 
 export const metadata = {
-  title: 'Arslandede Köyü Derneği',
+  title: 'Arslandede Köyü',
   description: 'Arslandede Köyü Derneği resmi web sitesi',
   manifest: '/manifest.json',
   themeColor: '#2C5F2D',
