@@ -50,7 +50,7 @@ const PhotoGallery = () => {
 
   return (
     <section className={styles.photoGalleryContainer}>
-      <h1>Fotoğraf Galerisi</h1>
+        <h1>Fotoğraf Galerisi</h1>
       <div className={styles.photoCategories}>
         <button
           className={`${styles.photoCategoryButton} ${selectedCategory === 'all' ? styles.active : ''}`}
@@ -71,15 +71,15 @@ const PhotoGallery = () => {
 
       <div className={styles.photoGrid}>
         {filteredPhotos.map((photo, index) => (
-          <div 
-            key={photo.id} 
-            className={styles.photoCard}
+                <div 
+                  key={photo.id} 
+                  className={styles.photoCard}
             onClick={() => handlePhotoClick(photo, index)}
-          >
+                >
             <div className={styles.photoImageContainer}>
-              <Image
-                src={photo.image}
-                alt={photo.title}
+                    <Image
+                      src={photo.image}
+                      alt={photo.title}
                 width={600}
                 height={400}
                 priority={index < 4}
@@ -88,7 +88,7 @@ const PhotoGallery = () => {
               />
             </div>
             <div className={styles.photoInfo}>
-              <h3>{photo.title}</h3>
+                      <h3>{photo.title}</h3>
               {photo.description && <p>{photo.description}</p>}
               {photo.tags && photo.tags.length > 0 && (
                 <div className={styles.photoTags}>

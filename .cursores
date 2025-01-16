@@ -14,8 +14,8 @@
           "culture": ["curses", "proverbs", "words"],
           "pages": ["gallery", "news", "events"],
           "files": ["page.jsx", "layout.js", "globals.scss"]
-        },
-        "components": {
+    },
+    "components": {
           "common": ["Header", "Footer", "SideMenu", "BottomNav"],
           "home": ["Hero", "NewsSlider", "Features", "EventCalendar"],
           "gallery": ["GalleryCategories", "PhotoGallery"]
