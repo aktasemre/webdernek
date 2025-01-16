@@ -1,9 +1,4 @@
 {
   "/_not-found/page": "app/_not-found/page.js",
-  "/about/village/economy/page": "app/about/village/economy/page.js",
-  "/about/village/geography/page": "app/about/village/geography/page.js",
-  "/about/board/page": "app/about/board/page.js",
-  "/about/statute/page": "app/about/statute/page.js",
-  "/about/members/page": "app/about/members/page.js",
   "/page": "app/page.js"
 }

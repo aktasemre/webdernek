@@ -6,14 +6,13 @@ import Link from 'next/link';
 import { FaArrowLeft, FaArrowRight, FaDonate, FaUsers, FaPhone } from 'react-icons/fa';
 import styles from './Hero.module.scss';
 import sliderData from '@/data/slider.data.json';
+import { useSwipeHandler } from '@/utils/swipeHandler';
 
 export default function Hero() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const slides = sliderData.slides;
   
-  // Dokunma (swipe) işlemleri için referanslar
-  const touchStartX = useRef(null);
-  const touchEndX = useRef(null);
+  const { handleTouchStart, handleTouchMove, handleTouchEnd } = useSwipeHandler(setCurrentSlide, slides.length);
 
   // Otomatik geçiş için
   useEffect(() => {
@@ -23,44 +22,9 @@ export default function Hero() {
     return () => clearInterval(timer);
   }, [slides.length]);
 
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % slides.length);
-  };
-
-  const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
-  };
-
-  // Dokunma başladığında
-  const handleTouchStart = (e) => {
-    touchStartX.current = e.touches[0].clientX;
-  };
-
-  // Dokunma hareket halindeyken
-  const handleTouchMove = (e) => {
-    touchEndX.current = e.touches[0].clientX;
-  };
-
-  // Dokunma bittiğinde swipe işlemini değerlendir
-  const handleTouchEnd = () => {
-    if (touchStartX.current === null || touchEndX.current === null) {
-      return;
-    }
-    const swipeDistance = touchStartX.current - touchEndX.current;
-    const swipeThreshold = 50; // Swipe için gereken minimum mesafe (piksel)
-
-    if (swipeDistance > swipeThreshold) {
-      // Kullanıcı sola kaydırdı: sonraki slide
-      nextSlide();
-    } else if (swipeDistance < -swipeThreshold) {
-      // Kullanıcı sağa kaydırdı: önceki slide
-      prevSlide();
-    }
-    
-    // Referansları sıfırlıyoruz
-    touchStartX.current = null;
-    touchEndX.current = null;
-  };
+  if (slides.length === 0) {
+    return <div>No slides available</div>; // Hata kontrolü
+  }
 
   return (
     <section 
@@ -97,10 +61,10 @@ export default function Hero() {
         ))}
 
         {/* Slider Kontrolleri */}
-        <button className={`${styles.control} ${styles.prev}`} onClick={prevSlide}>
+        <button className={`${styles.control} ${styles.prev}`} onClick={() => setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length)}>
           <FaArrowLeft />
         </button>
-        <button className={`${styles.control} ${styles.next}`} onClick={nextSlide}>
+        <button className={`${styles.control} ${styles.next}`} onClick={() => setCurrentSlide((prev) => (prev + 1) % slides.length)}>
           <FaArrowRight />
         </button>
 

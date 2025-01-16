@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 import styles from './NewsSlider.module.scss';
 import haberlerData from '@/data/haberler.data.json';
+import { useSwipeHandler } from '@/utils/swipeHandler';
 
 const NewsSlider = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -34,30 +35,7 @@ const NewsSlider = () => {
     setCurrentSlide((prev) => (prev - 1 + sliderHaberler.length) % sliderHaberler.length);
   };
 
-  // Touch işlemleri için değişkenler
-  const touchStartX = useRef(0);
-  const touchEndX = useRef(0);
-
-  const handleTouchStart = (e) => {
-    touchStartX.current = e.touches[0].clientX;
-  };
-
-  const handleTouchMove = (e) => {
-    touchEndX.current = e.touches[0].clientX;
-  };
-
-  const handleTouchEnd = () => {
-    const touchDiff = touchStartX.current - touchEndX.current;
-    const minSwipeDistance = 50;
-
-    if (Math.abs(touchDiff) > minSwipeDistance) {
-      if (touchDiff > 0) {
-        nextSlide();
-      } else {
-        prevSlide();
-      }
-    }
-  };
+  const { handleTouchStart, handleTouchMove, handleTouchEnd } = useSwipeHandler(setCurrentSlide, sliderHaberler.length);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -68,6 +46,10 @@ const NewsSlider = () => {
   }, []);
 
   const imageUrl = `https://source.unsplash.com/1600x900/?news,journalism`;
+
+  if (sliderHaberler.length === 0) {
+    return <div>No news available</div>;
+  }
 
   return (
     <div 
