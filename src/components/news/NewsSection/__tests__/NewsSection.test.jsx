@@ -33,7 +33,7 @@ describe('NewsSection', () => {
     render(<NewsSection />)
     haberlerData.haberler.forEach(news => {
       const link = screen.getByText(news.title).closest('a')
-      expect(link).toHaveAttribute('href', `/news/${news.id}`)
+      expect(link).toHaveAttribute('href', `/haberler/${news.id}`)
     })
   })
 

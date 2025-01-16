@@ -22,36 +22,110 @@
       "title": "Derneğimizin Yeni Web Sitesi Yayında",
       "summary": "Derneğimizin yeni web sitesi modern bir tasarımla yayına başladı.",
       "content": "<p>Derneğimizin yeni web sitesi, modern tasarımı ve kullanıcı dostu arayüzüyle yayına başladı. Sitemizde dernek faaliyetlerimiz, köyümüz hakkında bilgiler ve güncel haberler yer alacak.</p><p>Yeni sitemizde:</p><ul><li>Köyümüz hakkında detaylı bilgiler</li><li>Dernek faaliyetlerimiz</li><li>Projelerimiz</li><li>Duyurularımız</li><li>Galeri</li></ul><p>gibi bölümler bulunmaktadır.</p>",
-      "image": "/images/news/website-launch.jpg",
+      "image": "/images/news/website-launch.webp",
       "category": "dernek",
       "date": "2024-01-15",
       "author": "Yönetim Kurulu",
       "tags": ["dernek", "website", "duyuru"],
       "featured": true
     },
-    {
-      "id": 2,
-      "title": "Köyümüzde Altyapı Çalışmaları Başladı",
-      "summary": "Köyümüzde yeni altyapı çalışmaları başlatıldı.",
-      "content": "<p>Köyümüzde uzun süredir planlanan altyapı çalışmaları nihayet başladı. Bu kapsamda:</p><ul><li>İçme suyu şebekesi yenilenecek</li><li>Kanalizasyon sistemi modernize edilecek</li><li>Yollar yenilenecek</li></ul><p>Çalışmaların 3 ay içinde tamamlanması planlanıyor.</p>",
-      "image": "/images/news/altyapi.jpg",
-      "category": "koy",
-      "date": "2024-01-10",
-      "author": "Köy Muhtarlığı",
-      "tags": ["köy", "altyapı", "gelişim"],
-      "featured": true
-    },
+   
     {
       "id": 3,
       "title": "Geleneksel Köy Pikniğimiz Yaklaşıyor",
       "summary": "Her yıl düzenlediğimiz geleneksel köy pikniğimizin tarihi belli oldu.",
       "content": "<p>Geleneksel köy pikniğimiz bu yıl 15 Temmuz 2024 tarihinde düzenlenecek. Tüm köylülerimiz ve dernek üyelerimiz davetlidir.</p><p>Piknik programımızda:</p><ul><li>Köy yemekleri</li><li>Çocuklar için oyunlar</li><li>Müzik ve eğlence</li><li>Sohbet ve hasret giderme</li></ul><p>yer alacaktır.</p>",
-      "image": "/images/news/piknik.jpg",
+      "image": "/images/news/piknik.webpg",
       "category": "duyuru",
       "date": "2024-01-05",
       "author": "Etkinlik Komitesi",
       "tags": ["piknik", "etkinlik", "gelenek"],
       "featured": false
+    },
+   
+    {
+      "id": 8,
+      "title": "Muhtarımız ve Azaarimiz Derneği Ziyaret Etti",
+      "summary": "Köy muhtarımız ve Azaarimiz Derneği yetkilileri, köyümüzü ziyaret etti.",
+      "content": "<p>Bugün, köy muhtarımız ve Azaarimiz Derneği'nden gelen yetkililer, köyümüzde düzenlenen kısa bir ziyaret gerçekleştirdi. Ziyaret kapsamında, köyün mevcut durumuyla ilgili bilgi alışverişinde bulunuldu ve geleceğe yönelik projeler masaya yatırıldı.</p>",
+      "image": "/images/news/agaclandirma.webp",
+      "category": "dernek",
+      "date": "2024-02-01",
+      "author": "Köy Muhtarlığı",
+      "tags": ["ziyaret", "dernek", "muhtar"],
+      "featured": false
+    },
+    {
+      "id": 9,
+      "title": "Dernek Başkanı ve Yönetimi Seçildi",
+      "summary": "Yeni dernek başkanı ve yönetim kadrosu belirlendi.",
+      "content": "<p>Son yapılan seçimle birlikte, dernek başkanımız ve yeni yönetim kadrosu kamuoyuna duyuruldu. Toplantıda, derneğimizin geleceği, gerçekleştirilmesi planlanan projeler ve mevcut çalışmalar değerlendirildi.</p>",
+      "image": "/images/news/yonetim.webp",
+      "category": "dernek",
+      "date": "2024-02-03",
+      "author": "Seçim Komitesi",
+      "tags": ["dernek", "seçim", "yönetim"],
+      "featured": true
+    },
+    {
+      "id": 10,
+      "title": "Köyümüze Tarla Kazandırıldı - 250 Dönüm",
+      "summary": "Köyümüze 250 dönümlük yeni bir tarla kazandırıldı.",
+      "content": "<p>Köyümüze, yerel yönetimler ve ilgili kurumların iş birliğiyle 250 dönümlük verimli tarla kazandırıldı. Bu alan, köyümüzün tarımsal faaliyetlerini artıracak ve yerel ekonomiye katkı sağlayacak.</p>",
+      "image": "/images/news/tarla.webp",
+      "category": "koy",
+      "date": "2024-02-05",
+      "author": "Köy Yönetimi",
+      "tags": ["tarla", "köy", "tarım"],
+      "featured": false
+    },
+    {
+      "id": 11,
+      "title": "Ağaçlandırma Projesi Netleşiyor: Yakında Yeşil Bir Köyümüz Olacak",
+      "summary": "Köyümüzde hayata geçirilecek ağaçlandırma projesi için son hazırlıklar tamamlanıyor.",
+      "content": "<p>Köyümüzde çevre ve doğa dostu bir düzenleme yapmak amacıyla ağaçlandırma projesi hızla ilerliyor. Proje kapsamında, çeşitli ağaç türleri dikilerek, köyümüzün yeşil ve temiz bir çevreye kavuşması hedefleniyor.</p><p>Projeye ilişkin detaylar ve katılım şartları önümüzdeki günlerde kamuoyu ile paylaşılacak.</p>",
+      "image": "/images/news/agaclandirma.webp",
+      "category": "koy",
+      "date": "2024-02-07",
+      "author": "Çevre Komitesi",
+      "tags": ["ağaçlandırma", "proje", "köy"],
+      "featured": false
+    },
+    {
+      "id": 12,
+      "title": "Gençler Ayasofya'da Buluşuyor",
+      "summary": "Kültürel mirasın izinde, gençler için Ayasofya'da düzenlenecek buluşma programı açıklığa kavuştu.",
+      "content": "<p>Köyümüzün gençlerinin kültürel ve sosyal yönden gelişimine katkı sağlamak amacıyla, Ayasofya'da düzenlenecek olan buluşma programı duyuruldu. Program kapsamında, tarih ve sanat temalı etkinlikler yer alacak.</p><p>Etkinlik detayları ve katılım koşulları yakın zamanda açıklanacak.</p>",
+      "image": "/images/news/genclerevent.webp",
+      "category": "duyuru",
+      "date": "2024-02-10",
+      "author": "Gençlik Komitesi",
+      "tags": ["gençlik", "buluşma", "ayısoya"],
+      "featured": false
+    },
+    {
+      "id": 13,
+      "title": "Köydeki Depodaki Su: Az Su Kaçağı Bulundu mu?",
+      "summary": "Köydeki su deposunda az miktarda su kaçağı tespit edildi.",
+      "content": "<p>Yakın yapılan kontroller sonucunda, köydeki su deposunda az miktarda su kaçağı olduğu belirlendi. Yetkililer, sorunun kaynağını tespit ederek en kısa sürede çözüm üretmeyi planlıyor.</p><p>Köy halkı bilgilendirilirken, benzer durumların önüne geçmek için düzenli bakım çalışmalarının yapılacağı bildirildi.</p>",
+      "image": "/images/news/sukacagi.webp",
+      "category": "koy",
+      "date": "2024-02-12",
+      "author": "İdari İşler",
+      "tags": ["su kaçağı", "depo", "köy"],
+      "featured": false
+    },
+    {
+      "id": 14,
+      "title": "Köy Pikniği Olacak mı? Ne Zaman Gerçekleşecek?",
+      "summary": "Köy pikniği ile ilgili merak edilen tarih ve  detaylar kamuoyuna duyurulmaya hazırlanıyor.",
+      "content": "<p>Köy pikniğiyle ilgili olarak, etkinlik tarihinin ve program detaylarının yakın gelecekte kesinleşeceği bildirildi. Köy halkı ve dernek üyeleri, etkinliğe dair detayları öğrenmek için duyuruları takip etmeye davet ediliyor.</p>",
+      "image": "/images/news/piknik-soru.webp",
+      "category": "duyuru",
+      "date": "2024-02-15",
+      "author": "Etkinlik Komitesi",
+      "tags": ["piknik", "soru", "etkinlik"],
+      "featured": false
     }
   ]
-} 
+}

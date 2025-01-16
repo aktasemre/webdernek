@@ -6,6 +6,8 @@
   border-radius: 12px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   background: #fff;
+  touch-action: pan-y pinch-zoom;
+  user-select: none;
 
   @media (max-width: 768px) {
     height: 300px;
@@ -19,9 +21,10 @@
   width: 100%;
   height: 100%;
   opacity: 0;
-  transition: opacity 0.5s ease-in-out;
+  transition: opacity 0.5s ease-in-out, transform 0.3s ease-out;
   display: flex;
   flex-direction: row;
+  will-change: transform;
 
   &.active {
     opacity: 1;

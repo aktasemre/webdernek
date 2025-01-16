@@ -20,11 +20,8 @@
   },
   "navigation": {
     "mainMenu": [
-      {
-        "title": "Ana Sayfa",
-        "path": "/"
-      },
-      {
+     
+     {
         "title": "Köyümüz",
         "path": "/about/village",
         "submenu": [

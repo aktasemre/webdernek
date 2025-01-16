@@ -27,6 +27,7 @@ export default function RootLayout({ children }) {
         <link rel="icon" href="/favicon.ico" />
         <meta name="theme-color" content="#2C5F2D" />
         <meta name="mobile-web-app-capable" content="yes" />
+        <link rel="apple-touch-icon" href="/icons/icon-192x192.png" />
       </head>
       <body suppressHydrationWarning={true} className="antialiased">
         <Header />
