@@ -17,7 +17,7 @@
       {
         "name": "Arslandede Köyü",
         "history": "Köyümüzün tarihi...",
-        "location": "Bayburt merkeze 15 km uzaklıkta...",
+        "location": "Bayburt merkeze 30km uzaklıkta...",
         "population": "Güncel nüfus bilgileri...",
         "economy": "Ekonomik faaliyetler...",
         "climate": "İklim özellikleri..."
@@ -30,7 +30,7 @@
       {
         "name": "Yer Adı",
         "description": "Yer hakkında açıklama",
-        "image": "/images/places/yer1.jpg",
+        "image": "/images/cami1.jpg",
         "history": "Tarihi önemi..."
       }
     ]

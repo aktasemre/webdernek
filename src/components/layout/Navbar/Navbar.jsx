@@ -102,7 +102,7 @@ const Navbar = () => {
               height={50}
               priority
             />
-            <span>Arslandede Köyü Derneği</span>
+            <span>Arslandede Köyü</span>
           </Link>
 
           <div className={styles.searchContainer}>

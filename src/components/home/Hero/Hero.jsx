@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { FaArrowLeft, FaArrowRight, FaDonate, FaUsers, FaPhone } from 'react-icons/fa';
@@ -10,13 +10,16 @@ import sliderData from '@/data/slider.data.json';
 export default function Hero() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const slides = sliderData.slides;
+  
+  // Dokunma (swipe) işlemleri için referanslar
+  const touchStartX = useRef(null);
+  const touchEndX = useRef(null);
 
   // Otomatik geçiş için
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length);
     }, 5000);
-
     return () => clearInterval(timer);
   }, [slides.length]);
 
@@ -28,8 +31,44 @@ export default function Hero() {
     setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
   };
 
+  // Dokunma başladığında
+  const handleTouchStart = (e) => {
+    touchStartX.current = e.touches[0].clientX;
+  };
+
+  // Dokunma hareket halindeyken
+  const handleTouchMove = (e) => {
+    touchEndX.current = e.touches[0].clientX;
+  };
+
+  // Dokunma bittiğinde swipe işlemini değerlendir
+  const handleTouchEnd = () => {
+    if (touchStartX.current === null || touchEndX.current === null) {
+      return;
+    }
+    const swipeDistance = touchStartX.current - touchEndX.current;
+    const swipeThreshold = 50; // Swipe için gereken minimum mesafe (piksel)
+
+    if (swipeDistance > swipeThreshold) {
+      // Kullanıcı sola kaydırdı: sonraki slide
+      nextSlide();
+    } else if (swipeDistance < -swipeThreshold) {
+      // Kullanıcı sağa kaydırdı: önceki slide
+      prevSlide();
+    }
+    
+    // Referansları sıfırlıyoruz
+    touchStartX.current = null;
+    touchEndX.current = null;
+  };
+
   return (
-    <section className={styles.hero}>
+    <section 
+      className={styles.hero}
+      onTouchStart={handleTouchStart}
+      onTouchMove={handleTouchMove}
+      onTouchEnd={handleTouchEnd}
+    >
       {/* Slider */}
       <div className={styles.slider}>
         {slides.map((slide, index) => (
@@ -94,4 +133,4 @@ export default function Hero() {
       </div>
     </section>
   );
-} 
+}
