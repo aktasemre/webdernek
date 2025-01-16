@@ -80,11 +80,11 @@ const PhotoGallery = () => {
               <Image
                 src={photo.image}
                 alt={photo.title}
-                width={400}
-                height={300}
-                sizes="(max-width: 768px) 160px, 400px"
-                className={styles.photoImage}
+                width={600}
+                height={400}
                 priority={index < 4}
+                style={{ objectFit: "cover", width: "100%", height: "100%" }}
+                className={styles.photoImage}
               />
             </div>
             <div className={styles.photoInfo}>

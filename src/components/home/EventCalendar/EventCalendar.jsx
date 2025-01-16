@@ -1,7 +1,13 @@
+'use client';
+
+import { useState } from 'react';
 import styles from './EventCalendar.module.scss';
 
-const EventCalendar = () => {
-  const events = [
+const EventCalendar = ({ events = [] }) => {
+  const [mounted, setMounted] = useState(false);
+
+  // Eğer events prop'u boşsa varsayılan etkinlikleri göster
+  const displayEvents = events.length > 0 ? events : [
     {
       id: 1,
       date: '20 Kasım',
@@ -28,17 +34,21 @@ const EventCalendar = () => {
   return (
     <section className={styles.eventCalendar}>
       <div className={styles.container}>
-        <h2>Yaklaşan Etkinlikler</h2>
         <div className={styles.eventList}>
-          {events.map((event) => (
+          {displayEvents.map((event) => (
             <div key={event.id} className={styles.eventCard}>
               <div className={styles.dateBox}>
-                <span className={styles.date}>{event.date}</span>
+                <span className={styles.date}>
+                  {event.date.includes('-') 
+                    ? new Date(event.date).toLocaleDateString('tr-TR', { day: 'numeric', month: 'long' })
+                    : event.date
+                  }
+                </span>
                 <span className={styles.time}>{event.time}</span>
               </div>
               <div className={styles.details}>
                 <h3>{event.title}</h3>
-                <p>{event.description}</p>
+                <p>{event.description || event.location}</p>
               </div>
               <button className={styles.joinButton}>
                 Katıl

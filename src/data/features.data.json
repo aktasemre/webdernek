@@ -1,0 +1,64 @@
+{
+  "features": [
+    {
+      "title": "Yerel Kelimeler",
+      "description": "Köyümüze özgü kelimeler ve anlamları",
+      "link": "/culture/words",
+      "iconName": "FaComments"
+    },
+    {
+      "title": "Üyelerimiz",
+      "description": "Güçlü üye ağımız ile birlikte çalışıyoruz",
+      "link": "/about/members",
+      "iconName": "FaUsers"
+    },
+    {
+      "title": "Sosyal Yardım",
+      "description": "İhtiyaç sahiplerine destek oluyoruz",
+      "link": "/donate",
+      "iconName": "FaHandHoldingHeart"
+    },
+    {
+      "title": "Kültürel Miras",
+      "description": "Köyümüzün zengin tarihini ve kültürünü yaşatıyoruz",
+      "link": "/about/village",
+      "iconName": "FaLandmark"
+    },
+    {
+      "title": "Haberler",
+      "description": "En güncel dernek ve köy haberlerimiz",
+      "link": "/news",
+      "iconName": "FaNewspaper"
+    },
+    {
+      "title": "Galeri",
+      "description": "Köyümüzden fotoğraflar ve videolar",
+      "link": "/gallery",
+      "iconName": "FaPhotoVideo"
+    },
+    {
+      "title": "Kültürümüz",
+      "description": "Köyümüzün kültürel değerleri ve gelenekleri",
+      "link": "/culture",
+      "iconName": "FaBook"
+    },
+    {
+      "title": "Beddualar",
+      "description": "Yöresel beddualar ve anlamları",
+      "link": "/culture/curses",
+      "iconName": "FaPray"
+    },
+    {
+      "title": "Atasözleri",
+      "description": "Yöresel atasözleri ve deyimler",
+      "link": "/culture/proverbs",
+      "iconName": "FaQuoteLeft"
+    },
+    {
+      "title": "Etkinlikler",
+      "description": "Dernek ve köy etkinliklerimiz",
+      "link": "/events",
+      "iconName": "FaCalendarAlt"
+    }
+  ]
+} 

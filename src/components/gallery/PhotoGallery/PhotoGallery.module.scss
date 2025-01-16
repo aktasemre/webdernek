@@ -6,8 +6,7 @@
   h1 {
     text-align: center;
     margin-bottom: 2rem;
-    color: #2C5F2D;
-    font-size: 2rem;
+    color: #2c3e50;
   }
 }
 
@@ -20,81 +19,68 @@
 }
 
 .photoCategoryButton {
-  padding: 0.75rem 1.5rem;
+  padding: 0.5rem 1rem;
   border: none;
-  border-radius: 8px;
-  background: #f5f5f5;
-  color: #333;
+  border-radius: 0.5rem;
+  background: #f8f9fa;
+  color: #2c3e50;
   cursor: pointer;
-  font-weight: 500;
   transition: all 0.3s ease;
 
   &:hover {
-    background: #e5e5e5;
-    transform: translateY(-2px);
+    background: #e9ecef;
   }
 
   &.active {
-    background: #2C5F2D;
+    background: #2c3e50;
     color: white;
   }
 }
 
 .photoGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 2rem;
-  padding: 1rem;
 }
 
 .photoCard {
   background: white;
-  border-radius: 12px;
+  border-radius: 0.5rem;
   overflow: hidden;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   cursor: pointer;
+  transition: transform 0.3s ease;
 
   &:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
-
-    .photoImage {
-      transform: scale(1.05);
-    }
   }
 }
 
 .photoImageContainer {
   position: relative;
   width: 100%;
-  height: 300px;
+  height: 250px;
   overflow: hidden;
-  background: #f5f5f5;
 }
 
 .photoImage {
   width: 100%;
   height: 100%;
-  transition: transform 0.3s ease;
   object-fit: cover;
 }
 
 .photoInfo {
-  padding: 1.5rem;
+  padding: 1rem;
 
   h3 {
-    font-size: 1.1rem;
-    color: #333;
-    margin-bottom: 0.75rem;
-    font-weight: 600;
+    margin: 0 0 0.5rem;
+    color: #2c3e50;
   }
 
   p {
-    color: #666;
+    margin: 0 0 1rem;
+    color: #6c757d;
     font-size: 0.9rem;
-    margin-bottom: 1rem;
-    line-height: 1.5;
   }
 }
 
@@ -105,27 +91,20 @@
 }
 
 .photoTag {
-  background: #f0f0f0;
-  color: #2C5F2D;
-  padding: 0.25rem 0.75rem;
-  border-radius: 20px;
-  font-size: 0.75rem;
-  transition: all 0.3s ease;
-
-  &:hover {
-    background: #2C5F2D;
-    color: white;
-  }
+  padding: 0.25rem 0.5rem;
+  background: #f8f9fa;
+  border-radius: 0.25rem;
+  font-size: 0.8rem;
+  color: #6c757d;
 }
 
-// Modal Stilleri
 .photoModal {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.9);
+  background: rgba(0, 0, 0, 0.8);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -135,21 +114,17 @@
 
 .photoModalContent {
   position: relative;
-  max-width: 1000px;
-  width: 100%;
+  max-width: 90vw;
+  max-height: 90vh;
   background: white;
-  border-radius: 12px;
+  border-radius: 0.5rem;
   overflow: hidden;
 }
 
 .photoModalImageContainer {
   position: relative;
   width: 100%;
-  height: 600px;
-  background: #000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  height: 70vh;
 }
 
 .photoModalImage {
@@ -159,51 +134,17 @@
 }
 
 .photoModalInfo {
-  padding: 1.5rem;
+  padding: 1rem;
   background: white;
 
   h3 {
-    font-size: 1.2rem;
-    color: #333;
-    margin-bottom: 0.75rem;
-    font-weight: 600;
+    margin: 0 0 0.5rem;
+    color: #2c3e50;
   }
 
   p {
-    color: #666;
-    margin-bottom: 1rem;
-    line-height: 1.6;
-  }
-}
-
-.photoModalNav {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(255, 255, 255, 0.8);
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  border: none;
-  color: #333;
-  font-size: 1.2rem;
-
-  &:hover {
-    background: white;
-    transform: translateY(-50%) scale(1.1);
-  }
-
-  &.prev {
-    left: 1rem;
-  }
-
-  &.next {
-    right: 1rem;
+    margin: 0 0 1rem;
+    color: #6c757d;
   }
 }
 
@@ -212,17 +153,16 @@
   top: 1rem;
   right: 1rem;
   background: rgba(255, 255, 255, 0.8);
-  width: 32px;
-  height: 32px;
+  border: none;
   border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  border: none;
-  color: #333;
   transition: all 0.3s ease;
-  font-size: 1.2rem;
+  z-index: 2;
 
   &:hover {
     background: white;
@@ -230,68 +170,55 @@
   }
 }
 
+.photoModalNav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.8);
+  border: none;
+  border-radius: 50%;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 2;
+
+  &.prev {
+    left: 1rem;
+  }
+
+  &.next {
+    right: 1rem;
+  }
+
+  &:hover {
+    background: white;
+    transform: translateY(-50%) scale(1.1);
+  }
+}
+
 @media (max-width: 768px) {
   .photoGalleryContainer {
     padding: 1rem;
-    
-    h1 {
-      font-size: 1.5rem;
-      margin-bottom: 1.5rem;
-    }
   }
 
   .photoGrid {
-    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 1rem;
-    padding: 0.5rem;
-  }
-
-  .photoInfo {
-    padding: 1rem;
-
-    h3 {
-      font-size: 1rem;
-      margin-bottom: 0.5rem;
-    }
-
-    p {
-      font-size: 0.85rem;
-      margin-bottom: 0.75rem;
-    }
-  }
-
-  .photoModal {
-    padding: 1rem;
-  }
-
-  .photoModalContent {
-    margin: 0;
-  }
-
-  .photoModalNav {
-    width: 32px;
-    height: 32px;
-    font-size: 1rem;
-
-    &.prev {
-      left: 0.5rem;
-    }
-
-    &.next {
-      right: 0.5rem;
-    }
-  }
-
-  .photoModalClose {
-    top: 0.5rem;
-    right: 0.5rem;
   }
 
   .photoImageContainer {
     height: 200px;
   }
 
+  .photoModalContent {
+    width: 95vw;
+  }
+
   .photoModalImageContainer {
-    height: 300px;
+    height: 50vh;
   }
 } 

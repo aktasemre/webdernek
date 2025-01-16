@@ -1,0 +1,123 @@
+.proverbsPage {
+  padding: 4rem 0;
+  background-color: #f8f9fa;
+  min-height: 100vh;
+
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 1rem;
+
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+      margin-bottom: 2rem;
+      font-size: 2.5rem;
+      font-weight: 600;
+    }
+
+    .intro {
+      text-align: center;
+      color: #666;
+      margin-bottom: 2rem;
+      line-height: 1.6;
+      font-size: 1.1rem;
+    }
+
+    .searchBox {
+      margin-bottom: 3rem;
+      
+      .searchInput {
+        width: 100%;
+        padding: 1rem;
+        border: 2px solid #e0e0e0;
+        border-radius: 8px;
+        font-size: 1rem;
+        transition: border-color 0.3s ease;
+        outline: none;
+
+        &:focus {
+          border-color: #27ae60;
+        }
+
+        &::placeholder {
+          color: #999;
+        }
+      }
+    }
+
+    .proverbsList {
+      display: grid;
+      gap: 2rem;
+    }
+
+    .proverbItem {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: translateY(-5px);
+      }
+
+      h3 {
+        color: #27ae60;
+        margin-bottom: 0.5rem;
+        font-size: 1.25rem;
+        font-weight: 600;
+      }
+
+      p {
+        color: #666;
+        line-height: 1.5;
+        font-size: 1rem;
+      }
+    }
+
+    .noResults {
+      text-align: center;
+      color: #666;
+      padding: 2rem;
+      background: white;
+      border-radius: 10px;
+      margin-top: 2rem;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .proverbsPage {
+    padding: 2rem 0;
+
+    .container {
+      h1 {
+        font-size: 2rem;
+      }
+
+      .intro {
+        font-size: 1rem;
+      }
+
+      .searchBox {
+        .searchInput {
+          padding: 0.8rem;
+          font-size: 0.9rem;
+        }
+      }
+
+      .proverbItem {
+        padding: 1.2rem;
+
+        h3 {
+          font-size: 1.1rem;
+        }
+
+        p {
+          font-size: 0.9rem;
+        }
+      }
+    }
+  }
+} 

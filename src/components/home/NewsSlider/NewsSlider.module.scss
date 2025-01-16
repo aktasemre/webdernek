@@ -1,0 +1,180 @@
+.sliderContainer {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background: #fff;
+
+  @media (max-width: 768px) {
+    height: 300px;
+  }
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  display: flex;
+  flex-direction: row;
+
+  &.active {
+    opacity: 1;
+    z-index: 1;
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+}
+
+.imageContainer {
+  width: 50%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    height: 60%;
+  }
+}
+
+.textContent {
+  width: 50%;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.95);
+
+  h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #333;
+  }
+
+  p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+  }
+
+  .date {
+    font-size: 0.9rem;
+    color: #888;
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    height: 40%;
+    padding: 1rem;
+
+    h3 {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      font-size: 0.9rem;
+      margin-bottom: 0.5rem;
+    }
+  }
+}
+
+.control {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.8);
+  color: #333;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  transition: all 0.3s ease;
+
+  svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.95);
+    color: #000;
+  }
+
+  &.prev {
+    left: 1rem;
+  }
+
+  &.next {
+    right: 1rem;
+  }
+
+  @media (max-width: 768px) {
+    width: 35px;
+    height: 35px;
+
+    svg {
+      width: 16px;
+      height: 16px;
+    }
+  }
+}
+
+.dots {
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.5rem;
+  z-index: 2;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.3s ease;
+
+  &.active {
+    background: #2c5282;
+    transform: scale(1.2);
+  }
+
+  &:hover {
+    background: rgba(44, 82, 130, 0.8);
+  }
+}
+
+.noNews {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+} 

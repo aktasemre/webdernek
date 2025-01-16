@@ -1,14 +1,75 @@
 'use client';
 
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { FaUsers, FaHandHoldingHeart, FaLandmark, FaNewspaper, FaClipboardList } from 'react-icons/fa';
 import styles from './page.module.scss';
 import Hero from '@/components/home/Hero/Hero';
 import SideMenu from '@/components/common/SideMenu/SideMenu';
+import EventCalendar from '@/components/home/EventCalendar/EventCalendar';
+import NewsSlider from '@/components/home/NewsSlider/NewsSlider';
+import Features from '@/components/home/Features/Features';
+import BottomNav from '@/components/layout/BottomNav/BottomNav';
 import iletisimData from '@/data/iletisim.data.json';
 
+// Örnek etkinlik verileri
+const events = [
+  {
+    id: 1,
+    title: 'Dernek Toplantısı',
+    date: '2024-01-20',
+    time: '14:00',
+    location: 'Dernek Merkezi',
+    type: 'meeting'
+  },
+  {
+    id: 2,
+    title: 'Köy Festivali',
+    date: '2024-07-20',
+    time: '10:00',
+    location: 'Köy Meydanı',
+    type: 'festival'
+  },
+  {
+    id: 3,
+    title: 'İftar Yemeği',
+    date: '2024-03-15',
+    time: '18:30',
+    location: 'Köy Konağı',
+    type: 'social'
+  }
+];
+
 export default function Home() {
+  const [mounted, setMounted] = useState(false);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    try {
+      setMounted(true);
+    } catch (err) {
+      console.error('Error in mounting:', err);
+      setError(err.message);
+    }
+  }, []);
+
+  if (error) {
+    return (
+      <div style={{ padding: '2rem', textAlign: 'center' }}>
+        <h2>Bir hata oluştu</h2>
+        <p>{error}</p>
+      </div>
+    );
+  }
+
+  if (!mounted) {
+    return (
+      <div style={{ padding: '2rem', textAlign: 'center' }}>
+        <p>Sayfa yükleniyor...</p>
+      </div>
+    );
+  }
+
   return (
     <main className={styles.main}>
       <Hero />
@@ -19,32 +80,22 @@ export default function Home() {
         </div>
         
         <div className={styles.mainContent}>
-          {/* Features Section */}
-          <section className={styles.features}>
+          {/* News Slider Section */}
+          <section className={styles.newsSliderSection}>
             <div className={styles.container}>
-              <h2>Derneğimizin Çalışmaları</h2>
-              <div className={styles.featureGrid}>
-                <Link href="/about/members" className={styles.featureCard}>
-                  <FaUsers className={styles.icon} />
-                  <h3>Üyelerimiz</h3>
-                  <p>Güçlü üye ağımız ile birlikte çalışıyoruz</p>
-                </Link>
-                <Link href="/donate" className={styles.featureCard}>
-                  <FaHandHoldingHeart className={styles.icon} />
-                  <h3>Sosyal Yardım</h3>
-                  <p>İhtiyaç sahiplerine destek oluyoruz</p>
-                </Link>
-                <Link href="/about/village" className={styles.featureCard}>
-                  <FaLandmark className={styles.icon} />
-                  <h3>Kültürel Miras</h3>
-                  <p>Köyümüzün zengin tarihini ve kültürünü yaşatıyoruz</p>
-                </Link>
-                <Link href="/news" className={styles.featureCard}>
-                  <FaNewspaper className={styles.icon} />
-                  <h3>Haberler</h3>
-                  <p>En güncel dernek ve köy haberlerimiz</p>
-                </Link>
-              </div>
+              <h2>Son Haberler</h2>
+              {mounted && <NewsSlider />}
+            </div>
+          </section>
+
+          {/* Features Section */}
+          {mounted && <Features />}
+
+          {/* Event Calendar Section */}
+          <section className={styles.eventCalendarSection}>
+            <div className={styles.container}>
+              <h2>Yaklaşan Etkinlikler</h2>
+              {mounted && <EventCalendar events={events} />}
             </div>
           </section>
 
@@ -66,18 +117,17 @@ export default function Home() {
                     width={500}
                     height={300}
                     style={{ objectFit: "cover" }}
+                    priority
                   />
                 </div>
               </div>
             </div>
           </section>
-         
 
           {/* Meslek Envanteri Section */}
           <section className={styles.professionSurvey}>
             <div className={styles.container}>
               <div className={styles.surveyContent}>
-                <FaClipboardList className={styles.surveyIcon} />
                 <h2>Meslek Envanteri</h2>
                 <p>Köyümüzün gelişimine katkıda bulunmak ve üyelerimiz arasındaki iş birliğini artırmak için meslek envanterimize katılın.</p>
                 <a 
@@ -91,10 +141,10 @@ export default function Home() {
               </div>
             </div>
           </section>
-
-          
         </div>
       </div>
+      
+      <BottomNav />
     </main>
   );
 } 

@@ -1,12 +1,16 @@
 import GalleryHero from '@/components/gallery/GalleryHero/GalleryHero';
 import GalleryCategories from '@/components/gallery/GalleryCategories/GalleryCategories';
-import Image from 'next/image';
+import PhotoGallery from '@/components/gallery/PhotoGallery/PhotoGallery';
+import styles from './page.module.scss';
 
 export default function Gallery() {
   return (
-    <main>
+    <main className={styles.galleryPage}>
       <GalleryHero />
-      <GalleryCategories />
+      <div className={styles.content}>
+        <GalleryCategories />
+        <PhotoGallery />
+      </div>
     </main>
   );
 }

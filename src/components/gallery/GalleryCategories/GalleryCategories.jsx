@@ -1,42 +1,43 @@
 'use client';
 
-import Link from 'next/link';
+import React from 'react';
 import Image from 'next/image';
-import { FaCamera, FaVideo, FaHistory, FaCalendarAlt } from 'react-icons/fa';
+import Link from 'next/link';
+import { FaImage, FaCalendarAlt, FaLandmark, FaUsers } from 'react-icons/fa';
 import styles from './GalleryCategories.module.scss';
 
 const categories = [
   {
-    id: 'photos',
-    title: 'Fotoğraf Galerisi',
-    description: 'Köyümüzün doğal güzellikleri ve güncel fotoğrafları',
-    icon: <FaCamera />,
+    id: 'dogal-guzellikler',
+    title: 'Doğal Güzellikler',
+    description: 'Köyümüzün eşsiz doğal güzellikleri',
     image: '/images/manzara1.jpg',
-    link: '/gallery/photos'
+    link: '/gallery/photos?category=dogal-guzellikler',
+    icon: <FaImage />
   },
   {
-    id: 'videos',
-    title: 'Video Galerisi',
-    description: 'Etkinliklerimiz ve köy yaşamından videolar',
-    icon: <FaVideo />,
-    image: '/images/manzara2.jpg',
-    link: '/gallery/videos'
+    id: 'etkinlikler',
+    title: 'Etkinlikler',
+    description: 'Köy etkinlikleri ve organizasyonlar',
+    image: '/images/koy1.jpg',
+    link: '/gallery/photos?category=etkinlikler',
+    icon: <FaCalendarAlt />
   },
   {
-    id: 'historical',
-    title: 'Tarihi Fotoğraflar',
-    description: 'Geçmişten günümüze köyümüzün fotoğrafları',
-    icon: <FaHistory />,
-    image: '/images/manzara3.jpg',
-    link: '/gallery/historical'
+    id: 'tarihi',
+    title: 'Tarihi Yerler',
+    description: 'Köyümüzün tarihi mekanları',
+    image: '/images/arslandede1.jpg',
+    link: '/gallery/photos?category=tarihi',
+    icon: <FaLandmark />
   },
   {
-    id: 'events',
-    title: 'Etkinlik Fotoğrafları',
-    description: 'Dernek ve köy etkinliklerimizden kareler',
-    icon: <FaCalendarAlt />,
-    image: '/images/manzara4.jpg',
-    link: '/gallery/events'
+    id: 'koyyasami',
+    title: 'Köy Yaşamı',
+    description: 'Günlük yaşamdan kareler',
+    image: '/images/koy2.jpg',
+    link: '/gallery/photos?category=koyyasami',
+    icon: <FaUsers />
   }
 ];
 

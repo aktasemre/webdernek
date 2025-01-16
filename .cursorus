@@ -1,0 +1,67 @@
+# Proje Yapısı ve Teknolojiler
+
+## Kullanılan Teknolojiler
+- Next.js 14
+- React 18
+- SCSS Modules
+- Next/Image Optimizasyonu
+
+## Ana Özellikler
+- Responsive Tasarım
+- SEO Optimizasyonu
+- Performans İyileştirmeleri
+- Görsel Optimizasyonu
+
+## Bileşenler
+### Layout Bileşenleri
+- Header (Navbar entegreli)
+- Footer
+- SideMenu (Mobil uyumlu açılır-kapanır menü)
+
+### Sayfa Bileşenleri
+- Hero Section
+- PhotoGallery
+  - Kategori filtreleme
+  - Lazy loading
+  - Modal görünümü
+  - Klavye navigasyonu
+  - Responsive grid yapısı
+  - Görsel optimizasyonu
+
+### Veri Yönetimi
+- JSON dosyaları ile statik veri yönetimi
+- SEO meta verileri
+- Görsel boyutları ve optimizasyonları
+
+## Stil Yapısı
+- SCSS Modules
+- Responsive tasarım
+- Tema renkleri
+- Animasyonlar ve geçişler
+
+## Performans İyileştirmeleri
+- Image optimizasyonu
+- Lazy loading
+- Code splitting
+- SEO optimizasyonu
+
+## Test ve Kalite
+- ESLint kuralları
+- TypeScript tip kontrolleri
+- Responsive test
+- Tarayıcı uyumluluğu
+
+## Yapılan Son Güncellemeler
+1. PhotoGallery bileşeni iyileştirmeleri
+   - Image loading optimizasyonu
+   - Explorer uyumluluğu
+   - Modal görünümü geliştirmeleri
+2. SideMenu mobil uyumluluğu
+3. Header yapısı düzenlemesi
+4. Responsive tasarım iyileştirmeleri
+
+## Planlanan İyileştirmeler
+1. SEO optimizasyonları
+2. Performans iyileştirmeleri
+3. Erişilebilirlik geliştirmeleri
+4. Test kapsamının artırılması 

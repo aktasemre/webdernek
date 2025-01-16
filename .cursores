@@ -1,118 +1,70 @@
 {
-  "project": {
-    "name": "Arslandede Köyü Derneği Web Sitesi",
-    "type": "Next.js Web Application",
-    "version": "1.0.0",
-    "description": "Bayburt Arslandede Köyü Derneği resmi web sitesi"
-  },
-  "structure": {
-    "pages": {
-      "home": {
-        "path": "/",
-        "components": ["Hero", "Features", "News", "Projects", "Contact"],
-        "features": {
-          "slider": "Köy ve dernek faaliyetlerini gösteren tam ekran slider",
-          "quickAccess": "Meslek envanteri ve diğer önemli sayfalara hızlı erişim butonları"
-        }
-      },
-      "about": {
-        "village": {
-          "path": "/about/village",
-          "sections": ["Tarihçe", "Coğrafya", "Nüfus", "Ekonomi", "Eğitim", "Gezilecek Yerler"],
-          "features": "Köy hakkında detaylı bilgiler ve görseller"
+  "projectStructure": {
+    "technologies": [
+      "Next.js 14",
+      "React 18",
+      "SCSS Modules",
+      "Next/Image optimizasyonu",
+      "JSON veri yönetimi"
+    ],
+    "fileStructure": {
+      "src": {
+        "app": {
+          "about": ["association", "members", "village"],
+          "culture": ["curses", "proverbs", "words"],
+          "pages": ["gallery", "news", "events"],
+          "files": ["page.jsx", "layout.js", "globals.scss"]
         },
-        "association": {
-          "path": "/about/association",
-          "sections": ["Tarihçe", "Yönetim", "Tüzük", "Denetim"],
-          "features": "Dernek yapısı ve yönetimi hakkında bilgiler"
-        }
-      },
-      "news": {
-        "path": "/news",
-        "features": {
-          "categories": ["Dernek Haberleri", "Köy Haberleri", "Duyurular"],
-          "filtering": "Kategori bazlı filtreleme",
-          "search": "Haber içeriklerinde arama"
-        }
-      },
-      "projects": {
-        "path": "/projects",
-        "features": {
-          "status": ["Devam Eden", "Tamamlanan", "Planlanan"],
-          "filtering": "Durum bazlı filtreleme",
-          "details": "Proje detayları, bütçe ve zaman çizelgesi"
-        }
-      },
-      "contact": {
-        "path": "/contact",
-        "features": {
-          "info": "Dernek ve köy iletişim bilgileri",
-          "maps": "Dernek merkezi ve köy konumu",
-          "social": "Sosyal medya bağlantıları"
-        }
+        "components": {
+          "common": ["Header", "Footer", "SideMenu", "BottomNav"],
+          "home": ["Hero", "NewsSlider", "Features", "EventCalendar"],
+          "gallery": ["GalleryCategories", "PhotoGallery"]
+        },
+        "data": [
+          "news.data.json",
+          "slider.data.json",
+          "features.data.json",
+          "gallery.data.json",
+          "iletisim.data.json"
+        ],
+        "styles": ["globals.scss"],
+        "utils": ["helpers.js"],
+        "hooks": ["useScrollPosition.js"],
+        "types": ["index.ts"]
       }
     },
-    "components": {
-      "common": ["Header", "Footer", "SearchBar", "Button"],
-      "home": ["Hero", "FeatureCard", "NewsCard", "ProjectCard"],
-      "about": ["VillageContent", "BoardMembers", "Timeline"],
-      "news": ["NewsList", "NewsDetail", "CategoryFilter"],
-      "projects": ["ProjectList", "ProjectDetail", "StatusFilter"],
-      "contact": ["ContactInfo", "SocialLinks", "Map"]
-    }
-  },
-  "data": {
-    "json": {
-      "haberler.data.json": "Haber içerikleri ve kategorileri",
-      "projeler.data.json": "Proje detayları ve durumları",
-      "iletisim.data.json": "İletişim bilgileri ve sosyal medya linkleri",
-      "koy.data.json": "Köy bilgileri ve içerikleri",
-      "slider.data.json": "Ana sayfa slider içerikleri"
-    }
-  },
-  "features": {
-    "seo": {
-      "metadata": "Her sayfa için özel meta etiketleri",
-      "openGraph": "Sosyal medya paylaşım meta etiketleri"
+    "mainComponents": [
+      "Hero (Slider)",
+      "NewsSlider",
+      "Features (JSON tabanlı)",
+      "EventCalendar",
+      "SideMenu"
+    ],
+    "dataManagement": {
+      "news.data.json": "Haberler",
+      "slider.data.json": "Hero slider",
+      "features.data.json": "Ana sayfa özellikleri",
+      "gallery.data.json": "Galeri",
+      "iletisim.data.json": "İletişim"
     },
-    "responsive": {
-      "breakpoints": {
-        "mobile": "768px",
-        "tablet": "1024px",
-        "desktop": "1200px"
-      }
-    },
-    "performance": {
-      "imageOptimization": "Next.js Image komponenti ile optimizasyon",
-      "lazyLoading": "Görseller ve içerikler için lazy loading",
-      "codeSplitting": "Sayfa bazlı otomatik kod bölümleme"
-    }
-  },
-  "dependencies": {
-    "framework": {
-      "next": "14.x",
-      "react": "18.x"
-    },
-    "styling": {
-      "sass": "Modül bazlı SCSS kullanımı",
-      "cssModules": "Komponent bazlı stil izolasyonu"
-    },
-    "icons": "react-icons kütüphanesi",
-    "testing": {
-      "jest": "Unit testler için Jest framework",
-      "testingLibrary": "React component testleri"
-    }
-  },
-  "testing": {
-    "coverage": {
-      "statements": 80,
-      "branches": 80,
-      "functions": 80,
-      "lines": 80
-    },
-    "setup": {
-      "jest.config.js": "Jest yapılandırması",
-      "jest.setup.js": "Test ortamı ayarları"
-    }
+    "features": [
+      "Responsive tasarım",
+      "SEO optimizasyonu",
+      "Performans iyileştirmeleri",
+      "Dinamik içerik yönetimi",
+      "JSON tabanlı veri yapısı"
+    ],
+    "recentUpdates": [
+      "Features bileşeni JSON tabanlı yapıya geçirildi",
+      "Kültürel içerik sayfaları eklendi",
+      "Mobil uyumluluk iyileştirmeleri",
+      "NewsSlider performans optimizasyonu"
+    ],
+    "plannedImprovements": [
+      "SEO optimizasyonları",
+      "Erişilebilirlik geliştirmeleri",
+      "Performans iyileştirmeleri",
+      "Offline kullanım desteği"
+    ]
   }
 } 
