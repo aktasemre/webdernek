@@ -1,6 +1,6 @@
 export const boardMembers = [
   {
-    name: 'Abdullah Kurtoglu',
+    name: 'Dr. Abdullah Kurtoglu',
     position: 'Yönetim Kurulu Başkanı',
     image: '/images/dernek_yonetim/abdullah_kurtoglu.jpg',
     phone: '0553 663 6094',

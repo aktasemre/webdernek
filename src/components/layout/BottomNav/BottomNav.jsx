@@ -20,12 +20,7 @@ const BottomNav = () => {
       path: '/news',
       icon: '📰'
     },
-    { 
-      label: 'Ara', 
-      path: '#',
-      icon: '🔍',
-      onClick: () => setIsSearchOpen(true)
-    },
+   
     { 
       label: 'Galeri', 
       path: '/gallery',
