@@ -1,4 +1,9 @@
 {
-  "/about/board/page": "app/about/board/page.js",
-  "/about/village/education/page": "app/about/village/education/page.js"
+  "/_not-found/page": "app/_not-found/page.js",
+  "/page": "app/page.js",
+  "/about/village/education/page": "app/about/village/education/page.js",
+  "/projects/page": "app/projects/page.js",
+  "/about/village/page": "app/about/village/page.js",
+  "/news/page": "app/news/page.js",
+  "/contact/page": "app/contact/page.js"
 }

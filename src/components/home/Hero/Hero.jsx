@@ -40,23 +40,22 @@ export default function Hero() {
             key={slide.id}
             className={`${styles.slide} ${index === currentSlide ? styles.active : ''}`}
           >
-            <Image
-              src={slide.image}
-              alt={slide.title}
-              fill
-              priority={index === 0}
-              quality={75}
-              sizes="100vw"
-              style={{ objectFit: 'cover' }}
-              className={styles.image}
-            />
-            <div className={styles.content}>
-              <h1>{slide.title}</h1>
-              <p>{slide.description}</p>
-              <Link href={slide.link} className={styles.button}>
-                Detaylı Bilgi
-              </Link>
-            </div>
+            <Link href={slide.link} className={styles.slideLink}>
+              <Image
+                src={slide.image}
+                alt={slide.title}
+                fill
+                priority={index === 0}
+                quality={75}
+                sizes="100vw"
+                style={{ objectFit: 'cover' }}
+                className={styles.image}
+              />
+              <div className={styles.content}>
+                <h1>{slide.title}</h1>
+                <p>{slide.description}</p>
+              </div>
+            </Link>
           </div>
         ))}
 

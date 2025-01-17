@@ -182,6 +182,16 @@
   }
 }
 
+.slideLink {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
 @media (max-width: 768px) {
   .hero {
     height: 400px;
