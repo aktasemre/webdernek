@@ -159,7 +159,7 @@
 
 .quickButton {
   padding: 12px 24px;
-  background-color: #28a745;
+  background-color: #3498db;
   border: none;
   border-radius: 8px;
   color: white;
@@ -172,7 +172,7 @@
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 
   &:hover {
-    background-color: #218838;
+    background-color: rgba(108, 182, 232, 0.1);
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   }
