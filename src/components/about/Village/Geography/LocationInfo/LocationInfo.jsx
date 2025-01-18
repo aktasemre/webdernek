@@ -9,8 +9,10 @@ const LocationInfo = () => {
       <div className={styles.locationContent}>
         <div className={styles.text}>
           <h3>Koordinatlar</h3>
-          <p>{locationData.coordinates.latitude}N, {locationData.coordinates.longitude}E</p>
-          
+          <p>
+            {locationData.coordinates.latitude}N, {locationData.coordinates.longitude}E
+          </p>
+
           <h3>Komşu Yerleşimler</h3>
           <ul>
             {locationData.neighbors.map((neighbor, index) => (
@@ -24,12 +26,12 @@ const LocationInfo = () => {
           <p>{locationData.transportation.description}</p>
         </div>
         <div className={styles.imageContainer}>
-          <Image 
-            src="/images/manzara2.jpg" 
+          <Image
+            src="/images/manzara2.jpg"
             alt="Arslandede Köyü Konumu"
             width={600}
             height={400}
-            style={{ objectFit: "cover" }}
+            style={{ objectFit: 'cover' }}
           />
         </div>
       </div>
@@ -37,4 +39,4 @@ const LocationInfo = () => {
   );
 };
 
-export default LocationInfo; 
+export default LocationInfo;

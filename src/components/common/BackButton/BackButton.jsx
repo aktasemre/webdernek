@@ -8,15 +8,11 @@ const BackButton = () => {
   const router = useRouter();
 
   return (
-    <button 
-      onClick={() => router.back()} 
-      className={styles.backButton}
-      aria-label="Geri Dön"
-    >
+    <button onClick={() => router.back()} className={styles.backButton} aria-label="Geri Dön">
       <FaArrowLeft />
       <span>Geri Dön</span>
     </button>
   );
 };
 
-export default BackButton; 
+export default BackButton;

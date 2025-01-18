@@ -14,8 +14,8 @@ const menuItems = [
       { title: 'Nüfus ve Yerleşim', path: '/about/village/population' },
       { title: 'Ekonomik Yapı', path: '/about/village/economy' },
       { title: 'Eğitim ve Kültür', path: '/about/village/education' },
-      { title: 'Gezilecek Yerler', path: '/about/village/places' }
-    ]
+      { title: 'Gezilecek Yerler', path: '/about/village/places' },
+    ],
   },
   {
     title: 'Derneğimiz Hakkında',
@@ -28,9 +28,9 @@ const menuItems = [
       { title: 'Üyelerimiz', path: '/about/members' },
       { title: 'Banka Hesaplarımız', path: '/about/bank-accounts' },
       { title: 'Yazarlarımız', path: '/about/writers' },
-      { title: 'Kan Bankası', path: '/about/blood-bank' }
-    ]
-  }
+      { title: 'Kan Bankası', path: '/about/blood-bank' },
+    ],
+  },
 ];
 
 const SideMenu = () => {
@@ -38,9 +38,9 @@ const SideMenu = () => {
   const pathname = usePathname();
 
   const toggleSection = (index) => {
-    setOpenSections(prev => {
+    setOpenSections((prev) => {
       if (prev.includes(index)) {
-        return prev.filter(i => i !== index);
+        return prev.filter((i) => i !== index);
       } else {
         return [...prev, index];
       }
@@ -58,23 +58,20 @@ const SideMenu = () => {
     <div className={styles.sideMenu}>
       {menuItems.map((item, index) => {
         const isOpen = openSections.includes(index);
-        const hasActiveLink = item.subItems.some(subItem => pathname === subItem.path);
-        
+        const hasActiveLink = item.subItems.some((subItem) => pathname === subItem.path);
+
         return (
-          <div 
-            key={index} 
+          <div
+            key={index}
             className={`${styles.menuSection} ${isOpen ? styles.open : ''} ${hasActiveLink ? styles.hasActive : ''}`}
           >
-            <h3 
-              className={styles.sectionTitle}
-              onClick={() => isMobile() && toggleSection(index)}
-            >
+            <h3 className={styles.sectionTitle} onClick={() => isMobile() && toggleSection(index)}>
               {item.title}
             </h3>
             <ul className={`${styles.subItems} ${isOpen ? styles.open : ''}`}>
               {item.subItems.map((subItem, subIndex) => (
                 <li key={subIndex}>
-                  <Link 
+                  <Link
                     href={subItem.path}
                     className={pathname === subItem.path ? styles.active : ''}
                   >
@@ -90,4 +87,4 @@ const SideMenu = () => {
   );
 };
 
-export default SideMenu; 
+export default SideMenu;

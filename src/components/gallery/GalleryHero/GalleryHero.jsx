@@ -10,7 +10,7 @@ const GalleryHero = () => {
         alt="Arslandede Köyü Galeri Görseli"
         fill
         priority
-        style={{ objectFit: "cover" }}
+        style={{ objectFit: 'cover' }}
         className={styles.heroImage}
       />
       <div className={styles.overlay} />
@@ -22,4 +22,4 @@ const GalleryHero = () => {
   );
 };
 
-export default GalleryHero; 
+export default GalleryHero;

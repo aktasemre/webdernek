@@ -5,79 +5,75 @@ import BackButton from '@/components/common/BackButton/BackButton';
 const historicalPlaces = [
   {
     name: 'Arslan Dede Türbesi',
-    description: 'Köyümüze adını veren Arslan Dede\'nin türbesi, yüzyıllardır önemli bir ziyaret yeridir. Osmanlı döneminden kalma türbe, geleneksel mimari özellikleri taşımaktadır.',
+    description:
+      "Köyümüze adını veren Arslan Dede'nin türbesi, yüzyıllardır önemli bir ziyaret yeridir. Osmanlı döneminden kalma türbe, geleneksel mimari özellikleri taşımaktadır.",
     history: '16. yüzyılda inşa edilmiştir.',
     features: [
       'Osmanlı mimarisi',
       'Tarihi mezar taşları',
       'Geleneksel süslemeler',
-      'Manevi atmosfer'
+      'Manevi atmosfer',
     ],
-    image: '/images/manzara1.jpg'
+    image: '/images/manzara1.jpg',
   },
   {
     name: 'Tarihi Cami',
-    description: 'Köyün merkezinde yer alan tarihi cami, Osmanlı döneminden günümüze ulaşan önemli bir mimari eserdir. Ahşap işçiliği ve taş süslemeleriyle dikkat çeker.',
+    description:
+      'Köyün merkezinde yer alan tarihi cami, Osmanlı döneminden günümüze ulaşan önemli bir mimari eserdir. Ahşap işçiliği ve taş süslemeleriyle dikkat çeker.',
     history: '17. yüzyılda inşa edilmiştir.',
-    features: [
-      'Ahşap minber',
-      'Taş işçiliği',
-      'Hat yazıları',
-      'Tarihi mihrap'
-    ],
-    image: '/images/manzara2.jpg'
-  }
+    features: ['Ahşap minber', 'Taş işçiliği', 'Hat yazıları', 'Tarihi mihrap'],
+    image: '/images/manzara2.jpg',
+  },
 ];
 
 const naturalPlaces = [
   {
     name: 'Arslandede Yaylası',
-    description: 'Köyün 5 km kuzeyinde yer alan yayla, zengin flora ve faunasıyla doğa tutkunlarını bekliyor. Yaz aylarında geleneksel yayla şenlikleri düzenlenir.',
-    activities: [
-      'Doğa yürüyüşü',
-      'Kamp yapma',
-      'Fotoğraf çekimi',
-      'Botanik gözlem'
-    ],
+    description:
+      'Köyün 5 km kuzeyinde yer alan yayla, zengin flora ve faunasıyla doğa tutkunlarını bekliyor. Yaz aylarında geleneksel yayla şenlikleri düzenlenir.',
+    activities: ['Doğa yürüyüşü', 'Kamp yapma', 'Fotoğraf çekimi', 'Botanik gözlem'],
     bestSeason: 'Haziran-Eylül arası',
-    image: '/images/manzara3.jpg'
+    image: '/images/manzara3.jpg',
   },
   {
     name: 'Şifalı Su Kaynağı',
-    description: 'Köyün doğusunda bulunan şifalı su kaynağı, mineral açısından zengin yapısıyla bilinir. Yöre halkı tarafından yüzyıllardır kullanılmaktadır.',
+    description:
+      'Köyün doğusunda bulunan şifalı su kaynağı, mineral açısından zengin yapısıyla bilinir. Yöre halkı tarafından yüzyıllardır kullanılmaktadır.',
     benefits: [
       'Mide rahatsızlıklarına iyi gelir',
       'Cilt hastalıklarında faydalıdır',
-      'Mineral açısından zengindir'
+      'Mineral açısından zengindir',
     ],
     bestSeason: 'Tüm yıl boyunca',
-    image: '/images/manzara1.jpg'
-  }
+    image: '/images/manzara1.jpg',
+  },
 ];
 
 const culturalPlaces = [
   {
     name: 'Köy Konağı',
-    description: 'Geleneksel Bayburt mimarisinin güzel bir örneği olan köy konağı, misafirleri ağırlamak için kullanılır. El sanatları sergisi ve yerel ürünler burada sergilenir.',
+    description:
+      'Geleneksel Bayburt mimarisinin güzel bir örneği olan köy konağı, misafirleri ağırlamak için kullanılır. El sanatları sergisi ve yerel ürünler burada sergilenir.',
     activities: [
       'El sanatları sergisi',
       'Yöresel yemek ikramı',
       'Kültürel etkinlikler',
-      'Geleneksel müzik dinletileri'
+      'Geleneksel müzik dinletileri',
     ],
-    image: '/images/manzara2.jpg'
+    image: '/images/manzara2.jpg',
   },
   {
     name: 'Etnografya Evi',
-    description: 'Köyün geçmişini ve kültürel mirasını yaşatan etnografya evi, geleneksel eşyalar ve el sanatı ürünlerini sergiler.',
+    description:
+      'Köyün geçmişini ve kültürel mirasını yaşatan etnografya evi, geleneksel eşyalar ve el sanatı ürünlerini sergiler.',
     exhibits: [
       'Geleneksel kıyafetler',
       'El dokuma kilimler',
       'Tarihi ev eşyaları',
-      'Tarım aletleri'
+      'Tarım aletleri',
     ],
-    image: '/images/manzara3.jpg'
-  }
+    image: '/images/manzara3.jpg',
+  },
 ];
 
 const PlacesContent = () => {
@@ -86,13 +82,12 @@ const PlacesContent = () => {
       <BackButton />
       <div className={styles.placesContent}>
         <h1>Gezilecek Yerler</h1>
-        
+
         <div className={styles.introduction}>
           <p>
-            Arslandede köyü, tarihi, doğal ve kültürel zenginlikleriyle ziyaretçilerine
-            unutulmaz deneyimler sunar. Osmanlı döneminden kalma tarihi yapılar,
-            el değmemiş doğal güzellikler ve zengin kültürel miras, köyümüzü
-            keşfedilmeyi bekleyen bir hazine haline getiriyor.
+            Arslandede köyü, tarihi, doğal ve kültürel zenginlikleriyle ziyaretçilerine unutulmaz
+            deneyimler sunar. Osmanlı döneminden kalma tarihi yapılar, el değmemiş doğal güzellikler
+            ve zengin kültürel miras, köyümüzü keşfedilmeyi bekleyen bir hazine haline getiriyor.
           </p>
         </div>
 
@@ -107,7 +102,7 @@ const PlacesContent = () => {
                     alt={place.name}
                     width={600}
                     height={400}
-                    style={{ objectFit: "cover" }}
+                    style={{ objectFit: 'cover' }}
                   />
                 </div>
                 <div className={styles.content}>
@@ -139,7 +134,7 @@ const PlacesContent = () => {
                     alt={place.name}
                     width={600}
                     height={400}
-                    style={{ objectFit: "cover" }}
+                    style={{ objectFit: 'cover' }}
                   />
                 </div>
                 <div className={styles.content}>
@@ -148,16 +143,12 @@ const PlacesContent = () => {
                   <div className={styles.activities}>
                     <h4>Aktiviteler</h4>
                     <ul>
-                      {place.activities ? place.activities.map((activity, i) => (
-                        <li key={i}>{activity}</li>
-                      )) : place.benefits.map((benefit, i) => (
-                        <li key={i}>{benefit}</li>
-                      ))}
+                      {place.activities
+                        ? place.activities.map((activity, i) => <li key={i}>{activity}</li>)
+                        : place.benefits.map((benefit, i) => <li key={i}>{benefit}</li>)}
                     </ul>
                   </div>
-                  <div className={styles.season}>
-                    En İyi Ziyaret Zamanı: {place.bestSeason}
-                  </div>
+                  <div className={styles.season}>En İyi Ziyaret Zamanı: {place.bestSeason}</div>
                 </div>
               </div>
             ))}
@@ -175,7 +166,7 @@ const PlacesContent = () => {
                     alt={place.name}
                     width={600}
                     height={400}
-                    style={{ objectFit: "cover" }}
+                    style={{ objectFit: 'cover' }}
                   />
                 </div>
                 <div className={styles.content}>
@@ -184,11 +175,9 @@ const PlacesContent = () => {
                   <div className={styles.activities}>
                     <h4>{place.activities ? 'Etkinlikler' : 'Sergilenen Eserler'}</h4>
                     <ul>
-                      {place.activities ? place.activities.map((activity, i) => (
-                        <li key={i}>{activity}</li>
-                      )) : place.exhibits.map((exhibit, i) => (
-                        <li key={i}>{exhibit}</li>
-                      ))}
+                      {place.activities
+                        ? place.activities.map((activity, i) => <li key={i}>{activity}</li>)
+                        : place.exhibits.map((exhibit, i) => <li key={i}>{exhibit}</li>)}
                     </ul>
                   </div>
                 </div>
@@ -210,15 +199,15 @@ const PlacesContent = () => {
             <div className={styles.infoCard}>
               <h3>Konaklama</h3>
               <p>
-                Köy konağında ve geleneksel evlerde konaklama imkanı sunulmaktadır.
-                Rezervasyon için muhtarlık ile iletişime geçebilirsiniz.
+                Köy konağında ve geleneksel evlerde konaklama imkanı sunulmaktadır. Rezervasyon için
+                muhtarlık ile iletişime geçebilirsiniz.
               </p>
             </div>
             <div className={styles.infoCard}>
               <h3>İletişim</h3>
               <p>
-                Ziyaret ve konaklama için önceden bilgi almak isteyenler muhtarlık
-                ile iletişime geçebilir. Tel: 0XXX XXX XX XX
+                Ziyaret ve konaklama için önceden bilgi almak isteyenler muhtarlık ile iletişime
+                geçebilir. Tel: 0XXX XXX XX XX
               </p>
             </div>
           </div>
@@ -228,4 +217,4 @@ const PlacesContent = () => {
   );
 };
 
-export default PlacesContent; 
+export default PlacesContent;

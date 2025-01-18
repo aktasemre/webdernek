@@ -1,19 +1,24 @@
 import ProjectDetail from '@/components/projects/ProjectDetail/ProjectDetail';
-import projectsData from '@/data/projects.data.json';
+import projelerData from '@/data/projeler.data.json';
 import PropTypes from 'prop-types';
 
-export function generateStaticParams() {
-  return projectsData.projects.map((project) => ({
-    id: project.id.toString()
+export async function generateStaticParams() {
+  if (!projelerData?.projeler) {
+    console.error('Projeler verisi bulunamadı');
+    return [];
+  }
+
+  return projelerData.projeler.map((proje) => ({
+    id: proje.id.toString(),
   }));
 }
 
 export function generateMetadata({ params }) {
-  const project = projectsData.projects.find(p => p.id.toString() === params.id);
-  
+  const project = projelerData.projeler.find((p) => p.id.toString() === params.id);
+
   if (!project) {
     return {
-      title: 'Proje Bulunamadı'
+      title: 'Proje Bulunamadı',
     };
   }
 
@@ -25,21 +30,26 @@ export function generateMetadata({ params }) {
 }
 
 export default function ProjectDetailPage({ params }) {
-  const project = projectsData.projects.find(p => p.id.toString() === params.id);
+  if (!projelerData?.projeler) {
+    return <div>Proje verisi yüklenemedi</div>;
+  }
+
+  const project = projelerData.projeler.find((p) => p.id.toString() === params.id);
 
   if (!project) {
-    return <div>Proje bulunamadı.</div>;
+    return <div>Proje bulunamadı</div>;
   }
 
   return (
-    <main>
-      <ProjectDetail project={project} />
-    </main>
+    <div className="container mx-auto px-4 py-8">
+      <h1 className="text-3xl font-bold mb-6">{project.title}</h1>
+      {/* Diğer proje detayları */}
+    </div>
   );
 }
 
 ProjectDetailPage.propTypes = {
   params: PropTypes.shape({
-    id: PropTypes.string.isRequired
-  }).isRequired
-}; 
+    id: PropTypes.string.isRequired,
+  }).isRequired,
+};

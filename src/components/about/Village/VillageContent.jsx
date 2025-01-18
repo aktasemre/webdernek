@@ -6,40 +6,46 @@ import styles from './VillageContent.module.scss';
 const sections = [
   {
     title: 'Köyümüzün Tarihi',
-    description: 'Arslandede köyünün zengin tarihi geçmişi, kültürel mirası ve önemli olayları hakkında detaylı bilgiler.',
+    description:
+      'Arslandede köyünün zengin tarihi geçmişi, kültürel mirası ve önemli olayları hakkında detaylı bilgiler.',
     image: '/images/manzara1.jpg',
-    link: '/about/village/history'
+    link: '/about/village/history',
   },
   {
     title: 'Coğrafi Yapı ve İklim',
-    description: 'Köyümüzün coğrafi konumu, iklim özellikleri, bitki örtüsü ve doğal kaynakları hakkında bilgiler.',
+    description:
+      'Köyümüzün coğrafi konumu, iklim özellikleri, bitki örtüsü ve doğal kaynakları hakkında bilgiler.',
     image: '/images/manzara2.jpg',
-    link: '/about/village/geography'
+    link: '/about/village/geography',
   },
   {
     title: 'Nüfus ve Yerleşim',
-    description: 'Köyümüzün nüfus yapısı, demografik özellikleri ve yerleşim düzeni hakkında istatistiki bilgiler.',
+    description:
+      'Köyümüzün nüfus yapısı, demografik özellikleri ve yerleşim düzeni hakkında istatistiki bilgiler.',
     image: '/images/manzara3.jpg',
-    link: '/about/village/population'
+    link: '/about/village/population',
   },
   {
     title: 'Ekonomik Yapı',
-    description: 'Köyümüzün ekonomik faaliyetleri, tarım, hayvancılık ve diğer geçim kaynakları hakkında bilgiler.',
+    description:
+      'Köyümüzün ekonomik faaliyetleri, tarım, hayvancılık ve diğer geçim kaynakları hakkında bilgiler.',
     image: '/images/manzara1.jpg',
-    link: '/about/village/economy'
+    link: '/about/village/economy',
   },
   {
     title: 'Eğitim ve Kültür',
-    description: 'Köyümüzdeki eğitim imkanları, kültürel faaliyetler ve sosyal yaşam hakkında detaylı bilgiler.',
+    description:
+      'Köyümüzdeki eğitim imkanları, kültürel faaliyetler ve sosyal yaşam hakkında detaylı bilgiler.',
     image: '/images/manzara2.jpg',
-    link: '/about/village/education'
+    link: '/about/village/education',
   },
   {
     title: 'Gezilecek Yerler',
-    description: 'Köyümüzün tarihi, doğal ve kültürel açıdan önemli turistik mekanları hakkında rehber bilgiler.',
+    description:
+      'Köyümüzün tarihi, doğal ve kültürel açıdan önemli turistik mekanları hakkında rehber bilgiler.',
     image: '/images/manzara3.jpg',
-    link: '/about/village/places'
-  }
+    link: '/about/village/places',
+  },
 ];
 
 const VillageContent = () => {
@@ -49,10 +55,10 @@ const VillageContent = () => {
       <div className={styles.header}>
         <h1>Köyümüz Hakkında</h1>
         <p>
-          Arslandede köyü, Bayburt ilinin tarihi ve kültürel zenginliklerini
-          barındıran, doğal güzellikleri ve misafirperver insanlarıyla öne çıkan
-          bir yerleşim yeridir. Köyümüzün geçmişten günümüze uzanan hikayesini,
-          coğrafi özelliklerini, sosyal ve ekonomik yapısını bu sayfada bulabilirsiniz.
+          Arslandede köyü, Bayburt ilinin tarihi ve kültürel zenginliklerini barındıran, doğal
+          güzellikleri ve misafirperver insanlarıyla öne çıkan bir yerleşim yeridir. Köyümüzün
+          geçmişten günümüze uzanan hikayesini, coğrafi özelliklerini, sosyal ve ekonomik yapısını
+          bu sayfada bulabilirsiniz.
         </p>
       </div>
 
@@ -65,7 +71,7 @@ const VillageContent = () => {
                 alt={section.title}
                 width={400}
                 height={300}
-                style={{ objectFit: "cover" }}
+                style={{ objectFit: 'cover' }}
               />
             </div>
             <div className={styles.content}>
@@ -102,4 +108,4 @@ const VillageContent = () => {
   );
 };
 
-export default VillageContent; 
+export default VillageContent;

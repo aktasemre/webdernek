@@ -13,4 +13,4 @@ export function Providers({ children }) {
 
 Providers.propTypes = {
   children: PropTypes.node.isRequired,
-}; 
+};

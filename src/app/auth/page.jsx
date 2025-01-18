@@ -16,14 +16,31 @@ export default function AuthPage() {
           <h2 className="text-xl font-semibold text-gray-800 mb-2">Giriş Yap</h2>
           <form>
             <div className="mb-4">
-              <label htmlFor="email" className="block text-gray-700 font-semibold mb-2">E-posta:</label>
-              <input type="email" id="email" className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required />
+              <label htmlFor="email" className="block text-gray-700 font-semibold mb-2">
+                E-posta:
+              </label>
+              <input
+                type="email"
+                id="email"
+                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                required
+              />
             </div>
             <div className="mb-6">
-              <label htmlFor="password" className="block text-gray-700 font-semibold mb-2">Şifre:</label>
-              <input type="password" id="password" className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required />
+              <label htmlFor="password" className="block text-gray-700 font-semibold mb-2">
+                Şifre:
+              </label>
+              <input
+                type="password"
+                id="password"
+                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                required
+              />
             </div>
-            <button type="submit" className="w-full py-2 px-4 bg-blue-500 text-white font-semibold rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
+            <button
+              type="submit"
+              className="w-full py-2 px-4 bg-blue-500 text-white font-semibold rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+            >
               <FaSignInAlt className="inline-block mr-2" />
               Giriş Yap
             </button>
@@ -34,25 +51,48 @@ export default function AuthPage() {
           <h2 className="text-xl font-semibold text-gray-800 mb-2">Kaydol</h2>
           <form>
             <div className="mb-4">
-              <label htmlFor="name" className="block text-gray-700 font-semibold mb-2">Ad Soyad:</label>
-              <input type="text" id="name" className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required />
+              <label htmlFor="name" className="block text-gray-700 font-semibold mb-2">
+                Ad Soyad:
+              </label>
+              <input
+                type="text"
+                id="name"
+                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                required
+              />
             </div>
             <div className="mb-4">
-              <label htmlFor="email" className="block text-gray-700 font-semibold mb-2">E-posta:</label>
-              <input type="email" id="email" className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required />
+              <label htmlFor="email" className="block text-gray-700 font-semibold mb-2">
+                E-posta:
+              </label>
+              <input
+                type="email"
+                id="email"
+                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                required
+              />
             </div>
             <div className="mb-6">
-              <label htmlFor="password" className="block text-gray-700 font-semibold mb-2">Şifre:</label>
-              <input type="password" id="password" className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required />
+              <label htmlFor="password" className="block text-gray-700 font-semibold mb-2">
+                Şifre:
+              </label>
+              <input
+                type="password"
+                id="password"
+                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                required
+              />
             </div>
-            <button type="submit" className="w-full py-2 px-4 bg-green-500 text-white font-semibold rounded-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2">
-              <FaUserPlus className="inline-block mr-2" />  
+            <button
+              type="submit"
+              className="w-full py-2 px-4 bg-green-500 text-white font-semibold rounded-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
+            >
+              <FaUserPlus className="inline-block mr-2" />
               Kaydol
             </button>
           </form>
         </div>
-
       </div>
     </main>
   );
-} 
+}

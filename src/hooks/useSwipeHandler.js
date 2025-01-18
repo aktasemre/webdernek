@@ -42,8 +42,8 @@ const useSwipeHandler = (setCurrentSlide, totalSlides) => {
   return {
     handleTouchStart,
     handleTouchMove,
-    handleTouchEnd
+    handleTouchEnd,
   };
 };
 
-export default useSwipeHandler; 
+export default useSwipeHandler;

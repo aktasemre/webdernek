@@ -11,9 +11,9 @@ const writers = [
     works: [
       'Arslandede Köyü Tarihi (2020)',
       'Köyümüzün Unutulan Değerleri (2021)',
-      'Arslandede\'den Hikayeler (2022)'
+      "Arslandede'den Hikayeler (2022)",
     ],
-    specialization: 'Yerel Tarih ve Kültür'
+    specialization: 'Yerel Tarih ve Kültür',
   },
   {
     name: 'Fatma Demir',
@@ -23,9 +23,9 @@ const writers = [
     works: [
       'Arslandede Düğün Gelenekleri (2019)',
       'Köy Mutfağımızdan Lezzetler (2021)',
-      'Yöresel El Sanatlarımız (2022)'
+      'Yöresel El Sanatlarımız (2022)',
     ],
-    specialization: 'Folklor ve Gelenekler'
+    specialization: 'Folklor ve Gelenekler',
   },
   {
     name: 'Mehmet Kaya',
@@ -35,10 +35,10 @@ const writers = [
     works: [
       'Arslandede Dergisi (2020-günümüz)',
       'Köy Bülteni (2019-2020)',
-      'Dijital Köy Arşivi Projesi (2021)'
+      'Dijital Köy Arşivi Projesi (2021)',
     ],
-    specialization: 'Dergi Editörlüğü ve Dijital Medya'
-  }
+    specialization: 'Dergi Editörlüğü ve Dijital Medya',
+  },
 ];
 
 const categories = [
@@ -46,31 +46,31 @@ const categories = [
     icon: <FaBook />,
     title: 'Kitaplar',
     count: 12,
-    description: 'Yazarlarımız tarafından yayınlanan kitaplar'
+    description: 'Yazarlarımız tarafından yayınlanan kitaplar',
   },
   {
     icon: <FaNewspaper />,
     title: 'Dergiler',
     count: 48,
-    description: 'Periyodik olarak yayınlanan dergilerimiz'
+    description: 'Periyodik olarak yayınlanan dergilerimiz',
   },
   {
     icon: <FaPen />,
     title: 'Makaleler',
     count: 156,
-    description: 'Çeşitli platformlarda yayınlanan makaleler'
-  }
+    description: 'Çeşitli platformlarda yayınlanan makaleler',
+  },
 ];
 
 export default function WritersContent() {
   return (
     <div className={styles.writersContent}>
       <h1>Yazarlarımız</h1>
-      
+
       <div className={styles.introduction}>
         <p>
-          Köyümüzün tarihini, kültürünü ve değerlerini gelecek nesillere aktarmak için
-          çalışan değerli yazarlarımızı tanıyın.
+          Köyümüzün tarihini, kültürünü ve değerlerini gelecek nesillere aktarmak için çalışan
+          değerli yazarlarımızı tanıyın.
         </p>
       </div>
 
@@ -94,7 +94,7 @@ export default function WritersContent() {
                 alt={writer.name}
                 width={300}
                 height={300}
-                style={{ objectFit: "cover" }}
+                style={{ objectFit: 'cover' }}
               />
             </div>
             <div className={styles.writerInfo}>
@@ -120,12 +120,11 @@ export default function WritersContent() {
       <div className={styles.publications}>
         <h2>Yayın Politikamız</h2>
         <p>
-          Derneğimiz, köyümüzün kültürel mirasını korumak ve gelecek nesillere
-          aktarmak amacıyla yazarlarımızın çalışmalarını desteklemektedir. Yayınlarımızda
-          bilimsel doğruluk, tarafsızlık ve kültürel değerlere saygı ilkelerini
-          gözetmekteyiz.
+          Derneğimiz, köyümüzün kültürel mirasını korumak ve gelecek nesillere aktarmak amacıyla
+          yazarlarımızın çalışmalarını desteklemektedir. Yayınlarımızda bilimsel doğruluk,
+          tarafsızlık ve kültürel değerlere saygı ilkelerini gözetmekteyiz.
         </p>
       </div>
     </div>
   );
-} 
+}

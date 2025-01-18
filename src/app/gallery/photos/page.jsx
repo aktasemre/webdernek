@@ -13,4 +13,4 @@ export default function PhotosPage() {
       <PhotoGallery />
     </main>
   );
-} 
+}

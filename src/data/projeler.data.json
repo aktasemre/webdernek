@@ -15,12 +15,7 @@
       "id": "social",
       "title": "Sosyal Projeler",
       "slug": "sosyal-projeler",
-      "items": [
-        "Köy Konağı Yenileme",
-        "Çocuk Parkı Yapımı",
-        "Spor Sahası",
-        "Gençlik Merkezi"
-      ]
+      "items": ["Köy Konağı Yenileme", "Çocuk Parkı Yapımı", "Spor Sahası", "Gençlik Merkezi"]
     },
     {
       "id": "agriculture",
@@ -37,12 +32,7 @@
       "id": "cultural",
       "title": "Kültürel Projeler",
       "slug": "kulturel-projeler",
-      "items": [
-        "Tarihi Yapı Restorasyonu",
-        "Kültür Evi",
-        "Köy Müzesi",
-        "Geleneksel El Sanatları"
-      ]
+      "items": ["Tarihi Yapı Restorasyonu", "Kültür Evi", "Köy Müzesi", "Geleneksel El Sanatları"]
     }
   ],
   "projects": [
@@ -139,12 +129,7 @@
             "role": "Ziraat Mühendisi"
           }
         ],
-        "benefits": [
-          "Su tasarrufu",
-          "Verim artışı",
-          "İşgücü tasarrufu",
-          "Enerji tasarrufu"
-        ]
+        "benefits": ["Su tasarrufu", "Verim artışı", "İşgücü tasarrufu", "Enerji tasarrufu"]
       }
     },
     {
@@ -161,13 +146,7 @@
       "details": {
         "location": "Köy Merkezi",
         "area": "800m²",
-        "features": [
-          "Kütüphane",
-          "Bilgisayar Odası",
-          "Spor Salonu",
-          "Etkinlik Salonu",
-          "Kafeterya"
-        ]
+        "features": ["Kütüphane", "Bilgisayar Odası", "Spor Salonu", "Etkinlik Salonu", "Kafeterya"]
       }
     },
     {
@@ -271,4 +250,4 @@
       }
     }
   ]
-} 
+}

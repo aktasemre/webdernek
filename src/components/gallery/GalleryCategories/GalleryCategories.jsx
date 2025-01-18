@@ -13,7 +13,7 @@ const categories = [
     description: 'Köyümüzün eşsiz doğal güzellikleri',
     image: '/images/manzara1.jpg',
     link: '/gallery/photos?category=dogal-guzellikler',
-    icon: <FaImage />
+    icon: <FaImage />,
   },
   {
     id: 'etkinlikler',
@@ -21,7 +21,7 @@ const categories = [
     description: 'Köy etkinlikleri ve organizasyonlar',
     image: '/images/koy1.jpg',
     link: '/gallery/photos?category=etkinlikler',
-    icon: <FaCalendarAlt />
+    icon: <FaCalendarAlt />,
   },
   {
     id: 'tarihi',
@@ -29,7 +29,7 @@ const categories = [
     description: 'Köyümüzün tarihi mekanları',
     image: '/images/arslandede1.jpg',
     link: '/gallery/photos?category=tarihi',
-    icon: <FaLandmark />
+    icon: <FaLandmark />,
   },
   {
     id: 'koyyasami',
@@ -37,8 +37,8 @@ const categories = [
     description: 'Günlük yaşamdan kareler',
     image: '/images/koy2.jpg',
     link: '/gallery/photos?category=koyyasami',
-    icon: <FaUsers />
-  }
+    icon: <FaUsers />,
+  },
 ];
 
 const GalleryCategories = () => {
@@ -54,7 +54,7 @@ const GalleryCategories = () => {
                   alt={category.title}
                   width={400}
                   height={300}
-                  style={{ objectFit: "cover" }}
+                  style={{ objectFit: 'cover' }}
                 />
                 <div className={styles.overlay}>
                   <div className={styles.icon}>{category.icon}</div>
@@ -72,4 +72,4 @@ const GalleryCategories = () => {
   );
 };
 
-export default GalleryCategories; 
+export default GalleryCategories;

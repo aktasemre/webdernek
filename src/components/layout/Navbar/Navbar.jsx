@@ -38,8 +38,8 @@ const Navbar = () => {
         { href: '/about/village/population', label: 'Nüfus ve Yerleşim' },
         { href: '/about/village/economy', label: 'Ekonomik Yapı' },
         { href: '/about/village/education', label: 'Eğitim ve Kültür' },
-        { href: '/about/village/places', label: 'Gezilecek Yerler' }
-      ]
+        { href: '/about/village/places', label: 'Gezilecek Yerler' },
+      ],
     },
     {
       href: '/about',
@@ -49,8 +49,8 @@ const Navbar = () => {
         { href: '/about/board', label: 'Yönetim Kurulu' },
         { href: '/about/statute', label: 'Dernek Tüzüğü' },
         { href: '/about/founders', label: 'Kurucularımız' },
-        { href: '/about/members', label: 'Üyelerimiz' }
-      ]
+        { href: '/about/members', label: 'Üyelerimiz' },
+      ],
     },
     {
       href: '/gallery',
@@ -58,12 +58,12 @@ const Navbar = () => {
       subItems: [
         { href: '/gallery/photos', label: 'Fotoğraf Galerisi' },
         { href: '/gallery/videos', label: 'Video Galerisi' },
-        { href: '/gallery/historical', label: 'Tarihi Fotoğraflar' }
-      ]
+        { href: '/gallery/historical', label: 'Tarihi Fotoğraflar' },
+      ],
     },
     { href: '/projects', label: 'Projeler' },
     { href: '/news', label: 'Haberler' },
-    { href: '/contact', label: 'İletişim' }
+    { href: '/contact', label: 'İletişim' },
   ];
 
   const toggleMenu = () => {
@@ -88,10 +88,7 @@ const Navbar = () => {
 
   return (
     <>
-      <div 
-        className={`${styles.overlay} ${isOpen ? styles.open : ''}`}
-        onClick={closeMenu}
-      />
+      <div className={`${styles.overlay} ${isOpen ? styles.open : ''}`} onClick={closeMenu} />
       <nav className={styles.navbar}>
         <div className={styles.container}>
           <Link href="/" className={styles.logo}>
@@ -106,11 +103,7 @@ const Navbar = () => {
           </Link>
 
           <div className={styles.searchContainer}>
-            <button 
-              className={styles.searchButton}
-              onClick={toggleSearch}
-              aria-label="Ara"
-            >
+            <button className={styles.searchButton} onClick={toggleSearch} aria-label="Ara">
               <FaSearch />
             </button>
 
@@ -126,19 +119,15 @@ const Navbar = () => {
                 <button type="submit" className={styles.submitButton}>
                   <FaSearch />
                 </button>
-                <button 
-                  type="button" 
-                  className={styles.closeButton}
-                  onClick={toggleSearch}
-                >
+                <button type="button" className={styles.closeButton} onClick={toggleSearch}>
                   <FaTimes />
                 </button>
               </form>
             )}
           </div>
 
-          <button 
-            className={styles.menuButton} 
+          <button
+            className={styles.menuButton}
             onClick={toggleMenu}
             aria-label={isOpen ? 'Menüyü Kapat' : 'Menüyü Aç'}
           >
@@ -151,9 +140,7 @@ const Navbar = () => {
                 <li key={item.href} className={styles.menuItem}>
                   {item.subItems ? (
                     <div className={styles.dropdown}>
-                      <span className={styles.dropdownTrigger}>
-                        {item.label}
-                      </span>
+                      <span className={styles.dropdownTrigger}>{item.label}</span>
                       <ul className={styles.dropdownMenu}>
                         {item.subItems.map((subItem) => (
                           <li key={subItem.href}>
@@ -192,4 +179,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar; 
+export default Navbar;

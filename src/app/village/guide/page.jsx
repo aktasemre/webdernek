@@ -31,11 +31,13 @@ const locations = [
 const transportation = [
   {
     type: 'Otobüs',
-    description: 'Köyümüze Osmancık\'tan günde 3 sefer otobüs kalkmaktadır. Sefer saatleri: 08:00, 13:00, 18:00',
+    description:
+      "Köyümüze Osmancık'tan günde 3 sefer otobüs kalkmaktadır. Sefer saatleri: 08:00, 13:00, 18:00",
   },
   {
     type: 'Minibüs',
-    description: 'Köyümüze Osmancık\'tan günde 6 sefer minibüs kalkmaktadır. Sefer saatleri: 07:00, 09:00, 11:00, 13:00, 15:00, 17:00',
+    description:
+      "Köyümüze Osmancık'tan günde 6 sefer minibüs kalkmaktadır. Sefer saatleri: 07:00, 09:00, 11:00, 13:00, 15:00, 17:00",
   },
   // Daha fazla ulaşım bilgisi eklenebilir
 ];
@@ -83,7 +85,6 @@ export default function VillageGuidePage() {
             ))}
           </div>
         </div>
-
       </div>
     </main>
   );

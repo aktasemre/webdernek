@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 function MyApp({ Component, pageProps }) {
   useEffect(() => {
     if ('serviceWorker' in navigator) {
-      window.addEventListener('load', function() {
+      window.addEventListener('load', function () {
         navigator.serviceWorker.register('/sw.js').then(
           () => {
             // Başarılı kayıt durumunda sessizce devam et
@@ -25,4 +25,4 @@ MyApp.propTypes = {
   pageProps: PropTypes.object.isRequired,
 };
 
-export default MyApp; 
+export default MyApp;

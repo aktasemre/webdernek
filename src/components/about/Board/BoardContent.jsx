@@ -9,7 +9,7 @@ const BoardContent = () => {
     <div className={styles.boardContent}>
       <BackButton />
       <h1>Yönetim Kurulumuz</h1>
-      
+
       <div className={styles.introduction}>
         <p>{boardInfo.introduction}</p>
       </div>
@@ -23,7 +23,7 @@ const BoardContent = () => {
                 alt={member.name}
                 width={300}
                 height={300}
-                style={{ objectFit: "cover" }}
+                style={{ objectFit: 'cover' }}
               />
             </div>
             <div className={styles.memberInfo}>
@@ -39,11 +39,21 @@ const BoardContent = () => {
                   <FaEnvelope className={styles.icon} />
                   <span>{member.email}</span>
                 </a>
-                <a href={member.linkedin} target="_blank" rel="noopener noreferrer" className={styles.contactItem}>
+                <a
+                  href={member.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.contactItem}
+                >
                   <FaLinkedin className={styles.icon} />
                   <span>{member.linkedin}</span>
                 </a>
-                <a href={member.instagram} target="_blank" rel="noopener noreferrer" className={styles.contactItem}>
+                <a
+                  href={member.instagram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.contactItem}
+                >
                   <FaInstagram className={styles.icon} />
                   <span>{member.instagram}</span>
                 </a>
@@ -61,4 +71,4 @@ const BoardContent = () => {
   );
 };
 
-export default BoardContent; 
+export default BoardContent;

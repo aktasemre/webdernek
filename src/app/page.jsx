@@ -21,7 +21,7 @@ const events = [
     date: '2024-01-20',
     time: '14:00',
     location: 'Dernek Merkezi',
-    type: 'meeting'
+    type: 'meeting',
   },
   {
     id: 2,
@@ -29,7 +29,7 @@ const events = [
     date: '2024-07-20',
     time: '10:00',
     location: 'Köy Meydanı',
-    type: 'festival'
+    type: 'festival',
   },
   {
     id: 3,
@@ -37,8 +37,8 @@ const events = [
     date: '2024-03-15',
     time: '18:30',
     location: 'Köy Konağı',
-    type: 'social'
-  }
+    type: 'social',
+  },
 ];
 
 export default function Home() {
@@ -75,12 +75,12 @@ export default function Home() {
     <main className={styles.main}>
       <Hero />
       <ActionButtons />
-      
+
       <div className={styles.contentWrapper}>
         <div className={styles.sideMenuContainer}>
           <SideMenu />
         </div>
-        
+
         <div className={styles.mainContent}>
           {/* News Slider Section */}
           <section className={styles.newsSliderSection}>
@@ -107,7 +107,11 @@ export default function Home() {
               <div className={styles.aboutContent}>
                 <div className={styles.aboutText}>
                   <h2>Hakkımızda</h2>
-                  <p>Arslandede Köyü Derneği olarak, köyümüzün gelişimi ve kalkınması için çalışıyoruz. Sosyal ve kültürel faaliyetlerimizle köyümüzün değerlerini yaşatıyor, yeni nesillere aktarıyoruz.</p>
+                  <p>
+                    Arslandede Köyü Derneği olarak, köyümüzün gelişimi ve kalkınması için
+                    çalışıyoruz. Sosyal ve kültürel faaliyetlerimizle köyümüzün değerlerini
+                    yaşatıyor, yeni nesillere aktarıyoruz.
+                  </p>
                   <Link href="/about/history" className={styles.aboutButton}>
                     Daha Fazla Bilgi
                   </Link>
@@ -118,7 +122,7 @@ export default function Home() {
                     alt="Arslandede Köyü"
                     width={500}
                     height={300}
-                    style={{ objectFit: "cover" }}
+                    style={{ objectFit: 'cover' }}
                     priority
                   />
                 </div>
@@ -131,11 +135,14 @@ export default function Home() {
             <div className={styles.container}>
               <div className={styles.surveyContent}>
                 <h2>Meslek Envanteri</h2>
-                <p>Köyümüzün gelişimine katkıda bulunmak ve üyelerimiz arasındaki iş birliğini artırmak için meslek envanterimize katılın.</p>
-                <a 
-                  href={iletisimData.forms.professionInventory} 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
+                <p>
+                  Köyümüzün gelişimine katkıda bulunmak ve üyelerimiz arasındaki iş birliğini
+                  artırmak için meslek envanterimize katılın.
+                </p>
+                <a
+                  href={iletisimData.forms.professionInventory}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className={styles.surveyButton}
                 >
                   Formu Doldurun
@@ -145,8 +152,8 @@ export default function Home() {
           </section>
         </div>
       </div>
-      
+
       <BottomNav />
     </main>
   );
-} 
+}

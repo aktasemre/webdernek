@@ -20,8 +20,7 @@
   },
   "navigation": {
     "mainMenu": [
-     
-     {
+      {
         "title": "Köyümüz",
         "path": "/about/village",
         "submenu": [
@@ -60,6 +59,13 @@
   "seo": {
     "defaultTitle": "Arslandede Köyü Derneği",
     "defaultDescription": "Bayburt Arslandede Köyü Yardımlaşma ve Dayanışma Derneği resmi web sitesi",
-    "defaultKeywords": ["Arslandede Köyü", "Bayburt", "Dernek", "Köy Derneği", "Yardımlaşma", "Dayanışma"]
+    "defaultKeywords": [
+      "Arslandede Köyü",
+      "Bayburt",
+      "Dernek",
+      "Köy Derneği",
+      "Yardımlaşma",
+      "Dayanışma"
+    ]
   }
-} 
+}

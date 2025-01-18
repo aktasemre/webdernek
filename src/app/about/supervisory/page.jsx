@@ -2,7 +2,8 @@ import SupervisoryContent from '@/components/about/Supervisory/SupervisoryConten
 
 export const metadata = {
   title: 'Denetleme Kurulu | Arslandede Köyü Derneği',
-  description: 'Arslandede Köyü Derneği Denetleme Kurulu üyeleri ve görevleri hakkında bilgi edinin.',
+  description:
+    'Arslandede Köyü Derneği Denetleme Kurulu üyeleri ve görevleri hakkında bilgi edinin.',
   keywords: ['denetleme kurulu', 'dernek denetimi', 'şeffaflık', 'hesap verebilirlik'],
 };
 
@@ -12,4 +13,4 @@ export default function SupervisoryPage() {
       <SupervisoryContent />
     </main>
   );
-} 
+}

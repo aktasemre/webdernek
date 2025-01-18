@@ -49,10 +49,10 @@ Board.propTypes = {
       title: PropTypes.string.isRequired,
       description: PropTypes.string,
       image: PropTypes.string,
-      tags: PropTypes.arrayOf(PropTypes.string)
-    })
+      tags: PropTypes.arrayOf(PropTypes.string),
+    }),
   ).isRequired,
-  status: PropTypes.string.isRequired
+  status: PropTypes.string.isRequired,
 };
 
-export default Board; 
+export default Board;

@@ -7,55 +7,58 @@ const founders = [
     title: 'Kurucu Başkan',
     image: '/images/manzara1.jpg',
     description: 'Derneğimizin kuruluşunda öncü rol oynayan değerli büyüğümüz.',
-    contribution: 'Derneğin kuruluş sürecini başlatan ve ilk tüzüğün hazırlanmasında önemli katkıları bulunan kurucu başkanımız.',
-    period: '1995-2000'
+    contribution:
+      'Derneğin kuruluş sürecini başlatan ve ilk tüzüğün hazırlanmasında önemli katkıları bulunan kurucu başkanımız.',
+    period: '1995-2000',
   },
   {
     name: 'Ali Kaya',
     title: 'Kurucu Üye',
     image: '/images/manzara2.jpg',
     description: 'Derneğimizin temellerinin atılmasında büyük emeği geçen değerli üyemiz.',
-    contribution: 'Derneğin mali yapısının oluşturulması ve ilk faaliyetlerin planlanmasında önemli rol oynamıştır.',
-    period: '1995-1998'
+    contribution:
+      'Derneğin mali yapısının oluşturulması ve ilk faaliyetlerin planlanmasında önemli rol oynamıştır.',
+    period: '1995-1998',
   },
   {
     name: 'Ayşe Demir',
     title: 'Kurucu Üye',
     image: '/images/manzara3.jpg',
     description: 'Derneğimizin sosyal faaliyetlerinin temelini atan değerli üyemiz.',
-    contribution: 'Köy kadınlarının dernek faaliyetlerine katılımını sağlamada öncü rol üstlenmiştir.',
-    period: '1995-1997'
-  }
+    contribution:
+      'Köy kadınlarının dernek faaliyetlerine katılımını sağlamada öncü rol üstlenmiştir.',
+    period: '1995-1997',
+  },
 ];
 
 const milestones = [
   {
     year: '1995',
     title: 'Derneğin Kuruluşu',
-    description: 'Arslandede Köyü Derneği resmi olarak kuruldu.'
+    description: 'Arslandede Köyü Derneği resmi olarak kuruldu.',
   },
   {
     year: '1996',
     title: 'İlk Genel Kurul',
-    description: 'Derneğin ilk genel kurulu yapıldı ve yönetim organları seçildi.'
+    description: 'Derneğin ilk genel kurulu yapıldı ve yönetim organları seçildi.',
   },
   {
     year: '1997',
     title: 'İlk Sosyal Faaliyet',
-    description: 'Köy çocukları için eğitim bursu programı başlatıldı.'
+    description: 'Köy çocukları için eğitim bursu programı başlatıldı.',
   },
   {
     year: '1998',
     title: 'Dernek Merkezi',
-    description: 'Derneğin ilk resmi merkezi açıldı.'
-  }
+    description: 'Derneğin ilk resmi merkezi açıldı.',
+  },
 ];
 
 export default function FoundersContent() {
   return (
     <div className={styles.foundersContent}>
       <h1>Kurucularımız</h1>
-      
+
       <div className={styles.introduction}>
         <p>
           1995 yılında bir araya gelerek Arslandede Köyü Derneği'ni kuran değerli büyüklerimiz,
@@ -73,7 +76,7 @@ export default function FoundersContent() {
                 alt={founder.name}
                 width={300}
                 height={300}
-                style={{ objectFit: "cover" }}
+                style={{ objectFit: 'cover' }}
               />
             </div>
             <div className={styles.founderInfo}>
@@ -105,11 +108,10 @@ export default function FoundersContent() {
       <div className={styles.tribute}>
         <h2>Saygı ve Minnetle</h2>
         <p>
-          Derneğimizin kuruluşunda emeği geçen, bugün aramızda olmayan değerli büyüklerimizi
-          rahmet ve minnetle anıyoruz. Onların açtığı yolda, köyümüz için çalışmaya devam
-          ediyoruz.
+          Derneğimizin kuruluşunda emeği geçen, bugün aramızda olmayan değerli büyüklerimizi rahmet
+          ve minnetle anıyoruz. Onların açtığı yolda, köyümüz için çalışmaya devam ediyoruz.
         </p>
       </div>
     </div>
   );
-} 
+}

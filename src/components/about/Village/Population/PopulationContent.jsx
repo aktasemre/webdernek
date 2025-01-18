@@ -11,20 +11,20 @@ const populationStats = {
       { group: '15-29 yaş', percentage: 25 },
       { group: '30-44 yaş', percentage: 20 },
       { group: '45-59 yaş', percentage: 25 },
-      { group: '60+ yaş', percentage: 15 }
+      { group: '60+ yaş', percentage: 15 },
     ],
     gender: {
       male: 52,
-      female: 48
+      female: 48,
     },
     education: [
       { level: 'İlkokul', percentage: 25 },
       { level: 'Ortaokul', percentage: 20 },
       { level: 'Lise', percentage: 30 },
       { level: 'Üniversite', percentage: 20 },
-      { level: 'Lisansüstü', percentage: 5 }
-    ]
-  }
+      { level: 'Lisansüstü', percentage: 5 },
+    ],
+  },
 };
 
 const settlementInfo = {
@@ -32,52 +32,41 @@ const settlementInfo = {
     {
       name: 'Merkez Mahallesi',
       description: 'Köyün en eski yerleşim yeri olup, cami ve köy meydanını içerir.',
-      population: 180
+      population: 180,
     },
     {
       name: 'Yukarı Mahalle',
       description: 'Köyün kuzey kesiminde yer alan, yeni yerleşim alanlarını içeren mahalle.',
-      population: 150
+      population: 150,
     },
     {
       name: 'Aşağı Mahalle',
       description: 'Köyün güney kesiminde, tarım alanlarına yakın konumda bulunan mahalle.',
-      population: 120
-    }
+      population: 120,
+    },
   ],
   housing: {
     traditional: {
       title: 'Geleneksel Evler',
       description: 'Taş ve ahşap malzemelerle inşa edilmiş, Bayburt mimarisini yansıtan evler.',
-      percentage: 40
+      percentage: 40,
     },
     modern: {
       title: 'Modern Konutlar',
       description: 'Son yıllarda yapılan, betonarme yapılar ve müstakil evler.',
-      percentage: 60
-    }
-  }
+      percentage: 60,
+    },
+  },
 };
 
 const migrationInfo = {
-  destinations: [
-    'İstanbul',
-    'Ankara',
-    'İzmir',
-    'Bursa',
-    'Almanya'
-  ],
-  reasons: [
-    'Eğitim',
-    'İş İmkanları',
-    'Ekonomik Nedenler',
-    'Sağlık Hizmetleri'
-  ],
+  destinations: ['İstanbul', 'Ankara', 'İzmir', 'Bursa', 'Almanya'],
+  reasons: ['Eğitim', 'İş İmkanları', 'Ekonomik Nedenler', 'Sağlık Hizmetleri'],
   trends: {
     outgoing: 'Yıllık ortalama 5-10 hane',
     incoming: 'Yaz aylarında nüfus 2-3 katına çıkmaktadır',
-    seasonal: 'Yaz aylarında gurbetçi ziyaretleri yoğunlaşmaktadır'
-  }
+    seasonal: 'Yaz aylarında gurbetçi ziyaretleri yoğunlaşmaktadır',
+  },
 };
 
 export default function PopulationContent() {
@@ -86,13 +75,13 @@ export default function PopulationContent() {
       <Link href="/about" className={styles.backButton}>
         <IoArrowBack /> Geri
       </Link>
-      
+
       <div className={styles.populationContent}>
         <h1>Nüfus ve Yerleşim</h1>
         <div className={styles.introduction}>
           <p>
-            Arslandede köyü, geleneksel yerleşim dokusunu korurken modern yaşamın
-            gerekliliklerine de uyum sağlayan dinamik bir nüfus yapısına sahiptir.
+            Arslandede köyü, geleneksel yerleşim dokusunu korurken modern yaşamın gerekliliklerine
+            de uyum sağlayan dinamik bir nüfus yapısına sahiptir.
           </p>
         </div>
 
@@ -117,10 +106,7 @@ export default function PopulationContent() {
                   <div key={index} className={styles.bar}>
                     <div className={styles.label}>{item.group}</div>
                     <div className={styles.barContainer}>
-                      <div 
-                        className={styles.barFill}
-                        style={{ width: `${item.percentage}%` }}
-                      />
+                      <div className={styles.barFill} style={{ width: `${item.percentage}%` }} />
                     </div>
                     <div className={styles.percentage}>{item.percentage}%</div>
                   </div>
@@ -131,13 +117,13 @@ export default function PopulationContent() {
             <div className={styles.genderDistribution}>
               <h3>Cinsiyet Dağılımı</h3>
               <div className={styles.genderChart}>
-                <div 
+                <div
                   className={styles.male}
                   style={{ width: `${populationStats.distribution.gender.male}%` }}
                 >
                   Erkek {populationStats.distribution.gender.male}%
                 </div>
-                <div 
+                <div
                   className={styles.female}
                   style={{ width: `${populationStats.distribution.gender.female}%` }}
                 >
@@ -155,9 +141,7 @@ export default function PopulationContent() {
               <div key={index} className={styles.neighborhoodCard}>
                 <h3>{neighborhood.name}</h3>
                 <p>{neighborhood.description}</p>
-                <div className={styles.population}>
-                  Nüfus: {neighborhood.population}
-                </div>
+                <div className={styles.population}>Nüfus: {neighborhood.population}</div>
               </div>
             ))}
           </div>
@@ -169,9 +153,7 @@ export default function PopulationContent() {
                 <div key={key} className={styles.housingCard}>
                   <h4>{type.title}</h4>
                   <p>{type.description}</p>
-                  <div className={styles.percentage}>
-                    {type.percentage}%
-                  </div>
+                  <div className={styles.percentage}>{type.percentage}%</div>
                 </div>
               ))}
             </div>
@@ -199,13 +181,19 @@ export default function PopulationContent() {
             </div>
             <div className={styles.trends}>
               <h3>Göç Eğilimleri</h3>
-              <p><strong>Dışa Göç:</strong> {migrationInfo.trends.outgoing}</p>
-              <p><strong>İçe Göç:</strong> {migrationInfo.trends.incoming}</p>
-              <p><strong>Mevsimsel:</strong> {migrationInfo.trends.seasonal}</p>
+              <p>
+                <strong>Dışa Göç:</strong> {migrationInfo.trends.outgoing}
+              </p>
+              <p>
+                <strong>İçe Göç:</strong> {migrationInfo.trends.incoming}
+              </p>
+              <p>
+                <strong>Mevsimsel:</strong> {migrationInfo.trends.seasonal}
+              </p>
             </div>
           </div>
         </div>
       </div>
     </div>
   );
-} 
+}

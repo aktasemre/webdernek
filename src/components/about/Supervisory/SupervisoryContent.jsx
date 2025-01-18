@@ -9,7 +9,7 @@ const SupervisoryContent = () => {
     <div className={styles.supervisoryContent}>
       <BackButton />
       <h1>Denetleme Kurulumuz</h1>
-      
+
       <div className={styles.introduction}>
         <p>{supervisoryInfo.introduction}</p>
       </div>
@@ -32,7 +32,7 @@ const SupervisoryContent = () => {
                 alt={member.name}
                 width={300}
                 height={300}
-                style={{ objectFit: "cover" }}
+                style={{ objectFit: 'cover' }}
               />
             </div>
             <div className={styles.memberInfo}>
@@ -62,4 +62,4 @@ const SupervisoryContent = () => {
   );
 };
 
-export default SupervisoryContent; 
+export default SupervisoryContent;

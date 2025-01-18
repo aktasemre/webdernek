@@ -29,7 +29,7 @@
       "tags": ["dernek", "website", "duyuru"],
       "featured": true
     },
-   
+
     {
       "id": 3,
       "title": "Geleneksel Köy Pikniğimiz Yaklaşıyor",
@@ -42,7 +42,7 @@
       "tags": ["piknik", "etkinlik", "gelenek"],
       "featured": false
     },
-   
+
     {
       "id": 8,
       "title": "Muhtarımız ve Azaarimiz Derneği Ziyaret Etti",

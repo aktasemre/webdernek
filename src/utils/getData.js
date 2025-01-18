@@ -3,7 +3,7 @@ const data = {
   duyurular: require('@/data/duyurular.data.json'),
   etkinlikler: require('@/data/etkinlikler.data.json'),
   haberler: require('@/data/haberler.data.json'),
-  projeler: require('@/data/projeler.data.json')
+  projeler: require('@/data/projeler.data.json'),
 };
 
 function getData(key) {
@@ -15,4 +15,4 @@ function getData(key) {
   }
 }
 
-module.exports = getData; 
+module.exports = getData;

@@ -6,7 +6,7 @@
       "description": "Köyümüzün doğal güzellikleri",
       "coverImage": "/images/manzara1.jpg"
     },
-   
+
     {
       "id": "koyyasami",
       "title": "Köy Yaşamı",
@@ -310,4 +310,4 @@
       "tags": ["etkinlik", "topluluk", "sosyal"]
     }
   ]
-} 
+}

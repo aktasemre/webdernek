@@ -2,17 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './Button.module.scss';
 
-const Button = ({
-  text,
-  onClick,
-  variant = 'primary',
-  disabled = false,
-  className = ''
-}) => {
+const Button = ({ text, onClick, variant = 'primary', disabled = false, className = '' }) => {
   const buttonClasses = `${styles[variant]} ${className}`.trim();
-  
+
   return (
-    <button 
+    <button
       type="button"
       className={buttonClasses}
       onClick={onClick}
@@ -29,7 +23,7 @@ Button.propTypes = {
   onClick: PropTypes.func,
   variant: PropTypes.string,
   disabled: PropTypes.bool,
-  className: PropTypes.string
+  className: PropTypes.string,
 };
 
-export default Button; 
+export default Button;

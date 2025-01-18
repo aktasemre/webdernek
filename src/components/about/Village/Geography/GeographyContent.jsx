@@ -11,30 +11,30 @@ const climateData = {
       months: 'Mart - Mayıs',
       temperature: '8°C - 18°C',
       precipitation: 'Orta düzeyde yağış',
-      description: 'Ilıman ve yağışlı bir dönem. Bitki örtüsü canlanır, çiçeklenme başlar.'
+      description: 'Ilıman ve yağışlı bir dönem. Bitki örtüsü canlanır, çiçeklenme başlar.',
     },
     {
       name: 'Yaz',
       months: 'Haziran - Ağustos',
       temperature: '20°C - 30°C',
       precipitation: 'Az yağış',
-      description: 'Sıcak ve kurak bir dönem. Tarımsal faaliyetler yoğunlaşır.'
+      description: 'Sıcak ve kurak bir dönem. Tarımsal faaliyetler yoğunlaşır.',
     },
     {
       name: 'Sonbahar',
       months: 'Eylül - Kasım',
       temperature: '10°C - 20°C',
       precipitation: 'Orta düzeyde yağış',
-      description: 'Ilıman ve yağışlı bir dönem. Hasat zamanı ve doğa renklenir.'
+      description: 'Ilıman ve yağışlı bir dönem. Hasat zamanı ve doğa renklenir.',
     },
     {
       name: 'Kış',
       months: 'Aralık - Şubat',
       temperature: '-5°C - 5°C',
       precipitation: 'Kar yağışlı',
-      description: 'Soğuk ve karlı bir dönem. Kar kalınlığı 50 cm\'yi bulabilir.'
-    }
-  ]
+      description: "Soğuk ve karlı bir dönem. Kar kalınlığı 50 cm'yi bulabilir.",
+    },
+  ],
 };
 
 const GeographyContent = () => {
@@ -50,14 +50,14 @@ const GeographyContent = () => {
               alt="Arslandede Köyü Coğrafi Görünüm"
               width={800}
               height={500}
-              style={{ objectFit: "cover" }}
+              style={{ objectFit: 'cover' }}
             />
           </div>
           <div className={styles.text}>
             <p>
-              Arslandede köyü, Bayburt ilinin güneydoğusunda, deniz seviyesinden
-              1650 metre yükseklikte yer almaktadır. Dağlarla çevrili verimli bir
-              vadide konumlanan köyümüz, zengin bir doğal çeşitliliğe sahiptir.
+              Arslandede köyü, Bayburt ilinin güneydoğusunda, deniz seviyesinden 1650 metre
+              yükseklikte yer almaktadır. Dağlarla çevrili verimli bir vadide konumlanan köyümüz,
+              zengin bir doğal çeşitliliğe sahiptir.
             </p>
           </div>
         </div>
@@ -126,4 +126,4 @@ const GeographyContent = () => {
   );
 };
 
-export default GeographyContent; 
+export default GeographyContent;

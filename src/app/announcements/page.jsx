@@ -11,13 +11,15 @@ const announcements = [
     id: 1,
     title: 'Dernek Genel Kurul Toplantısı',
     date: '15 Temmuz 2024',
-    content: 'Derneğimizin yıllık genel kurul toplantısı 15 Temmuz 2024 tarihinde dernek binasında yapılacaktır. Tüm üyelerimizin katılımını bekliyoruz.',
+    content:
+      'Derneğimizin yıllık genel kurul toplantısı 15 Temmuz 2024 tarihinde dernek binasında yapılacaktır. Tüm üyelerimizin katılımını bekliyoruz.',
   },
   {
     id: 2,
     title: 'Yeni Yönetim Kurulu Seçildi',
     date: '20 Temmuz 2024',
-    content: 'Derneğimizin yeni yönetim kurulu seçilmiştir. Yeni yönetim kurulumuz şu şekildedir: Başkan - Ali Yılmaz, Başkan Yardımcısı - Ayşe Demir, Sayman - Mehmet Kaya. Yeni yönetim kurulumuza başarılar diliyoruz.',
+    content:
+      'Derneğimizin yeni yönetim kurulu seçilmiştir. Yeni yönetim kurulumuz şu şekildedir: Başkan - Ali Yılmaz, Başkan Yardımcısı - Ayşe Demir, Sayman - Mehmet Kaya. Yeni yönetim kurulumuza başarılar diliyoruz.',
   },
   // Daha fazla duyuru eklenebilir
 ];
@@ -40,8 +42,7 @@ export default function AnnouncementsPage() {
             </div>
           ))}
         </div>
-
       </div>
     </main>
   );
-} 
+}

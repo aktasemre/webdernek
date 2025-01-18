@@ -11,15 +11,13 @@ const Footer = () => {
     twitter: FaTwitter,
     instagram: FaInstagram,
     youtube: FaYoutube,
-    whatsapp: FaWhatsapp
+    whatsapp: FaWhatsapp,
   };
 
   return (
     <footer className={styles.footer}>
       <div className={styles.container}>
         <div className={styles.content}>
-          
-          
           <div className={styles.section}>
             <h3>Köy İletişim</h3>
             <p>{iletisimData.address.koy.text}</p>
@@ -36,10 +34,18 @@ const Footer = () => {
           <div className={styles.section}>
             <h3>Hızlı Bağlantılar</h3>
             <ul>
-              <li><Link href="/about/history">Derneğimizin Tarihçesi</Link></li>
-              <li><Link href="/about/board">Yönetim Kurulu</Link></li>
-              <li><Link href="/about/village">Köyümüz Hakkında</Link></li>
-              <li><Link href="/contact">İletişim</Link></li>
+              <li>
+                <Link href="/about/history">Derneğimizin Tarihçesi</Link>
+              </li>
+              <li>
+                <Link href="/about/board">Yönetim Kurulu</Link>
+              </li>
+              <li>
+                <Link href="/about/village">Köyümüz Hakkında</Link>
+              </li>
+              <li>
+                <Link href="/contact">İletişim</Link>
+              </li>
             </ul>
           </div>
 
@@ -66,4 +72,4 @@ const Footer = () => {
   );
 };
 
-export default Footer; 
+export default Footer;

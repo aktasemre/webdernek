@@ -6,7 +6,8 @@ import styles from './page.module.scss';
 
 export const metadata = {
   title: 'Projeler | Arslandede Köyü',
-  description: 'Arslandede Köyü projeleri, devam eden ve tamamlanan altyapı, sosyal ve kültürel projelerimiz.',
+  description:
+    'Arslandede Köyü projeleri, devam eden ve tamamlanan altyapı, sosyal ve kültürel projelerimiz.',
   keywords: ['projeler', 'köy projeleri', 'altyapı projeleri', 'sosyal projeler'],
 };
 
@@ -14,7 +15,7 @@ const ProjectsPage = () => {
   return (
     <div className={styles.projectsPage}>
       <ProjectHero />
-      
+
       <div className={styles.container}>
         <section className={styles.categories}>
           <h2>Proje Kategorileri</h2>
@@ -41,4 +42,4 @@ const ProjectsPage = () => {
   );
 };
 
-export default ProjectsPage; 
+export default ProjectsPage;

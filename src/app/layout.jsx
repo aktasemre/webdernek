@@ -1,18 +1,28 @@
-import { Inter } from 'next/font/google'
-import './globals.css'
-import Header from '@/components/common/Header/Header'
-import Footer from '@/components/common/Footer/Footer'
-import { Providers } from '@/providers'
+import { Inter } from 'next/font/google';
+import './globals.css';
+import Header from '@/components/common/Header/Header';
+import Footer from '@/components/common/Footer/Footer';
+import { Providers } from '@/providers';
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
   title: {
     default: 'Arslandede Köyü Derneği',
-    template: '%s | Arslandede Köyü Derneği'
+    template: '%s | Arslandede Köyü Derneği',
   },
-  description: 'Arslandede Köyü Derneği resmi web sitesi. Köyümüz hakkında bilgiler, haberler, etkinlikler ve daha fazlası.',
-  keywords: ['arslandede köyü', 'dernek', 'köy', 'yardımlaşma', 'dayanışma', 'kültür', 'gelenek', 'görenek'],
+  description:
+    'Arslandede Köyü Derneği resmi web sitesi. Köyümüz hakkında bilgiler, haberler, etkinlikler ve daha fazlası.',
+  keywords: [
+    'arslandede köyü',
+    'dernek',
+    'köy',
+    'yardımlaşma',
+    'dayanışma',
+    'kültür',
+    'gelenek',
+    'görenek',
+  ],
   authors: [{ name: 'Arslandede Köyü Derneği' }],
   creator: 'Arslandede Köyü Derneği',
   publisher: 'Arslandede Köyü Derneği',
@@ -27,7 +37,8 @@ export const metadata = {
   },
   openGraph: {
     title: 'Arslandede Köyü Derneği',
-    description: 'Arslandede Köyü Derneği resmi web sitesi. Köyümüz hakkında bilgiler, haberler, etkinlikler ve daha fazlası.',
+    description:
+      'Arslandede Köyü Derneği resmi web sitesi. Köyümüz hakkında bilgiler, haberler, etkinlikler ve daha fazlası.',
     url: 'https://arslandede.org.tr',
     siteName: 'Arslandede Köyü Derneği',
     images: [
@@ -44,7 +55,8 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Arslandede Köyü Derneği',
-    description: 'Arslandede Köyü Derneği resmi web sitesi. Köyümüz hakkında bilgiler, haberler, etkinlikler ve daha fazlası.',
+    description:
+      'Arslandede Köyü Derneği resmi web sitesi. Köyümüz hakkında bilgiler, haberler, etkinlikler ve daha fazlası.',
     images: ['/images/logo.jpg'],
   },
   manifest: '/manifest.json',
@@ -77,7 +89,7 @@ export const metadata = {
       'max-snippet': -1,
     },
   },
-}
+};
 
 export default function RootLayout({ children }) {
   return (
@@ -95,5 +107,5 @@ export default function RootLayout({ children }) {
         </Providers>
       </body>
     </html>
-  )
-} 
+  );
+}

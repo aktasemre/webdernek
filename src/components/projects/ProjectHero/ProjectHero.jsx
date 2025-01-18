@@ -3,9 +3,9 @@ import projectsData from '@/data/projeler.data.json';
 
 const ProjectHero = () => {
   const stats = {
-    completed: projectsData.projects.filter(p => p.status === 'completed').length,
-    ongoing: projectsData.projects.filter(p => p.status === 'ongoing').length,
-    planned: projectsData.projects.filter(p => p.status === 'planned').length
+    completed: projectsData.projects.filter((p) => p.status === 'completed').length,
+    ongoing: projectsData.projects.filter((p) => p.status === 'ongoing').length,
+    planned: projectsData.projects.filter((p) => p.status === 'planned').length,
   };
 
   return (
@@ -36,4 +36,4 @@ const ProjectHero = () => {
   );
 };
 
-export default ProjectHero; 
+export default ProjectHero;

@@ -15,10 +15,10 @@ const educationStats = {
         'Bilgisayar laboratuvarı',
         'Spor salonu',
         'Kütüphane',
-        'Yemekhane'
+        'Yemekhane',
       ],
-      image: '/images/manzara1.jpg'
-    }
+      image: '/images/manzara1.jpg',
+    },
   },
   students: {
     total: 85,
@@ -29,15 +29,15 @@ const educationStats = {
       { level: '3. Sınıf', count: 11 },
       { level: '4. Sınıf', count: 13 },
       { level: '5. Sınıf', count: 10 },
-      { level: '6. Sınıf', count: 10 }
-    ]
+      { level: '6. Sınıf', count: 10 },
+    ],
   },
   achievements: [
-    'İlçe geneli başarı sıralamasında ilk 3\'te',
+    "İlçe geneli başarı sıralamasında ilk 3'te",
     'Spor müsabakalarında çeşitli dereceler',
     'Bilim fuarlarında ödüller',
-    'Çevre projeleri başarıları'
-  ]
+    'Çevre projeleri başarıları',
+  ],
 };
 
 const culturalActivities = {
@@ -45,38 +45,30 @@ const culturalActivities = {
     {
       name: 'Köy Şenlikleri',
       date: 'Her yıl Temmuz ayı',
-      description: 'Geleneksel yemekler, halk oyunları ve çeşitli etkinliklerle köy şenlikleri düzenlenir.',
-      image: '/images/manzara2.jpg'
+      description:
+        'Geleneksel yemekler, halk oyunları ve çeşitli etkinliklerle köy şenlikleri düzenlenir.',
+      image: '/images/manzara2.jpg',
     },
     {
       name: 'Bahar Festivali',
       date: 'Her yıl Mayıs ayı',
-      description: 'Baharın gelişini kutlamak için düzenlenen festival, çeşitli etkinlikler içerir.',
-      image: '/images/manzara3.jpg'
-    }
+      description:
+        'Baharın gelişini kutlamak için düzenlenen festival, çeşitli etkinlikler içerir.',
+      image: '/images/manzara3.jpg',
+    },
   ],
   traditions: [
     {
       name: 'Düğün Gelenekleri',
       description: 'Üç gün süren geleneksel düğünler, zengin folklor öğeleriyle doludur.',
-      elements: [
-        'Kına gecesi',
-        'Gelin alma',
-        'Yöresel oyunlar',
-        'Geleneksel yemekler'
-      ]
+      elements: ['Kına gecesi', 'Gelin alma', 'Yöresel oyunlar', 'Geleneksel yemekler'],
     },
     {
       name: 'El Sanatları',
       description: 'Nesilden nesile aktarılan el sanatları geleneği yaşatılmaktadır.',
-      elements: [
-        'Kilim dokuma',
-        'Ahşap işçiliği',
-        'Bakır işlemeciliği',
-        'Nakış işleme'
-      ]
-    }
-  ]
+      elements: ['Kilim dokuma', 'Ahşap işçiliği', 'Bakır işlemeciliği', 'Nakış işleme'],
+    },
+  ],
 };
 
 const socialFacilities = [
@@ -84,24 +76,14 @@ const socialFacilities = [
     name: 'Köy Konağı',
     description: 'Sosyal etkinlikler ve toplantılar için kullanılan modern tesis',
     capacity: 200,
-    features: [
-      'Toplantı salonu',
-      'Modern mutfak',
-      'Etkinlik alanı',
-      'Misafir odaları'
-    ]
+    features: ['Toplantı salonu', 'Modern mutfak', 'Etkinlik alanı', 'Misafir odaları'],
   },
   {
     name: 'Kütüphane',
     description: 'Zengin kitap koleksiyonu ve internet erişimi olan modern kütüphane',
     capacity: 50,
-    features: [
-      'Geniş kitap koleksiyonu',
-      'İnternet erişimi',
-      'Çalışma alanları',
-      'Çocuk bölümü'
-    ]
-  }
+    features: ['Geniş kitap koleksiyonu', 'İnternet erişimi', 'Çalışma alanları', 'Çocuk bölümü'],
+  },
 ];
 
 const EducationContent = () => {
@@ -109,13 +91,12 @@ const EducationContent = () => {
     <div className={styles.educationContent}>
       <BackButton />
       <h1>Eğitim ve Kültür</h1>
-      
+
       <div className={styles.introduction}>
         <p>
-          Arslandede köyü, eğitime verdiği önem ve zengin kültürel değerleriyle
-          öne çıkan bir yerleşim yeridir. Modern eğitim imkanları ve geleneksel
-          kültürel değerlerin bir arada yaşatıldığı köyümüz, gelecek nesillere
-          güçlü bir miras bırakmayı hedeflemektedir.
+          Arslandede köyü, eğitime verdiği önem ve zengin kültürel değerleriyle öne çıkan bir
+          yerleşim yeridir. Modern eğitim imkanları ve geleneksel kültürel değerlerin bir arada
+          yaşatıldığı köyümüz, gelecek nesillere güçlü bir miras bırakmayı hedeflemektedir.
         </p>
       </div>
 
@@ -128,7 +109,7 @@ const EducationContent = () => {
               alt={educationStats.facilities.school.name}
               width={600}
               height={400}
-              style={{ objectFit: "cover" }}
+              style={{ objectFit: 'cover' }}
             />
           </div>
           <div className={styles.schoolInfo}>
@@ -188,7 +169,7 @@ const EducationContent = () => {
                   alt={activity.name}
                   width={400}
                   height={300}
-                  style={{ objectFit: "cover" }}
+                  style={{ objectFit: 'cover' }}
                 />
               </div>
               <div className={styles.content}>
@@ -225,9 +206,7 @@ const EducationContent = () => {
             <div key={index} className={styles.facilityCard}>
               <h3>{facility.name}</h3>
               <p>{facility.description}</p>
-              <div className={styles.capacity}>
-                Kapasite: {facility.capacity} kişi
-              </div>
+              <div className={styles.capacity}>Kapasite: {facility.capacity} kişi</div>
               <div className={styles.features}>
                 <h4>Özellikler</h4>
                 <ul>
@@ -244,4 +223,4 @@ const EducationContent = () => {
   );
 };
 
-export default EducationContent; 
+export default EducationContent;

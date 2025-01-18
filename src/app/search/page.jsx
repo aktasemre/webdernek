@@ -55,7 +55,7 @@ export default function SearchPage({ searchParams }) {
 
             <div className={styles.results}>
               {results.map((result, index) => (
-                <a 
+                <a
                   key={`${result.type}-${index}`}
                   href={`/${result.type}s/${result.id}`}
                   className={styles.resultItem}
@@ -103,4 +103,4 @@ SearchPage.propTypes = {
   searchParams: PropTypes.shape({
     q: PropTypes.string,
   }),
-}; 
+};

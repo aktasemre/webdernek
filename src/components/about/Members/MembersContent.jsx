@@ -7,45 +7,47 @@ const memberCategories = [
   {
     id: 'active',
     title: 'Aktif Üyeler',
-    description: 'Derneğimizin faaliyetlerine düzenli olarak katılan ve aidat ödemelerini aksatmayan üyelerimiz.',
-    count: 150
+    description:
+      'Derneğimizin faaliyetlerine düzenli olarak katılan ve aidat ödemelerini aksatmayan üyelerimiz.',
+    count: 150,
   },
   {
     id: 'honorary',
     title: 'Onursal Üyeler',
-    description: 'Derneğimize ve köyümüze önemli katkılarda bulunmuş, onursal üyelik statüsü verilmiş değerli büyüklerimiz.',
-    count: 15
+    description:
+      'Derneğimize ve köyümüze önemli katkılarda bulunmuş, onursal üyelik statüsü verilmiş değerli büyüklerimiz.',
+    count: 15,
   },
   {
     id: 'youth',
     title: 'Genç Üyeler',
     description: 'Derneğimizin geleceğini oluşturan, 18-30 yaş arası genç üyelerimiz.',
-    count: 45
-  }
+    count: 45,
+  },
 ];
 
 const membershipInfo = {
   requirements: [
-    'Arslandede Köyü\'nde doğmuş olmak veya köy ile bağlantısı bulunmak',
+    "Arslandede Köyü'nde doğmuş olmak veya köy ile bağlantısı bulunmak",
     '18 yaşını doldurmuş olmak',
     'Medeni haklarını kullanma ehliyetine sahip olmak',
     'Dernek tüzüğünü kabul etmek',
-    'Yıllık aidat ödemeyi taahhüt etmek'
+    'Yıllık aidat ödemeyi taahhüt etmek',
   ],
   benefits: [
     'Dernek faaliyetlerine katılım hakkı',
     'Genel kurulda oy kullanma hakkı',
     'Dernek tesislerinden yararlanma imkanı',
     'Sosyal etkinliklere öncelikli katılım',
-    'Dernek yayınlarından ücretsiz yararlanma'
+    'Dernek yayınlarından ücretsiz yararlanma',
   ],
   duties: [
     'Dernek tüzüğüne uymak',
     'Yıllık aidatı zamanında ödemek',
     'Dernek faaliyetlerine katkıda bulunmak',
     'Genel kurul toplantılarına katılmak',
-    'Derneğin amaçlarına uygun davranmak'
-  ]
+    'Derneğin amaçlarına uygun davranmak',
+  ],
 };
 
 export default function MembersContent() {
@@ -54,11 +56,11 @@ export default function MembersContent() {
   return (
     <div className={styles.membersContent}>
       <h1>Üyelerimiz</h1>
-      
+
       <div className={styles.introduction}>
         <p>
-          Arslandede Köyü Derneği olarak, köyümüzün gelişimi ve dayanışması için
-          çalışan üyelerimizle birlikte güçlü bir topluluk oluşturuyoruz.
+          Arslandede Köyü Derneği olarak, köyümüzün gelişimi ve dayanışması için çalışan
+          üyelerimizle birlikte güçlü bir topluluk oluşturuyoruz.
         </p>
       </div>
 
@@ -74,7 +76,7 @@ export default function MembersContent() {
 
       <div className={styles.membershipInfo}>
         <h2>Üyelik Bilgileri</h2>
-        
+
         <div className={styles.tabs}>
           <button
             className={`${styles.tab} ${activeTab === 'requirements' ? styles.active : ''}`}
@@ -124,17 +126,15 @@ export default function MembersContent() {
       <div className={styles.applicationInfo}>
         <h2>Üyelik Başvurusu</h2>
         <p>
-          Derneğimize üye olmak için aşağıdaki belgelerle birlikte dernek merkezimize
-          başvurabilir veya online başvuru formunu doldurabilirsiniz:
+          Derneğimize üye olmak için aşağıdaki belgelerle birlikte dernek merkezimize başvurabilir
+          veya online başvuru formunu doldurabilirsiniz:
         </p>
         <ul>
           <li>Nüfus cüzdanı fotokopisi</li>
           <li>Üyelik başvuru formu</li>
         </ul>
-        <button className={styles.applyButton}>
-          Online Başvuru Yap
-        </button>
+        <button className={styles.applyButton}>Online Başvuru Yap</button>
       </div>
     </div>
   );
-} 
+}

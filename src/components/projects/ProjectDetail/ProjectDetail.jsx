@@ -7,7 +7,7 @@ import PropTypes from 'prop-types';
 const ProjectDetail = ({ project }) => {
   const renderDetails = () => {
     if (!project.details) return null;
-    
+
     const detailItems = [];
     if (project.details.features) {
       detailItems.push(...project.details.features);
@@ -15,7 +15,7 @@ const ProjectDetail = ({ project }) => {
     if (project.details.scope) {
       detailItems.push(...project.details.scope);
     }
-    
+
     return detailItems.length > 0 ? (
       <div className={styles.details}>
         <h2>Proje Detayları</h2>
@@ -49,23 +49,20 @@ const ProjectDetail = ({ project }) => {
               <h2>Proje Açıklaması</h2>
               <p>{project.description}</p>
             </div>
-            
+
             {renderDetails()}
-            
+
             {project.progress !== undefined && (
               <div className={styles.progress}>
                 <h2>İlerleme Durumu</h2>
                 <div className={styles.progressBar}>
-                  <div 
-                    className={styles.progressFill} 
-                    style={{width: `${project.progress}%`}}
-                  />
+                  <div className={styles.progressFill} style={{ width: `${project.progress}%` }} />
                 </div>
                 <span>{project.progress}% Tamamlandı</span>
               </div>
             )}
           </div>
-          
+
           <div className={styles.sidebar}>
             <div className={styles.infoBox}>
               <h2>Proje Bilgileri</h2>
@@ -136,16 +133,20 @@ ProjectDetail.propTypes = {
     details: PropTypes.shape({
       features: PropTypes.arrayOf(PropTypes.string),
       scope: PropTypes.arrayOf(PropTypes.string),
-      team: PropTypes.arrayOf(PropTypes.shape({
-        name: PropTypes.string.isRequired,
-        role: PropTypes.string.isRequired
-      })),
-      timeline: PropTypes.arrayOf(PropTypes.shape({
-        date: PropTypes.string.isRequired,
-        event: PropTypes.string.isRequired
-      }))
-    })
-  }).isRequired
+      team: PropTypes.arrayOf(
+        PropTypes.shape({
+          name: PropTypes.string.isRequired,
+          role: PropTypes.string.isRequired,
+        }),
+      ),
+      timeline: PropTypes.arrayOf(
+        PropTypes.shape({
+          date: PropTypes.string.isRequired,
+          event: PropTypes.string.isRequired,
+        }),
+      ),
+    }),
+  }).isRequired,
 };
 
-export default ProjectDetail; 
+export default ProjectDetail;

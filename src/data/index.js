@@ -29,18 +29,19 @@ export const getProjeKategorileri = () => projelerData.categories || [];
 // Global arama fonksiyonu
 export const searchContent = (query = '') => {
   const normalizedQuery = query.toLowerCase().trim();
-  
+
   if (!normalizedQuery) return [];
 
   const results = [
-    ...getHaberler().map(item => ({ ...item, type: 'haber' })),
-    ...getProjeler().map(item => ({ ...item, type: 'proje' })),
-    ...getEtkinlikler().map(item => ({ ...item, type: 'etkinlik' })),
+    ...getHaberler().map((item) => ({ ...item, type: 'haber' })),
+    ...getProjeler().map((item) => ({ ...item, type: 'proje' })),
+    ...getEtkinlikler().map((item) => ({ ...item, type: 'etkinlik' })),
   ];
 
-  return results.filter(item => 
-    item.baslik?.toLowerCase().includes(normalizedQuery) ||
-    item.aciklama?.toLowerCase().includes(normalizedQuery) ||
-    item.icerik?.toLowerCase().includes(normalizedQuery),
+  return results.filter(
+    (item) =>
+      item.baslik?.toLowerCase().includes(normalizedQuery) ||
+      item.aciklama?.toLowerCase().includes(normalizedQuery) ||
+      item.icerik?.toLowerCase().includes(normalizedQuery),
   );
-}; 
+};

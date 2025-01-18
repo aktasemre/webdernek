@@ -5,7 +5,7 @@ const VillageEconomy = () => {
   return (
     <div className={styles.container}>
       <h1>Arslandedede Köyü Ekonomik Faaliyetler</h1>
-      
+
       <section className={styles.section}>
         <h2>Tarımsal Üretim</h2>
         <div className={styles.subsection}>
@@ -99,4 +99,4 @@ const VillageEconomy = () => {
   );
 };
 
-export default VillageEconomy; 
+export default VillageEconomy;

@@ -8,4 +8,4 @@ export const metadata = {
 
 export default function VillageGeographyPage() {
   return <GeographyContent />;
-} 
+}

@@ -6,7 +6,6 @@ import Image from 'next/image';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import { useMediaQuery } from 'react-responsive';
 
-
 const menuItems = [
   { title: 'Ana Sayfa', path: '/' },
   {
@@ -16,14 +15,14 @@ const menuItems = [
       { title: 'Derneğimiz', path: '/about' },
       { title: 'Köyümüz', path: '/about/village' },
       { title: 'Üyelerimiz', path: '/about/members' },
-      { title: 'Yönetim Kurulu', path: '/about/board' }
-    ]
+      { title: 'Yönetim Kurulu', path: '/about/board' },
+    ],
   },
   { title: 'Haberler', path: '/news' },
   { title: 'Etkinlikler', path: '/events' },
   { title: 'Galeri', path: '/gallery' },
   { title: 'Dernek Bütçesi', path: '/budget' },
-  { title: 'İletişim', path: '/contact' }
+  { title: 'İletişim', path: '/contact' },
 ];
 
 export default function Header() {
@@ -51,10 +50,8 @@ export default function Header() {
             height={50}
             priority
           />
-   
         </Link>
-
       </div>
     </header>
   );
-} 
+}

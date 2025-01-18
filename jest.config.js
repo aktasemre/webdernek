@@ -1,6 +1,4 @@
-/** @type {import('jest').Config} */;
-
-const config = {
+/** @type {import('jest').Config} */ const config = {
   collectCoverage: true,
   coverageDirectory: 'coverage',
   coverageProvider: 'v8',
@@ -14,4 +12,4 @@ const config = {
   },
 };
 
-module.exports = config; 
+module.exports = config;

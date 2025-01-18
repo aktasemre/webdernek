@@ -22,7 +22,7 @@ const actions = [
     title: 'Bağış Yap',
     description: 'Köyümüzün gelişimine katkıda bulunun',
     link: '/donate',
-  }
+  },
 ];
 
 export default function ActionButtons() {
@@ -37,4 +37,4 @@ export default function ActionButtons() {
       ))}
     </div>
   );
-} 
+}

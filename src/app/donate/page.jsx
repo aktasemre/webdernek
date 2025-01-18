@@ -11,7 +11,9 @@ const DonatePage = () => {
       <div className={styles.container}>
         <header className={styles.header}>
           <h1>Bağış Yapabileceğiniz Hesaplar</h1>
-          <p>Derneğimize yapacağınız bağışlar için aşağıdaki banka hesaplarını kullanabilirsiniz.</p>
+          <p>
+            Derneğimize yapacağınız bağışlar için aşağıdaki banka hesaplarını kullanabilirsiniz.
+          </p>
         </header>
 
         <div className={styles.bankAccounts}>
@@ -28,8 +30,8 @@ const DonatePage = () => {
             {donationData.campaigns.map((campaign, index) => (
               <div key={index} className={styles.campaignCard}>
                 <div className={styles.imageContainer}>
-                  <Image 
-                    src={campaign.image} 
+                  <Image
+                    src={campaign.image}
                     alt={campaign.title}
                     width={400}
                     height={200}
@@ -40,9 +42,11 @@ const DonatePage = () => {
                   <h3>{campaign.title}</h3>
                   <p>{campaign.description}</p>
                   <div className={styles.progress}>
-                    <div 
-                      className={styles.progressBar} 
-                      style={{ width: `${(campaign.currentAmount / campaign.targetAmount) * 100}%` }}
+                    <div
+                      className={styles.progressBar}
+                      style={{
+                        width: `${(campaign.currentAmount / campaign.targetAmount) * 100}%`,
+                      }}
                     />
                   </div>
                   <div className={styles.amounts}>
@@ -59,4 +63,4 @@ const DonatePage = () => {
   );
 };
 
-export default DonatePage; 
+export default DonatePage;

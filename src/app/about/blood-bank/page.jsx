@@ -12,7 +12,8 @@ export default function BloodBank() {
         <div className="mb-6">
           <h2 className="text-xl font-semibold mb-3">Kan Bağışı Hakkında</h2>
           <p className="text-gray-700 mb-4">
-            Derneğimiz, köyümüz ve çevre köylerdeki kan ihtiyacı olan vatandaşlarımıza yardımcı olmak amacıyla kan bankası hizmeti vermektedir.
+            Derneğimiz, köyümüz ve çevre köylerdeki kan ihtiyacı olan vatandaşlarımıza yardımcı
+            olmak amacıyla kan bankası hizmeti vermektedir.
           </p>
         </div>
         <div className="mb-6">
@@ -35,4 +36,4 @@ export default function BloodBank() {
       </div>
     </main>
   );
-} 
+}

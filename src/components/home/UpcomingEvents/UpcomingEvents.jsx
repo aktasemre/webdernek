@@ -7,15 +7,13 @@ import styles from './UpcomingEvents.module.scss';
 import PropTypes from 'prop-types';
 
 export default function UpcomingEvents() {
-  const upcomingEvents = eventsData.events
-    .filter(event => event.isUpcoming)
-    .slice(0, 3);
+  const upcomingEvents = eventsData.events.filter((event) => event.isUpcoming).slice(0, 3);
 
   const formatDate = (dateStr) => {
     const date = new Date(dateStr);
     return {
       day: date.getDate(),
-      month: date.toLocaleDateString('tr-TR', { month: 'long' })
+      month: date.toLocaleDateString('tr-TR', { month: 'long' }),
     };
   };
 
@@ -34,7 +32,7 @@ export default function UpcomingEvents() {
               <span className={styles.day}>{formatDate(event.date).day}</span>
               <span className={styles.month}>{formatDate(event.date).month}</span>
             </div>
-            
+
             <div className={styles.content}>
               <h3>{event.title}</h3>
               <div className={styles.details}>
@@ -67,4 +65,4 @@ UpcomingEvents.propTypes = {
   title: PropTypes.string.isRequired,
   date: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
-}; 
+};

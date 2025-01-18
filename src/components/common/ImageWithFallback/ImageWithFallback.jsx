@@ -16,7 +16,7 @@ export default function ImageWithFallback({
   const [error, setError] = useState(false);
 
   return error ? (
-    <div 
+    <div
       className={`flex items-center justify-center bg-gray-100 ${className}`}
       style={{ width, height }}
     >
@@ -42,5 +42,5 @@ ImageWithFallback.propTypes = {
   width: PropTypes.number.isRequired,
   height: PropTypes.number.isRequired,
   className: PropTypes.string,
-  priority: PropTypes.bool
-}; 
+  priority: PropTypes.bool,
+};

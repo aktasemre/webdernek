@@ -10,27 +10,27 @@ const BottomNav = () => {
   const pathname = usePathname();
 
   const navItems = [
-    { 
-      label: 'Ana Sayfa', 
+    {
+      label: 'Ana Sayfa',
       path: '/',
-      icon: '🏠'
+      icon: '🏠',
     },
-    { 
-      label: 'Haberler', 
+    {
+      label: 'Haberler',
       path: '/news',
-      icon: '📰'
+      icon: '📰',
     },
-   
-    { 
-      label: 'Galeri', 
+
+    {
+      label: 'Galeri',
       path: '/gallery',
-      icon: '🖼️'
+      icon: '🖼️',
     },
-    { 
-      label: 'İletişim', 
+    {
+      label: 'İletişim',
       path: '/contact',
-      icon: '📞'
-    }
+      icon: '📞',
+    },
   ];
 
   return (
@@ -51,17 +51,14 @@ const BottomNav = () => {
 
       {isSearchOpen && (
         <div className={styles.searchOverlay} onClick={() => setIsSearchOpen(false)}>
-          <div className={styles.searchContainer} onClick={e => e.stopPropagation()}>
+          <div className={styles.searchContainer} onClick={(e) => e.stopPropagation()}>
             <input
               type="text"
               placeholder="Ne aramak istersiniz?"
               className={styles.searchInput}
               autoFocus
             />
-            <button 
-              className={styles.closeButton}
-              onClick={() => setIsSearchOpen(false)}
-            >
+            <button className={styles.closeButton} onClick={() => setIsSearchOpen(false)}>
               ✕
             </button>
           </div>
@@ -71,4 +68,4 @@ const BottomNav = () => {
   );
 };
 
-export default BottomNav; 
+export default BottomNav;

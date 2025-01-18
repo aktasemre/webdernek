@@ -13,7 +13,7 @@ const VegetationInfo = () => {
             alt="Arslandede Köyü Bitki Örtüsü"
             width={600}
             height={400}
-            style={{ objectFit: "cover" }}
+            style={{ objectFit: 'cover' }}
           />
         </div>
         <div className={styles.types}>
@@ -33,4 +33,4 @@ const VegetationInfo = () => {
   );
 };
 
-export default VegetationInfo; 
+export default VegetationInfo;

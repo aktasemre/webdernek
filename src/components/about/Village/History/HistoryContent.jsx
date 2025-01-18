@@ -4,65 +4,56 @@ import BackButton from '@/components/common/BackButton/BackButton';
 
 const historicalEvents = [
   {
-    year: '1500\'ler',
+    year: "1500'ler",
     title: 'Köyün Kuruluşu',
-    description: 'Arslandede köyü, 16. yüzyılın başlarında Arslan Dede isimli bir eren kişinin önderliğinde kurulmuştur. Köyün adı da buradan gelmektedir.',
+    description:
+      'Arslandede köyü, 16. yüzyılın başlarında Arslan Dede isimli bir eren kişinin önderliğinde kurulmuştur. Köyün adı da buradan gelmektedir.',
   },
   {
-    year: '1600\'ler',
+    year: "1600'ler",
     title: 'İlk Cami',
-    description: 'Köyün ilk camisi inşa edilmiş ve köy merkezi bu cami etrafında şekillenmeye başlamıştır.',
+    description:
+      'Köyün ilk camisi inşa edilmiş ve köy merkezi bu cami etrafında şekillenmeye başlamıştır.',
   },
   {
-    year: '1700\'ler',
+    year: "1700'ler",
     title: 'Tarım ve Yerleşimin Gelişmesi',
-    description: 'Köy nüfusu artmış, tarım alanları genişletilmiş ve yeni mahalleler oluşmaya başlamıştır.',
+    description:
+      'Köy nüfusu artmış, tarım alanları genişletilmiş ve yeni mahalleler oluşmaya başlamıştır.',
   },
   {
-    year: '1800\'ler',
+    year: "1800'ler",
     title: 'Kültürel Gelişim',
-    description: 'El sanatları gelişmiş, kilim dokumacılığı ve ahşap işçiliği köyün önemli zanaat dalları haline gelmiştir.',
+    description:
+      'El sanatları gelişmiş, kilim dokumacılığı ve ahşap işçiliği köyün önemli zanaat dalları haline gelmiştir.',
   },
   {
-    year: '1900\'ler',
+    year: "1900'ler",
     title: 'Modern Dönem',
-    description: 'Köye elektrik ve su gibi temel altyapı hizmetleri getirilmiş, eğitim imkanları artmıştır.',
+    description:
+      'Köye elektrik ve su gibi temel altyapı hizmetleri getirilmiş, eğitim imkanları artmıştır.',
   },
   {
-    year: '2000\'ler',
+    year: "2000'ler",
     title: 'Günümüz',
-    description: 'Köy derneği kurulmuş, köyün gelişimi için önemli projeler hayata geçirilmeye başlanmıştır.',
-  }
+    description:
+      'Köy derneği kurulmuş, köyün gelişimi için önemli projeler hayata geçirilmeye başlanmıştır.',
+  },
 ];
 
 const culturalHeritage = [
   {
     title: 'Mimari Miras',
-    items: [
-      'Tarihi Cami',
-      'Eski Köy Evleri',
-      'Tarihi Çeşmeler',
-      'Değirmenler'
-    ]
+    items: ['Tarihi Cami', 'Eski Köy Evleri', 'Tarihi Çeşmeler', 'Değirmenler'],
   },
   {
     title: 'El Sanatları',
-    items: [
-      'Kilim Dokuma',
-      'Ahşap İşçiliği',
-      'Bakır İşlemeciliği',
-      'Yöresel Dokumalar'
-    ]
+    items: ['Kilim Dokuma', 'Ahşap İşçiliği', 'Bakır İşlemeciliği', 'Yöresel Dokumalar'],
   },
   {
     title: 'Gelenekler',
-    items: [
-      'Düğün Adetleri',
-      'Bayram Gelenekleri',
-      'İmece Usulü',
-      'Yöresel Oyunlar'
-    ]
-  }
+    items: ['Düğün Adetleri', 'Bayram Gelenekleri', 'İmece Usulü', 'Yöresel Oyunlar'],
+  },
 ];
 
 const HistoryContent = () => {
@@ -78,19 +69,18 @@ const HistoryContent = () => {
               alt="Arslandede Köyü Tarihi Görünüm"
               width={600}
               height={400}
-              style={{ objectFit: "cover" }}
+              style={{ objectFit: 'cover' }}
             />
           </div>
           <div className={styles.text}>
             <p>
-              Arslandede köyü, yüzyıllar boyunca Bayburt'un önemli yerleşim yerlerinden
-              biri olmuştur. Zengin tarihi geçmişi, kültürel mirası ve gelenekleriyle
-              köyümüz, bölgenin en köklü yerleşimlerinden biridir.
+              Arslandede köyü, yüzyıllar boyunca Bayburt'un önemli yerleşim yerlerinden biri
+              olmuştur. Zengin tarihi geçmişi, kültürel mirası ve gelenekleriyle köyümüz, bölgenin
+              en köklü yerleşimlerinden biridir.
             </p>
             <p>
-              Köyümüzün kuruluşu 16. yüzyıla dayanmaktadır. O dönemden günümüze
-              kadar pek çok önemli olaya tanıklık etmiş, kültürel değerlerini
-              koruyarak bugünlere ulaşmıştır.
+              Köyümüzün kuruluşu 16. yüzyıla dayanmaktadır. O dönemden günümüze kadar pek çok önemli
+              olaya tanıklık etmiş, kültürel değerlerini koruyarak bugünlere ulaşmıştır.
             </p>
           </div>
         </div>
@@ -136,15 +126,14 @@ const HistoryContent = () => {
               alt="Tarihi Koruma Çalışmaları"
               width={400}
               height={300}
-              style={{ objectFit: "cover" }}
+              style={{ objectFit: 'cover' }}
             />
           </div>
           <div className={styles.text}>
             <p>
-              Köyümüzün tarihi dokusunu korumak için çeşitli çalışmalar
-              yürütülmektedir. Eski yapıların restorasyonu, geleneksel el
-              sanatlarının yaşatılması ve kültürel mirasın gelecek nesillere
-              aktarılması için projeler geliştirilmektedir.
+              Köyümüzün tarihi dokusunu korumak için çeşitli çalışmalar yürütülmektedir. Eski
+              yapıların restorasyonu, geleneksel el sanatlarının yaşatılması ve kültürel mirasın
+              gelecek nesillere aktarılması için projeler geliştirilmektedir.
             </p>
             <ul>
               <li>Tarihi yapıların restorasyonu</li>
@@ -159,4 +148,4 @@ const HistoryContent = () => {
   );
 };
 
-export default HistoryContent; 
+export default HistoryContent;

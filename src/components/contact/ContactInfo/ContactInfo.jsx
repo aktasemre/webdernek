@@ -33,17 +33,26 @@ const ContactInfo = () => {
           <h2>Birbirimizi Daha İyi Tanıyalım!</h2>
           <div className={styles.surveyContent}>
             <p>Değerli Köylülerimiz,</p>
-            <p>Bayburt Arslandede Köyü Yardımlaşma ve Dayanışma Derneği olarak, köyümüzün dayanışmasını güçlendirmek ve birbirimizi daha yakından tanımak amacıyla bir Meslek Envanteri Çalışması başlatıyoruz.</p>
-            <p>Köyümüzün farklı mesleklerinden bireyleri bir araya getirmek ve gençlerimize rehberlik sağlamak için sizin de katkılarınızı bekliyoruz.</p>
-            <a 
-              href="https://forms.gle/apMoxADc2iusKKEP8" 
-              target="_blank" 
+            <p>
+              Bayburt Arslandede Köyü Yardımlaşma ve Dayanışma Derneği olarak, köyümüzün
+              dayanışmasını güçlendirmek ve birbirimizi daha yakından tanımak amacıyla bir Meslek
+              Envanteri Çalışması başlatıyoruz.
+            </p>
+            <p>
+              Köyümüzün farklı mesleklerinden bireyleri bir araya getirmek ve gençlerimize rehberlik
+              sağlamak için sizin de katkılarınızı bekliyoruz.
+            </p>
+            <a
+              href="https://forms.gle/apMoxADc2iusKKEP8"
+              target="_blank"
               rel="noopener noreferrer"
               className={styles.surveyButton}
             >
               Ankete Katıl
             </a>
-            <p className={styles.shareText}>Lütfen bu formu tanıdıklarınızla paylaşıp bize destek olun.</p>
+            <p className={styles.shareText}>
+              Lütfen bu formu tanıdıklarınızla paylaşıp bize destek olun.
+            </p>
           </div>
         </div>
       </div>
@@ -51,4 +60,4 @@ const ContactInfo = () => {
   );
 };
 
-export default ContactInfo; 
+export default ContactInfo;

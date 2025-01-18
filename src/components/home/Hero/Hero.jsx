@@ -11,8 +11,11 @@ import { useSwipeHandler } from '@/utils/swipeHandler';
 export default function Hero() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const slides = sliderData.slides;
-  
-  const { handleTouchStart, handleTouchMove, handleTouchEnd } = useSwipeHandler(setCurrentSlide, slides.length);
+
+  const { handleTouchStart, handleTouchMove, handleTouchEnd } = useSwipeHandler(
+    setCurrentSlide,
+    slides.length,
+  );
 
   // Otomatik geçiş için
   useEffect(() => {
@@ -27,7 +30,7 @@ export default function Hero() {
   }
 
   return (
-    <section 
+    <section
       className={styles.hero}
       onTouchStart={handleTouchStart}
       onTouchMove={handleTouchMove}
@@ -60,10 +63,16 @@ export default function Hero() {
         ))}
 
         {/* Slider Kontrolleri */}
-        <button className={`${styles.control} ${styles.prev}`} onClick={() => setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length)}>
+        <button
+          className={`${styles.control} ${styles.prev}`}
+          onClick={() => setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length)}
+        >
           <FaArrowLeft />
         </button>
-        <button className={`${styles.control} ${styles.next}`} onClick={() => setCurrentSlide((prev) => (prev + 1) % slides.length)}>
+        <button
+          className={`${styles.control} ${styles.next}`}
+          onClick={() => setCurrentSlide((prev) => (prev + 1) % slides.length)}
+        >
           <FaArrowRight />
         </button>
 
@@ -78,8 +87,6 @@ export default function Hero() {
           ))}
         </div>
       </div>
-
-     
     </section>
   );
 }

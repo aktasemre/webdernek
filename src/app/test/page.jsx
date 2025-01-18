@@ -5,4 +5,4 @@ export default function Test() {
       <p>Bu sayfa görünüyorsa Next.js doğru çalışıyor demektir.</p>
     </div>
   );
-} 
+}

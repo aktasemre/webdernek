@@ -11,8 +11,11 @@ import haberlerData from '@/data/haberler.data.json';
 const NewsSlider = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const sliderHaberler = haberlerData.haberler || [];
-  
-  const { handleTouchStart, handleTouchMove, handleTouchEnd } = useSwipeHandler(setCurrentSlide, sliderHaberler.length);
+
+  const { handleTouchStart, handleTouchMove, handleTouchEnd } = useSwipeHandler(
+    setCurrentSlide,
+    sliderHaberler.length,
+  );
 
   const nextSlide = useCallback(() => {
     setCurrentSlide((prev) => (prev + 1) % sliderHaberler.length);
@@ -36,7 +39,7 @@ const NewsSlider = () => {
   }
 
   return (
-    <div 
+    <div
       className={styles.sliderContainer}
       onTouchStart={handleTouchStart}
       onTouchMove={handleTouchMove}
@@ -58,7 +61,7 @@ const NewsSlider = () => {
                 alt={haber.title}
                 width={800}
                 height={400}
-                style={{ objectFit: "cover" }}
+                style={{ objectFit: 'cover' }}
                 priority={index === currentSlide}
               />
             </div>
@@ -95,4 +98,4 @@ const NewsSlider = () => {
   );
 };
 
-export default NewsSlider; 
+export default NewsSlider;

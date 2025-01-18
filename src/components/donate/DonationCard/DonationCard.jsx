@@ -23,19 +23,19 @@ const DonationCard = ({ bankAccount }) => {
         <h3>{bankAccount.bankName}</h3>
         <p className={styles.description}>{bankAccount.description}</p>
       </div>
-      
+
       <div className={styles.accountInfo}>
         <div className={styles.infoRow}>
           <span className={styles.label}>Hesap Sahibi:</span>
           <span className={styles.value}>{bankAccount.accountHolder}</span>
         </div>
-        
+
         <div className={styles.ibanContainer}>
           <div className={styles.ibanRow}>
             <span className={styles.label}>IBAN:</span>
             <span className={styles.value}>{bankAccount.iban}</span>
           </div>
-          <button 
+          <button
             onClick={handleCopyIban}
             className={styles.copyButton}
             aria-label="IBAN'ı Kopyala"
@@ -58,4 +58,4 @@ const DonationCard = ({ bankAccount }) => {
   );
 };
 
-export default DonationCard; 
+export default DonationCard;

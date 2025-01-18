@@ -12,7 +12,7 @@ const ProjectList = () => {
     setActiveFilter(status);
   };
 
-  const filteredProjects = projectsData.projects.filter(project => {
+  const filteredProjects = projectsData.projects.filter((project) => {
     if (activeFilter === 'all') return true;
     return project.status === activeFilter;
   });
@@ -20,25 +20,25 @@ const ProjectList = () => {
   return (
     <section className={styles.projectList}>
       <div className={styles.filters}>
-        <button 
+        <button
           className={`${styles.filterButton} ${activeFilter === 'all' ? styles.active : ''}`}
           onClick={() => filterProjects('all')}
         >
           Tümü
         </button>
-        <button 
+        <button
           className={`${styles.filterButton} ${activeFilter === 'ongoing' ? styles.active : ''}`}
           onClick={() => filterProjects('ongoing')}
         >
           Devam Eden
         </button>
-        <button 
+        <button
           className={`${styles.filterButton} ${activeFilter === 'completed' ? styles.active : ''}`}
           onClick={() => filterProjects('completed')}
         >
           Tamamlanan
         </button>
-        <button 
+        <button
           className={`${styles.filterButton} ${activeFilter === 'planned' ? styles.active : ''}`}
           onClick={() => filterProjects('planned')}
         >
@@ -47,7 +47,7 @@ const ProjectList = () => {
       </div>
 
       <div className={styles.grid}>
-        {filteredProjects.map(project => (
+        {filteredProjects.map((project) => (
           <ProjectCard key={project.id} project={project} />
         ))}
       </div>
@@ -55,4 +55,4 @@ const ProjectList = () => {
   );
 };
 
-export default ProjectList; 
+export default ProjectList;

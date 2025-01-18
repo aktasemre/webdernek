@@ -6,26 +6,26 @@ import koyData from '@/data/koy.data.json';
 jest.mock('@/data/koy.data.json', () => ({
   konum: {
     koordinatlar: {
-      maps_link: "https://maps.app.goo.gl/Nm23fknSH1H5wLQt7",
-      lat: "40.2603",
-      long: "40.4736"
+      maps_link: 'https://maps.app.goo.gl/Nm23fknSH1H5wLQt7',
+      lat: '40.2603',
+      long: '40.4736',
     },
-    merkez_uzaklik: "30 km",
+    merkez_uzaklik: '30 km',
     komsu_yerlesimler: {
       kuzey: {
-        isim: "Yazyurdu (Çakmas) Köyü"
+        isim: 'Yazyurdu (Çakmas) Köyü',
       },
       guney: {
-        isim: "Çakırbağ (Abusta) Köyü"
+        isim: 'Çakırbağ (Abusta) Köyü',
       },
       dogu: {
-        isim: "Yanıkçam (Miserek) Köyü"
+        isim: 'Yanıkçam (Miserek) Köyü',
       },
       bati: {
-        isim: "Karşıgeçit (Milehi) Köyü"
-      }
-    }
-  }
+        isim: 'Karşıgeçit (Milehi) Köyü',
+      },
+    },
+  },
 }));
 
 describe('VillagePage', () => {
@@ -61,4 +61,4 @@ describe('VillagePage', () => {
     expect(iframe).toBeInTheDocument();
     expect(iframe).toHaveAttribute('loading', 'lazy');
   });
-}); 
+});

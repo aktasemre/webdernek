@@ -5,14 +5,14 @@ import { FaSearch } from 'react-icons/fa';
 import styles from './SearchBar.module.scss';
 import PropTypes from 'prop-types';
 
-const SearchBar = ({ onSearch, placeholder = "Ara..." }) => {
+const SearchBar = ({ onSearch, placeholder = 'Ara...' }) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [results, setResults] = useState([]);
 
   const handleSearch = (e) => {
     const value = e.target.value;
     setSearchTerm(value);
-    
+
     if (value.length > 2) {
       // Arama sonuçlarını filtrele
       const searchResults = onSearch(value);
@@ -34,15 +34,11 @@ const SearchBar = ({ onSearch, placeholder = "Ara..." }) => {
           onChange={handleSearch}
         />
       </div>
-      
+
       {results.length > 0 && (
         <div className={styles.resultsContainer}>
           {results.map((result) => (
-            <a
-              key={result.id}
-              href={result.link}
-              className={styles.resultItem}
-            >
+            <a key={result.id} href={result.link} className={styles.resultItem}>
               <span className={styles.resultTitle}>{result.title}</span>
               <span className={styles.resultType}>{result.type}</span>
             </a>
@@ -55,7 +51,7 @@ const SearchBar = ({ onSearch, placeholder = "Ara..." }) => {
 
 SearchBar.propTypes = {
   onSearch: PropTypes.func.isRequired,
-  placeholder: PropTypes.string
+  placeholder: PropTypes.string,
 };
 
-export default SearchBar; 
+export default SearchBar;

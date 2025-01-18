@@ -8,18 +8,18 @@ const heroSlides = [
   {
     image: '/images/arslandede1.jpg',
     title: 'Arslandede Köyü Derneği',
-    description: 'Köyümüzün gelişimi ve kalkınması için el ele'
+    description: 'Köyümüzün gelişimi ve kalkınması için el ele',
   },
   {
     image: '/images/arslandede2.jpg',
     title: 'Doğal Güzelliklerimiz',
-    description: 'Eşsiz doğası ve temiz havasıyla huzur dolu bir köy'
+    description: 'Eşsiz doğası ve temiz havasıyla huzur dolu bir köy',
   },
   {
     image: '/images/arslandede3.jpg',
     title: 'Kültürel Mirasımız',
-    description: 'Geleneklerimizi yaşatıyor, geleceğe taşıyoruz'
-  }
+    description: 'Geleneklerimizi yaşatıyor, geleceğe taşıyoruz',
+  },
 ];
 
 const Hero = () => {
@@ -33,9 +33,12 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className={styles.hero} style={{
-      backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${heroSlides[currentSlide].image})`
-    }}>
+    <section
+      className={styles.hero}
+      style={{
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${heroSlides[currentSlide].image})`,
+      }}
+    >
       <div className={styles.heroContent}>
         <h1>{heroSlides[currentSlide].title}</h1>
         <p>{heroSlides[currentSlide].description}</p>
@@ -51,10 +54,7 @@ const Hero = () => {
           >
             Meslek Envanteri
           </Link>
-          <Link
-            href="/about/members"
-            className={styles.heroButton}
-          >
+          <Link href="/about/members" className={styles.heroButton}>
             Üyelik Başvurusu
           </Link>
         </div>
@@ -72,4 +72,4 @@ const Hero = () => {
   );
 };
 
-export default Hero; 
+export default Hero;

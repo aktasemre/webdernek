@@ -9,4 +9,4 @@ export const fetchData = async (endpoint) => {
     console.error('Error fetching data:', error);
     throw error;
   }
-}; 
+};

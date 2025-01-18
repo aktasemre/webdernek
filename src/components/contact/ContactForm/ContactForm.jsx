@@ -9,12 +9,12 @@ const ContactForm = () => {
     name: '',
     email: '',
     subject: '',
-    message: ''
+    message: '',
   });
 
   const [status, setStatus] = useState({
     type: null, // 'success' veya 'error'
-    message: ''
+    message: '',
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -27,18 +27,18 @@ const ContactForm = () => {
     try {
       // Form gönderme işlemi burada yapılacak
       // Örnek olarak bir gecikme ekliyoruz
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      await new Promise((resolve) => setTimeout(resolve, 1000));
 
       // Başarılı sonuç
       setStatus({
         type: 'success',
-        message: 'Mesajınız başarıyla gönderildi. En kısa sürede size dönüş yapacağız.'
+        message: 'Mesajınız başarıyla gönderildi. En kısa sürede size dönüş yapacağız.',
       });
       setFormData({ name: '', email: '', subject: '', message: '' });
     } catch (error) {
       setStatus({
         type: 'error',
-        message: 'Mesajınız gönderilemedi. Lütfen daha sonra tekrar deneyin.'
+        message: 'Mesajınız gönderilemedi. Lütfen daha sonra tekrar deneyin.',
       });
     } finally {
       setIsSubmitting(false);
@@ -47,9 +47,9 @@ const ContactForm = () => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
-      [name]: value
+      [name]: value,
     }));
   };
 
@@ -58,7 +58,7 @@ const ContactForm = () => {
       <div className={styles.container}>
         <h2>İletişim Formu</h2>
         <p>Bizimle iletişime geçmek için aşağıdaki formu doldurun.</p>
-        
+
         <form onSubmit={handleSubmit}>
           <div className={styles.formGroup}>
             <label htmlFor="name">Ad Soyad</label>
@@ -116,11 +116,7 @@ const ContactForm = () => {
             />
           </div>
 
-          <button 
-            type="submit" 
-            className={styles.submitButton}
-            disabled={isSubmitting}
-          >
+          <button type="submit" className={styles.submitButton} disabled={isSubmitting}>
             <FaPaperPlane />
             {isSubmitting ? 'Gönderiliyor...' : 'Gönder'}
           </button>
@@ -144,4 +140,4 @@ const ContactForm = () => {
   );
 };
 
-export default ContactForm; 
+export default ContactForm;

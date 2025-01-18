@@ -12,7 +12,8 @@ export const donationData = {
   campaigns: [
     {
       title: 'Ağaçlandırma Kampanyası',
-      description: 'Köyümüzün yeşil dokusunu korumak ve geliştirmek için başlattığımız ağaçlandırma kampanyasına destek olabilirsiniz.',
+      description:
+        'Köyümüzün yeşil dokusunu korumak ve geliştirmek için başlattığımız ağaçlandırma kampanyasına destek olabilirsiniz.',
       image: '/images/bagis_kampanya/agaclandirma.jpg',
       targetAmount: 50000,
       currentAmount: 25000,
@@ -20,7 +21,8 @@ export const donationData = {
     {
       id: 1,
       title: 'Dar Gelirli Ailelere Yardım Kampanyası',
-      description: 'Dar gelirli ailelerimize destek olmak için başlattığımız yardım kampanyasına destek olabilirsiniz.',
+      description:
+        'Dar gelirli ailelerimize destek olmak için başlattığımız yardım kampanyasına destek olabilirsiniz.',
       image: '/images/bagis_kampanya/kumanya.jpg',
       targetAmount: 50000,
       currentAmount: 15000,
@@ -39,7 +41,8 @@ export const donationData = {
     {
       id: 2,
       title: 'Mezarlık Yeri Alma Kampanyası',
-      description: 'Köyümüz için mezarlık yeri almak amacıyla başlattığımız kampanyaya destek olabilirsiniz.',
+      description:
+        'Köyümüz için mezarlık yeri almak amacıyla başlattığımız kampanyaya destek olabilirsiniz.',
       image: '/images/bagis_kampanya/mezarlik.jpg',
       targetAmount: 100000,
       currentAmount: 35000,
@@ -49,4 +52,4 @@ export const donationData = {
   ],
 };
 
-export default donationData; 
+export default donationData;

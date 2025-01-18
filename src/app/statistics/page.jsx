@@ -2,7 +2,8 @@ import { FaChartBar, FaChartPie, FaUsers } from 'react-icons/fa';
 
 export const metadata = {
   title: 'İstatistikler | Arslandede Köyü Derneği',
-  description: 'Arslandede Köyü Derneği istatistikleri. Bağışlar, yapılan yardımlar ve üye sayıları.',
+  description:
+    'Arslandede Köyü Derneği istatistikleri. Bağışlar, yapılan yardımlar ve üye sayıları.',
   keywords: ['istatistikler', 'bağışlar', 'yardımlar', 'üye sayıları'],
 };
 
@@ -41,7 +42,9 @@ export default function StatisticsPage() {
             <FaChartPie className="text-green-500 text-4xl mr-4" />
             <div>
               <p className="text-gray-600 text-sm uppercase tracking-wide">Yapılan Yardımlar</p>
-              <p className="text-3xl font-semibold text-gray-800">{statistics.totalAssistance} TL</p>
+              <p className="text-3xl font-semibold text-gray-800">
+                {statistics.totalAssistance} TL
+              </p>
             </div>
           </div>
           <div className="bg-white p-6 rounded-lg shadow-md flex items-center">
@@ -77,8 +80,7 @@ export default function StatisticsPage() {
             </div>
           </div>
         </div>
-
       </div>
     </main>
   );
-} 
+}

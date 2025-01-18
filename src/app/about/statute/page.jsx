@@ -6,4 +6,4 @@ export default function Statute() {
       <StatuteContent />
     </main>
   );
-} 
+}

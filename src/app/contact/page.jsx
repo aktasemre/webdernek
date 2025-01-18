@@ -1,4 +1,14 @@
-import { FaWhatsapp, FaPhone, FaEnvelope, FaMapMarkerAlt, FaFacebook, FaTwitter, FaInstagram, FaYoutube, FaClipboardList } from 'react-icons/fa';
+import {
+  FaWhatsapp,
+  FaPhone,
+  FaEnvelope,
+  FaMapMarkerAlt,
+  FaFacebook,
+  FaTwitter,
+  FaInstagram,
+  FaYoutube,
+  FaClipboardList,
+} from 'react-icons/fa';
 import MapButtons from '@/components/common/MapButtons/MapButtons';
 import iletisimData from '@/data/iletisim.data.json';
 import styles from './page.module.scss';
@@ -6,7 +16,7 @@ import styles from './page.module.scss';
 export const metadata = {
   title: 'İletişim | Arslandede Köyü',
   description: 'Arslandede Köyü Derneği iletişim bilgileri',
-  keywords: ['iletişim', 'adres', 'telefon', 'e-posta', 'sosyal medya']
+  keywords: ['iletişim', 'adres', 'telefon', 'e-posta', 'sosyal medya'],
 };
 
 export default function ContactPage() {
@@ -18,7 +28,8 @@ export default function ContactPage() {
         <div className={styles.header}>
           <h1>İletişim</h1>
           <p>
-            Derneğimiz ile ilgili her konuda bizimle iletişime geçebilirsiniz. Size en kısa sürede dönüş yapacağız.
+            Derneğimiz ile ilgili her konuda bizimle iletişime geçebilirsiniz. Size en kısa sürede
+            dönüş yapacağız.
           </p>
         </div>
 
@@ -119,19 +130,39 @@ export default function ContactPage() {
           <div className={styles.socialSection}>
             <h2>Sosyal Medya Hesaplarımız</h2>
             <div className={styles.socialGrid}>
-              <a href={social.facebook} target="_blank" rel="noopener noreferrer" className={styles.facebook}>
+              <a
+                href={social.facebook}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.facebook}
+              >
                 <FaFacebook />
                 <span>Facebook</span>
               </a>
-              <a href={social.twitter} target="_blank" rel="noopener noreferrer" className={styles.twitter}>
+              <a
+                href={social.twitter}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.twitter}
+              >
                 <FaTwitter />
                 <span>Twitter</span>
               </a>
-              <a href={social.instagram} target="_blank" rel="noopener noreferrer" className={styles.instagram}>
+              <a
+                href={social.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.instagram}
+              >
                 <FaInstagram />
                 <span>Instagram</span>
               </a>
-              <a href={social.youtube} target="_blank" rel="noopener noreferrer" className={styles.youtube}>
+              <a
+                href={social.youtube}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.youtube}
+              >
                 <FaYoutube />
                 <span>YouTube</span>
               </a>
@@ -146,7 +177,8 @@ export default function ContactPage() {
               </div>
               <h2>Meslek Envanteri</h2>
               <p>
-                Köyümüzün meslek haritasını çıkarmak ve gençlerimize yol göstermek amacıyla başlattığımız çalışmaya katılımınızı bekliyoruz.
+                Köyümüzün meslek haritasını çıkarmak ve gençlerimize yol göstermek amacıyla
+                başlattığımız çalışmaya katılımınızı bekliyoruz.
               </p>
               <a
                 href={forms.professionInventory}
@@ -156,13 +188,11 @@ export default function ContactPage() {
               >
                 Formu Doldur
               </a>
-              <p className={styles.surveyNote}>
-                Form doldurmak yaklaşık 5 dakika sürmektedir.
-              </p>
+              <p className={styles.surveyNote}>Form doldurmak yaklaşık 5 dakika sürmektedir.</p>
             </div>
           </div>
         </div>
       </div>
     </main>
   );
-} 
+}

@@ -6,14 +6,16 @@ import PropTypes from 'prop-types';
 
 const MapButtons = ({ address }) => {
   const encodedAddress = encodeURIComponent(address);
-  
+
   const handleOpenMaps = () => {
     window.open(`https://www.google.com/maps/search/?api=1&query=${encodedAddress}`, '_blank');
   };
 
   const handleGetDirections = () => {
     // Mobil cihazlarda navigasyon uygulamasını açar
-    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+    if (
+      /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
+    ) {
       window.open(`https://www.google.com/maps/dir/?api=1&destination=${encodedAddress}`, '_blank');
     } else {
       window.open(`https://www.google.com/maps/dir/?api=1&destination=${encodedAddress}`, '_blank');
@@ -22,7 +24,7 @@ const MapButtons = ({ address }) => {
 
   return (
     <div className={styles.mapButtons}>
-      <button 
+      <button
         onClick={handleOpenMaps}
         className={styles.mapButton}
         aria-label="Google Haritalar'da Aç"
@@ -30,11 +32,7 @@ const MapButtons = ({ address }) => {
         <FaMapMarkedAlt />
         <span>Haritada Göster</span>
       </button>
-      <button 
-        onClick={handleGetDirections}
-        className={styles.mapButton}
-        aria-label="Yol Tarifi Al"
-      >
+      <button onClick={handleGetDirections} className={styles.mapButton} aria-label="Yol Tarifi Al">
         <FaDirections />
         <span>Yol Tarifi Al</span>
       </button>
@@ -43,7 +41,7 @@ const MapButtons = ({ address }) => {
 };
 
 MapButtons.propTypes = {
-  address: PropTypes.string.isRequired
+  address: PropTypes.string.isRequired,
 };
 
-export default MapButtons; 
+export default MapButtons;

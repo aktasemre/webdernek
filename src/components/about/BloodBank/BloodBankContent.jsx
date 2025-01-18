@@ -13,7 +13,7 @@ const bloodGroups = [
   { type: '0 Rh+', donors: 52, needed: false },
   { type: '0 Rh-', donors: 15, needed: true },
   { type: 'AB Rh+', donors: 18, needed: false },
-  { type: 'AB Rh-', donors: 5, needed: true }
+  { type: 'AB Rh-', donors: 5, needed: true },
 ];
 
 const statistics = [
@@ -21,20 +21,20 @@ const statistics = [
     icon: <FaHeart />,
     title: 'Toplam Bağışçı',
     count: 183,
-    description: 'Kayıtlı kan bağışçısı'
+    description: 'Kayıtlı kan bağışçısı',
   },
   {
     icon: <FaUsers />,
     title: 'Acil İhtiyaç',
     count: 12,
-    description: 'Acil kan ihtiyacı'
+    description: 'Acil kan ihtiyacı',
   },
   {
     icon: <FaHandHoldingHeart />,
     title: 'Başarılı Eşleşme',
     count: 156,
-    description: 'Tamamlanan bağış'
-  }
+    description: 'Tamamlanan bağış',
+  },
 ];
 
 const BloodBankContent = () => {
@@ -44,14 +44,14 @@ const BloodBankContent = () => {
     phone: '',
     email: '',
     isEmergency: false,
-    message: ''
+    message: '',
   });
 
   const handleInputChange = (e) => {
     const { name, value, type, checked } = e.target;
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
-      [name]: type === 'checkbox' ? checked : value
+      [name]: type === 'checkbox' ? checked : value,
     }));
   };
 
@@ -65,11 +65,11 @@ const BloodBankContent = () => {
     <div className={styles.bloodBankContent}>
       <BackButton />
       <h1>Kan Bankası</h1>
-      
+
       <div className={styles.introduction}>
         <p>
-          Derneğimizin kan bankası sistemi, köyümüz ve çevre köylerdeki kan ihtiyaçlarını
-          karşılamak için gönüllü bağışçılarla ihtiyaç sahiplerini bir araya getirmektedir.
+          Derneğimizin kan bankası sistemi, köyümüz ve çevre köylerdeki kan ihtiyaçlarını karşılamak
+          için gönüllü bağışçılarla ihtiyaç sahiplerini bir araya getirmektedir.
         </p>
       </div>
 
@@ -92,9 +92,7 @@ const BloodBankContent = () => {
               <h3>{group.type}</h3>
               <div className={styles.donorCount}>{group.donors}</div>
               <p>Kayıtlı Bağışçı</p>
-              {group.needed && (
-                <div className={styles.needBadge}>İhtiyaç Var</div>
-              )}
+              {group.needed && <div className={styles.needBadge}>İhtiyaç Var</div>}
             </div>
           ))}
         </div>
@@ -126,7 +124,9 @@ const BloodBankContent = () => {
             >
               <option value="">Seçiniz</option>
               {bloodGroups.map((group, index) => (
-                <option key={index} value={group.type}>{group.type}</option>
+                <option key={index} value={group.type}>
+                  {group.type}
+                </option>
               ))}
             </select>
           </div>
@@ -198,4 +198,4 @@ const BloodBankContent = () => {
   );
 };
 
-export default BloodBankContent; 
+export default BloodBankContent;

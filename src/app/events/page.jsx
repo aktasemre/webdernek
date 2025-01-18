@@ -10,16 +10,15 @@ export default function EventsPage() {
   const [filter, setFilter] = useState('all');
   const events = eventsData.events;
 
-  const filteredEvents = filter === 'all' 
-    ? events 
-    : events.filter(event => event.type === filter);
+  const filteredEvents =
+    filter === 'all' ? events : events.filter((event) => event.type === filter);
 
   const formatDate = (dateStr) => {
     const date = new Date(dateStr);
     return date.toLocaleDateString('tr-TR', {
       day: 'numeric',
       month: 'long',
-      year: 'numeric'
+      year: 'numeric',
     });
   };
 
@@ -31,25 +30,25 @@ export default function EventsPage() {
       </header>
 
       <div className={styles.filters}>
-        <button 
+        <button
           className={`${styles.filterButton} ${filter === 'all' ? styles.active : ''}`}
           onClick={() => setFilter('all')}
         >
           Tümü
         </button>
-        <button 
+        <button
           className={`${styles.filterButton} ${filter === 'meeting' ? styles.active : ''}`}
           onClick={() => setFilter('meeting')}
         >
           Toplantılar
         </button>
-        <button 
+        <button
           className={`${styles.filterButton} ${filter === 'festival' ? styles.active : ''}`}
           onClick={() => setFilter('festival')}
         >
           Festivaller
         </button>
-        <button 
+        <button
           className={`${styles.filterButton} ${filter === 'dinner' ? styles.active : ''}`}
           onClick={() => setFilter('dinner')}
         >
@@ -68,9 +67,7 @@ export default function EventsPage() {
                 height={250}
                 className={styles.image}
               />
-              {event.isUpcoming && (
-                <span className={styles.upcomingBadge}>Yaklaşan Etkinlik</span>
-              )}
+              {event.isUpcoming && <span className={styles.upcomingBadge}>Yaklaşan Etkinlik</span>}
             </div>
             <div className={styles.content}>
               <h3>{event.title}</h3>
@@ -89,9 +86,7 @@ export default function EventsPage() {
                   <span>{event.location}</span>
                 </div>
               </div>
-              <button className={styles.joinButton}>
-                Katıl
-              </button>
+              <button className={styles.joinButton}>Katıl</button>
             </div>
           </div>
         ))}
@@ -104,4 +99,4 @@ export default function EventsPage() {
       )}
     </div>
   );
-} 
+}

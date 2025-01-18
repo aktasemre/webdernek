@@ -9,13 +9,13 @@ import PropTypes from 'prop-types';
 const statusLabels = {
   ongoing: 'Devam Ediyor',
   completed: 'Tamamlandı',
-  planned: 'Planlanan'
+  planned: 'Planlanan',
 };
 
 const statusColors = {
   ongoing: '#FFB800',
   completed: '#2C5F2D',
-  planned: '#666666'
+  planned: '#666666',
 };
 
 const ProjectCard = ({ project }) => {
@@ -24,17 +24,8 @@ const ProjectCard = ({ project }) => {
   return (
     <div className={styles.card}>
       <div className={styles.imageContainer}>
-        <Image 
-          src={image} 
-          alt={title}
-          width={400}
-          height={250}
-          style={{ objectFit: "cover" }}
-        />
-        <span 
-          className={styles.status}
-          style={{ backgroundColor: statusColors[status] }}
-        >
+        <Image src={image} alt={title} width={400} height={250} style={{ objectFit: 'cover' }} />
+        <span className={styles.status} style={{ backgroundColor: statusColors[status] }}>
           {statusLabels[status]}
         </span>
       </div>
@@ -81,8 +72,8 @@ ProjectCard.propTypes = {
     startDate: PropTypes.string,
     endDate: PropTypes.string,
     budget: PropTypes.string,
-    progress: PropTypes.number
-  }).isRequired
+    progress: PropTypes.number,
+  }).isRequired,
 };
 
-export default ProjectCard; 
+export default ProjectCard;

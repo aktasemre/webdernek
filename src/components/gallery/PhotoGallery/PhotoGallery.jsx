@@ -12,9 +12,10 @@ const PhotoGallery = () => {
 
   const categories = galleryData.categories;
 
-  const filteredPhotos = selectedCategory === 'all' 
-    ? galleryData.photos
-    : galleryData.photos.filter(photo => photo.category === selectedCategory);
+  const filteredPhotos =
+    selectedCategory === 'all'
+      ? galleryData.photos
+      : galleryData.photos.filter((photo) => photo.category === selectedCategory);
 
   const handlePhotoClick = (photo, index) => {
     setSelectedPhoto(photo);
@@ -27,18 +28,22 @@ const PhotoGallery = () => {
 
   const handlePrevious = useCallback(() => {
     setCurrentIndex((prev) => (prev === 0 ? filteredPhotos.length - 1 : prev - 1));
-    setSelectedPhoto(filteredPhotos[currentIndex === 0 ? filteredPhotos.length - 1 : currentIndex - 1]);
+    setSelectedPhoto(
+      filteredPhotos[currentIndex === 0 ? filteredPhotos.length - 1 : currentIndex - 1],
+    );
   }, [currentIndex, filteredPhotos]);
 
   const handleNext = useCallback(() => {
     setCurrentIndex((prev) => (prev === filteredPhotos.length - 1 ? 0 : prev + 1));
-    setSelectedPhoto(filteredPhotos[currentIndex === filteredPhotos.length - 1 ? 0 : currentIndex + 1]);
+    setSelectedPhoto(
+      filteredPhotos[currentIndex === filteredPhotos.length - 1 ? 0 : currentIndex + 1],
+    );
   }, [currentIndex, filteredPhotos]);
 
   useEffect(() => {
     const handleKeyDown = (e) => {
       if (!selectedPhoto) return;
-      
+
       if (e.key === 'Escape') handleClose();
       if (e.key === 'ArrowLeft') handlePrevious();
       if (e.key === 'ArrowRight') handleNext();
@@ -50,7 +55,7 @@ const PhotoGallery = () => {
 
   return (
     <section className={styles.photoGalleryContainer}>
-        <h1>Fotoğraf Galerisi</h1>
+      <h1>Fotoğraf Galerisi</h1>
       <div className={styles.photoCategories}>
         <button
           className={`${styles.photoCategoryButton} ${selectedCategory === 'all' ? styles.active : ''}`}
@@ -58,7 +63,7 @@ const PhotoGallery = () => {
         >
           Tümü
         </button>
-        {categories.map(category => (
+        {categories.map((category) => (
           <button
             key={category.id}
             className={`${styles.photoCategoryButton} ${selectedCategory === category.id ? styles.active : ''}`}
@@ -71,28 +76,28 @@ const PhotoGallery = () => {
 
       <div className={styles.photoGrid}>
         {filteredPhotos.map((photo, index) => (
-                <div 
-                  key={photo.id} 
-                  className={styles.photoCard}
+          <div
+            key={photo.id}
+            className={styles.photoCard}
             onClick={() => handlePhotoClick(photo, index)}
-                >
+          >
             <div className={styles.photoImageContainer}>
-                    <Image
-                      src={photo.image}
-                      alt={photo.title}
+              <Image
+                src={photo.image}
+                alt={photo.title}
                 width={600}
                 height={400}
                 priority={index < 4}
-                style={{ objectFit: "cover", width: "100%", height: "100%" }}
+                style={{ objectFit: 'cover', width: '100%', height: '100%' }}
                 className={styles.photoImage}
               />
             </div>
             <div className={styles.photoInfo}>
-                      <h3>{photo.title}</h3>
+              <h3>{photo.title}</h3>
               {photo.description && <p>{photo.description}</p>}
               {photo.tags && photo.tags.length > 0 && (
                 <div className={styles.photoTags}>
-                  {photo.tags.map(tag => (
+                  {photo.tags.map((tag) => (
                     <span key={tag} className={styles.photoTag}>
                       {tag}
                     </span>
@@ -106,7 +111,7 @@ const PhotoGallery = () => {
 
       {selectedPhoto && (
         <div className={styles.photoModal} onClick={handleClose}>
-          <div className={styles.photoModalContent} onClick={e => e.stopPropagation()}>
+          <div className={styles.photoModalContent} onClick={(e) => e.stopPropagation()}>
             <div className={styles.photoModalImageContainer}>
               <Image
                 src={selectedPhoto.image}
@@ -123,7 +128,7 @@ const PhotoGallery = () => {
               {selectedPhoto.description && <p>{selectedPhoto.description}</p>}
               {selectedPhoto.tags && selectedPhoto.tags.length > 0 && (
                 <div className={styles.photoTags}>
-                  {selectedPhoto.tags.map(tag => (
+                  {selectedPhoto.tags.map((tag) => (
                     <span key={tag} className={styles.photoTag}>
                       {tag}
                     </span>
@@ -147,4 +152,4 @@ const PhotoGallery = () => {
   );
 };
 
-export default PhotoGallery; 
+export default PhotoGallery;

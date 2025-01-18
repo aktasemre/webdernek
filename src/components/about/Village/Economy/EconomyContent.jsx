@@ -6,18 +6,18 @@ const economicActivities = [
   {
     title: 'Tarım',
     description: 'Köyümüzde yetiştirilen başlıca tarım ürünleri buğday, arpa ve yem bitkileridir.',
-    image: '/images/manzara1.jpg'
+    image: '/images/manzara1.jpg',
   },
   {
     title: 'Hayvancılık',
     description: 'Büyükbaş ve küçükbaş hayvancılık önemli geçim kaynaklarımızdandır.',
-    image: '/images/manzara2.jpg'
+    image: '/images/manzara2.jpg',
   },
   {
     title: 'Arıcılık',
     description: 'Son yıllarda gelişen arıcılık faaliyetleri ek gelir kaynağı oluşturmaktadır.',
-    image: '/images/manzara3.jpg'
-  }
+    image: '/images/manzara3.jpg',
+  },
 ];
 
 const EconomyContent = () => {
@@ -25,11 +25,11 @@ const EconomyContent = () => {
     <div className={styles.economyContent}>
       <BackButton />
       <h1>Ekonomik Yapı</h1>
-      
+
       <div className={styles.introduction}>
         <p>
-          Arslandede köyünün ekonomisi temel olarak tarım ve hayvancılığa dayanmaktadır.
-          Son yıllarda modern tarım teknikleri ve çeşitli projelerle ekonomik faaliyetler
+          Arslandede köyünün ekonomisi temel olarak tarım ve hayvancılığa dayanmaktadır. Son
+          yıllarda modern tarım teknikleri ve çeşitli projelerle ekonomik faaliyetler
           çeşitlendirilmeye çalışılmaktadır.
         </p>
       </div>
@@ -43,7 +43,7 @@ const EconomyContent = () => {
                 alt={activity.title}
                 width={400}
                 height={300}
-                style={{ objectFit: "cover" }}
+                style={{ objectFit: 'cover' }}
               />
             </div>
             <div className={styles.content}>
@@ -89,4 +89,4 @@ const EconomyContent = () => {
   );
 };
 
-export default EconomyContent; 
+export default EconomyContent;

@@ -5,14 +5,12 @@ import haberlerData from '@/data/haberler.data.json';
 import PropTypes from 'prop-types';
 
 export async function generateMetadata({ params }) {
-  const haber = haberlerData.haberler.find(
-    (h) => h.id.toString() === params.id
-  );
+  const haber = haberlerData.haberler.find((h) => h.id.toString() === params.id);
 
   if (!haber) {
     return {
       title: 'Haber Bulunamadı',
-      description: 'Aradığınız haber bulunamadı.'
+      description: 'Aradığınız haber bulunamadı.',
     };
   }
 
@@ -35,9 +33,7 @@ export async function generateStaticParams() {
 }
 
 export default function NewsDetail({ params }) {
-  const haber = haberlerData.haberler.find(
-    (h) => h.id.toString() === params.id
-  );
+  const haber = haberlerData.haberler.find((h) => h.id.toString() === params.id);
 
   if (!haber) {
     notFound();
@@ -57,23 +53,23 @@ export default function NewsDetail({ params }) {
             />
           </div>
         )}
-        
+
         <h1>{haber.title}</h1>
-        
+
         <div className={styles.meta}>
-          <time dateTime={haber.date}>
-            {new Date(haber.date).toLocaleDateString('tr-TR')}
-          </time>
+          <time dateTime={haber.date}>{new Date(haber.date).toLocaleDateString('tr-TR')}</time>
           <span className={styles.category}>{haber.category}</span>
           {haber.author && <span className={styles.author}>{haber.author}</span>}
         </div>
 
         <div className={styles.content} dangerouslySetInnerHTML={{ __html: haber.content }} />
-        
+
         {haber.tags && haber.tags.length > 0 && (
           <div className={styles.tags}>
             {haber.tags.map((tag) => (
-              <span key={tag} className={styles.tag}>#{tag}</span>
+              <span key={tag} className={styles.tag}>
+                #{tag}
+              </span>
             ))}
           </div>
         )}
@@ -84,6 +80,6 @@ export default function NewsDetail({ params }) {
 
 NewsDetail.propTypes = {
   params: PropTypes.shape({
-    id: PropTypes.string.isRequired
-  }).isRequired
-}; 
+    id: PropTypes.string.isRequired,
+  }).isRequired,
+};

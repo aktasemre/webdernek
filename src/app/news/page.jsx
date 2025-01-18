@@ -14,9 +14,10 @@ export default function NewsPage() {
   const categories = haberlerData.categories || [];
 
   // Haberleri filtrele
-  const filteredHaberler = haberler.filter(haber => {
-    const matchesSearch = haber.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         haber.summary.toLowerCase().includes(searchTerm.toLowerCase());
+  const filteredHaberler = haberler.filter((haber) => {
+    const matchesSearch =
+      haber.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      haber.summary.toLowerCase().includes(searchTerm.toLowerCase());
     const matchesCategory = !selectedCategory || haber.category === selectedCategory;
     return matchesSearch && matchesCategory;
   });
@@ -50,7 +51,7 @@ export default function NewsPage() {
               onChange={(e) => setSelectedCategory(e.target.value)}
             >
               <option value="">Tümü</option>
-              {categories.map(category => (
+              {categories.map((category) => (
                 <option key={category.id} value={category.id}>
                   {category.title}
                 </option>
@@ -61,15 +62,10 @@ export default function NewsPage() {
 
         {filteredHaberler.length > 0 ? (
           <div className={styles.newsGrid}>
-            {filteredHaberler.map(haber => (
+            {filteredHaberler.map((haber) => (
               <Link href={`/news/${haber.id}`} key={haber.id} className={styles.newsCard}>
                 <div className={styles.imageContainer}>
-                  <Image
-                    src={haber.image}
-                    alt={haber.title}
-                    fill
-                    style={{ objectFit: "cover" }}
-                  />
+                  <Image src={haber.image} alt={haber.title} fill style={{ objectFit: 'cover' }} />
                 </div>
                 <div className={styles.content}>
                   <h2>{haber.title}</h2>
@@ -79,7 +75,7 @@ export default function NewsPage() {
                       {new Date(haber.date).toLocaleDateString('tr-TR')}
                     </time>
                     <span className={styles.category}>
-                      {categories.find(c => c.id === haber.category)?.title || haber.category}
+                      {categories.find((c) => c.id === haber.category)?.title || haber.category}
                     </span>
                   </div>
                 </div>
@@ -94,4 +90,4 @@ export default function NewsPage() {
       </div>
     </>
   );
-} 
+}
