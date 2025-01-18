@@ -1,0 +1,34 @@
+// Global cursor stilleri
+.cursor {
+  &-pointer {
+    cursor: pointer;
+  }
+  
+  &-default {
+    cursor: default;
+  }
+  
+  &-wait {
+    cursor: wait;
+  }
+  
+  &-not-allowed {
+    cursor: not-allowed;
+  }
+  
+  &-text {
+    cursor: text;
+  }
+  
+  &-move {
+    cursor: move;
+  }
+  
+  &-grab {
+    cursor: grab;
+    
+    &:active {
+      cursor: grabbing;
+    }
+  }
+} 

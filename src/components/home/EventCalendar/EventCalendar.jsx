@@ -1,41 +1,14 @@
 'use client';
 
-import { useState } from 'react';
 import styles from './EventCalendar.module.scss';
+import PropTypes from 'prop-types';
 
 const EventCalendar = ({ events = [] }) => {
-  const [mounted, setMounted] = useState(false);
-
-  // Eğer events prop'u boşsa varsayılan etkinlikleri göster
-  const displayEvents = events.length > 0 ? events : [
-    {
-      id: 1,
-      date: '20 Kasım',
-      title: 'Köy Toplantısı',
-      description: 'Köy konağında genel değerlendirme toplantısı yapılacaktır.',
-      time: '14:00'
-    },
-    {
-      id: 2,
-      date: '25 Kasım',
-      title: 'Tarım Semineri',
-      description: 'Modern tarım teknikleri hakkında bilgilendirme semineri.',
-      time: '15:30'
-    },
-    {
-      id: 3,
-      date: '1 Aralık',
-      title: 'Gençlik Merkezi Açılışı',
-      description: 'Yeni gençlik merkezimizin resmi açılış töreni.',
-      time: '10:00'
-    }
-  ];
-
   return (
     <section className={styles.eventCalendar}>
       <div className={styles.container}>
         <div className={styles.eventList}>
-          {displayEvents.map((event) => (
+          {events.map((event) => (
             <div key={event.id} className={styles.eventCard}>
               <div className={styles.dateBox}>
                 <span className={styles.date}>
@@ -59,6 +32,17 @@ const EventCalendar = ({ events = [] }) => {
       </div>
     </section>
   );
+};
+
+EventCalendar.propTypes = {
+  events: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    title: PropTypes.string.isRequired,
+    date: PropTypes.string.isRequired,
+    time: PropTypes.string.isRequired,
+    location: PropTypes.string.isRequired,
+    type: PropTypes.string
+  }))
 };
 
 export default EventCalendar; 

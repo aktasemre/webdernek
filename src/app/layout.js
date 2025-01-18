@@ -1,6 +1,6 @@
-import Head from 'next/head';
 import Header from '@/components/common/Header/Header';
 import '@/styles/globals.scss';
+import PropTypes from 'prop-types';
 
 export const metadata = {
   title: 'Arslandede Köyü',
@@ -37,4 +37,8 @@ export default function RootLayout({ children }) {
       </body>
     </html>
   );
-} 
+}
+
+RootLayout.propTypes = {
+  children: PropTypes.node.isRequired
+}; 

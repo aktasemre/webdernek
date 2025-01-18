@@ -1,0 +1,56 @@
+.budgetSection {
+  padding: 4rem 0;
+  background-color: #f8f9fa;
+  
+  h2 {
+    text-align: center;
+    font-size: 2rem;
+    color: #2C5F2D;
+    margin-bottom: 2rem;
+    max-width: 1200px;
+    margin: 0 auto 2rem;
+    padding: 0 1rem;
+  }
+}
+
+.tableWrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  
+  iframe {
+    display: block;
+    width: 100%;
+    border: none;
+  }
+}
+
+.note {
+  max-width: 1200px;
+  margin: 1rem auto 0;
+  padding: 0 1rem;
+  
+  p {
+    color: #666;
+    font-size: 0.9rem;
+    font-style: italic;
+  }
+}
+
+@media (max-width: 768px) {
+  .budgetSection {
+    padding: 3rem 0;
+    
+    h2 {
+      font-size: 1.75rem;
+    }
+  }
+  
+  .tableWrapper iframe {
+    height: 400px;
+  }
+} 

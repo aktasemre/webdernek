@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { FaSearch } from 'react-icons/fa';
 import styles from './SearchBar.module.scss';
+import PropTypes from 'prop-types';
 
 const SearchBar = ({ onSearch, placeholder = "Ara..." }) => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -50,6 +51,11 @@ const SearchBar = ({ onSearch, placeholder = "Ara..." }) => {
       )}
     </div>
   );
+};
+
+SearchBar.propTypes = {
+  onSearch: PropTypes.func.isRequired,
+  placeholder: PropTypes.string
 };
 
 export default SearchBar; 

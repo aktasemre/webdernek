@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import styles from './FoundersContent.module.scss';
-import BackButton from '@/components/common/BackButton/BackButton';
 
 const founders = [
   {
@@ -52,7 +51,7 @@ const milestones = [
   }
 ];
 
-const FoundersContent = () => {
+export default function FoundersContent() {
   return (
     <div className={styles.foundersContent}>
       <h1>Kurucularımız</h1>
@@ -113,6 +112,4 @@ const FoundersContent = () => {
       </div>
     </div>
   );
-};
-
-export default FoundersContent; 
+} 

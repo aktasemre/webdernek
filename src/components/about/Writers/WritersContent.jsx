@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import { FaBook, FaNewspaper, FaPen } from 'react-icons/fa';
-import BackButton from '@/components/common/BackButton/BackButton';
 import styles from './WritersContent.module.scss';
 
 const writers = [
@@ -63,7 +62,7 @@ const categories = [
   }
 ];
 
-const WritersContent = () => {
+export default function WritersContent() {
   return (
     <div className={styles.writersContent}>
       <h1>Yazarlarımız</h1>
@@ -129,6 +128,4 @@ const WritersContent = () => {
       </div>
     </div>
   );
-};
-
-export default WritersContent; 
+} 

@@ -1,9 +1,9 @@
 'use client';
 
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { FaArrowLeft, FaArrowRight, FaDonate, FaUsers, FaPhone } from 'react-icons/fa';
+import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 import styles from './Hero.module.scss';
 import sliderData from '@/data/slider.data.json';
 import { useSwipeHandler } from '@/utils/swipeHandler';
@@ -79,21 +79,7 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Hızlı Erişim Butonları */}
-      <div className={styles.quickAccess}>
-        <Link href="/donate" className={styles.quickButton}>
-          <FaDonate />
-          <span>Bağış Yap</span>
-        </Link>
-        <Link href="/membership" className={styles.quickButton}>
-          <FaUsers />
-          <span>Üye Ol</span>
-        </Link>
-        <Link href="/contact" className={styles.quickButton}>
-          <FaPhone />
-          <span>İletişim</span>
-        </Link>
-      </div>
+     
     </section>
   );
 }

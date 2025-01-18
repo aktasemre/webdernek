@@ -2,6 +2,7 @@ import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import styles from './page.module.scss';
 import haberlerData from '@/data/haberler.data.json';
+import PropTypes from 'prop-types';
 
 export async function generateMetadata({ params }) {
   const haber = haberlerData.haberler.find(
@@ -79,4 +80,10 @@ export default function NewsDetail({ params }) {
       </div>
     </article>
   );
-} 
+}
+
+NewsDetail.propTypes = {
+  params: PropTypes.shape({
+    id: PropTypes.string.isRequired
+  }).isRequired
+}; 

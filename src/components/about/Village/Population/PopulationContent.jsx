@@ -1,5 +1,5 @@
-import Image from 'next/image';
-import BackButton from '@/components/common/BackButton/BackButton';
+import Link from 'next/link';
+import { IoArrowBack } from 'react-icons/io5';
 import styles from './PopulationContent.module.scss';
 
 const populationStats = {
@@ -80,14 +80,15 @@ const migrationInfo = {
   }
 };
 
-const PopulationContent = () => {
+export default function PopulationContent() {
   return (
     <div className={styles.container}>
-      <BackButton />
+      <Link href="/about" className={styles.backButton}>
+        <IoArrowBack /> Geri
+      </Link>
       
       <div className={styles.populationContent}>
         <h1>Nüfus ve Yerleşim</h1>
-        
         <div className={styles.introduction}>
           <p>
             Arslandede köyü, geleneksel yerleşim dokusunu korurken modern yaşamın
@@ -207,6 +208,4 @@ const PopulationContent = () => {
       </div>
     </div>
   );
-};
-
-export default PopulationContent; 
+} 

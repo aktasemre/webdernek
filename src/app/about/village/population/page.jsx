@@ -1,4 +1,3 @@
-import { Metadata } from 'next';
 import PopulationContent from '@/components/about/Village/Population/PopulationContent';
 import styles from './page.module.scss';
 

@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import styles from './ProjectDetail.module.scss';
+import PropTypes from 'prop-types';
 
 const ProjectDetail = ({ project }) => {
   const renderDetails = () => {
@@ -119,6 +120,32 @@ const ProjectDetail = ({ project }) => {
       </div>
     </div>
   );
+};
+
+ProjectDetail.propTypes = {
+  project: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    title: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    status: PropTypes.string.isRequired,
+    image: PropTypes.string,
+    startDate: PropTypes.string,
+    endDate: PropTypes.string,
+    budget: PropTypes.string,
+    progress: PropTypes.number,
+    details: PropTypes.shape({
+      features: PropTypes.arrayOf(PropTypes.string),
+      scope: PropTypes.arrayOf(PropTypes.string),
+      team: PropTypes.arrayOf(PropTypes.shape({
+        name: PropTypes.string.isRequired,
+        role: PropTypes.string.isRequired
+      })),
+      timeline: PropTypes.arrayOf(PropTypes.shape({
+        date: PropTypes.string.isRequired,
+        event: PropTypes.string.isRequired
+      }))
+    })
+  }).isRequired
 };
 
 export default ProjectDetail; 

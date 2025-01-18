@@ -1,0 +1,48 @@
+{
+  "events": [
+    {
+      "id": 1,
+      "title": "Dernek Toplantısı",
+      "date": "2024-01-20",
+      "time": "14:00",
+      "location": "Dernek Merkezi",
+      "description": "Yıllık dernek toplantımızda önemli konuları görüşeceğiz.",
+      "type": "meeting",
+      "image": "/images/events/dernek-toplantisi.jpg",
+      "isUpcoming": true
+    },
+    {
+      "id": 2,
+      "title": "Köy Festivali",
+      "date": "2024-07-20",
+      "time": "10:00",
+      "location": "Köy Meydanı",
+      "description": "Geleneksel köy festivalimizde müzik, yemek ve eğlence bir arada.",
+      "type": "festival",
+      "image": "/images/events/koy-festivali.jpg",
+      "isUpcoming": true
+    },
+    {
+      "id": 3,
+      "title": "İftar Yemeği",
+      "date": "2024-03-15",
+      "time": "18:30",
+      "location": "Köy Konağı",
+      "description": "Ramazan ayı münasebetiyle düzenlenecek iftar yemeğimize tüm köylülerimiz davetlidir.",
+      "type": "dinner",
+      "image": "/images/events/iftar-yemegi.jpg",
+      "isUpcoming": true
+    },
+    {
+      "id": 4,
+      "title": "Yaz Pikniği",
+      "date": "2024-08-10",
+      "time": "11:00",
+      "location": "Köy Mesire Alanı",
+      "description": "Yaz mevsiminin keyfini çıkaracağımız piknik organizasyonumuz.",
+      "type": "picnic",
+      "image": "/images/events/yaz-piknik.jpg",
+      "isUpcoming": true
+    }
+  ]
+} 

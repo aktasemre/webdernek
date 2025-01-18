@@ -50,53 +50,6 @@
   min-width: 0;
 }
 
-.features {
-  margin: 2rem 0;
-  padding: 2rem 0;
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-
-  .featureGrid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 1.5rem;
-    padding: 1rem;
-  }
-}
-
-.featureCard {
-  padding: 2rem;
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-  text-align: center;
-  text-decoration: none;
-  color: #333;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-
-  &:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-
-  .icon {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-    color: #2c5282;
-  }
-
-  h3 {
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
-  }
-
-  p {
-    font-size: 0.9rem;
-    color: #666;
-  }
-}
-
 .newsSliderSection {
   margin: 2rem 0;
   padding: 0;
@@ -117,94 +70,107 @@
   }
 }
 
-.about {
+.eventCalendarSection {
   margin: 2rem 0;
-  padding: 2rem 0;
+  padding: 2rem;
   background: #fff;
   border-radius: 12px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.aboutContent {
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-  padding: 0 1rem;
 
   @media (max-width: 768px) {
-    flex-direction: column-reverse;
+    padding: 1rem;
   }
 }
 
-.aboutText {
-  flex: 1;
-
-  h2 {
-    text-align: left;
-  }
-
-  p {
-    margin-bottom: 1.5rem;
-    line-height: 1.6;
-    color: #666;
-  }
-}
-
-.aboutButton {
-  display: inline-block;
-  padding: 0.8rem 1.5rem;
-  background: #2c5282;
-  color: white;
-  text-decoration: none;
-  border-radius: 6px;
-  transition: background 0.3s ease;
-
-  &:hover {
-    background: #1a365d;
-  }
-}
-
-.aboutImage {
-  flex: 1;
+.about {
+  margin: 2rem 0;
+  padding: 2rem;
+  background: #fff;
   border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+  .aboutContent {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    
+    @media (max-width: 768px) {
+      flex-direction: column-reverse;
+    }
+
+    .aboutText {
+      flex: 1;
+
+      h2 {
+        text-align: left;
+        color: #2C5F2D;
+      }
+
+      p {
+        color: #666;
+        line-height: 1.6;
+        margin-bottom: 1.5rem;
+      }
+
+      .aboutButton {
+        display: inline-block;
+        padding: 0.75rem 1.5rem;
+        background: #2C5F2D;
+        color: white;
+        text-decoration: none;
+        border-radius: 6px;
+        transition: background 0.3s ease;
+
+        &:hover {
+          background: darken(#2C5F2D, 10%);
+        }
+      }
+    }
+
+    .aboutImage {
+      flex: 1;
+      max-width: 500px;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+  }
 }
 
 .professionSurvey {
   margin: 2rem 0;
-  padding: 2rem 0;
+  padding: 2rem;
   background: #fff;
   border-radius: 12px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
 
-.surveyContent {
-  text-align: center;
-  padding: 0 1rem;
+  .surveyContent {
+    text-align: center;
 
-  .surveyIcon {
-    font-size: 3rem;
-    color: #2c5282;
-    margin-bottom: 1rem;
-  }
+    h2 {
+      color: #2C5F2D;
+    }
 
-  p {
-    margin: 1rem 0;
-    color: #666;
-  }
-}
+    p {
+      color: #666;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
 
-.surveyButton {
-  display: inline-block;
-  padding: 0.8rem 1.5rem;
-  background: #2c5282;
-  color: white;
-  text-decoration: none;
-  border-radius: 6px;
-  transition: background 0.3s ease;
+    .surveyButton {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      background: #2C5F2D;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      transition: background 0.3s ease;
 
-  &:hover {
-    background: #1a365d;
+      &:hover {
+        background: darken(#2C5F2D, 10%);
+      }
+    }
   }
 } 

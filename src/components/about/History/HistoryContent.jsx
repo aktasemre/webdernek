@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import styles from './HistoryContent.module.scss';
-import BackButton from '@/components/common/BackButton/BackButton';
 
 const timelineEvents = [
   {
@@ -40,7 +39,7 @@ const timelineEvents = [
   }
 ];
 
-const HistoryContent = () => {
+export default function HistoryContent() {
   return (
     <div className={styles.historyContent}>
       <h1>Derneğimizin Tarihçesi</h1>
@@ -97,6 +96,4 @@ const HistoryContent = () => {
       </div>
     </div>
   );
-};
-
-export default HistoryContent; 
+} 

@@ -2,6 +2,7 @@
 
 import PropTypes from 'prop-types';
 import styles from './Board.module.scss';
+import Image from 'next/image';
 
 const Board = ({ items, status }) => {
   return (

@@ -1,8 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { FaHeart, FaUsers, FaHandHoldingHeart, FaCopy } from 'react-icons/fa';
-import BackButton from '@/components/common/BackButton/BackButton';
+import { FaRegCopy } from 'react-icons/fa';
 import styles from './BankAccountsContent.module.scss';
 
 const bankAccounts = [
@@ -42,7 +41,7 @@ const paymentInfo = {
   ]
 };
 
-const BankAccountsContent = () => {
+export default function BankAccountsContent() {
   const [copiedIban, setCopiedIban] = useState('');
 
   const copyToClipboard = (iban) => {
@@ -86,7 +85,7 @@ const BankAccountsContent = () => {
                   className={styles.copyButton}
                   onClick={() => copyToClipboard(account.iban)}
                 >
-                  <FaCopy />
+                  <FaRegCopy />
                   {copiedIban === account.iban && <span className={styles.tooltip}>Kopyalandı!</span>}
                 </button>
               </div>
@@ -116,6 +115,4 @@ const BankAccountsContent = () => {
       </div>
     </div>
   );
-};
-
-export default BankAccountsContent; 
+} 

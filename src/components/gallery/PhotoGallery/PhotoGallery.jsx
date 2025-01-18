@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import Image from 'next/image';
 import styles from './PhotoGallery.module.scss';
 import galleryData from '@/data/gallery.data.json';
@@ -21,19 +21,19 @@ const PhotoGallery = () => {
     setCurrentIndex(index);
   };
 
-  const handleClose = () => {
+  const handleClose = useCallback(() => {
     setSelectedPhoto(null);
-  };
+  }, []);
 
-  const handlePrevious = () => {
+  const handlePrevious = useCallback(() => {
     setCurrentIndex((prev) => (prev === 0 ? filteredPhotos.length - 1 : prev - 1));
     setSelectedPhoto(filteredPhotos[currentIndex === 0 ? filteredPhotos.length - 1 : currentIndex - 1]);
-  };
+  }, [currentIndex, filteredPhotos]);
 
-  const handleNext = () => {
+  const handleNext = useCallback(() => {
     setCurrentIndex((prev) => (prev === filteredPhotos.length - 1 ? 0 : prev + 1));
     setSelectedPhoto(filteredPhotos[currentIndex === filteredPhotos.length - 1 ? 0 : currentIndex + 1]);
-  };
+  }, [currentIndex, filteredPhotos]);
 
   useEffect(() => {
     const handleKeyDown = (e) => {
@@ -46,7 +46,7 @@ const PhotoGallery = () => {
 
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [selectedPhoto, currentIndex]);
+  }, [handleNext, handlePrevious, handleClose, selectedPhoto]);
 
   return (
     <section className={styles.photoGalleryContainer}>

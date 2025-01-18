@@ -2,6 +2,7 @@
 
 import { FaMapMarkedAlt, FaDirections } from 'react-icons/fa';
 import styles from './MapButtons.module.scss';
+import PropTypes from 'prop-types';
 
 const MapButtons = ({ address }) => {
   const encodedAddress = encodeURIComponent(address);
@@ -39,6 +40,10 @@ const MapButtons = ({ address }) => {
       </button>
     </div>
   );
+};
+
+MapButtons.propTypes = {
+  address: PropTypes.string.isRequired
 };
 
 export default MapButtons; 

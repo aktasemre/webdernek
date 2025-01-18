@@ -2,7 +2,7 @@ import './globals.scss';
 import Header from '@/components/common/Header/Header';
 import Footer from '@/components/common/Footer/Footer';
 import BottomNav from '@/components/layout/BottomNav/BottomNav';
-
+import PropTypes from 'prop-types';
 
 export const viewport = {
   width: 'device-width',
@@ -16,14 +16,24 @@ export const metadata = {
     template: '%s | Arslandede Köyü Derneği',
     default: 'Arslandede Köyü Derneği'
   },
-  description: 'Arslandede Köyü Derneği resmi web sitesi',
-  keywords: ['arslandede', 'köy derneği', 'trabzon', 'dernekpazarı'],
-  manifest: '/manifest.json',
-  icons: {
-    apple: [
-      { url: '/icons/icon-192.png', sizes: '192x192', type: 'image/png' },
-      { url: '/icons/icon-512.png', sizes: '512x512', type: 'image/png' }
-    ]
+  description: 'Arslandede Köyü Derneği resmi web sitesi - Köyümüzün gelişimi için çalışıyoruz',
+  keywords: ['arslandede köyü', 'köy derneği', 'bayburt', 'yardımlaşma', 'dayanışma'],
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  verification: {
+    google: 'google-site-verification-code',
+  },
+  alternates: {
+    canonical: 'https://arslandededernegi.org',
   }
 };
 
@@ -63,4 +73,8 @@ export default function RootLayout({ children }) {
       </body>
     </html>
   );
-} 
+}
+
+RootLayout.propTypes = {
+  children: PropTypes.node.isRequired
+}; 

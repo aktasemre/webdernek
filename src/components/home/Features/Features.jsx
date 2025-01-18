@@ -1,54 +1,99 @@
-import React from 'react';
+'use client';
+
 import Link from 'next/link';
-import { 
-  FaUsers, 
-  FaHandHoldingHeart, 
-  FaLandmark, 
-  FaNewspaper,
-  FaPhotoVideo,
-  FaBook,
-  FaPray,
-  FaComments,
-  FaQuoteLeft,
-  FaCalendarAlt
-} from 'react-icons/fa';
+import { FaComments, FaUsers, FaHandHoldingHeart, FaLandmark, FaNewspaper, FaImages, FaBook, FaPray, FaQuoteRight, FaCalendarAlt } from 'react-icons/fa';
 import styles from './Features.module.scss';
-import featuresData from '@/data/features.data.json';
 
-const Features = () => {
-  // Icon mapping object
-  const iconMap = {
-    FaUsers,
-    FaHandHoldingHeart,
-    FaLandmark,
-    FaNewspaper,
-    FaPhotoVideo,
-    FaBook,
-    FaPray,
-    FaComments,
-    FaQuoteLeft,
-    FaCalendarAlt
-  };
+const features = [
+  {
+    icon: <FaComments />,
+    title: 'Yerel Kelimeler',
+    description: 'Köyümüze özgü kelimeler ve anlamları',
+    link: '/culture/words',
+    color: '#3498db'
+  },
+  {
+    icon: <FaUsers />,
+    title: 'Üyelerimiz',
+    description: 'Güçlü üye ağımız ile birlikte çalışıyoruz',
+    link: '/about/members',
+    color: '#2980b9'
+  },
+  {
+    icon: <FaHandHoldingHeart />,
+    title: 'Sosyal Yardım',
+    description: 'İhtiyaç sahiplerine destek oluyoruz',
+    link: '/social-aid',
+    color: '#e74c3c'
+  },
+  {
+    icon: <FaLandmark />,
+    title: 'Kültürel Miras',
+    description: 'Köyümüzün zengin tarihini ve kültürünü yaşatıyoruz',
+    link: '/culture',
+    color: '#2C5F2D'
+  },
+  {
+    icon: <FaNewspaper />,
+    title: 'Haberler',
+    description: 'En güncel dernek ve köy haberlerimiz',
+    link: '/news',
+    color: '#3498db'
+  },
+  {
+    icon: <FaImages />,
+    title: 'Galeri',
+    description: 'Köyümüzden fotoğraflar ve videolar',
+    link: '/gallery',
+    color: '#9b59b6'
+  },
+  {
+    icon: <FaBook />,
+    title: 'Kültürümüz',
+    description: 'Köyümüzün kültürel değerleri ve gelenekleri',
+    link: '/culture/traditions',
+    color: '#f1c40f'
+  },
+  {
+    icon: <FaPray />,
+    title: 'Beddualar',
+    description: 'Yöresel beddualar ve anlamları',
+    link: '/culture/curses',
+    color: '#95a5a6'
+  },
+  {
+    icon: <FaQuoteRight />,
+    title: 'Atasözleri',
+    description: 'Yöresel atasözleri ve deyimler',
+    link: '/culture/proverbs',
+    color: '#34495e'
+  },
+  {
+    icon: <FaCalendarAlt />,
+    title: 'Etkinlikler',
+    description: 'Dernek ve köy etkinliklerimiz',
+    link: '/events',
+    color: '#27ae60'
+  }
+];
 
+export default function Features() {
   return (
     <section className={styles.features}>
       <div className={styles.container}>
-        <h2>Derneğimizin Çalışmaları</h2>
-        <div className={styles.featureGrid}>
-          {featuresData.features.map((feature, index) => {
-            const Icon = iconMap[feature.iconName];
-            return (
-              <Link href={feature.link} key={index} className={styles.featureCard}>
-                <Icon className={styles.icon} />
-                <h3>{feature.title}</h3>
-                <p>{feature.description}</p>
-              </Link>
-            );
-          })}
+        <h2>Değerlerimiz ve Hizmetlerimiz</h2>
+        <div className={styles.grid}>
+          {features.map((feature, index) => (
+            <Link href={feature.link} key={index} className={styles.feature}>
+              <div className={styles.iconWrapper} style={{ backgroundColor: feature.color }}>
+                {feature.icon}
+              </div>
+              <h3>{feature.title}</h3>
+              <p>{feature.description}</p>
+            </Link>
+          ))}
         </div>
       </div>
     </section>
   );
-};
-
-export default Features; 
+} 

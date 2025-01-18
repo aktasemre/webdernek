@@ -1,10 +1,11 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import styles from './page.module.scss';
 import Hero from '@/components/home/Hero/Hero';
+import ActionButtons from '@/components/home/ActionButtons/ActionButtons';
 import SideMenu from '@/components/common/SideMenu/SideMenu';
 import EventCalendar from '@/components/home/EventCalendar/EventCalendar';
 import NewsSlider from '@/components/home/NewsSlider/NewsSlider';
@@ -73,6 +74,7 @@ export default function Home() {
   return (
     <main className={styles.main}>
       <Hero />
+      <ActionButtons />
       
       <div className={styles.contentWrapper}>
         <div className={styles.sideMenuContainer}>

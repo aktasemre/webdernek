@@ -1,0 +1,179 @@
+.upcomingEvents {
+  padding: 4rem 0;
+  background-color: #f8f9fa;
+  
+  h2 {
+    text-align: center;
+    font-size: 2rem;
+    color: #2C5F2D;
+    margin-bottom: 2rem;
+    max-width: 1200px;
+    margin: 0 auto 2rem;
+    padding: 0 1rem;
+  }
+}
+
+.eventList {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.eventCard {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  
+  &:hover {
+    transform: translateX(10px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  }
+}
+
+.dateBox {
+  min-width: 100px;
+  padding: 1rem;
+  background: #2C5F2D;
+  border-radius: 8px;
+  text-align: center;
+  color: white;
+  
+  .day {
+    display: block;
+    font-size: 1.8rem;
+    font-weight: bold;
+    line-height: 1.2;
+    margin-bottom: 0.25rem;
+  }
+  
+  .month {
+    display: block;
+    font-size: 1rem;
+    text-transform: capitalize;
+    opacity: 0.9;
+  }
+}
+
+.content {
+  flex: 1;
+  
+  h3 {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+  }
+}
+
+.details {
+  display: flex;
+  gap: 2rem;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.detail {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  
+  svg {
+    color: #2C5F2D;
+    font-size: 1.1rem;
+  }
+}
+
+.katilButton {
+  padding: 0.8rem 1.5rem;
+  background: #2C5F2D;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  white-space: nowrap;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    background: darken(#2C5F2D, 10%);
+    transform: translateY(-2px);
+  }
+}
+
+.viewAllButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 2rem;
+  padding: 1rem 2rem;
+  background: white;
+  color: #2C5F2D;
+  text-decoration: none;
+  border: 2px solid #2C5F2D;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  
+  svg {
+    transition: transform 0.3s ease;
+  }
+  
+  &:hover {
+    background: #2C5F2D;
+    color: white;
+    
+    svg {
+      transform: translateX(5px);
+    }
+  }
+  
+  @media (max-width: 768px) {
+    padding: 0.8rem 1.5rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .upcomingEvents {
+    padding: 3rem 0;
+    
+    h2 {
+      font-size: 1.75rem;
+    }
+  }
+  
+  .eventCard {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.5rem;
+    
+    &:hover {
+      transform: translateY(-5px);
+    }
+  }
+  
+  .dateBox {
+    margin-bottom: 1rem;
+    min-width: 120px;
+  }
+  
+  .details {
+    justify-content: center;
+    gap: 1.5rem;
+  }
+  
+  .katilButton {
+    width: 100%;
+    margin-top: 1rem;
+    text-align: center;
+  }
+} 

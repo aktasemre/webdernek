@@ -1,9 +1,10 @@
-import AboutDistrictContent from '@/components/village/AboutDistrict/AboutDistrictContent';
+import AboutDistrictContent from '@/components/about/Village/AboutDistrict/AboutDistrictContent';
+import styles from './page.module.scss';
 
-export default async function AboutDistrict({ searchParams }) {
+export default function AboutDistrictPage() {
   return (
-    <main>
+    <div className={styles.container}>
       <AboutDistrictContent />
-    </main>
+    </div>
   );
 } 

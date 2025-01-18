@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import ProgressBar from '@/components/common/ProgressBar/ProgressBar';
 import styles from './ProjectCard.module.scss';
+import PropTypes from 'prop-types';
 
 const statusLabels = {
   ongoing: 'Devam Ediyor',
@@ -68,6 +69,20 @@ const ProjectCard = ({ project }) => {
       </div>
     </div>
   );
+};
+
+ProjectCard.propTypes = {
+  project: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    title: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    status: PropTypes.string.isRequired,
+    image: PropTypes.string,
+    startDate: PropTypes.string,
+    endDate: PropTypes.string,
+    budget: PropTypes.string,
+    progress: PropTypes.number
+  }).isRequired
 };
 
 export default ProjectCard; 

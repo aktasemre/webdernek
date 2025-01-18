@@ -1,5 +1,6 @@
 import ProjectDetail from '@/components/projects/ProjectDetail/ProjectDetail';
 import projectsData from '@/data/projects.data.json';
+import PropTypes from 'prop-types';
 
 export function generateStaticParams() {
   return projectsData.projects.map((project) => ({
@@ -35,4 +36,10 @@ export default function ProjectDetailPage({ params }) {
       <ProjectDetail project={project} />
     </main>
   );
-} 
+}
+
+ProjectDetailPage.propTypes = {
+  params: PropTypes.shape({
+    id: PropTypes.string.isRequired
+  }).isRequired
+}; 

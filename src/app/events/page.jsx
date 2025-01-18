@@ -1,79 +1,107 @@
-import { FaCalendarAlt, FaClock, FaMapMarkerAlt } from 'react-icons/fa';
-import Link from 'next/link';
+'use client';
 
-export const metadata = {
-  title: 'Etkinlikler | Arslandede Köyü Derneği',
-  description: 'Arslandede Köyü Derneği etkinlik takvimi. Yaklaşan etkinlikler ve detayları.',
-  keywords: ['etkinlikler', 'takvim', 'köy etkinlikleri', 'şenlikler', 'toplantılar'],
-};
-
-// Örnek etkinlik verileri
-const events = [
-  {
-    id: 1,
-    title: 'Geleneksel Köy Şenliği',
-    date: '20 Haziran 2024',
-    time: '10:00',
-    location: 'Arslandede Köyü Meydanı',
-    description: 'Her yıl düzenlediğimiz geleneksel köy şenliğimize tüm köylülerimiz davetlidir.',
-    image: '/images/events/senlik.jpg',
-  },
-  {
-    id: 2,
-    title: 'Dernek Genel Kurul Toplantısı',
-    date: '15 Temmuz 2024',
-    time: '14:00',
-    location: 'Dernek Binası',
-    description: 'Derneğimizin yıllık genel kurul toplantısı yapılacaktır. Tüm üyelerimizin katılımını bekliyoruz.',
-    image: '/images/events/toplanti.jpg',
-  },
-  // Daha fazla etkinlik eklenebilir
-];
+import { useState } from 'react';
+import Image from 'next/image';
+import { FaMapMarkerAlt, FaClock, FaCalendarAlt } from 'react-icons/fa';
+import eventsData from '@/data/events.data.json';
+import styles from './events.module.scss';
 
 export default function EventsPage() {
-  return (
-    <main className="min-h-screen p-4 md:p-8 bg-gray-50">
-      <div className="max-w-6xl mx-auto">
-        <h1 className="text-4xl font-bold text-center text-gray-800 mb-8">Etkinlikler</h1>
+  const [filter, setFilter] = useState('all');
+  const events = eventsData.events;
 
-        <div className="grid md:grid-cols-2 gap-8">
-          {events.map((event) => (
-            <div key={event.id} className="bg-white rounded-lg shadow-md overflow-hidden">
-              <div className="relative h-48">
-                <img
-                  src={event.image}
-                  alt={event.title}
-                  className="absolute inset-0 w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent"></div>
-                <div className="absolute bottom-0 left-0 p-4 text-white">
-                  <h2 className="text-2xl font-semibold">{event.title}</h2>
-                </div>
-              </div>
-              <div className="p-4">
-                <div className="mb-4">
-                  <div className="flex items-center gap-2 text-gray-600 mb-1">
-                    <FaCalendarAlt />
-                    <span>{event.date}</span>
-                  </div>
-                  <div className="flex items-center gap-2 text-gray-600 mb-1">
-                    <FaClock />
-                    <span>{event.time}</span>
-                  </div>
-                  <div className="flex items-center gap-2 text-gray-600">
-                    <FaMapMarkerAlt />
-                    <span>{event.location}</span>
-                  </div>
-                </div>
-                <p className="text-gray-700 mb-4">{event.description}</p>
-                <Link href={`/events/${event.id}`} className="text-blue-600 hover:underline">
-                  Etkinlik Detayları
-                </Link>
-              </div>
-            </div>
-          ))}
-        </div>
+  const filteredEvents = filter === 'all' 
+    ? events 
+    : events.filter(event => event.type === filter);
+
+  const formatDate = (dateStr) => {
+    const date = new Date(dateStr);
+    return date.toLocaleDateString('tr-TR', {
+      day: 'numeric',
+      month: 'long',
+      year: 'numeric'
+    });
+  };
+
+  return (
+    <div className={styles.container}>
+      <header className={styles.header}>
+        <h1>Etkinlikler</h1>
+        <p>Derneğimizin düzenlediği tüm etkinlikleri buradan takip edebilirsiniz.</p>
+      </header>
+
+      <div className={styles.filters}>
+        <button 
+          className={`${styles.filterButton} ${filter === 'all' ? styles.active : ''}`}
+          onClick={() => setFilter('all')}
+        >
+          Tümü
+        </button>
+        <button 
+          className={`${styles.filterButton} ${filter === 'meeting' ? styles.active : ''}`}
+          onClick={() => setFilter('meeting')}
+        >
+          Toplantılar
+        </button>
+        <button 
+          className={`${styles.filterButton} ${filter === 'festival' ? styles.active : ''}`}
+          onClick={() => setFilter('festival')}
+        >
+          Festivaller
+        </button>
+        <button 
+          className={`${styles.filterButton} ${filter === 'dinner' ? styles.active : ''}`}
+          onClick={() => setFilter('dinner')}
+        >
+          Yemekler
+        </button>
       </div>
-    </main>
+
+      <div className={styles.eventGrid}>
+        {filteredEvents.map((event) => (
+          <div key={event.id} className={styles.eventCard}>
+            <div className={styles.imageContainer}>
+              <Image
+                src={event.image}
+                alt={event.title}
+                width={400}
+                height={250}
+                className={styles.image}
+              />
+              {event.isUpcoming && (
+                <span className={styles.upcomingBadge}>Yaklaşan Etkinlik</span>
+              )}
+            </div>
+            <div className={styles.content}>
+              <h3>{event.title}</h3>
+              <p className={styles.description}>{event.description}</p>
+              <div className={styles.details}>
+                <div className={styles.detail}>
+                  <FaCalendarAlt />
+                  <span>{formatDate(event.date)}</span>
+                </div>
+                <div className={styles.detail}>
+                  <FaClock />
+                  <span>{event.time}</span>
+                </div>
+                <div className={styles.detail}>
+                  <FaMapMarkerAlt />
+                  <span>{event.location}</span>
+                </div>
+              </div>
+              <button className={styles.joinButton}>
+                Katıl
+              </button>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {filteredEvents.length === 0 && (
+        <div className={styles.noEvents}>
+          <p>Bu kategoride etkinlik bulunmamaktadır.</p>
+        </div>
+      )}
+    </div>
   );
 } 

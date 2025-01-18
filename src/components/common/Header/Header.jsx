@@ -9,21 +9,15 @@ import {
   FaBars, 
   FaTimes, 
   FaSearch,
-  FaHome,
-  FaHistory,
-  FaMapMarkerAlt,
-  FaUsers,
-  FaIndustry,
-  FaGraduationCap,
-  FaLandmark,
-  FaChevronDown
+  FaChevronDown,
+  FaMapMarkerAlt
 } from 'react-icons/fa';
 import styles from './Header.module.scss';
 import iletisimData from '@/data/iletisim.data.json';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [showSearch, setShowSearch] = useState(false);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [isScrolled, setIsScrolled] = useState(false);
   const searchRef = useRef(null);
@@ -54,7 +48,7 @@ const Header = () => {
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (searchRef.current && !searchRef.current.contains(event.target)) {
-        setShowSearch(false);
+        setIsSearchOpen(false);
       }
     };
 
@@ -73,14 +67,14 @@ const Header = () => {
   };
 
   const toggleSearch = () => {
-    setShowSearch(!showSearch);
+    setIsSearchOpen(!isSearchOpen);
   };
 
   const handleSearch = (e) => {
     e.preventDefault();
     if (searchQuery.trim()) {
       router.push(`/search?q=${encodeURIComponent(searchQuery.trim())}`);
-      setShowSearch(false);
+      setIsSearchOpen(false);
       setSearchQuery('');
     }
   };
@@ -189,7 +183,7 @@ const Header = () => {
               >
                 <FaSearch />
               </button>
-              {showSearch && (
+              {isSearchOpen && (
                 <div className={styles.searchBox}>
                   <input
                     type="text"

@@ -2,7 +2,6 @@
 
 import { useState } from 'react';
 import styles from './MembersContent.module.scss';
-import BackButton from '@/components/common/BackButton/BackButton';
 
 const memberCategories = [
   {
@@ -49,7 +48,7 @@ const membershipInfo = {
   ]
 };
 
-const MembersContent = () => {
+export default function MembersContent() {
   const [activeTab, setActiveTab] = useState('requirements');
 
   return (
@@ -138,6 +137,4 @@ const MembersContent = () => {
       </div>
     </div>
   );
-};
-
-export default MembersContent; 
+} 

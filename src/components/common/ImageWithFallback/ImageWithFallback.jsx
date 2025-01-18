@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
+import PropTypes from 'prop-types';
 
 export default function ImageWithFallback({
   src,
@@ -33,4 +34,13 @@ export default function ImageWithFallback({
       {...props}
     />
   );
-} 
+}
+
+ImageWithFallback.propTypes = {
+  src: PropTypes.string.isRequired,
+  alt: PropTypes.string.isRequired,
+  width: PropTypes.number.isRequired,
+  height: PropTypes.number.isRequired,
+  className: PropTypes.string,
+  priority: PropTypes.bool
+}; 

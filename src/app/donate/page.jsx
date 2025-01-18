@@ -1,28 +1,20 @@
+'use client';
+
+import Image from 'next/image';
 import DonationCard from '@/components/donate/DonationCard/DonationCard';
 import { donationData } from '@/data/donation.data';
-import styles from './page.module.scss';
-import Image from 'next/image';
-
-export const metadata = {
-  title: 'Bağış Yap | Arslandede Köyü Derneği',
-  description: 'Arslandede Köyü Derneği bağış sayfası. Ağaçlandırma, ramazan kumanyası, eğitim bursu ve cami yardımları için bağış yapabilirsiniz.',
-  keywords: ['bağış', 'yardım', 'ağaçlandırma', 'kumanya', 'eğitim bursu', 'cami yardımı'],
-};
+import styles from './donate.module.scss';
 
 const DonatePage = () => {
   return (
     <main className={styles.donatePage}>
       <div className={styles.container}>
-        <div className={styles.header}>
-          <h1>Bağış Yap</h1>
-          <p>
-            Köyümüzün gelişimi ve ihtiyaçları için başlattığımız kampanyalara destek olabilirsiniz.
-            Tüm bağışlarınız derneğimiz tarafından kayıt altına alınmakta ve amacına uygun olarak kullanılmaktadır.
-          </p>
-        </div>
+        <header className={styles.header}>
+          <h1>Bağış Yapabileceğiniz Hesaplar</h1>
+          <p>Derneğimize yapacağınız bağışlar için aşağıdaki banka hesaplarını kullanabilirsiniz.</p>
+        </header>
 
         <div className={styles.bankAccounts}>
-          <h2>Banka Hesaplarımız</h2>
           <div className={styles.accountCards}>
             {donationData.bankAccounts.map((account, index) => (
               <DonationCard key={index} bankAccount={account} />
@@ -37,15 +29,11 @@ const DonatePage = () => {
               <div key={index} className={styles.campaignCard}>
                 <div className={styles.imageContainer}>
                   <Image 
-                    src={campaign.image}
+                    src={campaign.image} 
                     alt={campaign.title}
-                    width={300}
+                    width={400}
                     height={200}
-                    style={{
-                      width: '100%',
-                      height: '100%',
-                      objectFit: 'cover'
-                    }}
+                    className={styles.image}
                   />
                 </div>
                 <div className={styles.content}>

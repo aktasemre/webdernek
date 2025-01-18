@@ -1,5 +1,3 @@
-import Image from 'next/image';
-import { FaHistory, FaUsers, FaStar, FaAward } from 'react-icons/fa';
 import styles from './history.module.scss';
 import BackButton from '@/components/common/BackButton/BackButton';
 

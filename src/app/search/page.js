@@ -1,6 +1,7 @@
 'use client';
 
 import { Suspense } from 'react';
+import PropTypes from 'prop-types';
 
 // Arama formu komponenti (client component)
 function SearchForm() {
@@ -49,4 +50,10 @@ export default function SearchPage({ searchParams }) {
       </div>
     </div>
   );
-} 
+}
+
+SearchPage.propTypes = {
+  searchParams: PropTypes.shape({
+    q: PropTypes.string
+  }).isRequired
+}; 

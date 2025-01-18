@@ -1,6 +1,6 @@
 'use client';
 
-import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaClock } from 'react-icons/fa';
+import { FaMapMarkerAlt, FaPhone, FaEnvelope } from 'react-icons/fa';
 import styles from './ContactInfo.module.scss';
 
 const ContactInfo = () => {
