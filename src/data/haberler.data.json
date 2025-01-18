@@ -35,7 +35,7 @@
       "title": "Geleneksel Köy Pikniğimiz Yaklaşıyor",
       "summary": "Her yıl düzenlediğimiz geleneksel köy pikniğimizin tarihi belli oldu.",
       "content": "<p>Geleneksel köy pikniğimiz bu yıl 15 Temmuz 2024 tarihinde düzenlenecek. Tüm köylülerimiz ve dernek üyelerimiz davetlidir.</p><p>Piknik programımızda:</p><ul><li>Köy yemekleri</li><li>Çocuklar için oyunlar</li><li>Müzik ve eğlence</li><li>Sohbet ve hasret giderme</li></ul><p>yer alacaktır.</p>",
-      "image": "/images/news/piknik.webpg",
+      "image": "/images/news/piknik.webp",
       "category": "duyuru",
       "date": "2024-01-05",
       "author": "Etkinlik Komitesi",
@@ -100,7 +100,7 @@
       "category": "duyuru",
       "date": "2024-02-10",
       "author": "Gençlik Komitesi",
-      "tags": ["gençlik", "buluşma", "ayısoya"],
+      "tags": ["gençlik", "buluşma", "ayasofya"],
       "featured": false
     },
     {

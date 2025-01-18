@@ -1,7 +1,7 @@
 import React from 'react';
 import ProjectHero from '@/components/projects/ProjectHero/ProjectHero';
 import ProjectList from '@/components/projects/ProjectList/ProjectList';
-import projectsData from '@/data/projects.data.json';
+import projectsData from '@/data/projeler.data.json';
 import styles from './page.module.scss';
 
 export const metadata = {

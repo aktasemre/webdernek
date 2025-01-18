@@ -1,11 +1,52 @@
 {
-  "extends": "next/core-web-vitals",
+  "extends": [
+    "next/core-web-vitals",
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
+    "plugin:jsx-a11y/recommended"
+  ],
+  "plugins": [
+    "react",
+    "react-hooks",
+    "jsx-a11y"
+  ],
   "rules": {
-    "react/no-unescaped-entities": "off",
-    "react/prop-types": "error",
-    "no-unused-vars": "warn",
+    "react/react-in-jsx-scope": "off",
+    "react/prop-types": "warn",
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
-    "@next/next/no-img-element": "warn"
+    "jsx-a11y/anchor-is-valid": [
+      "error",
+      {
+        "components": ["Link"],
+        "specialLink": ["hrefLeft", "hrefRight"],
+        "aspects": ["invalidHref", "preferButton"]
+      }
+    ],
+    "no-console": "warn",
+    "no-unused-vars": "warn",
+    "no-undef": "error",
+    "semi": ["error", "always"],
+    "quotes": ["error", "single"],
+    "indent": ["error", 2],
+    "comma-dangle": ["error", "always-multiline"],
+    "object-curly-spacing": ["error", "always"]
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 2020,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
   }
 }

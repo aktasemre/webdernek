@@ -3,6 +3,7 @@
     {
       "id": "infrastructure",
       "title": "Altyapı Projeleri",
+      "slug": "altyapi-projeleri",
       "items": [
         "Yol ve Kaldırım Çalışmaları",
         "Su Şebekesi İyileştirme",
@@ -13,6 +14,7 @@
     {
       "id": "social",
       "title": "Sosyal Projeler",
+      "slug": "sosyal-projeler",
       "items": [
         "Köy Konağı Yenileme",
         "Çocuk Parkı Yapımı",
@@ -23,6 +25,7 @@
     {
       "id": "agriculture",
       "title": "Tarım ve Hayvancılık",
+      "slug": "tarim-ve-hayvancilik",
       "items": [
         "Modern Sulama Sistemleri",
         "Sera Projeleri",
@@ -33,6 +36,7 @@
     {
       "id": "cultural",
       "title": "Kültürel Projeler",
+      "slug": "kulturel-projeler",
       "items": [
         "Tarihi Yapı Restorasyonu",
         "Kültür Evi",
@@ -45,61 +49,62 @@
     {
       "id": 1,
       "title": "Köy Meydanı Yenileme",
+      "slug": "koy-meydani-yenileme",
       "description": "Modern ve ferah bir köy meydanı için kapsamlı yenileme çalışması. Yeşil alanlar, oturma bankları ve çocuk parkı.",
-      "status": "ongoing",
+      "status": "devam-ediyor",
       "category": "infrastructure",
       "image": "/images/projects/meydan.jpg",
-      "startDate": "Ocak 2024",
-      "endDate": "Haziran 2024",
-      "budget": "1.5M TL",
+      "startDate": "2024-01-01",
+      "endDate": "2024-06-30",
+      "budget": 1500000,
       "progress": 35,
       "details": {
-        "location": "Köy Merkezi",
-        "area": "2500m²",
-        "features": [
+        "konum": "Köy Merkezi",
+        "alan": "2500m²",
+        "ozellikler": [
           "Yeşil Alan: 1000m²",
           "Oturma Alanları: 20 Bank",
           "Çocuk Parkı: 200m²",
           "Aydınlatma: 30 LED Direk"
         ],
-        "team": [
+        "ekip": [
           {
-            "name": "Ahmet Yılmaz",
-            "role": "Proje Yöneticisi"
+            "isim": "Ahmet Yılmaz",
+            "gorev": "Proje Yöneticisi"
           },
           {
-            "name": "Mehmet Demir",
-            "role": "Mimar"
+            "isim": "Mehmet Demir",
+            "gorev": "Mimar"
           },
           {
-            "name": "Ayşe Kaya",
-            "role": "Peyzaj Mimarı"
+            "isim": "Ayşe Kaya",
+            "gorev": "Peyzaj Mimarı"
           }
         ],
-        "timeline": [
+        "zaman_cizelgesi": [
           {
-            "date": "Ocak 2024",
-            "event": "Proje Başlangıcı"
+            "tarih": "2024-01-01",
+            "etkinlik": "Proje Başlangıcı"
           },
           {
-            "date": "Şubat 2024",
-            "event": "Zemin Hazırlığı"
+            "tarih": "2024-02-01",
+            "etkinlik": "Zemin Hazırlığı"
           },
           {
-            "date": "Mart 2024",
-            "event": "Altyapı Çalışmaları"
+            "tarih": "2024-03-01",
+            "etkinlik": "Altyapı Çalışmaları"
           },
           {
-            "date": "Nisan 2024",
-            "event": "Peyzaj Düzenlemesi"
+            "tarih": "2024-04-01",
+            "etkinlik": "Peyzaj Düzenlemesi"
           },
           {
-            "date": "Mayıs 2024",
-            "event": "Mobilya Yerleşimi"
+            "tarih": "2024-05-01",
+            "etkinlik": "Mobilya Yerleşimi"
           },
           {
-            "date": "Haziran 2024",
-            "event": "Proje Tamamlanması"
+            "tarih": "2024-06-30",
+            "etkinlik": "Proje Tamamlanması"
           }
         ]
       }

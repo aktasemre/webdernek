@@ -4,7 +4,8 @@ import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { FaBars, FaTimes } from 'react-icons/fa';
-import styles from './Header.module.scss';
+import { useMediaQuery } from 'react-responsive';
+
 
 const menuItems = [
   { title: 'Ana Sayfa', path: '/' },
@@ -28,6 +29,7 @@ const menuItems = [
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [activeSubmenu, setActiveSubmenu] = useState(null);
+  const isMobile = useMediaQuery({ maxWidth: 768 });
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -39,9 +41,9 @@ export default function Header() {
   };
 
   return (
-    <header className={styles.header}>
-      <div className={styles.container}>
-        <Link href="/" className={styles.logo}>
+    <header className="header">
+      <div className="container">
+        <Link href="/" className="logo">
           <Image
             src="/images/logo.png"
             alt="Arslandede Köyü Derneği"
@@ -49,44 +51,9 @@ export default function Header() {
             height={50}
             priority
           />
-          <span>Arslandede Köyü Derneği</span>
+   
         </Link>
 
-        <button className={styles.menuButton} onClick={toggleMenu}>
-          {isOpen ? <FaTimes /> : <FaBars />}
-        </button>
-
-        <nav className={`${styles.nav} ${isOpen ? styles.open : ''}`}>
-          <ul className={styles.menu}>
-            {menuItems.map((item, index) => (
-              <li key={index} className={item.submenu ? styles.hasSubmenu : ''}>
-                {item.submenu ? (
-                  <>
-                    <button
-                      onClick={() => toggleSubmenu(index)}
-                      className={activeSubmenu === index ? styles.active : ''}
-                    >
-                      {item.title}
-                    </button>
-                    <ul className={`${styles.submenu} ${activeSubmenu === index ? styles.active : ''}`}>
-                      {item.submenu.map((subItem, subIndex) => (
-                        <li key={subIndex}>
-                          <Link href={subItem.path} onClick={toggleMenu}>
-                            {subItem.title}
-                          </Link>
-                        </li>
-                      ))}
-                    </ul>
-                  </>
-                ) : (
-                  <Link href={item.path} onClick={toggleMenu}>
-                    {item.title}
-                  </Link>
-                )}
-              </li>
-            ))}
-          </ul>
-        </nav>
       </div>
     </header>
   );

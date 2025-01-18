@@ -1,5 +1,5 @@
 import styles from './ProjectHero.module.scss';
-import projectsData from '@/data/projects.data.json';
+import projectsData from '@/data/projeler.data.json';
 
 const ProjectHero = () => {
   const stats = {

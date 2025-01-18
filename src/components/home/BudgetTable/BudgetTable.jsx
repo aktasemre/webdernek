@@ -8,9 +8,10 @@ export default function BudgetTable() {
       <h2>Dernek Bütçesi</h2>
       <div className={styles.tableWrapper}>
         <iframe
-          src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQXbZvnYQGGQi_fjbXA9_tUzVYWCpXAp5S9N5_Z_tuxW7qnK3TjKXGpEJ_xcJ_jtg/pubhtml?widget=true&amp;headers=false"
+          title="Dernek Bütçe Tablosu"
+          src="https://docs.google.com/spreadsheets/d/e/your-spreadsheet-id/pubhtml?widget=true&amp;headers=false"
           width="100%"
-          height="500"
+          height="400"
           frameBorder="0"
           scrolling="no"
         ></iframe>

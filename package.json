@@ -1,35 +1,62 @@
 {
-  "name": "web_sdernek",
-  "version": "0.1.0",
+  "name": "arslandede-koyu-dernegi",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "test": "jest"
+    "lint:fix": "next lint --fix",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "prepare": "husky install"
   },
   "dependencies": {
-    "@ducanh2912/next-pwa": "^10.2.9",
-    "next": "^14.0.0",
-    "next-pwa": "^5.6.0",
-    "prop-types": "^15.8.1",
-    "react": "^18",
-    "react-dom": "^18",
-    "react-icons": "^4.11.0",
-    "react-lazy-load-image-component": "^1.6.3",
-    "react-masonry-css": "^1.0.16",
-    "react-swipeable": "^7.0.2",
-    "react-zoom-pan-pinch": "^3.6.1",
-    "sass": "^1.69.5",
-    "yet-another-react-lightbox": "^3.21.7"
+    "@headlessui/react": "^1.7.18",
+    "@heroicons/react": "^2.1.1",
+    "next": "14.1.0",
+    "next-themes": "^0.2.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-icons": "^5.0.1",
+    "react-responsive": "^10.0.0"
   },
   "devDependencies": {
-    "@testing-library/jest-dom": "^6.6.3",
-    "@testing-library/react": "^14.3.1",
-    "eslint": "^8.57.1",
-    "eslint-config-next": "^14.2.23",
+    "@tailwindcss/aspect-ratio": "^0.4.2",
+    "@tailwindcss/forms": "^0.5.7",
+    "@tailwindcss/typography": "^0.5.10",
+    "@testing-library/jest-dom": "^6.4.2",
+    "@testing-library/react": "^14.2.1",
+    "@testing-library/user-event": "^14.5.2",
+    "autoprefixer": "^10.4.20",
+    "critters": "^0.0.23",
+    "cssnano": "^6.0.3",
+    "eslint": "^8.56.0",
+    "eslint-config-next": "14.1.0",
+    "eslint-plugin-jsx-a11y": "^6.8.0",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "husky": "^9.0.11",
     "jest": "^29.7.0",
-    "jest-environment-jsdom": "^29.7.0"
+    "jest-environment-jsdom": "^29.7.0",
+    "lint-staged": "^15.2.2",
+    "postcss": "^8.5.1",
+    "postcss-import": "^16.1.0",
+    "postcss-preset-env": "^9.3.0",
+    "prettier": "^3.2.5",
+    "sass": "^1.83.4",
+    "tailwindcss": "^3.4.17"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{json,md}": [
+      "prettier --write"
+    ]
   }
 }

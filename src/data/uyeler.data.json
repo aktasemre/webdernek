@@ -1,0 +1,10 @@
+[
+  {
+    "id": 1,
+    "ad": "Ahmet Yılmaz",
+    "gorev": "Dernek Başkanı",
+    "telefon": "+90 555 123 4567",
+    "email": "ahmet.yilmaz@example.com",
+    "fotograf": "/images/members/ahmet-yilmaz.jpg"
+  }
+] 

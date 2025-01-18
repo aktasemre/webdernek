@@ -1,0 +1,11 @@
+[
+  {
+    "id": 1,
+    "baslik": "Okul Tadilatı",
+    "aciklama": "Köy okulumuzun tadilatı için bağış kampanyası",
+    "hedef_miktar": 100000,
+    "toplanan_miktar": 75000,
+    "son_tarih": "2024-12-31",
+    "resim": "/images/donations/okul-tadilat.jpg"
+  }
+] 

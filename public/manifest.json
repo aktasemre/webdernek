@@ -1,12 +1,11 @@
 {
-  "name": "Arslandede Köyü",
+  "name": "Arslandede Köyü Derneği",
   "short_name": "Arslandede",
-  "description": "Arslandede Köyü Resmi Web Sitesi",
+  "description": "Arslandede Köyü Derneği resmi web sitesi",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#2C5F2D",
-  "prefer_related_applications": false,
   "icons": [
     {
       "src": "/icons/icon-192.png",
@@ -20,5 +19,7 @@
       "type": "image/png",
       "purpose": "any maskable"
     }
-  ]
+  ],
+  "orientation": "portrait",
+  "prefer_related_applications": false
 } 

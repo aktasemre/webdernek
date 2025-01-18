@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { FaClock, FaMapMarkerAlt, FaArrowRight } from 'react-icons/fa';
 import eventsData from '@/data/events.data.json';
 import styles from './UpcomingEvents.module.scss';
+import PropTypes from 'prop-types';
 
 export default function UpcomingEvents() {
   const upcomingEvents = eventsData.events
@@ -60,4 +61,10 @@ export default function UpcomingEvents() {
       </div>
     </section>
   );
-} 
+}
+
+UpcomingEvents.propTypes = {
+  title: PropTypes.string.isRequired,
+  date: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+}; 

@@ -1,23 +1,71 @@
-import './globals.scss';
-import Header from '@/components/common/Header/Header';
-import Footer from '@/components/common/Footer/Footer';
-import BottomNav from '@/components/layout/BottomNav/BottomNav';
-import PropTypes from 'prop-types';
+import { Inter } from 'next/font/google'
+import './globals.css'
+import Header from '@/components/common/Header/Header'
+import Footer from '@/components/common/Footer/Footer'
+import { Providers } from '@/providers'
 
-export const viewport = {
-  width: 'device-width',
-  initialScale: 1,
-  themeColor: '#2C5F2D'
-};
+const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
-  metadataBase: new URL('https://arslandededernegi.org'),
   title: {
-    template: '%s | Arslandede Köyü Derneği',
-    default: 'Arslandede Köyü Derneği'
+    default: 'Arslandede Köyü Derneği',
+    template: '%s | Arslandede Köyü Derneği'
   },
-  description: 'Arslandede Köyü Derneği resmi web sitesi - Köyümüzün gelişimi için çalışıyoruz',
-  keywords: ['arslandede köyü', 'köy derneği', 'bayburt', 'yardımlaşma', 'dayanışma'],
+  description: 'Arslandede Köyü Derneği resmi web sitesi. Köyümüz hakkında bilgiler, haberler, etkinlikler ve daha fazlası.',
+  keywords: ['arslandede köyü', 'dernek', 'köy', 'yardımlaşma', 'dayanışma', 'kültür', 'gelenek', 'görenek'],
+  authors: [{ name: 'Arslandede Köyü Derneği' }],
+  creator: 'Arslandede Köyü Derneği',
+  publisher: 'Arslandede Köyü Derneği',
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  metadataBase: new URL('https://arslandede.org.tr'),
+  alternates: {
+    canonical: '/',
+  },
+  openGraph: {
+    title: 'Arslandede Köyü Derneği',
+    description: 'Arslandede Köyü Derneği resmi web sitesi. Köyümüz hakkında bilgiler, haberler, etkinlikler ve daha fazlası.',
+    url: 'https://arslandede.org.tr',
+    siteName: 'Arslandede Köyü Derneği',
+    images: [
+      {
+        url: '/images/logo.jpg',
+        width: 800,
+        height: 600,
+        alt: 'Arslandede Köyü Derneği Logo',
+      },
+    ],
+    locale: 'tr_TR',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Arslandede Köyü Derneği',
+    description: 'Arslandede Köyü Derneği resmi web sitesi. Köyümüz hakkında bilgiler, haberler, etkinlikler ve daha fazlası.',
+    images: ['/images/logo.jpg'],
+  },
+  manifest: '/manifest.json',
+  icons: {
+    icon: '/icons/icon-192.png',
+    shortcut: '/icons/icon-192.png',
+    apple: '/icons/icon-192.png',
+    other: {
+      rel: 'apple-touch-icon-precomposed',
+      url: '/icons/icon-192.png',
+    },
+  },
+  viewport: {
+    width: 'device-width',
+    initialScale: 1,
+    maximumScale: 1,
+  },
+  verification: {
+    google: 'google-site-verification-code',
+    yandex: 'yandex-verification-code',
+  },
   robots: {
     index: true,
     follow: true,
@@ -29,52 +77,23 @@ export const metadata = {
       'max-snippet': -1,
     },
   },
-  verification: {
-    google: 'google-site-verification-code',
-  },
-  alternates: {
-    canonical: 'https://arslandededernegi.org',
-  }
-};
+}
 
 export default function RootLayout({ children }) {
   return (
     <html lang="tr">
       <head>
         <link rel="manifest" href="/manifest.json" />
-        <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-        <meta name="apple-mobile-web-app-title" content="Arslandede" />
+        <meta name="theme-color" content="#2C5F2D" />
         <link rel="apple-touch-icon" href="/icons/icon-192.png" />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              if ('serviceWorker' in navigator) {
-                window.addEventListener('load', function() {
-                  navigator.serviceWorker.register('/sw.js').then(
-                    function(registration) {
-                      console.log('ServiceWorker registration successful');
-                    },
-                    function(err) {
-                      console.log('ServiceWorker registration failed: ', err);
-                    }
-                  );
-                });
-              }
-            `
-          }}
-        />
       </head>
-      <body>
-        <Header />
-        {children}
-        <BottomNav/>
-        <Footer />
+      <body className={inter.className}>
+        <Providers>
+          <Header />
+          <main className="min-h-screen">{children}</main>
+          <Footer />
+        </Providers>
       </body>
     </html>
-  );
-}
-
-RootLayout.propTypes = {
-  children: PropTypes.node.isRequired
-}; 
+  )
+} 
