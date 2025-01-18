@@ -10,6 +10,7 @@ export const donationData = {
     }
   ],
   campaigns: [
+
     {
       title: "Ağaçlandırma Kampanyası",
       description: "Köyümüzün yeşil dokusunu korumak ve geliştirmek için başlattığımız ağaçlandırma kampanyasına destek olabilirsiniz.",
@@ -18,25 +19,36 @@ export const donationData = {
       currentAmount: 25000
     },
     {
-      title: "Ramazan Kumanyası",
-      description: "Ramazan ayında ihtiyaç sahibi ailelerimize kumanya desteği sağlıyoruz.",
+      id: 1,
+      title: "Dar Gelirli Ailelere Yardım Kampanyası",
+      description: "Dar gelirli ailelerimize destek olmak için başlattığımız yardım kampanyasına destek olabilirsiniz.",
       image: "/images/bagis_kampanya/kumanya.jpg",
-      targetAmount: 30000,
-      currentAmount: 15000
+      targetAmount: 50000,
+      currentAmount: 15000,
+      deadline: "2024-06-01",
+      status: "active"
     },
+    
     {
+      id: 3,
       title: "Eğitim Bursu",
       description: "Köyümüzün başarılı öğrencilerine eğitim bursu desteği sağlıyoruz.",
       image: "/images/bagis_kampanya/egitim.jpg",
       targetAmount: 100000,
-      currentAmount: 45000
+      currentAmount: 45000,
+      status: "active"
     },
-    {
-      title: "Cami Yardımı",
-      description: "Köyümüz camisinin bakım, onarım ve ihtiyaçları için yardımlarınızı bekliyoruz.",
-      image: "/images/cami1.jpg",
-      targetAmount: 75000,
-      currentAmount: 35000
-    }
+   {
+      id: 2,
+      title: "Mezarlık Yeri Alma Kampanyası",
+      description: "Köyümüz için mezarlık yeri almak amacıyla başlattığımız kampanyaya destek olabilirsiniz.",
+      image: "/images/bagis_kampanya/mezarlik.jpg",
+      targetAmount: 100000,
+      currentAmount: 35000,
+      deadline: "2024-08-01",
+      status: "active"
+    },
   ]
-}; 
+};
+
+export default donationData; 

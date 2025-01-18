@@ -1,7 +1,8 @@
 {
-  "/about/village/page": "app/about/village/page.js",
+  "/_not-found/page": "app/_not-found/page.js",
   "/page": "app/page.js",
   "/events/page": "app/events/page.js",
   "/donate/page": "app/donate/page.js",
-  "/news/[id]/page": "app/news/[id]/page.js"
+  "/news/[id]/page": "app/news/[id]/page.js",
+  "/news/page": "app/news/page.js"
 }

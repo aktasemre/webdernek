@@ -206,13 +206,13 @@ const Header = () => {
             </div>
 
             <a 
-              href={iletisimData.forms.professionInventory} 
+              href={iletisimData.butce} 
               target="_blank" 
               rel="noopener noreferrer" 
               className={styles.surveyButton} 
               onClick={closeMenu}
             >
-              <FaClipboardList /> Meslek Envanteri
+              <FaClipboardList /> Dernek butcesi
             </a>
           </div>
         </div>
