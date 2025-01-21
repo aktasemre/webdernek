@@ -69,11 +69,6 @@ export const metadata = {
       url: '/icons/icon-192.png',
     },
   },
-  viewport: {
-    width: 'device-width',
-    initialScale: 1,
-    maximumScale: 1,
-  },
   verification: {
     google: 'google-site-verification-code',
     yandex: 'yandex-verification-code',

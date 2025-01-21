@@ -33,7 +33,7 @@ export const donationData = {
       id: 3,
       title: 'Eğitim Bursu',
       description: 'Köyümüzün başarılı öğrencilerine eğitim bursu desteği sağlıyoruz.',
-      image: '/images/bagis_kampanya/egitim.jpg',
+      image: '/images/bagis_kampanya/egit.jpg',
       targetAmount: 100000,
       currentAmount: 45000,
       status: 'active',
