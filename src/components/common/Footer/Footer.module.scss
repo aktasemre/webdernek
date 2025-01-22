@@ -71,13 +71,37 @@
   }
 
   .bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 1rem;
+    margin-top: 2rem;
     text-align: center;
-    padding-top: 2rem;
-    border-top: 1px solid #333;
 
-    p {
-      color: #888;
-      font-size: 0.8rem;
+    .copyright {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      color: #cbd5e0;
+
+      p {
+        margin: 0;
+      }
+
+      .developer {
+        font-size: 0.875rem;
+        color: #a0aec0;
+      }
+
+      .developerLink {
+        color: #63b3ed;
+        text-decoration: none;
+        transition: color 0.2s;
+
+        &:hover {
+          color: #90cdf4;
+          text-decoration: underline;
+        }
+      }
     }
   }
 }

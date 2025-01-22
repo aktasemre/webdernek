@@ -2,11 +2,11 @@
 
 import Link from 'next/link';
 import { FaClock, FaMapMarkerAlt, FaArrowRight } from 'react-icons/fa';
+import PropTypes from 'prop-types';
 import eventsData from '@/data/events.data.json';
 import styles from './UpcomingEvents.module.scss';
-import PropTypes from 'prop-types';
 
-export default function UpcomingEvents() {
+const UpcomingEvents = () => {
   const upcomingEvents = eventsData.events.filter((event) => event.isUpcoming).slice(0, 3);
 
   const formatDate = (dateStr) => {
@@ -59,10 +59,23 @@ export default function UpcomingEvents() {
       </div>
     </section>
   );
-}
+};
 
 UpcomingEvents.propTypes = {
-  title: PropTypes.string.isRequired,
-  date: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
+  events: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      title: PropTypes.string.isRequired,
+      date: PropTypes.string.isRequired,
+      time: PropTypes.string.isRequired,
+      location: PropTypes.string.isRequired,
+      isUpcoming: PropTypes.bool.isRequired,
+    }),
+  ),
 };
+
+UpcomingEvents.defaultProps = {
+  events: [],
+};
+
+export default UpcomingEvents;

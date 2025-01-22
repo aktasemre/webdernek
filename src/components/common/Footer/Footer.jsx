@@ -65,7 +65,15 @@ const Footer = () => {
         </div>
 
         <div className={styles.bottom}>
-          <p>&copy; {new Date().getFullYear()} Arslandede Köyü Derneği. Tüm hakları saklıdır.</p>
+          <div className={styles.copyright}>
+            <p>&copy; {new Date().getFullYear()} Arslandede Köyü Derneği. Tüm hakları saklıdır.</p>
+            <p className={styles.developer}>
+              Web sitesi geliştirme ve teknik destek için:{' '}
+              <a href="mailto:aktasemre1988@gmail.com" className={styles.developerLink}>
+                Emre Aktaş
+              </a>
+            </p>
+          </div>
         </div>
       </div>
     </footer>

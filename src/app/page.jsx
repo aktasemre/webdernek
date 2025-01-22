@@ -1,6 +1,3 @@
-'use client';
-
-import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import styles from './page.module.scss';
@@ -12,64 +9,11 @@ import NewsSlider from '@/components/home/NewsSlider/NewsSlider';
 import Features from '@/components/home/Features/Features';
 import BottomNav from '@/components/layout/BottomNav/BottomNav';
 import iletisimData from '@/data/iletisim.data.json';
+import { getEtkinlikler, getHaberler } from '@/data';
 
-// Örnek etkinlik verileri
-const events = [
-  {
-    id: 1,
-    title: 'Dernek Toplantısı',
-    date: '2024-01-20',
-    time: '14:00',
-    location: 'Dernek Merkezi',
-    type: 'meeting',
-  },
-  {
-    id: 2,
-    title: 'Köy Festivali',
-    date: '2024-07-20',
-    time: '10:00',
-    location: 'Köy Meydanı',
-    type: 'festival',
-  },
-  {
-    id: 3,
-    title: 'İftar Yemeği',
-    date: '2024-03-15',
-    time: '18:30',
-    location: 'Köy Konağı',
-    type: 'social',
-  },
-];
-
-export default function Home() {
-  const [mounted, setMounted] = useState(false);
-  const [error, setError] = useState(null);
-
-  useEffect(() => {
-    try {
-      setMounted(true);
-    } catch (err) {
-      console.error('Error in mounting:', err);
-      setError(err.message);
-    }
-  }, []);
-
-  if (error) {
-    return (
-      <div style={{ padding: '2rem', textAlign: 'center' }}>
-        <h2>Bir hata oluştu</h2>
-        <p>{error}</p>
-      </div>
-    );
-  }
-
-  if (!mounted) {
-    return (
-      <div style={{ padding: '2rem', textAlign: 'center' }}>
-        <p>Sayfa yükleniyor...</p>
-      </div>
-    );
-  }
+export default async function Home() {
+  const etkinlikler = await getEtkinlikler();
+  const haberler = await getHaberler();
 
   return (
     <main className={styles.main}>
@@ -86,18 +30,18 @@ export default function Home() {
           <section className={styles.newsSliderSection}>
             <div className={styles.container}>
               <h2>Son Haberler</h2>
-              {mounted && <NewsSlider />}
+              <NewsSlider news={haberler} />
             </div>
           </section>
 
           {/* Features Section */}
-          {mounted && <Features />}
+          <Features />
 
           {/* Event Calendar Section */}
           <section className={styles.eventCalendarSection}>
             <div className={styles.container}>
               <h2>Yaklaşan Etkinlikler</h2>
-              {mounted && <EventCalendar events={events} />}
+              <EventCalendar events={etkinlikler} />
             </div>
           </section>
 

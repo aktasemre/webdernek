@@ -6,7 +6,7 @@ Allow: /
 Host: https://arslandede.org.tr
 
 # Sitemaps
-Sitemap: https://arslandede.org.tr/sitemap.xml
+Sitemap: https://arslandede.netlify.app/sitemap.xml
 
 # Disallow
 Disallow: /api/

@@ -16,12 +16,18 @@ const normalizeData = (data) => ({
   durum: data.status || data.durum,
 });
 
+// Genel veri getirme fonksiyonu
+const getData = (data, key = null) => {
+  const items = key ? data[key] : data;
+  return Array.isArray(items) ? items.map(normalizeData) : [];
+};
+
 // Veri getirme fonksiyonları
-export const getHaberler = () => haberlerData.haberler?.map(normalizeData) || [];
-export const getProjeler = () => projelerData.projects?.map(normalizeData) || [];
-export const getEtkinlikler = () => etkinliklerData?.map(normalizeData) || [];
-export const getIletisim = () => iletisimData || {};
-export const getDonations = () => donationData || [];
+export const getHaberler = () => getData(haberlerData, 'haberler');
+export const getProjeler = () => getData(projelerData, 'projects');
+export const getEtkinlikler = () => getData(etkinliklerData);
+export const getIletisim = () => iletisimData;
+export const getDonations = () => donationData;
 
 // Proje kategorileri
 export const getProjeKategorileri = () => projelerData.categories || [];

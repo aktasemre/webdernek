@@ -1,36 +1,40 @@
 'use client';
 
+import { FaCalendarAlt } from 'react-icons/fa';
 import styles from './EventCalendar.module.scss';
 import PropTypes from 'prop-types';
 
 const EventCalendar = ({ events = [] }) => {
+  const formatDate = (date) => {
+    return new Date(date).toLocaleDateString('tr-TR', {
+      day: 'numeric',
+      month: 'long',
+      year: 'numeric',
+    });
+  };
+
+  const formatTime = (time) => {
+    return time;
+  };
+
+  const sortedEvents = [...events].sort((a, b) => new Date(a.date) - new Date(b.date));
+
   return (
-    <section className={styles.eventCalendar}>
-      <div className={styles.container}>
-        <div className={styles.eventList}>
-          {events.map((event) => (
-            <div key={event.id} className={styles.eventCard}>
-              <div className={styles.dateBox}>
-                <span className={styles.date}>
-                  {event.date.includes('-')
-                    ? new Date(event.date).toLocaleDateString('tr-TR', {
-                        day: 'numeric',
-                        month: 'long',
-                      })
-                    : event.date}
-                </span>
-                <span className={styles.time}>{event.time}</span>
-              </div>
-              <div className={styles.details}>
-                <h3>{event.title}</h3>
-                <p>{event.description || event.location}</p>
-              </div>
-              <button className={styles.joinButton}>Katıl</button>
-            </div>
-          ))}
+    <div className={styles.calendar}>
+      {sortedEvents.map((event) => (
+        <div key={event.id} className={styles.event}>
+          <div className={styles.icon}>
+            <FaCalendarAlt />
+          </div>
+          <div className={styles.details}>
+            <h3>{event.title}</h3>
+            <p className={styles.date}>{formatDate(event.date)}</p>
+            <p className={styles.time}>{formatTime(event.time)}</p>
+            <p className={styles.location}>{event.location}</p>
+          </div>
         </div>
-      </div>
-    </section>
+      ))}
+    </div>
   );
 };
 

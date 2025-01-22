@@ -1,5 +1,6 @@
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
+import Script from 'next/script';
 import styles from './page.module.scss';
 import haberlerData from '@/data/haberler.data.json';
 import PropTypes from 'prop-types';
@@ -39,42 +40,71 @@ export default function NewsDetail({ params }) {
     notFound();
   }
 
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'NewsArticle',
+    headline: haber.title,
+    description: haber.summary,
+    image: haber.image,
+    datePublished: haber.date,
+    dateModified: haber.date,
+    author: {
+      '@type': 'Organization',
+      name: 'Arslandede Köyü Derneği',
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Arslandede Köyü Derneği',
+      logo: {
+        '@type': 'ImageObject',
+        url: '/images/logo.png',
+      },
+    },
+  };
+
   return (
-    <article className={styles.newsDetail}>
-      <div className={styles.container}>
-        {haber.image && (
-          <div className={styles.imageContainer}>
-            <Image
-              src={haber.image}
-              alt={haber.title}
-              width={800}
-              height={400}
-              className={styles.image}
-            />
+    <>
+      <Script
+        id="news-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <article className={styles.newsDetail}>
+        <div className={styles.container}>
+          {haber.image && (
+            <div className={styles.imageContainer}>
+              <Image
+                src={haber.image}
+                alt={haber.title}
+                width={800}
+                height={400}
+                className={styles.image}
+              />
+            </div>
+          )}
+
+          <h1>{haber.title}</h1>
+
+          <div className={styles.meta}>
+            <time dateTime={haber.date}>{new Date(haber.date).toLocaleDateString('tr-TR')}</time>
+            <span className={styles.category}>{haber.category}</span>
+            {haber.author && <span className={styles.author}>{haber.author}</span>}
           </div>
-        )}
 
-        <h1>{haber.title}</h1>
+          <div className={styles.content} dangerouslySetInnerHTML={{ __html: haber.content }} />
 
-        <div className={styles.meta}>
-          <time dateTime={haber.date}>{new Date(haber.date).toLocaleDateString('tr-TR')}</time>
-          <span className={styles.category}>{haber.category}</span>
-          {haber.author && <span className={styles.author}>{haber.author}</span>}
+          {haber.tags && haber.tags.length > 0 && (
+            <div className={styles.tags}>
+              {haber.tags.map((tag) => (
+                <span key={tag} className={styles.tag}>
+                  #{tag}
+                </span>
+              ))}
+            </div>
+          )}
         </div>
-
-        <div className={styles.content} dangerouslySetInnerHTML={{ __html: haber.content }} />
-
-        {haber.tags && haber.tags.length > 0 && (
-          <div className={styles.tags}>
-            {haber.tags.map((tag) => (
-              <span key={tag} className={styles.tag}>
-                #{tag}
-              </span>
-            ))}
-          </div>
-        )}
-      </div>
-    </article>
+      </article>
+    </>
   );
 }
 

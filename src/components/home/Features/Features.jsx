@@ -2,17 +2,20 @@
 
 import Link from 'next/link';
 import {
-  FaComments,
-  FaUsers,
-  FaHandHoldingHeart,
   FaLandmark,
-  FaNewspaper,
-  FaImages,
-  FaBook,
-  FaPray,
+  FaComments,
   FaQuoteRight,
-  FaCalendarAlt,
+  FaUsers,
+  FaRegCalendarAlt,
+  FaNewspaper,
+  FaImages
 } from 'react-icons/fa';
+import {
+  FaHandshakeSimple,
+  FaHeart,
+  FaPeopleGroup,
+  FaGraduationCap
+} from 'react-icons/fa6';
 import styles from './Features.module.scss';
 
 const features = [
@@ -38,13 +41,6 @@ const features = [
     color: '#34495e',
   },
   {
-    icon: <FaPray />,
-    title: 'Beddualar',
-    description: 'Yöresel beddualar ve anlamları',
-    link: '/culture/curses',
-    color: '#95a5a6',
-  },
-  {
     icon: <FaUsers />,
     title: 'Üyelerimiz',
     description: 'Güçlü üye ağımız ile birlikte çalışıyoruz',
@@ -52,14 +48,35 @@ const features = [
     color: '#2980b9',
   },
   {
-    icon: <FaHandHoldingHeart />,
-    title: 'Sosyal Yardım',
-    description: 'İhtiyaç sahiplerine destek oluyoruz',
-    link: '/social-aid',
+    icon: <FaHandshakeSimple />,
+    title: 'Dayanışma',
+    description: 'Köyümüz ve derneğimiz arasında güçlü bir dayanışma ruhu',
+    link: '/about',
+    color: '#27ae60',
+  },
+  {
+    icon: <FaHeart />,
+    title: 'Yardımlaşma',
+    description: 'İhtiyaç sahiplerine destek ve yardım faaliyetleri',
+    link: '/donation',
     color: '#e74c3c',
   },
   {
-    icon: <FaCalendarAlt />,
+    icon: <FaPeopleGroup />,
+    title: 'Birlik',
+    description: 'Köylülerimiz arasında birlik ve beraberlik',
+    link: '/about/board',
+    color: '#f39c12',
+  },
+  {
+    icon: <FaGraduationCap />,
+    title: 'Eğitim',
+    description: 'Gençlerimize eğitim desteği ve burs imkanları',
+    link: '/education',
+    color: '#8e44ad',
+  },
+  {
+    icon: <FaRegCalendarAlt />,
     title: 'Etkinlikler',
     description: 'Dernek ve köy etkinliklerimiz',
     link: '/events',
@@ -81,7 +98,7 @@ const features = [
   },
 ];
 
-export default function Features() {
+const Features = () => {
   return (
     <section className={styles.features}>
       <div className={styles.container}>
@@ -100,4 +117,6 @@ export default function Features() {
       </div>
     </section>
   );
-}
+};
+
+export default Features;

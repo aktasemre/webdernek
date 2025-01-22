@@ -3,54 +3,47 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { useMediaQuery } from 'react-responsive';
+import { FaBars } from 'react-icons/fa';
+import styles from './Header.module.scss';
 
 const menuItems = [
   { title: 'Ana Sayfa', path: '/' },
-  {
-    title: 'Hakkımızda',
-    path: '/about',
-    submenu: [
-      { title: 'Derneğimiz', path: '/about' },
-      { title: 'Köyümüz', path: '/about/village' },
-      { title: 'Üyelerimiz', path: '/about/members' },
-      { title: 'Yönetim Kurulu', path: '/about/board' },
-    ],
-  },
+  { title: 'Hakkımızda', path: '/about' },
+  { title: 'Projeler', path: '/projects' },
   { title: 'Haberler', path: '/news' },
-  { title: 'Etkinlikler', path: '/events' },
-  { title: 'Galeri', path: '/gallery' },
-  { title: 'Dernek Bütçesi', path: '/budget' },
-  { title: 'İletişim', path: '/contact' },
+  { title: 'İletişim', path: '/contact' }
 ];
 
-export default function Header() {
-  const [isOpen, setIsOpen] = useState(false);
-  const [activeSubmenu, setActiveSubmenu] = useState(null);
-  const isMobile = useMediaQuery({ maxWidth: 768 });
+const Header = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-    setActiveSubmenu(null);
-  };
-
-  const toggleSubmenu = (index) => {
-    setActiveSubmenu(activeSubmenu === index ? null : index);
+  const handleMenuToggle = () => {
+    setIsMenuOpen(!isMenuOpen);
   };
 
   return (
-    <header className="header">
-      <div className="container">
-        <Link href="/" className="logo">
-          <Image
-            src="/images/logo.png"
-            alt="Arslandede Köyü Derneği"
-            width={50}
-            height={50}
-            priority
-          />
+    <header className={styles.header}>
+      <div className={styles.container}>
+        <Link href="/" className={styles.logo}>
+          <Image src="/images/logo.png" alt="Logo" width={48} height={48} />
         </Link>
+
+        <nav className={`${styles.nav} ${isMenuOpen ? styles.active : ''}`}>
+          {menuItems.map((item, index) => (
+            <Link key={index} href={item.path} className={styles.menuItem}>
+              {item.title}
+            </Link>
+          ))}
+        </nav>
+
+        <div className={styles.mobileMenu}>
+          <button onClick={handleMenuToggle}>
+            <FaBars />
+          </button>
+        </div>
       </div>
     </header>
   );
-}
+};
+
+export default Header;

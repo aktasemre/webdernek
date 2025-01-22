@@ -1,24 +1,26 @@
-import ProjectDetail from '@/components/projects/ProjectDetail/ProjectDetail';
-import projelerData from '@/data/projeler.data.json';
+import { getProjeler } from '@/data';
 import PropTypes from 'prop-types';
 
 export async function generateStaticParams() {
-  if (!projelerData?.projeler) {
+  const projects = await getProjeler();
+  if (!projects) {
     console.error('Projeler verisi bulunamadı');
     return [];
   }
 
-  return projelerData.projeler.map((proje) => ({
+  return projects.map((proje) => ({
     id: proje.id.toString(),
   }));
 }
 
-export function generateMetadata({ params }) {
-  const project = projelerData.projeler.find((p) => p.id.toString() === params.id);
+export async function generateMetadata({ params }) {
+  const projects = await getProjeler();
+  const project = projects.find((p) => p.id.toString() === params.id);
 
   if (!project) {
     return {
       title: 'Proje Bulunamadı',
+      description: 'Aradığınız proje bulunamadı.',
     };
   }
 
@@ -29,12 +31,9 @@ export function generateMetadata({ params }) {
   };
 }
 
-export default function ProjectDetailPage({ params }) {
-  if (!projelerData?.projeler) {
-    return <div>Proje verisi yüklenemedi</div>;
-  }
-
-  const project = projelerData.projeler.find((p) => p.id.toString() === params.id);
+export default async function ProjectDetailPage({ params }) {
+  const projects = await getProjeler();
+  const project = projects.find(p => p.id === params.id);
 
   if (!project) {
     return <div>Proje bulunamadı</div>;
@@ -42,8 +41,10 @@ export default function ProjectDetailPage({ params }) {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold mb-6">{project.title}</h1>
-      {/* Diğer proje detayları */}
+      <h1 className="text-3xl font-bold mb-4">{project.title}</h1>
+      <div className="prose max-w-none">
+        {project.description}
+      </div>
     </div>
   );
 }
