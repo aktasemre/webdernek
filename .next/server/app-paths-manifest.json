@@ -1,6 +1,8 @@
 {
   "/not-found": "app/not-found.js",
   "/page": "app/page.js",
-  "/donate/page": "app/donate/page.js",
-  "/about/village/page": "app/about/village/page.js"
+  "/about/village/page": "app/about/village/page.js",
+  "/about/village/economy/page": "app/about/village/economy/page.js",
+  "/about/history/page": "app/about/history/page.js",
+  "/about/founders/page": "app/about/founders/page.js"
 }
