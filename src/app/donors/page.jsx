@@ -81,16 +81,16 @@ const donors = [
 
 export default function DonorsPage() {
   return (
-    <main className={styles.donorsPage}>
-      <h1>Bağışcılarımız</h1>
-      <section className={styles.donorsList}>
+    <div className={styles.donorsPage}>
+      <h1 className={styles.title}>Bağışçılarımız</h1>
+      <div className={styles.donorsList}>
         {donors.map((donor, index) => (
           <div key={index} className={styles.donorCard}>
             <h2>{donor.name}</h2>
             <p><strong>Bağış Miktarı:</strong> {donor.contribution}</p>
           </div>
         ))}
-      </section>
-    </main>
+      </div>
+    </div>
   );
 } 

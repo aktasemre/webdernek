@@ -2,11 +2,16 @@
 const nextConfig = {
   output: 'standalone',
   images: {
-    domains: ['localhost'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: '**',
+      },
+    ],
     unoptimized: true,
   },
   sassOptions: {
-    includePaths: ['./src/styles'],
+    includePaths: ['./src/styles', './src/app', './src/components'],
   },
   webpack: (config) => {
     config.resolve.fallback = { fs: false };

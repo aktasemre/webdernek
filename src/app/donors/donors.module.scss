@@ -1,0 +1,40 @@
+.donorsPage {
+  padding: 2rem;
+  
+  .title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    color: #1a365d;
+  }
+
+  .donorsList {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+    
+    .donorCard {
+      background: white;
+      border-radius: 0.5rem;
+      padding: 1.5rem;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      
+      .donorName {
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+      }
+      
+      .donationAmount {
+        color: #4a5568;
+        font-size: 1.125rem;
+      }
+      
+      .donationDate {
+        color: #718096;
+        font-size: 0.875rem;
+        margin-top: 0.5rem;
+      }
+    }
+  }
+} 
