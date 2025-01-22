@@ -4,6 +4,8 @@
 .hero {
   position: relative;
   height: 600px;
+  margin-bottom: 0;
+  padding: 0;
   
   @media (max-width: 768px) {
     height: 500px;

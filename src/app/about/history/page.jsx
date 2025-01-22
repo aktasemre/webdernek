@@ -10,40 +10,69 @@ export const metadata = {
 
 const historicalEvents = [
   {
-    year: '1990',
+    year: '1992',
     title: 'Derneğin Kuruluşu',
     description:
-      'Arslandede Köyü Derneği, köyümüzün gelişimi ve kalkınması için kuruldu. Kurucu üyelerimizin özverili çalışmalarıyla derneğimizin temelleri atıldı.',
+      '17.07.1992 - Derneğimizin kuruluş tarihi.',
   },
   {
-    year: '1995',
-    title: 'İlk Büyük Proje',
+    year: '1994',
+    title: 'Kiralık Dükkan',
     description:
-      'Köy meydanı düzenleme projesi başarıyla tamamlandı. Bu proje, derneğimizin köy için yapabileceklerinin ilk somut örneği oldu.',
+      'Esenler Atışalanı Havaalanı mahallesinde kiralık dükkan tutuldu.',
   },
   {
-    year: '2000',
-    title: 'Eğitim Atılımı',
+    year: '1995 - 1998',
+    title: 'Dernek Başkanı Yaşar ÜSTÜN',
     description:
-      'Köyümüze yeni bir ilkokul binası kazandırıldı. Eğitim alanında yapılan bu yatırım, gençlerimizin geleceği için önemli bir adım oldu.',
+      'Kiralık dükkanda faaliyetlerimiz devam etti.',
+  },
+  {
+    year: '1999 - 2000',
+    title: 'Dernek Başkanı Hacı KURTOĞLU',
+    description:
+      'Köylülerimizin yardımları ile burası satın alındı. 36.500 Mark ödendi.',
+  },
+  {
+    year: '2001 - 2002',
+    title: 'Dernek Başkanı Zeynel ÖKSÜZ',
+    description:
+      'Zemin kattan bodrum kata, arka taraftan merdiven yapıldı. Bilardo masası alındı.',
+  },
+  {
+    year: '2003 - 2004',
+    title: 'Dernek Başkanı Canan KURTOĞLU',
+    description:
+      'İkinci bilardo masası alındı.',
+  },
+  {
+    year: '2005 - 2006',
+    title: 'Dernek Başkanı Yaşar ÜSTÜN',
+    description: 'Faaliyetler devam etti.',
+  },
+  {
+    year: '2007 - 2008',
+    title: 'Dernek Başkanı Musa ÜSTÜN',
+    description:
+      'Mesaj sistemi kuruldu. Dernek yerinin tapusu dernek üzerine tescil edildi.',
   },
   {
     year: '2010',
-    title: 'Üye Sayısında Rekor',
+    title: 'Dernek Başkanı Salman YILMAZ',
     description:
-      '500 aktif üye sayısına ulaşıldı. Artan üye sayımızla birlikte derneğimizin etki alanı ve yapabilecekleri de genişledi.',
+      'Dernek yerimizin olduğu binanın kömürlükleri satın alınarak derneğe katıldı.',
   },
   {
     year: '2015',
-    title: 'Sosyal Sorumluluk',
+    title: 'Bodrum Kat Düzenlemeleri',
     description:
-      'İhtiyaç sahibi ailelere yönelik düzenli yardım programları başlatıldı. Köyümüzün dayanışma ruhu güçlendi.',
+      'Bodrum kata WC yapıldı. Zemin katın ahşap oturma yerleri yapıldı. Zemin kata Başkanı Necmettin EMİRALİ. Derneğimizin giriş kapısı değişti. Oturma balkonu yapıldı. Çay ocağının yeri değişti. Perdeler yenilendi.',
   },
   {
-    year: '2020',
-    title: 'Dijital Dönüşüm',
+    year: '2016',
+    title: 'Dernek Başkanı Yaşar ÜSTÜN',
     description:
-      'Dernek web sitesi yenilendi, sosyal medya hesapları açıldı. Üyelerimizle iletişimimiz güçlendi.',
+      'Zemin kata otomatik kepenk yapıldı.',
   },
 ];
 

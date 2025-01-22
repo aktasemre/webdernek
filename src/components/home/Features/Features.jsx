@@ -17,11 +17,32 @@ import styles from './Features.module.scss';
 
 const features = [
   {
+    icon: <FaLandmark />,
+    title: 'Kültürel Miras',
+    description: 'Köyümüzün zengin tarihini ve kültürünü yaşatıyoruz',
+    link: '/culture',
+    color: '#2C5F2D',
+  },
+  {
     icon: <FaComments />,
     title: 'Yerel Kelimeler',
     description: 'Köyümüze özgü kelimeler ve anlamları',
     link: '/culture/words',
     color: '#3498db',
+  },
+  {
+    icon: <FaQuoteRight />,
+    title: 'Atasözleri',
+    description: 'Yöresel atasözleri ve deyimler',
+    link: '/culture/proverbs',
+    color: '#34495e',
+  },
+  {
+    icon: <FaPray />,
+    title: 'Beddualar',
+    description: 'Yöresel beddualar ve anlamları',
+    link: '/culture/curses',
+    color: '#95a5a6',
   },
   {
     icon: <FaUsers />,
@@ -38,11 +59,11 @@ const features = [
     color: '#e74c3c',
   },
   {
-    icon: <FaLandmark />,
-    title: 'Kültürel Miras',
-    description: 'Köyümüzün zengin tarihini ve kültürünü yaşatıyoruz',
-    link: '/culture',
-    color: '#2C5F2D',
+    icon: <FaCalendarAlt />,
+    title: 'Etkinlikler',
+    description: 'Dernek ve köy etkinliklerimiz',
+    link: '/events',
+    color: '#27ae60',
   },
   {
     icon: <FaNewspaper />,
@@ -57,34 +78,6 @@ const features = [
     description: 'Köyümüzden fotoğraflar ve videolar',
     link: '/gallery',
     color: '#9b59b6',
-  },
-  {
-    icon: <FaBook />,
-    title: 'Kültürümüz',
-    description: 'Köyümüzün kültürel değerleri ve gelenekleri',
-    link: '/culture/traditions',
-    color: '#f1c40f',
-  },
-  {
-    icon: <FaPray />,
-    title: 'Beddualar',
-    description: 'Yöresel beddualar ve anlamları',
-    link: '/culture/curses',
-    color: '#95a5a6',
-  },
-  {
-    icon: <FaQuoteRight />,
-    title: 'Atasözleri',
-    description: 'Yöresel atasözleri ve deyimler',
-    link: '/culture/proverbs',
-    color: '#34495e',
-  },
-  {
-    icon: <FaCalendarAlt />,
-    title: 'Etkinlikler',
-    description: 'Dernek ve köy etkinliklerimiz',
-    link: '/events',
-    color: '#27ae60',
   },
 ];
 

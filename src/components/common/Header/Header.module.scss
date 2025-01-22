@@ -108,10 +108,20 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  
+  color: #2C5F2D;
+  transition: color 0.3s ease;
+  font-weight: bold;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 0.5rem;
+  border-radius: 4px;
+
   .dropdownIcon {
     font-size: 0.8rem;
     transition: transform 0.3s ease;
+  }
+
+  &:hover {
+    color: #0070f3;
   }
 }
 
