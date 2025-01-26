@@ -1,0 +1,280 @@
+.viewPage {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+
+    .headerLeft {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+
+      h1 {
+        margin: 0;
+        color: var(--text-color);
+        font-size: 1.5rem;
+      }
+    }
+
+    button {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+
+      &.backButton {
+        background: #f3f4f6;
+        color: #666;
+
+        &:hover {
+          background: #e5e7eb;
+        }
+      }
+
+      &.editButton {
+        background: var(--primary-color);
+        color: white;
+
+        &:hover {
+          filter: brightness(0.9);
+        }
+      }
+    }
+  }
+
+  .success {
+    background: #dcfce7;
+    color: #16a34a;
+    padding: 1rem;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+  }
+
+  .error {
+    background: #fee2e2;
+    color: #ef4444;
+    padding: 1rem;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+  }
+
+  .content {
+    .mainInfo {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+
+      .statusSection {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+
+        .roleInfo, .duesInfo {
+          h3 {
+            margin-bottom: 1rem;
+            color: var(--text-color);
+          }
+
+          .roleCard, .duesCard {
+            padding: 1.5rem;
+            border-radius: 8px;
+            background: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+
+            .roleHeader, .duesHeader {
+              display: flex;
+              align-items: center;
+              gap: 1rem;
+              margin-bottom: 1rem;
+
+              .roleIcon, .duesIcon {
+                font-size: 1.5rem;
+              }
+
+              .roleLabel, .duesLabel {
+                font-weight: 500;
+                font-size: 1.1rem;
+              }
+            }
+
+            .changeRoleButton {
+              width: 100%;
+              padding: 0.75rem;
+              border: 1px solid;
+              border-radius: 6px;
+              background: transparent;
+              cursor: pointer;
+              transition: all 0.3s ease;
+
+              &:hover {
+                filter: brightness(0.95);
+              }
+            }
+
+            .duesDate {
+              color: #666;
+              font-size: 0.9rem;
+            }
+          }
+        }
+      }
+
+      .personalInfo, .accountInfo {
+        background: white;
+        padding: 2rem;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+
+        h3 {
+          margin-bottom: 1.5rem;
+          color: var(--text-color);
+        }
+
+        .infoGrid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+          gap: 2rem;
+
+          .infoItem {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+
+            svg {
+              color: #666;
+              margin-top: 0.25rem;
+            }
+
+            div {
+              flex: 1;
+
+              label {
+                display: block;
+                color: #666;
+                font-size: 0.875rem;
+                margin-bottom: 0.25rem;
+              }
+
+              p {
+                color: var(--text-color);
+                font-size: 1rem;
+              }
+            }
+
+            .status {
+              display: inline-flex;
+              align-items: center;
+              gap: 0.5rem;
+              padding: 0.5rem 1rem;
+              border-radius: 999px;
+              font-size: 0.875rem;
+
+              &.active {
+                background: #dcfce7;
+                color: #16a34a;
+              }
+
+              &.inactive {
+                background: #fee2e2;
+                color: #ef4444;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+
+  .modalContent {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 600px;
+    max-height: 90vh;
+    overflow-y: auto;
+
+    h2 {
+      margin-bottom: 1.5rem;
+      color: var(--text-color);
+      text-align: center;
+    }
+
+    .roleButtons {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+
+      .roleButton {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.75rem;
+        padding: 1rem;
+        border: 1px solid;
+        border-radius: 6px;
+        background: white;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-weight: 500;
+
+        &:hover:not(:disabled) {
+          filter: brightness(0.95);
+        }
+
+        &:disabled {
+          opacity: 0.7;
+          cursor: not-allowed;
+        }
+
+        &.currentRole {
+          font-weight: 600;
+
+          .currentLabel {
+            font-size: 0.75rem;
+            opacity: 0.7;
+            margin-left: 0.5rem;
+          }
+        }
+      }
+    }
+
+    .cancelButton {
+      width: 100%;
+      padding: 1rem;
+      border: none;
+      border-radius: 6px;
+      background: #f3f4f6;
+      color: #666;
+      cursor: pointer;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background: #e5e7eb;
+      }
+    }
+  }
+} 

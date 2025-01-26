@@ -1,0 +1,345 @@
+.membersPage {
+  padding: 2rem;
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+
+    h1 {
+      color: var(--text-color);
+      margin: 0;
+    }
+
+    .addButton {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--primary-color);
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+
+      &:hover {
+        filter: brightness(0.9);
+        transform: translateY(-1px);
+      }
+    }
+  }
+
+  .filters {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+
+    .filterSelect, .searchInput {
+      padding: 0.75rem;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      min-width: 200px;
+
+      &:focus {
+        outline: none;
+        border-color: var(--primary-color);
+        box-shadow: 0 0 0 2px rgba(44, 95, 45, 0.1);
+      }
+    }
+  }
+
+  .error {
+    background: #fee2e2;
+    color: #ef4444;
+    padding: 1rem;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+  }
+
+  .loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+
+    .spinner {
+      border: 4px solid #f3f3f3;
+      border-top: 4px solid var(--primary-color);
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      animation: spin 1s linear infinite;
+      margin-bottom: 1rem;
+    }
+  }
+
+  .tableContainer {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    overflow: hidden;
+
+    .membersTable {
+      width: 100%;
+      border-collapse: collapse;
+
+      th, td {
+        padding: 1rem;
+        text-align: left;
+        border-bottom: 1px solid #eee;
+      }
+
+      th {
+        background: #f8f9fa;
+        font-weight: 600;
+        color: #666;
+      }
+
+      .status {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.25rem 0.75rem;
+        border-radius: 999px;
+        font-size: 0.875rem;
+
+        &.active {
+          background: #dcfce7;
+          color: #16a34a;
+        }
+
+        &.inactive {
+          background: #fee2e2;
+          color: #ef4444;
+        }
+
+        &.pending {
+          background: #fef3c7;
+          color: #d97706;
+        }
+      }
+
+      .actions {
+        display: flex;
+        gap: 0.5rem;
+
+        button {
+          display: flex;
+          align-items: center;
+          gap: 0.25rem;
+          padding: 0.5rem 1rem;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+          transition: all 0.3s ease;
+
+          &.editButton {
+            background: #edf2ff;
+            color: #3b82f6;
+
+            &:hover {
+              background: #dbeafe;
+            }
+          }
+
+          &.deleteButton {
+            background: #fee2e2;
+            color: #ef4444;
+
+            &:hover {
+              background: #fecaca;
+            }
+          }
+        }
+      }
+
+      .noData {
+        text-align: center;
+        color: #666;
+        padding: 2rem;
+      }
+    }
+  }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.statusButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 0.875rem;
+  transition: all 0.3s ease;
+
+  &.active {
+    background: #dcfce7;
+    color: #16a34a;
+
+    &:hover {
+      background: #bbf7d0;
+    }
+  }
+
+  &.inactive {
+    background: #fee2e2;
+    color: #ef4444;
+
+    &:hover {
+      background: #fecaca;
+    }
+  }
+
+  svg {
+    font-size: 1rem;
+  }
+}
+
+.actions {
+  button {
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+  }
+}
+
+.roleInfo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  .roleLabel {
+    padding: 0.25rem 0.75rem;
+    background: #f3f4f6;
+    border-radius: 999px;
+    font-size: 0.875rem;
+    color: #666;
+  }
+
+  .changeRoleButton {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 4px;
+    background: #edf2ff;
+    color: #3b82f6;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: #dbeafe;
+    }
+  }
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+
+  .modalContent {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 500px;
+
+    h2 {
+      margin-bottom: 1.5rem;
+      color: var(--text-color);
+    }
+
+    .roleButtons {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+
+      button {
+        padding: 1rem;
+        border: none;
+        border-radius: 6px;
+        background: var(--primary-color);
+        color: white;
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        &:hover {
+          filter: brightness(0.9);
+        }
+
+        &:disabled {
+          opacity: 0.7;
+          cursor: not-allowed;
+        }
+      }
+    }
+
+    .cancelButton {
+      width: 100%;
+      padding: 1rem;
+      border: none;
+      border-radius: 6px;
+      background: #f3f4f6;
+      color: #666;
+      cursor: pointer;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background: #e5e7eb;
+      }
+    }
+  }
+}
+
+.duesStatus {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  font-size: 0.875rem;
+
+  &.paid {
+    background: #dcfce7;
+    color: #16a34a;
+  }
+
+  &.pending {
+    background: #fef3c7;
+    color: #d97706;
+  }
+
+  &.overdue {
+    background: #fee2e2;
+    color: #ef4444;
+  }
+
+  &.cancelled {
+    background: #f3f4f6;
+    color: #666;
+  }
+
+  svg {
+    font-size: 1rem;
+  }
+} 

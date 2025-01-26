@@ -1,0 +1,21 @@
+// Ana stil dosyası
+@import 'variables';  // Değişkenler
+@import 'mixins';     // Mixin'ler
+@import 'base';       // Temel stiller
+@import 'components'; // Bileşen stilleri
+@import 'layouts';    // Layout stilleri
+@import 'pages';      // Sayfa özel stilleri
+
+// Tema değişkenleri
+:root {
+  --primary-color: #2C5F2D;
+  --secondary-color: #97BC62;
+  --accent-color: #FFB800;
+  --text-color: #333333;
+  --background-color: #FFFFFF;
+  
+  @media (prefers-color-scheme: dark) {
+    --text-color: #FFFFFF;
+    --background-color: #1A1A1A;
+  }
+} 

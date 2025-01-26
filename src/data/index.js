@@ -5,6 +5,13 @@ import etkinliklerData from './etkinlikler.data.json';
 import iletisimData from './iletisim.data.json';
 import donationData from './donation.data.js';
 
+// Merkezi veri yönetimi
+import * as associationData from './association.data.json';
+import * as villageData from './village.data.json';
+import * as eventsData from './events.data.json';
+import * as newsData from './haberler.data.json';
+import * as projectsData from './projeler.data.json';
+
 // Veri normalizasyon fonksiyonu
 const normalizeData = (data) => ({
   ...data,
@@ -17,15 +24,22 @@ const normalizeData = (data) => ({
 });
 
 // Genel veri getirme fonksiyonu
-const getData = (data, key = null) => {
-  const items = key ? data[key] : data;
-  return Array.isArray(items) ? items.map(normalizeData) : [];
+export const getData = (key) => {
+  const dataMap = {
+    association: associationData,
+    village: villageData,
+    events: eventsData,
+    news: newsData,
+    projects: projectsData
+  };
+  
+  return dataMap[key] || null;
 };
 
 // Veri getirme fonksiyonları
-export const getHaberler = () => getData(haberlerData, 'haberler');
-export const getProjeler = () => getData(projelerData, 'projects');
-export const getEtkinlikler = () => getData(etkinliklerData);
+export const getHaberler = () => getData('news')?.haberler || [];
+export const getProjeler = () => getData('projects')?.projects || [];
+export const getEtkinlikler = () => getData('events')?.events || [];
 export const getIletisim = () => iletisimData;
 export const getDonations = () => donationData;
 
@@ -35,19 +49,15 @@ export const getProjeKategorileri = () => projelerData.categories || [];
 // Global arama fonksiyonu
 export const searchContent = (query = '') => {
   const normalizedQuery = query.toLowerCase().trim();
-
   if (!normalizedQuery) return [];
 
-  const results = [
-    ...getHaberler().map((item) => ({ ...item, type: 'haber' })),
-    ...getProjeler().map((item) => ({ ...item, type: 'proje' })),
-    ...getEtkinlikler().map((item) => ({ ...item, type: 'etkinlik' })),
-  ];
-
-  return results.filter(
-    (item) =>
-      item.baslik?.toLowerCase().includes(normalizedQuery) ||
-      item.aciklama?.toLowerCase().includes(normalizedQuery) ||
-      item.icerik?.toLowerCase().includes(normalizedQuery),
+  return [
+    ...getHaberler().map(item => ({...item, type: 'haber'})),
+    ...getProjeler().map(item => ({...item, type: 'proje'})),
+    ...getEtkinlikler().map(item => ({...item, type: 'etkinlik'}))
+  ].filter(item => 
+    item.title?.toLowerCase().includes(normalizedQuery) ||
+    item.description?.toLowerCase().includes(normalizedQuery) ||
+    item.content?.toLowerCase().includes(normalizedQuery)
   );
 };

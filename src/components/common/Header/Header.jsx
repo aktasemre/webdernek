@@ -11,9 +11,12 @@ import {
   FaSearch,
   FaChevronDown,
   FaMapMarkerAlt,
+  FaUserCog,
+  FaSignInAlt,
 } from 'react-icons/fa';
 import styles from './Header.module.scss';
 import iletisimData from '@/data/iletisim.data.json';
+import { useSession } from 'next-auth/react';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -23,6 +26,7 @@ const Header = () => {
   const searchRef = useRef(null);
   const router = useRouter();
   const [activeDropdown, setActiveDropdown] = useState(null);
+  const { data: session } = useSession();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -239,6 +243,18 @@ const Header = () => {
             >
               <FaClipboardList /> Dernek butcesi
             </a>
+
+            <div className={styles.authButtons}>
+              {session ? (
+                <Link href="/admin" className={styles.adminButton}>
+                  <FaUserCog /> Admin Panel
+                </Link>
+              ) : (
+                <Link href="/auth/login" className={styles.loginButton}>
+                  <FaSignInAlt /> Giriş Yap
+                </Link>
+              )}
+            </div>
           </div>
         </div>
       </nav>
