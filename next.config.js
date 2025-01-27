@@ -33,7 +33,7 @@ const nextConfig = {
     domains: ['localhost'],
   },
   sassOptions: {
-    includePaths: ['./src/styles', './src/app', './src/components'],
+    includePaths: ['./src'],
   },
   webpack: (config, { isServer }) => {
     if (!isServer) {

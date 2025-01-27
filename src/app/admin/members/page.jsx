@@ -1,34 +1,24 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { FaPlus, FaEdit, FaTrash } from 'react-icons/fa';
 import { userService } from '@/services/api';
+import { FaEdit, FaTrash, FaUserPlus, FaSearch, FaEye, FaMoneyBill, FaClock } from 'react-icons/fa';
 import styles from './members.module.scss';
-
-const roleLabels = {
-  ROLE_USER: 'Üye',
-  ROLE_ADMIN: 'Yönetici'
-};
 
 export default function MembersPage() {
   const router = useRouter();
   const [members, setMembers] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [modalOpen, setModalOpen] = useState(false);
-  const [selectedMember, setSelectedMember] = useState(null);
-  const [filters, setFilters] = useState({
-    status: 'all',
-    search: ''
-  });
+  const [searchTerm, setSearchTerm] = useState('');
+  const [filterType, setFilterType] = useState('Tüm Üyeler');
 
   useEffect(() => {
     const fetchMembers = async () => {
       try {
         setLoading(true);
         const response = await userService.getAllUsers();
-        console.log('Users response:', response); // Debug için
         setMembers(response);
       } catch (err) {
         console.error('Error fetching members:', err);
@@ -41,24 +31,12 @@ export default function MembersPage() {
     fetchMembers();
   }, []);
 
-  // Üye ekle/güncelle
-  const handleSubmit = async (formData) => {
-    try {
-      if (selectedMember) {
-        await userService.update(selectedMember.id, formData);
-      } else {
-        await userService.create(formData);
-      }
-      loadUsers();
-      setModalOpen(false);
-    } catch (err) {
-      setError(err.message);
-    }
+  const handleEdit = (member) => {
+    router.push(`/admin/members/edit/${member.id}`);
   };
 
-  // Üye sil
   const handleDelete = async (id) => {
-    if (window.confirm('Bu üyeyi silmek istediğinize emin misiniz?')) {
+    if (window.confirm('Bu üyeyi silmek istediğinizden emin misiniz?')) {
       try {
         await userService.delete(id);
         setMembers(members.filter(member => member.id !== id));
@@ -68,70 +46,128 @@ export default function MembersPage() {
     }
   };
 
-  // Düzenleme modalını aç
-  const handleEdit = (member) => {
-    setSelectedMember(member);
-    setModalOpen(true);
+  if (loading) return <div className={styles.loading}>Yükleniyor...</div>;
+  if (error) return <div className={styles.error}>Hata: {error}</div>;
+
+  const filteredMembers = members.filter(member => {
+    const searchMatch = 
+      member.firstName?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      member.lastName?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      member.email?.toLowerCase().includes(searchTerm.toLowerCase());
+    
+    if (filterType === 'Tüm Üyeler') return searchMatch;
+    return searchMatch && member.role === filterType;
+  });
+
+  const formatDate = (dateString) => {
+    if (!dateString) return '-';
+    return new Date(dateString).toLocaleDateString('tr-TR');
   };
-
-  if (loading) return (
-    <div className={styles.loading}>
-      <div className={styles.spinner}></div>
-      <p>Üyeler yükleniyor...</p>
-    </div>
-  );
-
-  if (error) return <div className={styles.error}>{error}</div>;
 
   return (
     <div className={styles.membersPage}>
-      <div className={styles.header}>
-        <h1>Üyeler ({members.length})</h1>
+      <div className={styles.searchBar}>
+        <div className={styles.filterGroup}>
+          <select 
+            value={filterType}
+            onChange={(e) => setFilterType(e.target.value)}
+          >
+            <option value="ALL">Tüm Üyeler</option>
+            <option value="ROLE_USER">Üye</option>
+            <option value="ROLE_ADMIN">Yönetici</option>
+          </select>
+          <div className={styles.searchInput}>
+            <FaSearch className={styles.searchIcon} />
+            <input
+              type="text"
+              placeholder="Ad, soyad veya email ile ara..."
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+            />
+          </div>
+        </div>
         <button 
           className={styles.addButton}
           onClick={() => router.push('/admin/members/create')}
         >
-          <FaPlus /> Yeni Üye Ekle
+          <FaUserPlus /> Yeni Üye Ekle
         </button>
       </div>
 
-      <div className={styles.filters}>
-        <select 
-          value={filters.status}
-          onChange={(e) => setFilters({...filters, status: e.target.value})}
-          className={styles.filterSelect}
-        >
-          <option value="all">Tüm Üyeler</option>
-          <option value="active">Aktif Üyeler</option>
-          <option value="pending">Onay Bekleyenler</option>
-          <option value="inactive">Pasif Üyeler</option>
-        </select>
-        
-        <input 
-          type="text"
-          placeholder="Üye ara..."
-          value={filters.search}
-          onChange={(e) => setFilters({...filters, search: e.target.value})}
-          className={styles.searchInput}
-        />
-      </div>
-
-      <div className={styles.membersList}>
-        {members.map((member) => (
-          <div key={member.id} className={styles.memberCard}>
-            <h3>{member.firstName} {member.lastName}</h3>
-            <p>Email: {member.email}</p>
-            <p>Telefon: {member.phoneNumber}</p>
-            <div className={styles.actions}>
-              <button onClick={() => handleEdit(member)}>
-                <FaEdit /> Düzenle
-              </button>
-              <button onClick={() => handleDelete(member.id)}>
-                <FaTrash /> Sil
-              </button>
-            </div>
-          </div>
-        ))}
+      <div className={styles.tableContainer}>
+        <table className={styles.membersTable}>
+          <thead>
+            <tr>
+              <th>Ad Soyad</th>
+              <th>Email</th>
+              <th>Telefon</th>
+              <th>Rol</th>
+              <th>Durum</th>
+              <th>Aidat Durumu</th>
+              <th>Kayıt Tarihi</th>
+              <th>İşlemler</th>
+            </tr>
+          </thead>
+          <tbody>
+            {filteredMembers.map((member) => (
+              <tr key={member.id}>
+                <td>{member.firstName} {member.lastName}</td>
+                <td>{member.email}</td>
+                <td>{member.phoneNumber || '-'}</td>
+                <td>
+                  <span className={`${styles.roleTag} ${styles[member.role?.toLowerCase()]}`}>
+                    {member.role === 'ROLE_ADMIN' ? 'Yönetici' : 
+                     member.role === 'ROLE_USER' ? 'Üye' : member.role}
+                  </span>
+                </td>
+                <td>
+                  <span className={`${styles.status} ${member.active ? styles.active : styles.inactive}`}>
+                    {member.status === 'ACTIVE' ? 'Aktif' : 
+                     member.status === 'PENDING' ? 'Onay Bekliyor' : 
+                     member.status === 'SUSPENDED' ? 'Askıya Alındı' : 'Pasif'}
+                  </span>
+                </td>
+                <td>
+                  <span className={`${styles.duesStatus} ${member.duesPaid ? styles.paid : styles.unpaid}`}>
+                    <FaMoneyBill />
+                    {member.duesPaid ? 'Ödendi' : 'Ödenmedi'}
+                  </span>
+                </td>
+                <td>
+                  <span className={styles.dateInfo}>
+                    <FaClock />
+                    {formatDate(member.createdDate)}
+                  </span>
+                </td>
+                <td>
+                  <div className={styles.actions}>
+                    <button 
+                      className={styles.viewButton}
+                      onClick={() => router.push(`/admin/members/view/${member.id}`)}
+                      title="Detayları Görüntüle"
+                    >
+                      <FaEye /> Detay
+                    </button>
+                    <button 
+                      className={styles.editButton}
+                      onClick={() => handleEdit(member)}
+                      title="Düzenle"
+                    >
+                      <FaEdit /> Düzenle
+                    </button>
+                    <button 
+                      className={styles.deleteButton}
+                      onClick={() => handleDelete(member.id)}
+                      title="Sil"
+                    >
+                      <FaTrash /> Sil
+                    </button>
+                  </div>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
     </div>
   );

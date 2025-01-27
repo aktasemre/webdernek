@@ -1,400 +1,308 @@
 .membersPage {
-  padding: 2rem;
+  padding: 20px;
+  background: #f8f9fa;
+  min-height: calc(100vh - 60px);
 
-  h1 {
-    margin-bottom: 2rem;
-    color: var(--text-color);
-  }
-}
-
-.membersList {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 1.5rem;
-}
-
-.memberCard {
-  background: white;
-  padding: 1.5rem;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-
-  h3 {
-    margin-bottom: 1rem;
-    color: var(--primary-color);
-  }
-
-  p {
-    margin: 0.5rem 0;
-    color: var(--text-color);
-  }
-}
-
-.actions {
-  display: flex;
-  gap: 1rem;
-  margin-top: 1rem;
-
-  button {
-    padding: 0.5rem 1rem;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-
-    &:first-child {
-      background: var(--primary-color);
-      color: white;
-
-      &:hover {
-        filter: brightness(0.9);
-      }
-    }
-
-    &:last-child {
-      background: #dc2626;
-      color: white;
-
-      &:hover {
-        filter: brightness(0.9);
-      }
-    }
-  }
-}
-
-.error {
-  color: #dc2626;
-  padding: 1rem;
-  background: #fee2e2;
-  border-radius: 6px;
-  margin: 1rem 0;
-}
-
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 2rem;
-
-  .addButton {
+  .searchBar {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
-    background: var(--primary-color);
-    color: white;
-    border: none;
-    padding: 0.75rem 1.5rem;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-
-    &:hover {
-      filter: brightness(0.9);
-      transform: translateY(-1px);
-    }
-  }
-}
-
-.filters {
-  display: flex;
-  gap: 1rem;
-  margin-bottom: 2rem;
-
-  .filterSelect, .searchInput {
-    padding: 0.75rem;
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    min-width: 200px;
-
-    &:focus {
-      outline: none;
-      border-color: var(--primary-color);
-      box-shadow: 0 0 0 2px rgba(44, 95, 45, 0.1);
-    }
-  }
-}
-
-.loading {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 2rem;
-
-  .spinner {
-    border: 4px solid #f3f3f3;
-    border-top: 4px solid var(--primary-color);
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    animation: spin 1s linear infinite;
-    margin-bottom: 1rem;
-  }
-}
-
-.tableContainer {
-  background: white;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  overflow: hidden;
-
-  .membersTable {
-    width: 100%;
-    border-collapse: collapse;
-
-    th, td {
-      padding: 1rem;
-      text-align: left;
-      border-bottom: 1px solid #eee;
-    }
-
-    th {
-      background: #f8f9fa;
-      font-weight: 600;
-      color: #666;
-    }
-
-    .status {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.25rem 0.75rem;
-      border-radius: 999px;
-      font-size: 0.875rem;
-
-      &.active {
-        background: #dcfce7;
-        color: #16a34a;
-      }
-
-      &.inactive {
-        background: #fee2e2;
-        color: #ef4444;
-      }
-
-      &.pending {
-        background: #fef3c7;
-        color: #d97706;
-      }
-    }
-
-    .actions {
-      display: flex;
-      gap: 0.5rem;
-
-      button {
-        display: flex;
-        align-items: center;
-        gap: 0.25rem;
-        padding: 0.5rem 1rem;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-        transition: all 0.3s ease;
-
-        &.editButton {
-          background: #edf2ff;
-          color: #3b82f6;
-
-          &:hover {
-            background: #dbeafe;
-          }
-        }
-
-        &.deleteButton {
-          background: #fee2e2;
-          color: #ef4444;
-
-          &:hover {
-            background: #fecaca;
-          }
-        }
-      }
-    }
-
-    .noData {
-      text-align: center;
-      color: #666;
-      padding: 2rem;
-    }
-  }
-}
-
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
-.statusButton {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.5rem 1rem;
-  border: none;
-  border-radius: 999px;
-  cursor: pointer;
-  font-size: 0.875rem;
-  transition: all 0.3s ease;
-
-  &.active {
-    background: #dcfce7;
-    color: #16a34a;
-
-    &:hover {
-      background: #bbf7d0;
-    }
-  }
-
-  &.inactive {
-    background: #fee2e2;
-    color: #ef4444;
-
-    &:hover {
-      background: #fecaca;
-    }
-  }
-
-  svg {
-    font-size: 1rem;
-  }
-}
-
-.actions {
-  button {
-    &:disabled {
-      opacity: 0.5;
-      cursor: not-allowed;
-    }
-  }
-}
-
-.roleInfo {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-
-  .roleLabel {
-    padding: 0.25rem 0.75rem;
-    background: #f3f4f6;
-    border-radius: 999px;
-    font-size: 0.875rem;
-    color: #666;
-  }
-
-  .changeRoleButton {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.5rem;
-    border: none;
-    border-radius: 4px;
-    background: #edf2ff;
-    color: #3b82f6;
-    cursor: pointer;
-    transition: all 0.3s ease;
-
-    &:hover {
-      background: #dbeafe;
-    }
-  }
-}
-
-.modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 1000;
-
-  .modalContent {
+    gap: 16px;
+    margin-bottom: 20px;
+    padding: 16px;
     background: white;
-    padding: 2rem;
     border-radius: 8px;
-    width: 100%;
-    max-width: 500px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
 
-    h2 {
-      margin-bottom: 1.5rem;
-      color: var(--text-color);
-    }
+    .filterGroup {
+      display: flex;
+      gap: 12px;
+      flex: 1;
 
-    .roleButtons {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1rem;
-      margin-bottom: 1.5rem;
-
-      button {
-        padding: 1rem;
-        border: none;
-        border-radius: 6px;
-        background: var(--primary-color);
-        color: white;
+      select {
+        padding: 8px 12px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        min-width: 150px;
+        background: white;
         cursor: pointer;
-        transition: all 0.3s ease;
 
-        &:hover {
-          filter: brightness(0.9);
+        &:focus {
+          outline: none;
+          border-color: #4CAF50;
+        }
+      }
+
+      .searchInput {
+        position: relative;
+        flex: 1;
+        max-width: 400px;
+
+        input {
+          width: 100%;
+          padding: 8px 12px 8px 36px;
+          border: 1px solid #ddd;
+          border-radius: 4px;
+          font-size: 14px;
+
+          &:focus {
+            outline: none;
+            border-color: #4CAF50;
+          }
         }
 
-        &:disabled {
-          opacity: 0.7;
-          cursor: not-allowed;
+        .searchIcon {
+          position: absolute;
+          left: 12px;
+          top: 50%;
+          transform: translateY(-50%);
+          color: #666;
         }
       }
     }
 
-    .cancelButton {
-      width: 100%;
-      padding: 1rem;
+    .addButton {
+      padding: 8px 16px;
+      background: #4CAF50;
+      color: white;
       border: none;
-      border-radius: 6px;
-      background: #f3f4f6;
-      color: #666;
+      border-radius: 4px;
       cursor: pointer;
-      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      transition: background 0.2s;
 
       &:hover {
-        background: #e5e7eb;
+        background: #45a049;
+      }
+    }
+  }
+
+  .tableContainer {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    overflow-x: auto;
+
+    .membersTable {
+      width: 100%;
+      border-collapse: collapse;
+
+      th, td {
+        padding: 12px 16px;
+        text-align: left;
+        border-bottom: 1px solid #eee;
+      }
+
+      th {
+        background: #f8f9fa;
+        color: #333;
+        font-weight: 500;
+        font-size: 14px;
+        white-space: nowrap;
+      }
+
+      td {
+        font-size: 14px;
+        color: #444;
+        
+        .roleTag {
+          display: inline-flex;
+          align-items: center;
+          padding: 4px 12px;
+          border-radius: 20px;
+          font-size: 13px;
+          font-weight: 500;
+
+          &.role_admin {
+            background: #818cf8;
+            color: white;
+          }
+
+          &.role_user {
+            background: #60a5fa;
+            color: white;
+          }
+        }
+
+        .status {
+          display: inline-flex;
+          align-items: center;
+          padding: 4px 12px;
+          border-radius: 20px;
+          font-size: 13px;
+          font-weight: 500;
+
+          &.active {
+            background: #dcfce7;
+            color: #16a34a;
+          }
+
+          &.inactive {
+            background: #fee2e2;
+            color: #dc2626;
+          }
+
+          &.pending {
+            background: #fef3c7;
+            color: #d97706;
+          }
+
+          &.suspended {
+            background: #fee2e2;
+            color: #dc2626;
+          }
+        }
+
+        .duesStatus {
+          display: inline-flex;
+          align-items: center;
+          gap: 6px;
+          padding: 4px 12px;
+          border-radius: 20px;
+          font-size: 13px;
+          font-weight: 500;
+
+          svg {
+            font-size: 14px;
+          }
+
+          &.paid {
+            background: #dcfce7;
+            color: #16a34a;
+          }
+
+          &.unpaid {
+            background: #fef3c7;
+            color: #d97706;
+          }
+        }
+
+        .dateInfo {
+          display: inline-flex;
+          align-items: center;
+          gap: 6px;
+          color: #666;
+          font-size: 13px;
+
+          svg {
+            font-size: 14px;
+          }
+        }
+
+        .actions {
+          display: flex;
+          gap: 8px;
+
+          button {
+            padding: 6px 12px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 13px;
+            transition: all 0.2s;
+            white-space: nowrap;
+
+            &.viewButton {
+              background: #f3f4f6;
+              color: #4b5563;
+
+              &:hover {
+                background: #e5e7eb;
+              }
+            }
+
+            &.editButton {
+              background: #e3f2fd;
+              color: #1976d2;
+
+              &:hover {
+                background: #bbdefb;
+              }
+            }
+
+            &.deleteButton {
+              background: #ffebee;
+              color: #c62828;
+
+              &:hover {
+                background: #ffcdd2;
+              }
+            }
+          }
+        }
+      }
+
+      tr:hover {
+        background: #f8f9fa;
       }
     }
   }
 }
 
-.duesStatus {
-  display: inline-flex;
+// Loading ve Error durumları için stiller
+.loading, .error {
+  display: flex;
+  justify-content: center;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.5rem 1rem;
-  border-radius: 999px;
-  font-size: 0.875rem;
+  padding: 40px;
+  font-size: 14px;
+  color: #666;
+}
 
-  &.paid {
-    background: #dcfce7;
-    color: #16a34a;
+// Responsive tasarım için
+@media (max-width: 768px) {
+  .membersPage {
+    .searchBar {
+      flex-direction: column;
+      align-items: stretch;
+
+      .filterGroup {
+        flex-direction: column;
+
+        .searchInput {
+          max-width: none;
+        }
+      }
+    }
+
+    .tableContainer {
+      .membersTable {
+        td {
+          .actions {
+            flex-direction: column;
+            
+            button {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
   }
+}
 
-  &.pending {
-    background: #fef3c7;
-    color: #d97706;
-  }
-
-  &.overdue {
-    background: #fee2e2;
-    color: #ef4444;
-  }
-
-  &.cancelled {
-    background: #f3f4f6;
-    color: #666;
-  }
-
-  svg {
-    font-size: 1rem;
+@media (max-width: 1024px) {
+  .membersPage {
+    .tableContainer {
+      .membersTable {
+        td {
+          .actions {
+            flex-direction: column;
+            gap: 4px;
+            
+            button {
+              width: 100%;
+              justify-content: center;
+            }
+          }
+        }
+      }
+    }
   }
 } 
+; 

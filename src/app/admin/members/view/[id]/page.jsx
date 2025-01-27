@@ -14,10 +14,16 @@ import {
   FaEnvelope,
   FaPhone,
   FaMapMarkerAlt,
-  FaVenusMars
+  FaVenusMars,
+  FaClock,
+  FaBan,
+  FaIdCard,
+  FaHistory,
+  FaUserShield
 } from 'react-icons/fa';
 import { userService } from '@/services/api';
 import styles from './view.module.scss';
+import React from 'react';
 
 const roleLabels = {
   ROLE_USER: { label: 'Üye', color: '#60a5fa' },
@@ -34,6 +40,29 @@ const duesStatusLabels = {
   PAID: { label: 'Ödendi', color: '#10b981' },
   OVERDUE: { label: 'Gecikmiş', color: '#ef4444' },
   CANCELLED: { label: 'İptal', color: '#6b7280' }
+};
+
+const statusLabels = {
+  ACTIVE: { 
+    label: 'Aktif', 
+    color: '#10b981', 
+    Icon: FaCheck 
+  },
+  PENDING: { 
+    label: 'Onay Bekliyor', 
+    color: '#f59e0b', 
+    Icon: FaClock 
+  },
+  SUSPENDED: { 
+    label: 'Askıya Alındı', 
+    color: '#ef4444', 
+    Icon: FaBan 
+  },
+  INACTIVE: { 
+    label: 'Pasif', 
+    color: '#6b7280', 
+    Icon: FaTimes 
+  }
 };
 
 export default function ViewMemberPage({ params }) {
@@ -171,16 +200,40 @@ export default function ViewMemberPage({ params }) {
                     <FaUserCog style={{ color: roleLabels[member.role]?.color }} />
                   </span>
                   <span className={styles.roleLabel} style={{ color: roleLabels[member.role]?.color }}>
-                    {roleLabels[member.role]?.label}
+                    {roleLabels[member.role]?.label || 'Belirsiz'}
                   </span>
                 </div>
-                <button
+                <button 
                   className={styles.changeRoleButton}
                   onClick={() => setRoleModalOpen(true)}
                   style={{ borderColor: roleLabels[member.role]?.color }}
                 >
                   Rol Değiştir
                 </button>
+              </div>
+            </div>
+
+            <div className={styles.statusInfo}>
+              <h3>Hesap Durumu</h3>
+              <div className={styles.statusCard} style={{ backgroundColor: statusLabels[member.status]?.color + '15' }}>
+                <div className={styles.statusHeader}>
+                  <span className={styles.statusIcon}>
+                    {member.status && statusLabels[member.status]?.Icon && (
+                      <div style={{ color: statusLabels[member.status].color }}>
+                        {(() => {
+                          const Icon = statusLabels[member.status].Icon;
+                          return <Icon />;
+                        })()}
+                      </div>
+                    )}
+                  </span>
+                  <span className={styles.statusLabel} style={{ color: statusLabels[member.status]?.color }}>
+                    {statusLabels[member.status]?.label || 'Belirsiz'}
+                  </span>
+                </div>
+                <p className={styles.statusDate}>
+                  Son Güncelleme: {new Date(member.lastModifiedDate).toLocaleString('tr-TR')}
+                </p>
               </div>
             </div>
 
@@ -377,6 +430,14 @@ export default function ViewMemberPage({ params }) {
                     <p>{member.gender === 'MALE' ? 'Erkek' : 'Kadın'}</p>
                   </div>
                 </div>
+
+                <div className={styles.infoItem}>
+                  <FaIdCard />
+                  <div>
+                    <label>Üye ID</label>
+                    <p>#{member.id}</p>
+                  </div>
+                </div>
               </div>
             )}
           </div>
@@ -385,16 +446,7 @@ export default function ViewMemberPage({ params }) {
             <h3>Hesap Bilgileri</h3>
             <div className={styles.infoGrid}>
               <div className={styles.infoItem}>
-                <div>
-                  <label>Hesap Durumu</label>
-                  <span className={`${styles.status} ${styles[member.status?.toLowerCase()]}`}>
-                    {member.status === 'ACTIVE' ? <FaCheck /> : <FaTimes />}
-                    {member.status === 'ACTIVE' ? 'Aktif' : 'Pasif'}
-                  </span>
-                </div>
-              </div>
-
-              <div className={styles.infoItem}>
+                <FaClock />
                 <div>
                   <label>Kayıt Tarihi</label>
                   <p>{new Date(member.createdDate).toLocaleString('tr-TR')}</p>
@@ -402,9 +454,20 @@ export default function ViewMemberPage({ params }) {
               </div>
 
               <div className={styles.infoItem}>
+                <FaHistory />
                 <div>
                   <label>Son Güncelleme</label>
                   <p>{new Date(member.lastModifiedDate).toLocaleString('tr-TR')}</p>
+                </div>
+              </div>
+
+              <div className={styles.infoItem}>
+                <FaUserShield />
+                <div>
+                  <label>Hesap Durumu</label>
+                  <span className={`${styles.statusBadge} ${styles[member.status?.toLowerCase()]}`}>
+                    {statusLabels[member.status]?.label}
+                  </span>
                 </div>
               </div>
             </div>
