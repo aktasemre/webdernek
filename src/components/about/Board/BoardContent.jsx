@@ -1,13 +1,11 @@
 import Image from 'next/image';
 import { FaPhone, FaEnvelope, FaLinkedin, FaInstagram } from 'react-icons/fa';
-import BackButton from '@/components/common/BackButton/BackButton';
 import { boardMembers, boardInfo } from '@/data/board.data';
 import styles from './BoardContent.module.scss';
 
 const BoardContent = () => {
   return (
     <div className={styles.boardContent}>
-      <BackButton />
       <h1>Yönetim Kurulumuz</h1>
 
       <div className={styles.introduction}>

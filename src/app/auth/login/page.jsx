@@ -4,7 +4,6 @@ import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { FaUser, FaLock, FaSignInAlt, FaUserPlus } from 'react-icons/fa';
 import styles from './login.module.scss';
-import { authService } from '@/services/api';
 
 export default function LoginPage() {
   const router = useRouter();

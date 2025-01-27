@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { 
   FaUsers, FaNewspaper, FaCalendar, FaDonate,
-  FaUserPlus, FaPlus, FaMoneyBill, FaChartBar 
+  FaUserPlus,  FaMoneyBill, FaChartBar 
 } from 'react-icons/fa';
 import styles from './admin.module.scss';
 

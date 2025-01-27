@@ -69,13 +69,9 @@ const migrationInfo = {
   },
 };
 
-export default function PopulationContent() {
+const PopulationContent = () => {
   return (
     <div className={styles.container}>
-      <Link href="/about" className={styles.backButton}>
-        <IoArrowBack /> Geri
-      </Link>
-
       <div className={styles.populationContent}>
         <h1>Nüfus ve Yerleşim</h1>
         <div className={styles.introduction}>
@@ -196,4 +192,6 @@ export default function PopulationContent() {
       </div>
     </div>
   );
-}
+};
+
+export default PopulationContent;
