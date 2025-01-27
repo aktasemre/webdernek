@@ -1,4 +1,4 @@
-const BASE_URL = '/api';
+const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8080';
 
 // API istekleri için yardımcı fonksiyon
 async function fetchApi(endpoint, options = {}) {
@@ -6,7 +6,7 @@ async function fetchApi(endpoint, options = {}) {
   console.log('Using token:', token);
 
   try {
-    const response = await fetch(`${BASE_URL}${endpoint}`, {
+    const response = await fetch(`${API_URL}${endpoint}`, {
       ...options,
       headers: {
         'Content-Type': 'application/json',
@@ -45,21 +45,15 @@ async function fetchApi(endpoint, options = {}) {
 export const authService = {
   login: async (credentials) => {
     try {
-      console.log('Login isteği gönderiliyor:', credentials);
-      
-      const response = await fetch(`${BASE_URL}/auth/login`, {
+      const response = await fetch(`${API_URL}/api/auth/login`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'Accept': 'application/json',
+          'Accept': 'application/json'
         },
-        body: JSON.stringify({
-          email: credentials.email,
-          password: credentials.password
-        })
+        body: JSON.stringify(credentials),
+        credentials: 'include'
       });
-
-      console.log('Login response status:', response.status);
 
       if (!response.ok) {
         const error = await response.json();
@@ -67,27 +61,7 @@ export const authService = {
       }
 
       const data = await response.json();
-      console.log('Login response data:', data);
-
-      // JwtAuthResponse formatına göre kontrol
-      if (data.accessToken) {
-        const token = `Bearer ${data.accessToken}`;
-        sessionStorage.setItem('token', token);
-        console.log('Token kaydedildi:', token);
-
-        const user = {
-          id: data.userId,
-          email: data.email,
-          role: data.role,
-          tokenType: data.tokenType
-        };
-        sessionStorage.setItem('user', JSON.stringify(user));
-        console.log('User data kaydedildi:', user);
-
-        return data;
-      } else {
-        throw new Error('Token alınamadı');
-      }
+      return data;
     } catch (error) {
       console.error('Login error:', error);
       throw error;
@@ -96,7 +70,7 @@ export const authService = {
 
   register: async (userData) => {
     try {
-      const response = await fetch(`${BASE_URL}/auth/register`, {
+      const response = await fetch(`${API_URL}/auth/register`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -152,7 +126,7 @@ export const userService = {
       }
 
       const queryParams = new URLSearchParams(filters).toString();
-      const response = await fetch(`${BASE_URL}/users?${queryParams}`, {
+      const response = await fetch(`${API_URL}/users?${queryParams}`, {
         method: 'GET', // Metodu belirtiyoruz
         headers: {
           'Authorization': token,
@@ -203,7 +177,7 @@ export const userService = {
         throw new Error('Oturum bulunamadı');
       }
 
-      const response = await fetch(`${BASE_URL}/users/${id}`, {
+      const response = await fetch(`${API_URL}/users/${id}`, {
         method: 'GET',
         headers: {
           'Authorization': token,
@@ -250,7 +224,7 @@ export const userService = {
       // Telefon numarası formatını düzelt
       const formattedPhone = userData.phoneNumber?.replace(/[^0-9]/g, '');
 
-      const response = await fetch(`${BASE_URL}/auth/register`, {
+      const response = await fetch(`${API_URL}/auth/register`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -294,7 +268,7 @@ export const userService = {
         throw new Error('Oturum bulunamadı');
       }
 
-      const response = await fetch(`${BASE_URL}/users/${id}`, {
+      const response = await fetch(`${API_URL}/users/${id}`, {
         method: 'PUT',
         headers: {
           'Authorization': token,
@@ -326,7 +300,7 @@ export const userService = {
         throw new Error('Oturum bulunamadı');
       }
 
-      const response = await fetch(`${BASE_URL}/users/${id}`, {
+      const response = await fetch(`${API_URL}/users/${id}`, {
         method: 'DELETE',
         headers: {
           'Authorization': token,
@@ -360,7 +334,7 @@ export const userService = {
         throw new Error('Oturum bulunamadı');
       }
 
-      const response = await fetch(`${BASE_URL}/users/${action}/${id}`, {
+      const response = await fetch(`${API_URL}/users/${action}/${id}`, {
         method: 'PUT',
         headers: {
           'Authorization': token,
@@ -388,7 +362,7 @@ export const userService = {
         throw new Error('Oturum bulunamadı');
       }
 
-      const response = await fetch(`${BASE_URL}/users/${id}/role`, {
+      const response = await fetch(`${API_URL}/users/${id}/role`, {
         method: 'PUT',
         headers: {
           'Authorization': token,
@@ -417,7 +391,7 @@ export const newsService = {
       const token = sessionStorage.getItem('token');
       if (!token) throw new Error('Oturum bulunamadı');
 
-      const response = await fetch(`${BASE_URL}/news`, {
+      const response = await fetch(`${API_URL}/news`, {
         headers: {
           'Authorization': token,
           'Content-Type': 'application/json',
@@ -446,7 +420,7 @@ export const newsService = {
       const token = sessionStorage.getItem('token');
       if (!token) throw new Error('Oturum bulunamadı');
 
-      const response = await fetch(`${BASE_URL}/news/${id}`, {
+      const response = await fetch(`${API_URL}/news/${id}`, {
         headers: {
           'Authorization': token,
           'Content-Type': 'application/json',
@@ -470,7 +444,7 @@ export const newsService = {
       const token = sessionStorage.getItem('token');
       if (!token) throw new Error('Oturum bulunamadı');
 
-      const response = await fetch(`${BASE_URL}/news`, {
+      const response = await fetch(`${API_URL}/news`, {
         method: 'POST',
         headers: {
           'Authorization': token,
@@ -494,7 +468,7 @@ export const newsService = {
       const token = sessionStorage.getItem('token');
       if (!token) throw new Error('Oturum bulunamadı');
 
-      const response = await fetch(`${BASE_URL}/news/${id}`, {
+      const response = await fetch(`${API_URL}/news/${id}`, {
         method: 'PUT',
         headers: {
           'Authorization': token,
@@ -518,7 +492,7 @@ export const newsService = {
       const token = sessionStorage.getItem('token');
       if (!token) throw new Error('Oturum bulunamadı');
 
-      const response = await fetch(`${BASE_URL}/news/${id}`, {
+      const response = await fetch(`${API_URL}/news/${id}`, {
         method: 'DELETE',
         headers: {
           'Authorization': token,
@@ -540,7 +514,7 @@ export const newsService = {
       const token = sessionStorage.getItem('token');
       if (!token) throw new Error('Oturum bulunamadı');
 
-      const response = await fetch(`${BASE_URL}/news/${id}/publish`, {
+      const response = await fetch(`${API_URL}/news/${id}/publish`, {
         method: 'PUT',
         headers: {
           'Authorization': token,
@@ -565,7 +539,7 @@ export const eventService = {
       const token = sessionStorage.getItem('token');
       if (!token) throw new Error('Oturum bulunamadı');
 
-      const response = await fetch(`${BASE_URL}/events`, {
+      const response = await fetch(`${API_URL}/events`, {
         headers: {
           'Authorization': token,
           'Content-Type': 'application/json',
@@ -594,7 +568,7 @@ export const eventService = {
       const token = sessionStorage.getItem('token');
       if (!token) throw new Error('Oturum bulunamadı');
 
-      const response = await fetch(`${BASE_URL}/events/${id}`, {
+      const response = await fetch(`${API_URL}/events/${id}`, {
         headers: {
           'Authorization': token,
           'Content-Type': 'application/json',
@@ -616,7 +590,7 @@ export const eventService = {
       const token = sessionStorage.getItem('token');
       if (!token) throw new Error('Oturum bulunamadı');
 
-      const response = await fetch(`${BASE_URL}/events`, {
+      const response = await fetch(`${API_URL}/events`, {
         method: 'POST',
         headers: {
           'Authorization': token,
@@ -640,7 +614,7 @@ export const eventService = {
       const token = sessionStorage.getItem('token');
       if (!token) throw new Error('Oturum bulunamadı');
 
-      const response = await fetch(`${BASE_URL}/events/${id}`, {
+      const response = await fetch(`${API_URL}/events/${id}`, {
         method: 'PUT',
         headers: {
           'Authorization': token,
@@ -664,7 +638,7 @@ export const eventService = {
       const token = sessionStorage.getItem('token');
       if (!token) throw new Error('Oturum bulunamadı');
 
-      const response = await fetch(`${BASE_URL}/events/${id}`, {
+      const response = await fetch(`${API_URL}/events/${id}`, {
         method: 'DELETE',
         headers: {
           'Authorization': token,

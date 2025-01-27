@@ -1,0 +1,144 @@
+.createPage {
+  padding: 2rem;
+
+  .header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+
+    .backButton {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      background: #f3f4f6;
+      border: none;
+      border-radius: 6px;
+      color: #666;
+      cursor: pointer;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background: #e5e7eb;
+      }
+    }
+
+    h1 {
+      color: var(--text-color);
+      margin: 0;
+    }
+  }
+
+  .error, .success {
+    padding: 1rem;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+  }
+
+  .error {
+    background: #fee2e2;
+    color: #ef4444;
+  }
+
+  .success {
+    background: #dcfce7;
+    color: #16a34a;
+  }
+
+  .form {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+
+    .formGroup {
+      margin-bottom: 1.5rem;
+
+      label {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin-bottom: 0.5rem;
+        color: var(--text-color);
+
+        svg {
+          color: var(--primary-color);
+        }
+      }
+
+      input, textarea, select {
+        width: 100%;
+        padding: 0.75rem;
+        border: 1px solid #ddd;
+        border-radius: 6px;
+        transition: all 0.3s ease;
+
+        &:focus {
+          outline: none;
+          border-color: var(--primary-color);
+          box-shadow: 0 0 0 2px rgba(44, 95, 45, 0.1);
+        }
+      }
+
+      textarea {
+        resize: vertical;
+      }
+
+      &.checkboxLabel {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        cursor: pointer;
+
+        input[type="checkbox"] {
+          width: auto;
+        }
+      }
+    }
+
+    .formRow {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+
+    .formActions {
+      display: flex;
+      gap: 1rem;
+      margin-top: 2rem;
+
+      button {
+        flex: 1;
+        padding: 0.75rem;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        &.cancelButton {
+          background: #f3f4f6;
+          color: #666;
+
+          &:hover {
+            background: #e5e7eb;
+          }
+        }
+
+        &.submitButton {
+          background: var(--primary-color);
+          color: white;
+
+          &:hover {
+            filter: brightness(0.9);
+          }
+
+          &:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+          }
+        }
+      }
+    }
+  }
+} 

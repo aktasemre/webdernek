@@ -2,7 +2,12 @@ import NextAuth from 'next-auth';
 import CredentialsProvider from 'next-auth/providers/credentials';
 import { API_URL } from '@/config';
 
-const handler = NextAuth({
+interface Credentials {
+  email: string;
+  password: string;
+}
+
+const authOptions = {
   providers: [
     CredentialsProvider({
       name: 'Credentials',
@@ -10,7 +15,7 @@ const handler = NextAuth({
         email: { label: "Email", type: "email" },
         password: { label: "Şifre", type: "password" }
       },
-      async authorize(credentials) {
+      async authorize(credentials: Credentials | undefined) {
         if (!credentials) {
           throw new Error('Kimlik bilgileri eksik');
         }
@@ -44,14 +49,15 @@ const handler = NextAuth({
     signIn: '/auth/login',
   },
   callbacks: {
-    async jwt({ token, user }) {
+    async jwt({ token, user }: { token: any; user: any }) {
       return { ...token, ...user };
     },
-    async session({ session, token }) {
+    async session({ session, token }: { session: any; token: any }) {
       session.user = token;
       return session;
     }
   }
-});
+};
 
+const handler = NextAuth(authOptions);
 export { handler as GET, handler as POST }; 

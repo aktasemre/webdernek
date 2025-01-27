@@ -74,17 +74,18 @@ export default function ViewMemberPage({ params }) {
   const handleRoleChange = async (newRole) => {
     try {
       setLoading(true);
-      setError('');
       await userService.changeRole(id, newRole);
       
-      // Üye bilgilerini güncelle
-      const updatedMember = await userService.getById(id);
-      setMember(updatedMember);
+      if (member) {
+        setMember({
+          ...member,
+          role: newRole
+        });
+      }
       
       setRoleModalOpen(false);
       setSuccess('Rol başarıyla güncellendi');
       
-      // 3 saniye sonra başarı mesajını kaldır
       setTimeout(() => setSuccess(''), 3000);
     } catch (error) {
       setError(error.message);
