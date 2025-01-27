@@ -64,6 +64,14 @@ export default function MembersPage() {
     return new Date(dateString).toLocaleDateString('tr-TR');
   };
 
+  const formatStatus = (active) => {
+    return active ? (
+      <span className={styles.statusActive}>Aktif</span>
+    ) : (
+      <span className={styles.statusInactive}>Pasif</span>
+    );
+  };
+
   return (
     <div className={styles.membersPage}>
       <div className={styles.searchBar}>
@@ -121,11 +129,7 @@ export default function MembersPage() {
                   </span>
                 </td>
                 <td>
-                  <span className={`${styles.status} ${member.active ? styles.active : styles.inactive}`}>
-                    {member.status === 'ACTIVE' ? 'Aktif' : 
-                     member.status === 'PENDING' ? 'Onay Bekliyor' : 
-                     member.status === 'SUSPENDED' ? 'Askıya Alındı' : 'Pasif'}
-                  </span>
+                  {formatStatus(member.active)}
                 </td>
                 <td>
                   <span className={`${styles.duesStatus} ${member.duesPaid ? styles.paid : styles.unpaid}`}>

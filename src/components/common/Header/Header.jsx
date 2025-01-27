@@ -13,10 +13,12 @@ import {
   FaMapMarkerAlt,
   FaUserCog,
   FaSignInAlt,
+  FaSignOutAlt,
+  FaUser
 } from 'react-icons/fa';
 import styles from './Header.module.scss';
 import iletisimData from '@/data/iletisim.data.json';
-import { useSession } from 'next-auth/react';
+import { useSession, signOut } from 'next-auth/react';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -26,7 +28,9 @@ const Header = () => {
   const searchRef = useRef(null);
   const router = useRouter();
   const [activeDropdown, setActiveDropdown] = useState(null);
-  const { data: session } = useSession();
+  const { data: session, status } = useSession();
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const dropdownRef = useRef(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -244,14 +248,38 @@ const Header = () => {
               <FaClipboardList /> Dernek butcesi
             </a>
 
-            <div className={styles.authButtons}>
-              {session ? (
-                <Link href="/admin" className={styles.adminButton}>
-                  <FaUserCog /> Admin Panel
-                </Link>
+            <div className={styles.rightSection}>
+              {status === 'authenticated' && session?.user ? (
+                <div className={styles.userMenu} ref={dropdownRef}>
+                  <button 
+                    className={styles.userButton}
+                    onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                  >
+                    <FaUser />
+                    <span>{session.user.name || session.user.email.split('@')[0]}</span>
+                    <FaChevronDown className={isDropdownOpen ? styles.rotated : ''} />
+                  </button>
+
+                  {isDropdownOpen && (
+                    <div className={styles.dropdown}>
+                      <Link href="/admin" className={styles.dropdownItem}>
+                        <FaUserCog />
+                        <span>Dashboard</span>
+                      </Link>
+                      <button 
+                        className={styles.dropdownItem}
+                        onClick={() => signOut()}
+                      >
+                        <FaSignOutAlt />
+                        <span>Çıkış Yap</span>
+                      </button>
+                    </div>
+                  )}
+                </div>
               ) : (
                 <Link href="/auth/login" className={styles.loginButton}>
-                  <FaSignInAlt /> Giriş Yap
+                  <FaSignInAlt />
+                  <span>Giriş Yap</span>
                 </Link>
               )}
             </div>

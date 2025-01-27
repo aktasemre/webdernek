@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import styles from './GeographyContent.module.scss';
-import BackButton from '@/components/common/BackButton/BackButton';
 import LocationInfo from './LocationInfo/LocationInfo';
 import VegetationInfo from './VegetationInfo/VegetationInfo';
 
@@ -40,7 +39,7 @@ const climateData = {
 const GeographyContent = () => {
   return (
     <div className={styles.geographyContent}>
-      <BackButton />
+      <h2>Coğrafi Konum</h2>
       <div className={styles.header}>
         <h1>Coğrafi Yapı ve İklim</h1>
         <div className={styles.introduction}>

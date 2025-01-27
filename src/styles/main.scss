@@ -8,14 +8,14 @@
 
 // Tema değişkenleri
 :root {
-  --primary-color: #2C5F2D;
-  --secondary-color: #97BC62;
-  --accent-color: #FFB800;
-  --text-color: #333333;
-  --background-color: #FFFFFF;
+  --primary-color: #{$primary};
+  --secondary-color: #{$secondary};
+  --accent-color: #{$accent};
+  --text-color: #{$text-dark};
+  --background-color: #{$white};
   
   @media (prefers-color-scheme: dark) {
-    --text-color: #FFFFFF;
-    --background-color: #1A1A1A;
+    --text-color: #{$white};
+    --background-color: #{$background-dark};
   }
 } 

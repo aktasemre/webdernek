@@ -5,25 +5,24 @@
 }
 
 @mixin responsive($breakpoint) {
-  @if $breakpoint == sm {
-    @media (min-width: $breakpoint-sm) { @content; }
-  }
-  @if $breakpoint == md {
-    @media (min-width: $breakpoint-md) { @content; }
-  }
-  @if $breakpoint == lg {
-    @media (min-width: $breakpoint-lg) { @content; }
-  }
-  @if $breakpoint == xl {
-    @media (min-width: $breakpoint-xl) { @content; }
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media (max-width: map-get($breakpoints, $breakpoint)) {
+      @content;
+    }
   }
 }
 
 @mixin card-shadow {
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: $shadow-sm;
   transition: $transition-base;
   
   &:hover {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    box-shadow: $shadow-md;
   }
-} 
+}
+
+// Cursor mixins
+@mixin cursor-pointer { cursor: pointer; }
+@mixin cursor-default { cursor: default; }
+@mixin cursor-wait { cursor: wait; }
+// ... diğer cursor mixinler 
