@@ -2,36 +2,23 @@
 
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
-import { FaPlus, FaEdit, FaTrash, FaCheck, FaTimes, FaEye, FaMoneyBill } from 'react-icons/fa';
+import { FaPlus, FaEdit, FaTrash } from 'react-icons/fa';
 import { userService } from '@/services/api';
-import MemberModal from '@/components/admin/MemberModal';
 import styles from './members.module.scss';
 
 const roleLabels = {
   ROLE_USER: 'Üye',
-  ROLE_ADMIN: 'Yönetici',
-  ROLE_EMPLOYEE: 'Çalışan',
-  ROLE_CUSTOMER: 'Müşteri',
-  ROLE_PARTNER: 'Ortak',
-  ROLE_MANAGER: 'Müdür',
-  ROLE_SUPERADMIN: 'Süper Yönetici'
-};
-
-const duesStatusLabels = {
-  PENDING: 'Beklemede',
-  PAID: 'Ödendi',
-  OVERDUE: 'Gecikmiş',
-  CANCELLED: 'İptal'
+  ROLE_ADMIN: 'Yönetici'
 };
 
 export default function MembersPage() {
   const router = useRouter();
   const [members, setMembers] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState('');
+  const [error, setError] = useState(null);
   const [modalOpen, setModalOpen] = useState(false);
   const [selectedMember, setSelectedMember] = useState(null);
-  const [filters] = useState({
+  const [filters, setFilters] = useState({
     status: 'all',
     search: ''
   });
@@ -40,33 +27,19 @@ export default function MembersPage() {
     const fetchMembers = async () => {
       try {
         setLoading(true);
-        setError('');
-
-        // Token kontrolü
-        const token = sessionStorage.getItem('token');
-        const user = JSON.parse(sessionStorage.getItem('user') || '{}');
-
-        if (!token || !user.role || user.role !== 'ROLE_ADMIN') {
-          router.push('/auth/login');
-          return;
-        }
-
-        const data = await userService.getAll(filters);
-        console.log('Fetched members:', data);
-        setMembers(Array.isArray(data) ? data : []);
-      } catch (error) {
-        console.error('Error fetching members:', error);
-        setError(error.message);
-        if (error.message.includes('yetkiniz yok')) {
-          router.push('/auth/login');
-        }
+        const response = await userService.getAllUsers();
+        console.log('Users response:', response); // Debug için
+        setMembers(response);
+      } catch (err) {
+        console.error('Error fetching members:', err);
+        setError(err.message);
       } finally {
         setLoading(false);
       }
     };
 
     fetchMembers();
-  }, [router]); // router'ı dependency olarak ekle
+  }, []);
 
   // Üye ekle/güncelle
   const handleSubmit = async (formData) => {
@@ -76,7 +49,7 @@ export default function MembersPage() {
       } else {
         await userService.create(formData);
       }
-      fetchMembers();
+      loadUsers();
       setModalOpen(false);
     } catch (err) {
       setError(err.message);
@@ -87,41 +60,11 @@ export default function MembersPage() {
   const handleDelete = async (id) => {
     if (window.confirm('Bu üyeyi silmek istediğinize emin misiniz?')) {
       try {
-        setLoading(true);
         await userService.delete(id);
         setMembers(members.filter(member => member.id !== id));
-        setError('');
-      } catch (error) {
-        setError(error.message);
-      } finally {
-        setLoading(false);
+      } catch (err) {
+        setError(err.message);
       }
-    }
-  };
-
-  // Kullanıcı durumunu değiştir
-  const handleStatusChange = async (id, currentStatus) => {
-    try {
-      setLoading(true);
-      const action = currentStatus === 'ACTIVE' ? 'deactivate' : 'activate';
-      await userService.changeStatus(id, action);
-      
-      // Durumu güncelle
-      setMembers(members.map(member => {
-        if (member.id === id) {
-          return {
-            ...member,
-            status: currentStatus === 'ACTIVE' ? 'INACTIVE' : 'ACTIVE'
-          };
-        }
-        return member;
-      }));
-      
-      setError('');
-    } catch (error) {
-      setError(error.message);
-    } finally {
-      setLoading(false);
     }
   };
 
@@ -137,6 +80,8 @@ export default function MembersPage() {
       <p>Üyeler yükleniyor...</p>
     </div>
   );
+
+  if (error) return <div className={styles.error}>{error}</div>;
 
   return (
     <div className={styles.membersPage}>
@@ -163,93 +108,31 @@ export default function MembersPage() {
         </select>
         
         <input 
-          type="search"
-          placeholder="Üye Ara..."
+          type="text"
+          placeholder="Üye ara..."
           value={filters.search}
           onChange={(e) => setFilters({...filters, search: e.target.value})}
           className={styles.searchInput}
         />
       </div>
 
-      {error && <div className={styles.error}>{error}</div>}
-
-      <div className={styles.tableContainer}>
-        <table className={styles.membersTable}>
-          <thead>
-            <tr>
-              <th>Ad Soyad</th>
-              <th>Email</th>
-              <th>Telefon</th>
-              <th>Durum</th>
-              <th>Aidat Durumu</th>
-              <th>İşlemler</th>
-            </tr>
-          </thead>
-          <tbody>
-            {members.length === 0 ? (
-              <tr>
-                <td colSpan="5" className={styles.noData}>
-                  Üye bulunamadı
-                </td>
-              </tr>
-            ) : (
-              members.map((member) => (
-                <tr key={member.id}>
-                  <td>{member.firstName} {member.lastName}</td>
-                  <td>{member.email}</td>
-                  <td>{member.phoneNumber || '-'}</td>
-                  <td>
-                    <button
-                      className={`${styles.statusButton} ${styles[member.status?.toLowerCase()]}`}
-                      onClick={() => handleStatusChange(member.id, member.status)}
-                    >
-                      {member.status === 'ACTIVE' ? <FaCheck /> : <FaTimes />}
-                      {member.status === 'ACTIVE' ? 'Aktif' : 'Pasif'}
-                    </button>
-                  </td>
-                  <td>
-                    <span className={`${styles.duesStatus} ${styles[member.duesStatus?.toLowerCase()]}`}>
-                      <FaMoneyBill />
-                      {duesStatusLabels[member.duesStatus] || 'Belirsiz'}
-                    </span>
-                  </td>
-                  <td className={styles.actions}>
-                    <button 
-                      className={styles.viewButton}
-                      onClick={() => router.push(`/admin/members/view/${member.id}`)}
-                    >
-                      <FaEye /> Görüntüle
-                    </button>
-                    <button 
-                      className={styles.editButton}
-                      onClick={() => router.push(`/admin/members/edit/${member.id}`)}
-                    >
-                      <FaEdit /> Düzenle
-                    </button>
-                    <button 
-                      className={styles.deleteButton}
-                      onClick={() => handleDelete(member.id)}
-                      disabled={loading}
-                    >
-                      <FaTrash /> Sil
-                    </button>
-                  </td>
-                </tr>
-              ))
-            )}
-          </tbody>
-        </table>
+      <div className={styles.membersList}>
+        {members.map((member) => (
+          <div key={member.id} className={styles.memberCard}>
+            <h3>{member.firstName} {member.lastName}</h3>
+            <p>Email: {member.email}</p>
+            <p>Telefon: {member.phoneNumber}</p>
+            <div className={styles.actions}>
+              <button onClick={() => handleEdit(member)}>
+                <FaEdit /> Düzenle
+              </button>
+              <button onClick={() => handleDelete(member.id)}>
+                <FaTrash /> Sil
+              </button>
+            </div>
+          </div>
+        ))}
       </div>
-
-      <MemberModal 
-        isOpen={modalOpen}
-        onClose={() => {
-          setModalOpen(false);
-          setSelectedMember(null);
-        }}
-        member={selectedMember}
-        onSubmit={handleSubmit}
-      />
     </div>
   );
 } 

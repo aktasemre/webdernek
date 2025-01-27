@@ -1,5 +1,7 @@
 {
   "compilerOptions": {
+    "checkJs": false,
+    "jsx": "react-jsx",
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"],
@@ -10,23 +12,8 @@
       "@/hooks/*": ["src/hooks/*"],
       "@/contexts/*": ["src/contexts/*"],
       "@/data/*": ["src/data/*"],
-      "@/types/*": ["src/types/*"],
       "@/constants/*": ["src/constants/*"]
-    },
-    "jsx": "react-jsx",
-    "jsxImportSource": "react",
-    "strict": true,
-    "target": "es6",
-    "module": "esnext",
-    "moduleResolution": "node",
-    "isolatedModules": true,
-    "resolveJsonModule": true,
-    "esModuleInterop": true,
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
-    "allowJs": true,
-    "checkJs": true
+    }
   },
-  "include": ["src/**/*", "next-env.d.ts"],
   "exclude": ["node_modules", ".next", "out"]
 }

@@ -23,10 +23,27 @@ import { handleApiError } from './utils';
  */
 
 export const userService = {
-  // Tüm kullanıcıları getir
+  /**
+   * @returns {Promise<User[]>}
+   */
   getAll: async () => {
-    const response = await axiosInstance.get('/users');
-    return response.data;
+    try {
+      const token = sessionStorage.getItem('token');
+      if (!token) {
+        throw new Error('Oturum bulunamadı');
+      }
+
+      const response = await axiosInstance.get('/api/users', {
+        headers: {
+          'Authorization': token
+        }
+      });
+      
+      return response.data;
+    } catch (error) {
+      console.error('Kullanıcılar getirilirken hata:', error);
+      throw error;
+    }
   },
 
   /**

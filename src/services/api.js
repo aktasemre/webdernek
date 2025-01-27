@@ -45,14 +45,12 @@ async function fetchApi(endpoint, options = {}) {
 export const authService = {
   login: async (credentials) => {
     try {
-      const response = await fetch(`${API_URL}/api/auth/login`, {
+      const response = await fetch(`${API_URL}/auth/login`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'Accept': 'application/json'
         },
-        body: JSON.stringify(credentials),
-        credentials: 'include'
+        body: JSON.stringify(credentials)
       });
 
       if (!response.ok) {
@@ -61,7 +59,15 @@ export const authService = {
       }
 
       const data = await response.json();
-      return data;
+      
+      // Token'ı doğru formatta saklayalım
+      if (data.accessToken) {
+        const token = `Bearer ${data.accessToken}`;
+        sessionStorage.setItem('token', token);
+        return data;
+      } else {
+        throw new Error('Token alınamadı');
+      }
     } catch (error) {
       console.error('Login error:', error);
       throw error;
@@ -115,58 +121,27 @@ export const authService = {
   }
 };
 
-// Kullanıcı servisleri
+// Üye servisleri
 export const userService = {
-  // Tüm kullanıcıları getir
-  getAll: async (filters = {}) => {
-    try {
-      const token = sessionStorage.getItem('token');
-      if (!token) {
-        throw new Error('Oturum bulunamadı');
-      }
-
-      const queryParams = new URLSearchParams(filters).toString();
-      const response = await fetch(`${API_URL}/users?${queryParams}`, {
-        method: 'GET', // Metodu belirtiyoruz
-        headers: {
-          'Authorization': token,
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
-        },
-        credentials: 'include' // CORS için gerekli
-      });
-
-      console.log('Users API Response:', response);
-
-      if (!response.ok) {
-        if (response.status === 401) {
-          sessionStorage.removeItem('token');
-          sessionStorage.removeItem('user');
-          window.location.href = '/auth/login';
-          throw new Error('Oturum süresi doldu');
-        }
-        if (response.status === 403) {
-          throw new Error('Bu işlem için yetkiniz yok');
-        }
-        throw new Error('Kullanıcı listesi alınamadı');
-      }
-
-      const data = await response.json();
-      console.log('Users API Data:', data);
-
-      // Backend'den gelen veriyi kontrol et
-      if (Array.isArray(data)) {
-        return data;
-      } else if (data.data && Array.isArray(data.data)) {
-        return data.data;
-      } else {
-        console.warn('Unexpected data format:', data);
-        return [];
-      }
-    } catch (error) {
-      console.error('Kullanıcılar getirilirken hata:', error);
-      throw error;
+  getAllUsers: async () => {
+    const token = sessionStorage.getItem('token');
+    if (!token) {
+      throw new Error('Token bulunamadı');
     }
+
+    const response = await fetch(`${API_URL}/users`, {
+      headers: {
+        'Authorization': token,
+        'Content-Type': 'application/json',
+      }
+    });
+
+    if (!response.ok) {
+      const error = await response.json();
+      throw new Error(error.message || 'Kullanıcılar getirilemedi');
+    }
+
+    return response.json();
   },
 
   // Tek kullanıcı getir
