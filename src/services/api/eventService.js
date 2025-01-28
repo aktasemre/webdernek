@@ -1,27 +1,57 @@
 import axiosInstance from './axiosInstance';
 
-export const eventService = {
-  getAll: async () => {
-    const response = await axiosInstance.get('/events');
-    return response.data;
+const eventService = {
+  getAllEvents: async () => {
+    try {
+      console.log('Fetching events...');
+      const response = await axiosInstance.get('/events');
+      console.log('Events response:', response);
+      return response.data;
+    } catch (error) {
+      console.error('Error fetching events:', error);
+      throw error;
+    }
   },
 
-  getById: async (id) => {
-    const response = await axiosInstance.get(`/events/${id}`);
-    return response.data;
+  getEventById: async (id) => {
+    try {
+      const response = await axiosInstance.get(`/events/${id}`);
+      return response.data;
+    } catch (error) {
+      console.error('Error fetching event:', error);
+      throw error;
+    }
   },
 
-  create: async (eventData) => {
-    const response = await axiosInstance.post('/events', eventData);
-    return response.data;
+  createEvent: async (eventData) => {
+    try {
+      const response = await axiosInstance.post('/events', eventData);
+      return response.data;
+    } catch (error) {
+      console.error('Error creating event:', error);
+      throw error;
+    }
   },
 
-  update: async (id, eventData) => {
-    const response = await axiosInstance.put(`/events/${id}`, eventData);
-    return response.data;
+  updateEvent: async (id, eventData) => {
+    try {
+      const response = await axiosInstance.put(`/events/${id}`, eventData);
+      return response.data;
+    } catch (error) {
+      console.error('Error updating event:', error);
+      throw error;
+    }
   },
 
-  delete: async (id) => {
-    await axiosInstance.delete(`/events/${id}`);
+  deleteEvent: async (id) => {
+    try {
+      const response = await axiosInstance.delete(`/events/${id}`);
+      return response.data;
+    } catch (error) {
+      console.error('Error deleting event:', error);
+      throw error;
+    }
   }
-}; 
+};
+
+export default eventService; 

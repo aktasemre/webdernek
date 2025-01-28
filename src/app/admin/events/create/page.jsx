@@ -11,11 +11,11 @@ export default function CreateEventPage() {
   const [formData, setFormData] = useState({
     title: '',
     description: '',
-    startDate: '',
-    endDate: '',
     location: '',
     maxParticipants: 50,
-    isActive: true
+    startDate: '',
+    endDate: '',
+    imageUrl: null // Opsiyonel
   });
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
@@ -27,27 +27,32 @@ export default function CreateEventPage() {
     setError('');
     setSuccess('');
 
-    // Tarihi doğru formata çevirelim
-    const formattedStartDate = new Date(formData.startDate).toISOString().replace('Z', '+03:00');
-    const formattedEndDate = new Date(formData.endDate).toISOString().replace('Z', '+03:00');
-    
     const eventData = {
-      ...formData,
-      startDate: formattedStartDate, // Örnek: "2024-01-28T10:00:00+03:00"
-      endDate: formattedEndDate
+      title: formData.title,
+      description: formData.description,
+      location: formData.location,
+      maxParticipants: parseInt(formData.maxParticipants),
+      startDate: new Date(formData.startDate).toISOString(),
+      endDate: new Date(formData.endDate).toISOString(),
+      isActive: true,
+      active: true,
+      currentParticipants: 0,
+      imageUrl: formData.imageUrl
     };
 
     try {
-      await eventService.createEvent(eventData);
-      setSuccess('Etkinlik başarıyla oluşturuldu');
-      
-      // 2 saniye sonra listeye dön
-      setTimeout(() => {
-        router.push('/admin/events');
-      }, 2000);
+      const response = await eventService.createEvent(eventData);
+      if (response.success) {
+        setSuccess('Etkinlik başarıyla oluşturuldu');
+        
+        // 2 saniye sonra listeye dön
+        setTimeout(() => {
+          router.push('/admin/events');
+        }, 2000);
+      }
     } catch (error) {
-      console.error('Error creating event:', error);
-      setError(error.message);
+      console.error('Error:', error);
+      setError(error.response?.data?.message || 'Bir hata oluştu');
     } finally {
       setLoading(false);
     }
