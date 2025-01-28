@@ -2,99 +2,133 @@
 
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
-import { FaPlus, FaEdit, FaTrash, FaEye } from 'react-icons/fa';
-import { newsService } from '@/services/api';
+import newsService from '@/services/api/newsService';
+import { FaEdit, FaTrash, FaPlus, FaSearch, FaEye } from 'react-icons/fa';
 import styles from './news.module.scss';
 
 export default function NewsPage() {
   const router = useRouter();
   const [news, setNews] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState('');
+  const [error, setError] = useState(null);
+  const [searchTerm, setSearchTerm] = useState('');
 
   useEffect(() => {
-    const fetchNews = async () => {
-      try {
-        const data = await newsService.getAll();
-        setNews(data);
-      } catch (error) {
-        setError(error.message);
-      } finally {
-        setLoading(false);
-      }
-    };
-
     fetchNews();
   }, []);
 
+  const fetchNews = async () => {
+    try {
+      setLoading(true);
+      const response = await newsService.getAllNews();
+      setNews(response.response || []);
+    } catch (err) {
+      console.error('Error fetching news:', err);
+      setError(err.message);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleEdit = (id) => {
+    router.push(`/admin/news/edit/${id}`);
+  };
+
   const handleDelete = async (id) => {
-    if (window.confirm('Bu haberi silmek istediğinize emin misiniz?')) {
+    if (window.confirm('Bu haberi silmek istediğinizden emin misiniz?')) {
       try {
-        await newsService.delete(id);
+        await newsService.deleteNews(id);
         setNews(news.filter(item => item.id !== id));
-      } catch (error) {
-        setError(error.message);
+      } catch (err) {
+        setError(err.message);
       }
     }
   };
 
+  const formatDate = (dateString) => {
+    return new Date(dateString).toLocaleDateString('tr-TR');
+  };
+
+  if (loading) return <div className={styles.loading}>Yükleniyor...</div>;
+  if (error) return <div className={styles.error}>Hata: {error}</div>;
+
+  const filteredNews = news.filter(item => 
+    item.title?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    item.summary?.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   return (
     <div className={styles.newsPage}>
       <div className={styles.header}>
-        <h1>Haberler</h1>
+        <div className={styles.searchBar}>
+          <FaSearch className={styles.searchIcon} />
+          <input
+            type="text"
+            placeholder="Haber ara..."
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+          />
+        </div>
         <button 
           className={styles.addButton}
           onClick={() => router.push('/admin/news/create')}
         >
-          <FaPlus /> Haber Ekle
+          <FaPlus /> Yeni Haber Ekle
         </button>
       </div>
 
-      {error && <div className={styles.error}>{error}</div>}
-
-      {loading ? (
-        <div className={styles.loading}>Yükleniyor...</div>
-      ) : (
-        <div className={styles.newsGrid}>
-          {news.map((item) => (
-            <div key={item.id} className={styles.newsCard}>
-              {item.imageUrl && (
-                <div className={styles.imageContainer}>
-                  <img src={item.imageUrl} alt={item.title} />
-                </div>
-              )}
-              <div className={styles.content}>
-                <h3>{item.title}</h3>
-                <p>{item.summary}</p>
-                <div className={styles.meta}>
-                  <span>{new Date(item.publishDate).toLocaleDateString('tr-TR')}</span>
-                  <span>{item.viewCount} görüntülenme</span>
-                </div>
-                <div className={styles.actions}>
-                  <button 
-                    onClick={() => router.push(`/admin/news/view/${item.id}`)}
-                    className={styles.viewButton}
-                  >
-                    <FaEye /> Görüntüle
-                  </button>
-                  <button 
-                    onClick={() => router.push(`/admin/news/edit/${item.id}`)}
-                    className={styles.editButton}
-                  >
-                    <FaEdit /> Düzenle
-                  </button>
-                  <button 
-                    onClick={() => handleDelete(item.id)}
-                    className={styles.deleteButton}
-                  >
-                    <FaTrash /> Sil
-                  </button>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      )}
+      <div className={styles.tableContainer}>
+        <table className={styles.newsTable}>
+          <thead>
+            <tr>
+              <th>Başlık</th>
+              <th>Özet</th>
+              <th>Yayın Tarihi</th>
+              <th>Durum</th>
+              <th>İşlemler</th>
+            </tr>
+          </thead>
+          <tbody>
+            {filteredNews.map((item) => (
+              <tr key={item.id}>
+                <td>{item.title}</td>
+                <td>{item.summary}</td>
+                <td>{formatDate(item.publishDate)}</td>
+                <td>
+                  <span className={`${styles.status} ${item.published ? styles.published : styles.draft}`}>
+                    {item.published ? 'Yayında' : 'Taslak'}
+                  </span>
+                </td>
+                <td>
+                  <div className={styles.actions}>
+                    <button 
+                      className={styles.viewButton}
+                      onClick={() => router.push(`/news/${item.id}`)}
+                      title="Görüntüle"
+                    >
+                      <FaEye />
+                    </button>
+                    <button 
+                      className={styles.editButton}
+                      onClick={() => handleEdit(item.id)}
+                      title="Düzenle"
+                    >
+                      <FaEdit />
+                    </button>
+                    <button 
+                      className={styles.deleteButton}
+                      onClick={() => handleDelete(item.id)}
+                      title="Sil"
+                    >
+                      <FaTrash />
+                    </button>
+                  </div>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 } 

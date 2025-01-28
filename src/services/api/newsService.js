@@ -1,32 +1,35 @@
-import axiosInstance from './axiosInstance';
+import { axiosInstance } from './axiosInstance';
 
-export const newsService = {
-  getAll: async () => {
+const newsService = {
+  getAllNews: async () => {
     const response = await axiosInstance.get('/news');
     return response.data;
   },
 
-  getById: async (id) => {
+  getNewsById: async (id) => {
     const response = await axiosInstance.get(`/news/${id}`);
     return response.data;
   },
 
-  create: async (newsData) => {
+  createNews: async (newsData) => {
     const response = await axiosInstance.post('/news', newsData);
     return response.data;
   },
 
-  update: async (id, newsData) => {
+  updateNews: async (id, newsData) => {
     const response = await axiosInstance.put(`/news/${id}`, newsData);
     return response.data;
   },
 
-  delete: async (id) => {
-    await axiosInstance.delete(`/news/${id}`);
+  deleteNews: async (id) => {
+    const response = await axiosInstance.delete(`/news/${id}`);
+    return response.data;
   },
 
   publish: async (id) => {
     const response = await axiosInstance.put(`/news/${id}/publish`);
     return response.data;
   }
-}; 
+};
+
+export default newsService; 

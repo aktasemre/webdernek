@@ -27,8 +27,18 @@ export default function CreateEventPage() {
     setError('');
     setSuccess('');
 
+    // Tarihi doğru formata çevirelim
+    const formattedStartDate = new Date(formData.startDate).toISOString().replace('Z', '+03:00');
+    const formattedEndDate = new Date(formData.endDate).toISOString().replace('Z', '+03:00');
+    
+    const eventData = {
+      ...formData,
+      startDate: formattedStartDate, // Örnek: "2024-01-28T10:00:00+03:00"
+      endDate: formattedEndDate
+    };
+
     try {
-      await eventService.create(formData);
+      await eventService.createEvent(eventData);
       setSuccess('Etkinlik başarıyla oluşturuldu');
       
       // 2 saniye sonra listeye dön
@@ -36,6 +46,7 @@ export default function CreateEventPage() {
         router.push('/admin/events');
       }, 2000);
     } catch (error) {
+      console.error('Error creating event:', error);
       setError(error.message);
     } finally {
       setLoading(false);

@@ -1,12 +1,22 @@
 import axios from 'axios';
-import { API_URL } from '@/config';
 
-// Temel axios instance'ı oluşturma
 const axiosInstance = axios.create({
-  baseURL: API_URL,
+  baseURL: process.env.NEXT_PUBLIC_API_URL, // http://localhost:8080/api
   headers: {
     'Content-Type': 'application/json',
-  },
+  }
+});
+
+// Request'leri loglamak için
+axiosInstance.interceptors.request.use(request => {
+  console.log('API Request:', request);
+  return request;
+});
+
+// Response'ları loglamak için
+axiosInstance.interceptors.response.use(response => {
+  console.log('API Response:', response);
+  return response;
 });
 
 // Her istekte token kontrolü

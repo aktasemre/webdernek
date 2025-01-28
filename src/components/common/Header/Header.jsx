@@ -108,6 +108,10 @@ const Header = () => {
     return () => document.removeEventListener('click', closeDropdown);
   }, []);
 
+  if (status === 'loading') {
+    return <div>Loading...</div>;
+  }
+
   return (
     <header className={`${styles.header} ${isScrolled ? styles.scrolled : ''}`}>
       <nav className={styles.navbar}>

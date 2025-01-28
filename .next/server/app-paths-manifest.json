@@ -1,8 +1,7 @@
 {
-  "/auth/login/page": "app/auth/login/page.js",
-  "/about/village/history/page": "app/about/village/history/page.js",
+  "/admin/news/page": "app/admin/news/page.js",
   "/admin/page": "app/admin/page.js",
-  "/admin/members/view/[id]/page": "app/admin/members/view/[id]/page.js",
-  "/admin/members/edit/[id]/page": "app/admin/members/edit/[id]/page.js",
-  "/admin/members/page": "app/admin/members/page.js"
+  "/admin/members/page": "app/admin/members/page.js",
+  "/admin/events/page": "app/admin/events/page.js",
+  "/admin/events/create/page": "app/admin/events/create/page.js"
 }
