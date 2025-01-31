@@ -2,13 +2,29 @@
   command = "npm run build"
   publish = ".next"
 
+[build.environment]
+  NEXT_PUBLIC_API_URL = "https://api.arslandedekoyu.org.tr"
+  NEXT_PUBLIC_BASE_URL = "https://arslandedekoyu.org.tr"
+  NEXTAUTH_URL = "https://arslandedekoyu.org.tr"
+  NODE_VERSION = "18"
+  NEXT_TELEMETRY_DISABLED = "1"
+
 [[plugins]]
   package = "@netlify/plugin-nextjs"
 
-[build.environment]
-  NEXT_TELEMETRY_DISABLED = "1"
-  NODE_VERSION = "18"
-  NEXT_PUBLIC_BASE_URL = "https://arslandede.netlify.app"
-
 [build.processing]
   skip_processing = false
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Content-Security-Policy = "default-src 'self' 'unsafe-inline' 'unsafe-eval' data: *.arslandedekoyu.org.tr; img-src 'self' data: blob: *.arslandedekoyu.org.tr;"

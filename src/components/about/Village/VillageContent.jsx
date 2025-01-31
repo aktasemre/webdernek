@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import BackButton from '@/components/common/BackButton/BackButton';
 import styles from './VillageContent.module.scss';
 
 const sections = [
@@ -51,7 +50,6 @@ const sections = [
 const VillageContent = () => {
   return (
     <div className={styles.villageContent}>
-      <BackButton />
       <div className={styles.header}>
         <h1>Köyümüz Hakkında</h1>
         <p>

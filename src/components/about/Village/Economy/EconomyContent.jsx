@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import BackButton from '@/components/common/BackButton/BackButton';
 import styles from './EconomyContent.module.scss';
 
 const economicActivities = [
@@ -23,7 +22,6 @@ const economicActivities = [
 const EconomyContent = () => {
   return (
     <div className={styles.economyContent}>
-      <BackButton />
       <h1>Ekonomik Yapı</h1>
 
       <div className={styles.introduction}>

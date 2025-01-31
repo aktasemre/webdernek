@@ -3,7 +3,7 @@ import Link from 'next/link';
 import styles from './page.module.scss';
 import Hero from '@/components/home/Hero/Hero';
 import ActionButtons from '@/components/home/ActionButtons/ActionButtons';
-import SideMenu from '@/components/common/SideMenu/SideMenu';
+import SponsorSlider from '@/components/common/SponsorSlider/SponsorSlider';
 import EventCalendar from '@/components/home/EventCalendar/EventCalendar';
 import NewsSlider from '@/components/home/NewsSlider/NewsSlider';
 import Features from '@/components/home/Features/Features';
@@ -22,7 +22,7 @@ export default async function Home() {
 
       <div className={styles.contentWrapper}>
         <div className={styles.sideMenuContainer}>
-          <SideMenu />
+          <SponsorSlider />
         </div>
 
         <div className={styles.mainContent}>

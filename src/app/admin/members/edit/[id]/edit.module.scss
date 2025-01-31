@@ -11,21 +11,6 @@
       color: var(--text-color);
       margin: 0;
     }
-
-    .backButton {
-      padding: 0.75rem 1.5rem;
-      background: #f3f4f6;
-      border: none;
-      border-radius: 6px;
-      color: #666;
-      cursor: pointer;
-      transition: all 0.3s ease;
-
-      &:hover {
-        background: #e5e7eb;
-        transform: translateY(-1px);
-      }
-    }
   }
 
   .error {

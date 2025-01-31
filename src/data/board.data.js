@@ -1,9 +1,47 @@
+const boardData = [
+  {
+    id: 1,
+    name: 'Mehmet Yılmaz',
+    title: 'Yönetim Kurulu Başkanı',
+    period: '2023-2026',
+    image: '/images/board/chairman.jpg',
+    contact: {
+      email: 'mehmet.yilmaz@example.com',
+      phone: '+90 555 111 2233',
+    },
+  },
+  {
+    id: 2,
+    name: 'Ayşe Kaya',
+    title: 'Yönetim Kurulu Başkan Yardımcısı',
+    period: '2023-2026',
+    image: '/images/board/vice-chairman.jpg',
+    contact: {
+      email: 'ayse.kaya@example.com',
+      phone: '+90 555 222 3344',
+    },
+  },
+  {
+    id: 3,
+    name: 'Ali Demir',
+    title: 'Yönetim Kurulu Üyesi',
+    period: '2023-2026',
+    image: '/images/board/member1.jpg',
+    contact: {
+      email: 'ali.demir@example.com',
+      phone: '+90 555 333 4455',
+    },
+  },
+];
+
+export default boardData;
+
 export const boardMembers = [
   {
     name: 'Dr. Abdullah Kurtoglu',
     position: 'Yönetim Kurulu Başkanı',
     image: '/images/dernek_yonetim/abdullah_kurtoglu.jpg',
-    phone: '0553 663 6094',
+    phone: '0553 663 6094',
     email: 'abdullah@arslandedekoyu.org.tr g',
     linkedin: 'https://www.linkedin.com/in/abdullahkurtoglu',
     instagram: 'https://www.instagram.com/abdullahkurtoglu',
@@ -12,10 +50,9 @@ export const boardMembers = [
   {
     name: 'Ramazan Oksuz',
     position: 'Başkan Yardımcısı',
-    image: '/images/manzara2.jpg',
+    image: '/images/dernek_yonetim/ramazan_oksuz.jpg',
     phone: '+90 555 234 5678',
     email: 'mehmet.demir@arslandededernegi.org',
-
     description: '2023-2025 dönemi Başkan Yardımcısı',
   },
   {
@@ -53,7 +90,7 @@ export const boardMembers = [
   {
     name: 'Mustafa Albay Yildirim',
     position: 'Üye',
-    image: '/images/manzara5.jpg',
+    image: '/images/dernek_yonetim/mustafa_yildirim.jpg',
     phone: '+90 555 567 8901',
     email: 'fatma.sahin@arslandededernegi.org',
     description: '2023-2025 dönemi Yönetim Kurulu Üyesi',

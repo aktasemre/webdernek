@@ -22,15 +22,15 @@ import { useSession, signOut } from 'next-auth/react';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [isScrolled, setIsScrolled] = useState(false);
-  const searchRef = useRef(null);
-  const router = useRouter();
-  const [activeDropdown, setActiveDropdown] = useState(null);
-  const { data: session, status } = useSession();
+  const [mobileDropdowns, setMobileDropdowns] = useState({});
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const searchRef = useRef(null);
   const dropdownRef = useRef(null);
+  const router = useRouter();
+  const { data: session, status } = useSession();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -68,10 +68,14 @@ const Header = () => {
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
+    if (!isOpen) {
+      setMobileDropdowns({});
+    }
   };
 
   const closeMenu = () => {
     setIsOpen(false);
+    setMobileDropdowns({});
   };
 
   const toggleSearch = () => {
@@ -93,20 +97,19 @@ const Header = () => {
     }
   };
 
-  const toggleDropdown = (dropdownName) => {
-    setActiveDropdown(activeDropdown === dropdownName ? null : dropdownName);
+  const toggleMobileDropdown = (dropdownName, e) => {
+    e.stopPropagation();
+    if (window.innerWidth <= 768) {
+      setMobileDropdowns(prev => ({
+        ...prev,
+        [dropdownName]: !prev[dropdownName]
+      }));
+    }
   };
 
-  useEffect(() => {
-    const closeDropdown = (e) => {
-      if (!e.target.closest(`.${styles.dropdown}`)) {
-        setActiveDropdown(null);
-      }
-    };
-
-    document.addEventListener('click', closeDropdown);
-    return () => document.removeEventListener('click', closeDropdown);
-  }, []);
+  const handleLinkClick = () => {
+    closeMenu();
+  };
 
   if (status === 'loading') {
     return <div>Loading...</div>;
@@ -138,85 +141,97 @@ const Header = () => {
           </button>
 
           <div className={`${styles.menu} ${isOpen ? styles.active : ''}`} aria-hidden={!isOpen}>
-            <Link href="/" className={styles.menuItem} onClick={closeMenu}></Link>
+            <Link href="/" className={styles.menuItem} onClick={handleLinkClick}></Link>
 
-            <div className={styles.dropdown} onClick={() => toggleDropdown('village')}>
-              <span className={styles.menuItem}>
+            <div className={styles.dropdown}>
+              <span className={styles.menuItem} onClick={(e) => toggleMobileDropdown('village', e)}>
                 Köyümüz
                 <FaChevronDown
-                  className={`${styles.dropdownIcon} ${activeDropdown === 'village' ? styles.active : ''}`}
+                  className={`${styles.dropdownIcon} ${mobileDropdowns.village ? styles.active : ''}`}
                 />
               </span>
               <div
-                className={`${styles.dropdownContent} ${activeDropdown === 'village' ? styles.show : ''}`}
+                className={`${styles.dropdownContent} ${mobileDropdowns.village ? styles.show : ''}`}
               >
-                <Link href="/about/village" onClick={closeMenu}>
+                <Link href="/about/village" onClick={handleLinkClick}>
                   Köyümüz Hakkında
                 </Link>
-                <Link href="/about/village/history" onClick={closeMenu}>
+                <Link href="/about/village/history" onClick={handleLinkClick}>
                   Köyümüzün Tarihi
                 </Link>
                 <Link
                   href="/about/village/geography"
-                  onClick={closeMenu}
+                  onClick={handleLinkClick}
                   className={styles.dropdownLink}
                 >
                   <FaMapMarkerAlt className={styles.menuIcon} />
                   <span>Coğrafi Yapı</span>
                 </Link>
-                <Link href="/about/village/population" onClick={closeMenu}>
+                <Link href="/about/village/population" onClick={handleLinkClick}>
                   Nüfus ve Yerleşim
                 </Link>
-                <Link href="/about/village/economy" onClick={closeMenu}>
+                <Link href="/about/village/economy" onClick={handleLinkClick}>
                   Ekonomik Yapı
                 </Link>
-                <Link href="/about/village/education" onClick={closeMenu}>
+                <Link href="/about/village/education" onClick={handleLinkClick}>
                   Eğitim ve Kültür
                 </Link>
-                <Link href="/about/village/places" onClick={closeMenu}>
+                <Link href="/about/village/places" onClick={handleLinkClick}>
                   Gezilecek Yerler
                 </Link>
               </div>
             </div>
 
-            <div className={styles.dropdown} onClick={() => toggleDropdown('association')}>
-              <span className={styles.menuItem}>
+            <div className={styles.dropdown}>
+              <span className={styles.menuItem} onClick={(e) => toggleMobileDropdown('association', e)}>
                 Derneğimiz
                 <FaChevronDown
-                  className={`${styles.dropdownIcon} ${activeDropdown === 'association' ? styles.active : ''}`}
+                  className={`${styles.dropdownIcon} ${mobileDropdowns.association ? styles.active : ''}`}
                 />
               </span>
               <div
-                className={`${styles.dropdownContent} ${activeDropdown === 'association' ? styles.show : ''}`}
+                className={`${styles.dropdownContent} ${mobileDropdowns.association ? styles.show : ''}`}
               >
-                <Link href="/about/history" onClick={closeMenu}>
+                <Link href="/about/history" onClick={handleLinkClick}>
                   Derneğimizin Tarihçesi
                 </Link>
-                <Link href="/about/board" onClick={closeMenu}>
+                <Link href="/about/statute" onClick={handleLinkClick}>
+                  Derneğimizin Tüzüğü
+                </Link>
+                <Link href="/about/board" onClick={handleLinkClick}>
                   Yönetim Kurulu
                 </Link>
-                <Link href="/about/statute" onClick={closeMenu}>
-                  Dernek Tüzüğü
+                <Link href="/about/supervisory" onClick={handleLinkClick}>
+                  Denetleme Kurulu
                 </Link>
-                <Link href="/about/founders" onClick={closeMenu}>
+                <Link href="/about/founders" onClick={handleLinkClick}>
                   Kurucularımız
                 </Link>
-                <Link href="/about/members" onClick={closeMenu}>
+                <Link href="/about/members" onClick={handleLinkClick}>
                   Üyelerimiz
+                </Link>
+                <Link href="/about/bank-accounts" onClick={handleLinkClick}>
+                  Banka Hesaplarımız
+                </Link>
+                <Link href="/about/writers" onClick={handleLinkClick}>
+                  Yazarlarımız
+                </Link>
+                <Link href="/about/blood-bank" onClick={handleLinkClick}>
+                  Kan Bankası
                 </Link>
               </div>
             </div>
 
-            <Link href="/gallery" className={styles.menuItem} onClick={closeMenu}>
+            <Link href="/gallery" className={styles.menuItem} onClick={handleLinkClick}>
               Galeri
             </Link>
-            <Link href="/projects" className={styles.menuItem} onClick={closeMenu}>
+            <Link href="/projects" className={styles.menuItem} onClick={handleLinkClick}>
               Projeler
             </Link>
-            <Link href="/news" className={styles.menuItem} onClick={closeMenu}>
+            <Link href="/news" className={styles.menuItem} onClick={handleLinkClick}>
               Haberler
             </Link>
-            <Link href="/contact" className={styles.menuItem} onClick={closeMenu}>
+            <Link href="/contact" className={styles.menuItem} onClick={handleLinkClick}>
               İletişim
             </Link>
 
@@ -247,7 +262,7 @@ const Header = () => {
               target="_blank"
               rel="noopener noreferrer"
               className={styles.surveyButton}
-              onClick={closeMenu}
+              onClick={handleLinkClick}
             >
               <FaClipboardList /> Dernek butcesi
             </a>

@@ -1,46 +1,45 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  async rewrites() {
-    return [
+  reactStrictMode: true,
+  images: {
+    remotePatterns: [
       {
-        source: '/api/:path*',
-        destination: 'http://localhost:8080/api/:path*'
-      }
-    ];
+        protocol: 'https',
+        hostname: 'api.arslandedekoyu.org.tr',
+      },
+      {
+        protocol: 'https',
+        hostname: 'arslandedekoyu.org.tr',
+      },
+    ],
+  },
+  i18n: {
+    locales: ['tr'],
+    defaultLocale: 'tr',
   },
   async headers() {
     return [
       {
         source: '/:path*',
         headers: [
-          { key: 'Access-Control-Allow-Origin', value: '*' },
-          { key: 'Access-Control-Allow-Methods', value: 'GET,POST,PUT,DELETE,OPTIONS' },
-          { key: 'Access-Control-Allow-Headers', value: 'Content-Type, Authorization' },
-          { key: 'Access-Control-Allow-Credentials', value: 'true' },
+          {
+            key: 'X-DNS-Prefetch-Control',
+            value: 'on',
+          },
         ],
-      }
+      },
     ];
   },
-  reactStrictMode: true,
-  images: {
-    remotePatterns: [
+  async redirects() {
+    return [
       {
-        protocol: 'https',
-        hostname: '**',
+        source: '/anasayfa',
+        destination: '/',
+        permanent: true,
       },
-    ],
-    unoptimized: true,
-    domains: ['localhost'],
+    ];
   },
-  sassOptions: {
-    includePaths: ['./src'],
-  },
-  webpack: (config, { isServer }) => {
-    if (!isServer) {
-      config.target = 'web';
-    }
-    return config;
-  },
+  poweredByHeader: false,
 };
 
 module.exports = nextConfig;

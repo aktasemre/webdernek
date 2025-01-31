@@ -1,7 +1,5 @@
 // Veri importları
-import haberlerData from './haberler.data.json';
 import projelerData from './projeler.data.json';
-import etkinliklerData from './etkinlikler.data.json';
 import iletisimData from './iletisim.data.json';
 import donationData from './donation.data.js';
 
@@ -12,16 +10,18 @@ import * as eventsData from './events.data.json';
 import * as newsData from './haberler.data.json';
 import * as projectsData from './projeler.data.json';
 
-// Veri normalizasyon fonksiyonu
-const normalizeData = (data) => ({
-  ...data,
-  baslik: data.title || data.baslik,
-  aciklama: data.description || data.summary || data.aciklama,
-  icerik: data.content || data.icerik,
-  resim: data.image || data.resim,
-  tarih: data.date || data.tarih,
-  durum: data.status || data.durum,
-});
+// Temel veri exportları
+export { default as menuItems } from './menu.data.js';
+export { default as projectsData } from './projects.data.js';
+export { default as foundersData } from './founders.data.js';
+export { default as writersData } from './writers.data.js';
+export { default as supervisoryData } from './supervisory.data.js';
+export { default as placesData } from './places.data.js';
+export { default as membersData } from './members.data.js';
+export { default as wordsData } from './words.data.js';
+export { default as proverbsData } from './proverbs.data.js';
+export { default as galleryData } from './gallery.data.js';
+export { default as boardData } from './board.data.js';
 
 // Genel veri getirme fonksiyonu
 export const getData = (key) => {

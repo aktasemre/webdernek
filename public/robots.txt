@@ -3,19 +3,16 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://arslandede.org.tr
+Host: https://arslandedekoyu.org.tr
 
 # Sitemaps
-Sitemap: https://arslandede.netlify.app/sitemap.xml
+Sitemap: https://arslandedekoyu.org.tr/sitemap.xml
 
 # Disallow
-Disallow: /api/
 Disallow: /admin/
-Disallow: /auth/
-Disallow: /test/
+Disallow: /api/
 Disallow: /_next/
-Disallow: /404
-Disallow: /500
+Disallow: /auth/
 
 # Crawl-delay
 Crawl-delay: 10

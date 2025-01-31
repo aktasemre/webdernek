@@ -1,34 +1,15 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
-import { newsService } from '@/services/api';
+import haberlerData from '@/data/haberler.data.json';
 import styles from './NewsSlider.module.scss';
 
 const NewsSlider = () => {
-  const [news, setNews] = useState([]);
-  const [loading, setLoading] = useState(true);
   const [currentSlide, setCurrentSlide] = useState(0);
-
-  useEffect(() => {
-    const fetchNews = async () => {
-      try {
-        const response = await newsService.getAllNews();
-        // API response yapısını kontrol edelim
-        console.log('News Response:', response);
-        // response.data mı yoksa response.response mu?
-        setNews(response.response || []);
-      } catch (error) {
-        console.error('Error fetching news:', error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchNews();
-  }, []);
+  const news = haberlerData.haberler.filter(haber => haber.featured); // Sadece öne çıkan haberleri göster
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % news.length);
@@ -38,7 +19,6 @@ const NewsSlider = () => {
     setCurrentSlide((prev) => (prev - 1 + news.length) % news.length);
   };
 
-  if (loading) return <div>Yükleniyor...</div>;
   if (!news.length) return <div>Haber bulunamadı</div>;
 
   return (

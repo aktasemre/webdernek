@@ -1,6 +1,5 @@
 import ImageWithFallback from '@/components/common/ImageWithFallback/ImageWithFallback';
 import styles from './HistoryContent.module.scss';
-import BackButton from '@/components/common/BackButton/BackButton';
 
 const historicalEvents = [
   {
@@ -59,7 +58,6 @@ const culturalHeritage = [
 const HistoryContent = () => {
   return (
     <div className={styles.historyContent}>
-      <BackButton />
       <div className={styles.header}>
         <h1>Köyümüzün Tarihi</h1>
         <div className={styles.introduction}>

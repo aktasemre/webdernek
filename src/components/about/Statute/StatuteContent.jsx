@@ -1,4 +1,3 @@
-import BackButton from '@/components/common/BackButton/BackButton';
 import styles from './StatuteContent.module.scss';
 
 const statuteItems = [
@@ -72,7 +71,6 @@ const statuteItems = [
 const StatuteContent = () => {
   return (
     <div className={styles.statuteContent}>
-      <BackButton />
       <h1>Derneğimizin Tüzüğü</h1>
 
       <div className={styles.introduction}>

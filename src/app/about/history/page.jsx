@@ -1,5 +1,4 @@
 import styles from './history.module.scss';
-import BackButton from '@/components/common/BackButton/BackButton';
 
 export const metadata = {
   title: 'Derneğimizin Tarihçesi | Arslandede Köyü Derneği',
@@ -99,8 +98,6 @@ const achievements = [
 export default function HistoryPage() {
   return (
     <main className={styles.historyPage}>
-      <BackButton />
-
       <div className={styles.container}>
         <h1 className={styles.title}>Derneğimizin Tarihçesi</h1>
 

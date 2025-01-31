@@ -1,5 +1,4 @@
-import Link from 'next/link';
-import { IoArrowBack } from 'react-icons/io5';
+import React from 'react';
 import styles from './PopulationContent.module.scss';
 
 const populationStats = {

@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import styles from './PlacesContent.module.scss';
-import BackButton from '@/components/common/BackButton/BackButton';
 
 const historicalPlaces = [
   {
@@ -79,7 +78,6 @@ const culturalPlaces = [
 const PlacesContent = () => {
   return (
     <div className={styles.container}>
-      <BackButton />
       <div className={styles.placesContent}>
         <h1>Gezilecek Yerler</h1>
 
