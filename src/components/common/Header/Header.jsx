@@ -127,6 +127,7 @@ const Header = () => {
               height={64}
               className={styles.logoImage}
               priority
+              unoptimized
             />
             <span>Arslandede Köyü</span>
           </Link>

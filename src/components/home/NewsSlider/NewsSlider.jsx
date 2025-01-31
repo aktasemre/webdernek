@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import haberlerData from '@/data/haberler.data.json';
 import styles from './NewsSlider.module.scss';
+import imageLoader from '@/utils/imageLoader';
 
 const NewsSlider = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -35,11 +36,14 @@ const NewsSlider = () => {
           >
             <div className={styles.imageContainer}>
               <Image
+                loader={imageLoader}
                 src={item.image}
                 alt={item.title}
                 width={800}
                 height={400}
                 className={styles.image}
+                unoptimized
+                priority={index === currentSlide}
               />
             </div>
             <div className={styles.content}>

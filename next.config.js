@@ -1,45 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: true,
+  output: 'export',
   images: {
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'api.arslandedekoyu.org.tr',
-      },
-      {
-        protocol: 'https',
-        hostname: 'arslandedekoyu.org.tr',
-      },
-    ],
+    unoptimized: true,
   },
-  i18n: {
-    locales: ['tr'],
-    defaultLocale: 'tr',
-  },
-  async headers() {
-    return [
-      {
-        source: '/:path*',
-        headers: [
-          {
-            key: 'X-DNS-Prefetch-Control',
-            value: 'on',
-          },
-        ],
-      },
-    ];
-  },
-  async redirects() {
-    return [
-      {
-        source: '/anasayfa',
-        destination: '/',
-        permanent: true,
-      },
-    ];
-  },
-  poweredByHeader: false,
+  trailingSlash: true,
+  reactStrictMode: true,
 };
 
 module.exports = nextConfig;
